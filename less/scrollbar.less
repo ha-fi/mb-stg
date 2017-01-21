@@ -1,0 +1,68 @@
+// File: scrollbar.less
+// Note:
+
+
+.baron {
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    .baron-scroller-bar, .baron-scroller-bar-h {
+      opacity: .5;
+    }
+  }
+  .baron-scroller {
+    overflow-y: scroll;
+  }
+}
+
+.baron-h {
+  .baron-scroller {
+    overflow-x: scroll;
+  }
+}
+
+.baron-scroller {
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.baron-scroller::-webkit-scrollbar { /* Preventing webkit bug of horizontal scrolling */
+  width: 0;
+}
+
+.baron-scroller-track {
+  bottom: 2px;
+  pointer-events: none;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 9px;
+  z-index: 3;
+}
+
+.baron-scroller-bar {
+  background-color: #000;
+  border: 1px solid @gray-light;
+  border-radius: @border-radius-base;
+  opacity: 0;
+  pointer-events: auto;
+  position: absolute;
+  right: 0;
+  .transition(opacity .2s linear);
+  width: 9px;
+  z-index: 1;
+}
+
+.baron-scroller-bar-h {
+  background-color: #000;
+  border: 1px solid @gray-light;
+  border-radius: @border-radius-base;
+  opacity: 0;
+  pointer-events: auto;
+  position: absolute;
+  bottom: 10px;
+  .transition(opacity .2s linear);
+  height: 9px;
+  z-index: 1;
+}

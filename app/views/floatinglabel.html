@@ -1,0 +1,116 @@
+<div class="pl-docs-section" id="floatinglabel">
+    <div class="page-header">
+        <h1>Floating Labels<small>
+            (<a target="_blank" href="https://github.com/sandorTuranszky/angular-directive-implementing-float-label-pattern">angular-directive-implementing-float-label-pattern</a>)
+        </small></h1>
+    </div>
+    
+    <div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#floating-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#floating-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#floating-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#floating-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="floating-tab-0">
+          <form>
+        <div class="form-group floating-label-wrapper">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" ng-model="user.email"  with-floating-label>
+        </div>
+        <div class="form-group floating-label-wrapper">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ng-model="user.password"  with-floating-label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+          </div>
+          <div class="tab-pane fade" id="floating-tab-1">
+          <pre><code data-language="html">&lt;div class=&quot;form-group floating-label-wrapper&quot;&gt;
+  &lt;label for=&quot;exampleInputEmail1&quot;&gt;Email address&lt;/label&gt;
+  &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; placeholder=&quot;Enter email&quot; ng-model=&quot;user.email&quot;  with-floating-label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;form-group floating-label-wrapper&quot;&gt;
+  &lt;label for=&quot;exampleInputPassword1&quot;&gt;Password&lt;/label&gt;
+  &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot; placeholder=&quot;Password&quot; ng-model=&quot;user.password&quot;  with-floating-label&gt;
+&lt;/div&gt;
+
+&lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
+
+</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="floating-tab-2">
+          <pre><code data-language="javascript">app.directive(&#x27;withFloatingLabel&#x27;, function () {
+	    return {
+	        restrict: &#x27;A&#x27;,
+	        link: function ($scope, $element, attrs) {
+	            var template = &#x27;<div class="floating-label">&#x27; + attrs.placeholder +&#x27;</div>&#x27;;
+
+	            //append floating label template
+	            $element.after(template);
+
+	            //remove placeholder
+	            $element.removeAttr(&#x27;placeholder&#x27;);
+
+	            //hide label tag assotiated with given input
+	            document.querySelector(&#x27;label[for="&#x27; +  attrs.id +  &#x27;"]&#x27;).style.display = &#x27;none&#x27;;
+
+	            $scope.$watch(function () {
+	                if($element.val().toString().length < 1) {
+	                    $element.addClass(&#x27;empty&#x27;);
+	                } else {
+	                    $element.removeClass(&#x27;empty&#x27;);
+	                }
+	            });
+	        }
+	    };
+	});</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="floating-tab-3">
+          <pre><code data-language="css">.well {
+    margin: 10px;
+}
+
+.well input {
+    margin-bottom: 20px;
+}
+
+.floating-label-wrapper {
+    position: relative;
+}
+
+.floating-label {
+    color: #7E7E7E;
+    font-size: 14px;
+    position: absolute;
+    pointer-events: none;
+    left: 12px;
+    top: 7px;
+    transition: 0.2s ease all;
+    opacity: 0;
+}
+.form-control:focus ~ .floating-label,
+.form-control:not(.empty) ~ .floating-label {
+    top: -15px;
+    left: 0;
+    font-size: 11px;
+    opacity: 1;
+}
+
+.form-control.empty ~ .floating-label  {
+    opacity: 1;
+}
+textarea { resize: none; }
+textarea ~ .form-control-highlight {
+    margin-top: -11px;
+}</code></pre>
+        	</div> <!-- end tab-pane -->
+    	</div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+</div> <!-- end panel -->
+</div>

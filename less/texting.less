@@ -1,0 +1,226 @@
+// File: texting.less
+// Note: texting component
+
+
+// Texting base
+// -------------------------
+
+.texting { } // currently no styles
+
+.texting__actions {
+  background-color: @white;
+  padding: @texting-padding;
+  position: relative;
+  z-index: 10;
+}
+
+.texting__actions__compose {
+  .form-group {
+    margin-bottom: @margin-small;
+  }
+  textarea {
+    height: 60px;
+    overflow: auto;
+    resize: none;
+  }
+}
+
+.texting__actions__hr {
+  margin: @margin-half-gutter 0;
+}
+
+.texting__actions__phones {
+  margin-bottom: @margin-xsmall;
+}
+
+.texting__actions__phone-assign {
+  margin: @margin-xsmall 0;
+  .small;
+}
+
+.texting__actions__templates {
+  margin: @margin-xsmall 0;
+}
+
+.texting__body {
+  padding: 0;
+  position: relative;
+}
+
+.texting__charcount {
+  text-align: right;
+  .text-muted;
+  &--danger {
+    .text-danger;
+  }
+}
+
+.texting__convo {
+  background-color: @gray-lightest;
+  position: relative;
+}
+
+.texting__convo__inner {
+  height: 100%;
+  max-height: 230px;
+  min-height: 100px;
+  overflow-y: auto;
+  padding: @texting-padding;
+  position: relative;
+}
+
+.texting__welcome {
+  &:extend(.bg-success);
+  border-radius: @border-radius-small;
+  display: inline-block;
+  font-size: 13px;
+  margin-left: @message-face-width + @margin-large;
+  min-height: 40px; // to match message-face height
+  padding: @padding-medium @padding-large ;
+  position: relative;
+  .user-select(none);
+  .message-face {
+    position: absolute;
+    right: 100%;
+    top: 0;
+  }
+}
+
+
+// Actual text messages
+// -------------------------
+
+.texting__msg {
+  margin: 0 0 (@texting-padding/2) @texting-avatar-offset;
+  position: relative;
+}
+
+.texting__msg--user {
+  margin: 0 @texting-avatar-offset (@texting-padding/2) 0;
+  text-align: right;
+  .texting__msg__bubble {
+    &:extend(.bg-info);
+  }
+  .texting__msg__bubble__avatar {
+    left: auto;
+    right: -@texting-avatar-offset;
+  }
+  .texting__msg__time {
+    text-align: right;
+  }
+}
+
+.texting__msg__bubble {
+  background-color: @gray-lighter;
+  border-radius: @border-radius-small;
+  display: inline-block;
+  font-size: 13px;
+  max-width: 85%;
+  padding: @padding-small;
+  position: relative;
+  text-align: left;
+  &.texting__msg__bubble--error {
+    &:extend(.bg-danger);
+  }
+  .transition(background-color 500ms linear 0s);
+}
+
+.texting__msg__bubble__avatar {
+  background-clip: padding-box;
+  background-color: @gray-light;
+  border-radius: 50%;
+  height: @texting-avatar-size;
+  position: absolute;
+  left: -@texting-avatar-offset;
+  margin-top: -(@texting-avatar-size/2);
+  overflow: hidden;
+  pointer-events: none;
+  text-align: center;
+  top: 50%;
+  width: @texting-avatar-size;
+  z-index: 10;
+  .icon {
+    border-radius: 50%;
+    color: @gray-lighter;
+    font-size: 40px;
+    left: 1px;
+    top: 6px;
+  }
+  img {
+    margin-left: -2px;
+    width: @texting-avatar-size + 4px;
+  }
+}
+
+.texting__msg__status {
+  font-size: 11px;
+}
+
+.texting__msg__status--error {
+  color: @brand-danger;
+  padding: @padding-small 0;
+  a {
+    color: @brand-danger;
+    text-decoration: underline;
+  }
+  .icon-warning { top: -2px; }
+}
+
+.texting__msg__time {
+  color: @gray-dark;
+  font-size: 10px;
+} 
+
+
+// Texting modifer - large, side by side
+
+.texting--md {
+  .texting__actions {
+    border-left: 1px solid @gray-light;
+    float: right;
+    min-height: 280px;
+    width: @texting-sidebar-width;
+  }
+  .texting__actions__compose {
+    textarea {
+      height: 140px;
+    }  
+  }
+  .texting__body {
+    &:extend(.clearfix all);
+  }
+  .texting__convo {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: @texting-sidebar-width;
+    top: 0;
+    z-index: 1;
+  }
+  .texting__convo__inner {
+    max-height: auto;
+    min-height: 100%;
+  }
+  .texting__msg {
+    margin: 0 0 @texting-padding @texting-avatar-offset;
+  }
+  .texting__msg--user {
+    margin: 0 @texting-avatar-offset @texting-padding 0;
+  }
+}
+
+// Texting modifier - wrapped in modal or panel
+.texting--modal,.texting--panel {
+  .texting__actions {
+    background-color: transparent;
+  }
+  &.texting--md {
+    .texting__actions {
+      border-bottom-right-radius: @panel-border-radius;
+    }
+    .texting__convo {
+      border-bottom-left-radius: @panel-border-radius;
+    } 
+  } 
+}
+

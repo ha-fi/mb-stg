@@ -1,0 +1,101 @@
+<section id="Suggestions">
+<div ng-controller="AlertDemoCtrl">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('AlertDemoCtrl', ['$scope','$http', function ($scope) {
+	  $scope.alerts = [
+	                   { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+	                   { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+	                 ];
+	                 
+	                 console.log($scope.alerts);
+
+	                 $scope.addAlert = function() {
+	                   $scope.alerts.push({msg: 'Another alert!'});
+	                 };
+
+	                 $scope.closeAlert = function(index) {
+	                   $scope.alerts.splice(index, 1);
+	                 };
+	               }]);
+  
+</script>
+    <div class="page-header">
+        <h1>Alert<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/alert">ui.bootstrap.alert</a>)
+        </small></h1>
+    </div>
+    
+
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#panel-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#panel-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#panel-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#panel-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="panel-tab-0">
+            <script type="text/ng-template" id="alert.html">
+    <div ng-transclude></div>
+  </script>
+  <div uib-alert ng-repeat="alert in alerts" ng-class="'alert-' + (alert.type || 'warning')" close="closeAlert($index)"><span ng-bind="alert.msg"></span></div>
+  <div uib-alert template-url="alert.html" style="background-color:#fa39c3;color:white">A happy alert!</div>
+  <button type="button" class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+          
+          
+          </div>
+          <div class="tab-pane fade" id="panel-tab-1">
+             <pre><code data-language="html">&lt;div ng-controller=&quot;AlertDemoCtrl&quot;&gt;
+  &lt;script type=&quot;text/ng-template&quot; id=&quot;alert.html&quot;&gt;
+    &lt;div ng-transclude&gt;&lt;/div&gt;
+  &lt;/script&gt;
+
+  &lt;div uib-alert ng-repeat=&quot;alert in alerts&quot; ng-class=&quot;&#x27;alert-&#x27; + (alert.type || &#x27;warning&#x27;)&quot; close=&quot;closeAlert($index)&quot;&gt;&#123;&#123;alert.msg&#125;&#125;&lt;/div&gt;
+  &lt;div uib-alert template-url=&quot;alert.html&quot; style=&quot;background-color:#fa39c3;color:white&quot;&gt;A happy alert!&lt;/div&gt;
+  &lt;button type=&quot;button&quot; class=&#x27;btn btn-default&#x27; ng-click=&quot;addAlert()&quot;&gt;Add Alert&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-2">
+            <pre ng-non-bindable><code data-language="javascript">angular.module(&#x27;ui.bootstrap.demo&#x27;).controller(&#x27;AlertDemoCtrl&#x27;, function ($scope) {
+  $scope.alerts = [
+    { type: &#x27;danger&#x27;, msg: &#x27;Oh snap! Change a few things up and try submitting again.&#x27; },
+    { type: &#x27;success&#x27;, msg: &#x27;Well done! You successfully read this important alert message.&#x27; }
+  ];
+
+  $scope.addAlert = function() {
+    $scope.alerts.push({msg: &#x27;Another alert!&#x27;});
+  };
+
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
+  };
+});</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-3">
+            <p>This directive can be used both to generate alerts from static and dynamic model data (using the <code>ng-repeat</code> directive).</p>
+<h3 id="uib-alert-settings">uib-alert settings</h3>
+<ul>
+<li><p><code>close()</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+A callback function that gets fired when an <code>alert</code> is closed. If the attribute exists, a close button is displayed as well.</p>
+</li>
+<li><p><code>dismiss-on-timeout</code>
+<em>(Default: <code>none</code>)</em> -
+Takes the number of milliseconds that specify the timeout duration, after which the alert will be closed. This attribute requires the presence of the <code>close</code> attribute.</p>
+</li>
+<li><p><code>template-url</code>
+<em>(Default: <code>uib/template/alert/alert.html</code>)</em> -
+Add the ability to override the template used in the component.</p>
+</li>
+</ul>
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  
+</div>
+</section>

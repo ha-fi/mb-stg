@@ -1,0 +1,427 @@
+// File: variables.less
+// Note: Extends Bootstrap variables.less
+
+
+// -------------------------
+// Alerts
+// -------------------------
+
+@alert-link-font-weight:      @font-weight-semibold;
+
+
+// -------------------------
+// Badges
+// -------------------------
+
+@badge-border-radius:         0.25em; // override bootstrap
+@badge-font-weight:           400; // override bootstrap
+@badge-horizontal-padding:    @padding-xsmall;
+@badge-min-width:             18px;
+@badge-vertical-padding:      3px;
+
+
+// -------------------------
+// Buttons
+// -------------------------
+
+@btn-default-color:           @gray-dark;
+
+@btn-attention-color:         @white;
+@btn-attention-bg:            @brand-attention;
+@btn-attention-border:        darken(@btn-attention-bg, 5%);
+
+@btn-highlight-color:         @link-color;
+@btn-highlight-bg:            @brand-highlight;
+@btn-highlight-border:        #8ab7e0;
+
+
+// -------------------------
+// Colors
+// -------------------------
+
+// Black and white
+@black:                     #080808;
+@white:                     #ffffff;
+
+// Mineralbay colors
+@mineralbay-red:             		#b20001;
+@mineralbay-orange:           		#ee6023;
+
+// Brand colors
+@brand-primary:             #b20001;
+@brand-attention:           #ee6023;
+@brand-success:             #669900;
+@brand-info:                #5bc0de;
+@brand-warning:             #ffcc33;
+@brand-danger:              #cb2027;
+@brand-highlight:           #f5fbff;
+
+// Grays
+@gray-darker:               #444444;
+@gray-dark:                 #696969;
+@gray:                      #999999; //#848484;
+@gray-light:                #cccccc;
+@gray-lighter:              #ececec;
+@gray-lightest:             lighten(@gray-lighter,4%);
+
+// Cool colors
+@cool-dark:                 #222C32;
+@cool:                      #394B54;
+@cool-light:                #5F7F8E;
+@cool-hover:                lighten(@state-info-bg,6%);
+
+
+// -------------------------
+// Communication Status
+// -------------------------
+
+@comm-status-bad:           #f05b5a;
+@comm-status-good:          #6f8c31;
+@comm-status-neutral:       @gray-dark;
+
+
+// -------------------------
+// Components
+// -------------------------
+
+@padding-xs-horizontal:     6px; // override bootstrap
+
+@line-height-large:         1.34; // override bootstrap (essential for cross-browser icon in large btn)
+
+// custom fine-tuning padding vars
+
+@padding-half-gutter:       @grid-gutter-width / 2; // 15px
+@padding-xlarge:            14px;
+@padding-large:             12px;
+@padding-medium:            10px;
+@padding-base:              8px;
+@padding-small:             6px;
+@padding-xsmall:            4px;
+
+// custom fine-tuning margin vars
+
+@margin-half-gutter:        @grid-gutter-width / 2; // 15px
+@margin-xlarge:             14px;
+@margin-large:              12px;
+@margin-medium:             10px;
+@margin-base:               8px;
+@margin-small:              6px;
+@margin-xsmall:             4px;
+
+
+// -------------------------
+// Callouts
+// -------------------------
+
+@callout-link-font-weight:    @font-weight-semibold;
+
+@callout-success-bg:          lighten(@state-success-bg,5%);
+@callout-success-color:       @brand-success;
+@callout-success-txt:         @gray-darker;
+
+@callout-info-bg:             lighten(@state-info-bg,6%);
+@callout-info-color:          @brand-info;
+@callout-info-txt:            @gray-darker;
+
+@callout-warning-bg:          @state-warning-bg;
+@callout-warning-color:       @brand-warning;
+@callout-warning-txt:         @gray-darker;
+
+@callout-danger-bg:           lighten(@state-danger-bg,5%);
+@callout-danger-color:        @brand-danger;
+@callout-danger-txt:          @gray-darker;
+
+@callout-attention-bg:        lighten(@state-attention-bg,5%);
+@callout-attention-color:     @brand-attention;
+@callout-attention-txt:       @gray-darker;
+
+
+// -------------------------
+// Cards
+// -------------------------
+
+@card-border-radius:        @border-radius-small;
+@card-image-padding:        75%;
+
+
+// -------------------------
+// Dropdowns
+// -------------------------
+
+@dropdown-padding:          3px @padding-large;
+
+
+// -------------------------
+// Grid
+// -------------------------
+
+@grid-gutter-width-condensed:   14px;
+@grid-gutter-width-xcondensed:  6px;
+
+
+// -------------------------
+// Forms
+// -------------------------
+
+@input-color:               @gray-dark;
+
+// States & Alerts
+
+@state-attention-text:      #31708f;
+@state-attention-bg:        lighten(@brand-attention,30%);
+@state-attention-border:    @brand-attention;
+
+
+// -------------------------
+// Labels
+// -------------------------
+
+@label-padding-bottom:      0.2em;
+@label-padding-sides:       0.5em;
+@label-padding-top:         0.2em;
+
+@label-padding:             @label-padding-top @label-padding-sides @label-padding-bottom;
+@label-padding-bs:          @label-padding-top (@label-padding-sides / 1.5) @label-padding-bottom;
+@label-padding-bs-sm:       @label-padding-top (@label-padding-sides / 2) @label-padding-bottom;
+
+@label-default-bg:          darken(@gray-light,5%);
+@label-attention-bg:        @brand-attention;
+
+// Lead Category Labels
+
+@label-archive-color:       #744cac;
+@label-closed-color:        #4faf92;
+@label-hot-color:           #f75117;
+@label-new-color:           #e9b929;
+@label-nurture-color:       @brand-primary;
+@label-pending-color:       #dc85ac;
+@label-qualify-color:       #81a441;
+@label-trash-color:         #444444;
+@label-watch-color:         #c58c33;
+
+// Lead Type Labels
+
+@leadtype-color-buyer:      @brand-primary;
+@leadtype-color-seller:     @brand-attention;
+
+@leadtype-txt-buyer:        "b";
+@leadtype-txt-seller:       "s";
+
+
+// -------------------------
+// List Group
+// -------------------------
+
+@list-group-border:         @gray-light;
+@list-group-active-border:  @list-group-border;
+
+
+// -------------------------
+// Log Call
+// -------------------------
+
+@log-call-padding:          @padding-half-gutter;
+
+
+// -------------------------
+// Message Face
+// -------------------------
+
+@message-face-arrow-size:   8px;
+@message-face-height:       40px;
+@message-face-width:        50px;
+
+
+// -------------------------
+// Modals
+// -------------------------
+
+@modal-header-border-color: @gray-light;
+@modal-inner-padding:       @padding-half-gutter;
+@modal-easing:              cubic-bezier(0.465, 0.183, 0.153, 0.946);
+
+
+// -------------------------
+// Navs
+// -------------------------
+
+@nav-link-light-hover-bg:                       @gray-lightest;
+@nav-link-padding:                              @padding-medium @padding-half-gutter;
+@nav-link-padding-small:                        @padding-small @padding-medium;
+
+
+// Tabs
+@nav-tabs-border-color:                         @gray-light;
+
+@nav-tabs-link-hover-border-color:              @gray-light;
+
+@nav-tabs-active-link-hover-bg:                 @body-bg;
+@nav-tabs-active-link-hover-color:              @brand-attention;
+@nav-tabs-active-link-hover-border-color:       @gray-light;
+
+@nav-tabs-justified-link-border-color:          @gray-light;
+@nav-tabs-justified-active-link-border-color:   @body-bg;
+
+@nav-tabs-active-link-hover-border-color-top:   @brand-attention;
+
+// Nav Blocks
+@nav-blocks-color:                              @gray-dark;
+
+
+// -------------------------
+// Panels
+// -------------------------
+
+@panel-body-padding:        @padding-half-gutter;
+@panel-body-padding-small:  @padding-small;
+@panel-body-padding-medium: @padding-medium;
+@panel-default-border:      @gray-light;
+@panel-default-heading-bg:  @gray-lightest;
+
+
+// -------------------------
+// Popovers
+// -------------------------
+
+@popover-title-bg:          transparent;
+
+
+// -------------------------
+// Progress bars
+// -------------------------
+
+@progress-bar-radius:       @border-radius-base;
+@progress-bar-height:       20px;
+@progress-bar-height-lg:    26px;
+@progress-bar-height-sm:    14px;
+@progress-bar-height-xs:    10px;
+@progress-bar-inset-shadow: inset 0 0.5em 0.5em rgba(0,0,0,0.05);
+
+// -------------------------
+// Sashes
+// -------------------------
+
+@sash-back-color:           @brand-info;
+@sash-new-color:            @brand-warning;
+@sash-off-color:            @gray-dark;
+@sash-reduced-color:        @brand-success;
+
+
+// -------------------------
+// Scaffolding
+// -------------------------
+
+@text-color:                @gray-darker; // body color
+@text-muted:                @gray;
+@text-muted-dark:           @gray-dark;
+
+
+// -------------------------
+// Scores
+// -------------------------
+
+@score-width-base:          36px;
+@score-width-large:         48px;
+@score-width-small:         32px;
+@score-width-xs:            24px;
+
+@score-bg-base:             @white;
+@score-bg-excellent:        @brand-success;
+@score-bg-good:             @brand-warning;
+@score-bg-average:          @gray-light;
+
+@score-border-base:         @gray-light;
+@score-border-excellent:    @brand-success;
+@score-border-good:         @brand-warning;
+@score-border-average:      @gray-light;
+
+@score-color-base:          @gray-light;
+@score-color-invert:        @white;
+
+
+// -------------------------
+// Shadows
+// -------------------------
+
+@shadow-depth-1: 0px 2px  5px  0 rgba(0, 0, 0, 0.26);
+@shadow-depth-2: 0px 8px  17px   rgba(0, 0, 0, 0.2);
+@shadow-depth-3: 0px 17px 50px   rgba(0, 0, 0, 0.19);
+@shadow-depth-4: 0px 16px 28px 0 rgba(0, 0, 0, 0.22);
+@shadow-depth-5: 0px 27px 24px 0 rgba(0, 0, 0, 0.2);
+
+
+// -------------------------
+// SVG Path
+// -------------------------
+
+@svg-path:       "svg/";
+
+
+// -------------------------
+// Switchers
+// -------------------------
+
+@switcher-border-radius:         @border-radius-small;
+@switcher-height:                24px;
+@switcher-state-line-height:     @switcher-height;
+@switcher-state-padding:         20px;
+@switcher-toggler-height:        20px;
+@switcher-toggler-margin:        2px;
+@switcher-toggler-width:         20px;
+@switcher-width:                 52px;
+
+// small switcher
+@switcher-sm-border-radius:      2px;
+@switcher-sm-height:             20px;
+@switcher-sm-state-line-height:  @switcher-sm-height;
+@switcher-sm-state-padding:      16px;
+@switcher-sm-toggler-height:     16px;
+@switcher-sm-toggler-width:      16px;
+@switcher-sm-width:              42px;
+
+
+// -------------------------
+// Texting
+// -------------------------
+
+@texting-avatar-size:             42px;
+@texting-avatar-offset:           @texting-avatar-size + 10px;
+@texting-padding:                 @padding-half-gutter;
+@texting-sidebar-width:           280px;
+
+
+// -------------------------
+// Tooltip
+// -------------------------
+
+@tooltip-bg:                @gray; // override bootstrap
+
+
+// -------------------------
+// Typography
+// -------------------------
+
+@font-family-sans-serif:  'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif; // override bootstrap
+@headings-font-weight:    @font-weight-semibold; // override bootstrap
+
+@font-size-h1:            floor((@font-size-base * 1.75)); // ~24px
+@font-size-h2:            floor((@font-size-base * 1.6)); // ~22px
+@font-size-h3:            floor((@font-size-base * 1.45)); // ~20px
+@font-size-h4:            floor((@font-size-base * 1.3)); // ~18px
+@font-size-h5:            floor((@font-size-base * 1.2)); // ~16px
+@font-size-h6:            @font-size-base; // 14
+
+@font-weight-bold:        700;
+@font-weight-light:       300;
+@font-weight-semibold:    500;
+
+
+// -------------------------
+// Wells
+// -------------------------
+
+@well-bg:                     @white;
+@well-border:                 @gray-light;
+
+
+

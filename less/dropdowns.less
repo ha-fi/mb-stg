@@ -1,0 +1,57 @@
+// File: dropdowns.less
+// Note: Extends Bootstrap dropdowns.less
+
+// Dropdown menus
+// -------------------------
+
+// The dropdown menu (ul)
+.dropdown-menu {
+  .divider {
+    margin: @margin-xsmall 0;
+  }
+}
+
+// Hover/Focus state
+.dropdown-menu > li > a {
+  padding: @dropdown-padding;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+// Dropdown section headers
+.dropdown-header {
+  padding: @dropdown-padding
+}
+
+
+// No min width dropdown menu (ul)
+.dropdown-menu-no-min-width {
+  min-width: 1px;
+}
+
+// Lead category dropdown menu (ul)
+.dropdown-menu-leadcat, .dropdown-menu-leadtype {
+  min-width: 50px;
+  > li > a {
+    padding: 3px @padding-base @padding-small;
+  }
+}
+
+// Dropdown toggles
+// -------------------------
+
+// Link buttons with dropdown caret
+.dropdown-toggle {
+  &.btn-link {
+    padding: 0;
+    text-decoration: none;
+    .caret { color: @btn-default-color; }
+  }
+}
+
+
+
+

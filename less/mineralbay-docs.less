@@ -1,0 +1,407 @@
+// File: _docs.less
+// Note: This file is used for constructing the pattern library document.
+
+@import (reference) 'bower_components/bootstrap/less/bootstrap';
+@import (reference) 'variables';
+
+
+
+h1, h2 {
+  margin: 24px 0 10px;
+}
+
+.pl-body {
+  //padding-top: 70px;
+}
+
+.pl-docs-section {
+  padding: 2em 0;
+  > h1 { margin-top: 0px; }
+}
+
+.navbar-brand-logo {
+  display: inline-block;
+  margin-top: -4px;
+  max-width: 110px;
+}
+
+// Sidebar and sidebar nav
+.pl-docs-sidebar-header {
+  background-color: @brand-info;
+  color: @white;
+  padding: 6px 12px;
+  font-size: 15px;
+  &:extend(.clearfix all);
+  > a { color: @white; }
+  a:last-child {
+    float: right;
+  }
+}
+.pl-docs-sidebar.affix {
+  top: 10px;
+  width: 263px;
+  position: static;
+  @media (min-width: @screen-sm-min) {
+    position: fixed;
+  }
+}
+.pl-docs-sidenav {
+  margin-bottom: 6px;
+
+  > li {
+    margin: 0 6px 6px 0;
+    & + li {
+      margin-left: 0;
+    }
+  }
+}
+.pl-docs-sidenav > li > a {
+  background-color: @gray-lightest;
+  color: @gray-dark;
+  font-size: 12px;
+  padding: 3px 6px;
+  text-transform: lowercase;
+  transition: all 0.35s;
+  margin: 0;
+  &:hover {
+    background-color: @gray-lighter;
+  }
+}
+.pl-docs-sidenav > li.active > a {
+  background-color: @brand-attention;
+  &:focus,&:hover { background-color: @brand-attention; }
+  //background-color: @gray-lightest;
+  //border-left: 2px solid @brand-attention;
+}
+
+/*.pl-docs-sidebar > a {
+  border-left: 2px solid transparent;
+  color: @brand-attention;
+  display: inline-block;
+  font-size: 13px;
+  padding: 6px 12px;
+  text-decoration: none;
+}*/
+
+.pl-article {
+  &+article { margin-top: 2em; }
+  > h1 { margin-top: 0; }
+  > h3 { color: @gray-dark; }
+}
+
+.pl-example {
+  &:extend(.well);
+  //background-color: @white;
+  margin-bottom: 0;
+  position: relative;
+  &+.pl-code {
+    margin: -2px 0 @line-height-computed 0;
+    pre {
+     .border-top-radius(0);
+    }
+  }
+  >p:last-child { margin-bottom: 0; }
+}
+
+.pl-example-control-sizing select, .pl-example-control-sizing input[type=text]+input[type=text] {
+  margin-top: 10px;
+}
+.pl-example>.img-circle, .pl-example>.img-rounded, .pl-example>.img-thumbnail {
+  margin: 5px;
+}
+.pl-example-bg-classes > p {
+  padding: 10px;
+}
+.pl-example > p > .close { float: none; }
+
+.responsive-utilities td.is-visible {
+  .bg-variant(@state-success-bg)!important;
+  color: @brand-success;
+}
+.responsive-utilities th small {
+  display: block;
+  font-weight: 400;
+  color: @gray;
+}
+
+.responsive-utilities-test span {
+  display: block;
+  padding: 15px 10px;
+  font-size: 14px;
+  font-weight: @font-weight-bold;
+  line-height: 1.1;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.responsive-utilities-test .col-xs-6 {
+  margin-bottom: 10px;
+}
+
+.visible-on .col-xs-6 .visible-xs-block, .visible-on .col-xs-6 .visible-sm-block, .visible-on .col-xs-6 .visible-md-block, .visible-on .col-xs-6 .visible-lg-block, .hidden-on .col-xs-6 .visible-xs-block, .hidden-on .col-xs-6 .visible-sm-block, .hidden-on .col-xs-6 .visible-md-block, .hidden-on .col-xs-6 .visible-lg-block {
+color: #468847;
+background-color: #dff0d8;
+border: 1px solid #d6e9c6;
+}
+
+.show-grid [class^=col-] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #eee;
+  background-color: rgba(86,61,124,.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86,61,124,.2);
+}
+
+.pl-example>.btn-toolbar+.btn-toolbar {
+  margin-top: 10px;
+}
+
+.pl-spacious { margin: 24px 0; }
+
+// Code Snippets
+// -------------------------
+
+.pl-code {
+  margin: 1.5em 0;
+  pre {
+    border-color: @well-border;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+ .cp { color: #099; }
+ .na { color: #4f9fcf; }
+ .nc { color: #0A8; }
+ .nt { color: #2f6f9f; }
+ .s,.s2 { color: #d44950; }
+ .t { color: @brand-info; }
+ .s1 { color: #C30; }
+ .kd,.k { color: #006699; }
+}
+
+// Icons
+// -------------------------
+
+.pl-icons {
+  .icon {
+    font-size: 32px;
+    &+.icon { margin-left: 14px; }
+  }
+}
+
+// Color Swatches
+// -------------------------
+
+.pl-swatch-txt {
+  padding-top: (@line-height-computed / 2);
+  text-align: center;
+}
+
+[class*="pl-swatch--"] {
+  height: 120px;
+  width: 100%;
+}
+
+.pl-swatch--bt-orange { background-color: @brand-attention; }
+.pl-swatch--bt-blue { background-color: @brand-primary; }
+
+.pl-swatch--primary { background-color: @brand-primary; }
+.pl-swatch--attention { background-color: @brand-attention; }
+.pl-swatch--success { background-color: @brand-success; }
+.pl-swatch--info { background-color: @brand-info; }
+.pl-swatch--warning { background-color: @brand-warning; }
+.pl-swatch--danger { background-color: @brand-danger; }
+.pl-swatch--highlight { background-color: @brand-highlight; }
+
+.pl-swatch--gray { background-color: @gray; }
+.pl-swatch--gray-light { background-color: @gray-light; }
+.pl-swatch--gray-lighter { background-color: @gray-lighter; }
+.pl-swatch--gray-lightest { background-color: @gray-lightest; }
+.pl-swatch--gray-dark { background-color: @gray-dark; }
+.pl-swatch--gray-darker { background-color: @gray-darker; }
+
+//.pl-swatch--black { background-color: #000; }
+//.pl-swatch--white { background-color: #fff; }
+
+.pl-swatch--cool { background-color: @cool; }
+.pl-swatch--cool-light { background-color: @cool-light; }
+.pl-swatch--cool-dark { background-color: @cool-dark; }
+.pl-swatch--cool-hover { background-color: @cool-hover; }
+
+
+// Scores
+// -------------------------
+
+.pl-scores {
+  .score {
+    //margin: 4px;
+  }
+}
+
+
+
+// Cards
+// -------------------------
+
+.pl-cards .card { 
+  margin-bottom: @line-height-computed;
+}
+
+
+// Badges
+// -------------------------
+
+.pl-badge-outline {
+  > button { margin-bottom: @margin-small; }
+}
+
+
+// Prettify Code
+// -------------------------
+
+.pl-code {
+  margin: 1.5em 0;
+  pre {
+    border-color: @well-border;
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+ .cp { color: #099; }
+ .na { color: #4f9fcf; }
+ .nc { color: #0A8; }
+ .nt { color: #2f6f9f; }
+ .s,.s2 { color: #d44950; }
+ .t { color: @brand-info; }
+ .s1 { color: #C30; }
+ .kd,.k { color: #006699; }
+}
+
+.pl-body pre.prettyprint {
+  border-color: @well-border;
+  padding: 9.5px 19px;
+  .atv { color: #d44950; }
+  .atn,.pun { color: #4f9fcf; }
+  .com { color: inherit; }
+  .tag { color: #2f6f9f; }
+  
+}
+
+.pl-code pre { border-color: @well-border; }
+
+// btSelectRange
+// -------------------------
+.pl-example {
+  .ui-select-range {
+    .ui-select-bootstrap {
+      float: left;
+      width: 45%;
+      &+ .ui-select-bootstrap {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+// Scroll
+// -------------------------
+
+.pl-example .scroll-area-1 {
+  height: 200px;
+  p { margin: 0; padding: 5px 10px 0 5px; }
+}
+
+.pl-example .scroll-area-2 {
+  background-color: @brand-primary;
+  color: @white;
+  height: 300px;
+  h4 { padding-left: 10px; }
+  p { margin: 0; padding: 5px 10px; }
+}
+
+// Scroll Spy
+// -------------------------
+
+.scrollspy-example {
+  position: relative;
+  height: 200px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+// Typography
+// -------------------------
+
+.pl-example-type {
+  h1,h2,h3,h4,h5,h6 { margin: 0; }
+}
+
+// Helper
+// -------------------------
+
+.pl-example-close-inverted {
+  background-color: @brand-attention;
+  padding: @padding-large;
+  .close-inverted {
+    float: none;
+  }
+}
+
+.pl-example-vert-align {
+  background-color: @brand-warning;
+  height: 100px;
+  padding: @padding-large;
+}
+
+// Modals
+// -------------------------
+
+.pl-example-modal .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+
+
+// Texting
+// -------------------------
+
+.pl-example {
+  &.pl-example-texting {
+    border: none;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+}
+
+
+// Navbar
+// -------------------------
+
+.pl-example .navbar:last-child {
+  margin-bottom: 0;
+}
+
+.bs-navbar-top-example {
+  padding-bottom: 45px;
+}
+
+// Progress bar
+// -------------------------
+
+.pl-example-progress-bar .progress-bar {
+  cursor: pointer;
+  margin: 10px 0;
+  user-select: none;
+}
+
+
+
+
+
+.btn-showmarkup { margin-top: @margin-large; }
+
+

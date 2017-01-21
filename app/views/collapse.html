@@ -1,0 +1,168 @@
+<section id="collapse">
+<script type="text/javascript">
+angular.module('mineralbay').controller('CollapseDemoCtrl', function ($scope) {
+  $scope.isNavCollapsed = true;
+  $scope.isCollapsed = false;
+  $scope.isCollapsedHorizontal = false;
+});
+</script>
+<div ng-controller="CollapseDemoCtrl">
+    <div class="page-header">
+        <h1>Collapse<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/collapse">ui.bootstrap.collapse</a>)
+        </small></h1>
+    </div>
+   
+   
+   <style>
+  .horizontal-collapse {
+    height: 70px;
+  }
+  .navbar-collapse.in {
+    overflow-y: hidden;
+  }
+</style>
+
+<div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#coltab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#coltab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#coltab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#coltab-3" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+   <div class="tab-pane fade in active" id="coltab-0">
+	<p>Resize window to less than 768 pixels to display mobile menu toggle button.</p>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">A menu</a>
+		</div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+			</ul>
+		</div>
+	</nav>
+	<hr>
+	<button type="button" class="btn btn-default" ng-click="isCollapsed = !isCollapsed">Toggle collapse Vertically</button>
+	<hr>
+	<div uib-collapse="isCollapsed">
+		<div class="well well-lg">Some content</div>
+	</div>
+
+	<button type="button" class="btn btn-default" ng-click="isCollapsedHorizontal = !isCollapsedHorizontal">Toggle collapse Horizontally</button>
+	<hr>
+	<div class="horizontal-collapse" uib-collapse="isCollapsedHorizontal" horizontal>
+		<div class="well well-lg">Some content</div>
+	</div>
+	</div>
+          
+   <div class="tab-pane fade" id="coltab-1">
+             <pre><code data-language="html">
+ &lt;style&gt;
+  .horizontal-collapse {
+    height: 70px;
+  }
+  .navbar-collapse.in {
+    overflow-y: hidden;
+  }
+&lt;/style&gt;
+
+&lt;div ng-controller=&quot;CollapseDemoCtrl&quot;&gt;
+	&lt;p&gt;Resize window to less than 768 pixels to display mobile menu toggle button.&lt;/p&gt;
+	&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;
+		&lt;div class=&quot;navbar-header&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; ng-click=&quot;isNavCollapsed = !isNavCollapsed&quot;&gt;
+				&lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+				&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+				&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+				&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+			&lt;/button&gt;
+			&lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;A menu&lt;/a&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;collapse navbar-collapse&quot; uib-collapse=&quot;isNavCollapsed&quot;&gt;
+			&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/nav&gt;
+	&lt;hr&gt;
+	&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;isCollapsed = !isCollapsed&quot;&gt;Toggle collapse Vertically&lt;/button&gt;
+	&lt;hr&gt;
+	&lt;div uib-collapse=&quot;isCollapsed&quot;&gt;
+		&lt;div class=&quot;well well-lg&quot;&gt;Some content&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;isCollapsedHorizontal = !isCollapsedHorizontal&quot;&gt;Toggle collapse Horizontally&lt;/button&gt;
+	&lt;hr&gt;
+	&lt;div class=&quot;horizontal-collapse&quot; uib-collapse=&quot;isCollapsedHorizontal&quot; horizontal&gt;
+		&lt;div class=&quot;well well-lg&quot;&gt;Some content&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+             </code></pre>
+          </div> <!-- end tab-pane -->
+   <div class="tab-pane fade" id="coltab-2">
+    <pre><code data-language="javascript">
+ app.controller(&#x27;CollapseDemoCtrl&#x27;, function ($scope) {
+  $scope.isNavCollapsed = true;
+  $scope.isCollapsed = false;
+  $scope.isCollapsedHorizontal = false;
+});
+            </code></pre>
+          </div> <!-- end tab-pane -->
+   <div class="tab-pane fade" id="coltab-3">
+ <p><strong>uib-collapse</strong> provides a simple way to hide and show an element with a css transition</p>
+<h3 id="uib-collapse-settings">uib-collapse settings</h3>
+<ul>
+<li><p><code>collapsed()</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+An optional expression called after the element finished collapsing.</p>
+</li>
+<li><p><code>collapsing()</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+An optional expression called before the element begins collapsing.
+If the expression returns a promise, animation won&#39;t start until the promise resolves.
+If the returned promise is rejected, collapsing will be cancelled.</p>
+</li>
+<li><p><code>expanded()</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+An optional expression called after the element finished expanding.</p>
+</li>
+<li><p><code>expanding()</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+An optional expression called before the element begins expanding.
+If the expression returns a promise, animation won&#39;t start until the promise resolves.
+If the returned promise is rejected, expanding will be cancelled.</p>
+</li>
+<li><p><code>uib-collapse</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open"></i>
+<em>(Default: <code>false</code>)</em> -
+Whether the element should be collapsed or not.</p>
+</li>
+<li><p><code>horizontal</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+An optional attribute that permit to collapse horizontally.</p>
+</li>
+</ul>
+<h3 id="known-issues">Known Issues</h3>
+<p>When using the <code>horizontal</code> attribute with this directive, keep in mind that due to how CSS can reflow as the collapse element goes from 0px to its desired end width, this cause result in issues with a changing height. This can cause animations to not appear to run. The best way around this is to set a fixed height via CSS on the horizontal collapse element so that this situation does not occur, and so the animation can run as expected.</p>
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+
+
+</div>
+</section>

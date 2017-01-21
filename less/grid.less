@@ -1,0 +1,33 @@
+// File: grid.less
+// Note: Needed to extend grid to allow conensed gutters
+
+// Condensed Rows
+// -------------------------
+
+
+
+
+// Condensed
+.row-condensed {
+  margin-left: (@grid-gutter-width-condensed / -2);
+  margin-right: (@grid-gutter-width-condensed / -2);
+  [class*="col-"] {
+    padding-left: (@grid-gutter-width-condensed / 2);
+    padding-right: (@grid-gutter-width-condensed / 2);
+  }
+}
+
+
+// Extra condensed
+.row-xcondensed {
+  margin-left: (@grid-gutter-width-xcondensed / -2);
+  margin-right: (@grid-gutter-width-xcondensed / -2);
+  [class*="col-"] {
+    padding-left: (@grid-gutter-width-xcondensed / 2);
+    padding-right: (@grid-gutter-width-xcondensed / 2);
+  }
+}
+
+
+
+

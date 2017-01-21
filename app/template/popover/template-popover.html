@@ -1,0 +1,9 @@
+<div class="popover {{placement}}" ng-class="{ in: isOpen(), fade: animation() }">
+  <div class="arrow"></div>
+
+  <div class="popover-close" ng-click="$popover.close($event)" aria-hidden="true"><svg class="icon"><use xlink:href="#icon-cross"/></svg></div>
+
+  <h3 class="popover-title" ng-bind="title" ng-show="title"></h3>
+
+  <div class="popover-content" ng-include="content"></div>
+</div>

@@ -1,0 +1,244 @@
+<section id="tabs">
+<div ng-controller="TabsDemoCtrl">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('TabsDemoCtrl', function ($scope, $window) {
+  $scope.tabs = [
+    { title:'Dynamic Title 1', content:'Dynamic content 1' },
+    { title:'Dynamic Title 2', content:'Dynamic content 2', disabled: true }
+  ];
+
+  $scope.alertMe = function() {
+    setTimeout(function() {
+      $window.alert('You\'ve selected the alert tab!');
+    });
+  };
+
+  $scope.model = {
+    name: 'Tabs'
+  };
+});
+  
+</script>
+<style type="text/css">
+  form.tab-form-demo .tab-pane {
+    margin: 20px 20px;
+  }
+</style>
+
+ <div class="page-header">
+        <h1>Tabs<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/tabs">ui.bootstrap.tabs</a>)
+        </small></h1>
+    </div>
+    
+    <div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#tab-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#tab-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#tab-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#tab-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="tab-tab-0">
+          <p>Select a tab by setting active binding to true:</p>
+  <p>
+    <button type="button" class="btn btn-default btn-sm" ng-click="active = 1">Select second tab</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="active = 2">Select third tab</button>
+  </p>
+  <p>
+    <button type="button" class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+  </p>
+  <hr />
+
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="Static title">Static content</uib-tab>
+    <uib-tab index="$index + 1" ng-repeat="tab in tabs" heading="[[tab.title]]" disable="tab.disabled">
+      [[tab.content]]
+    </uib-tab>
+    <uib-tab index="3" select="alertMe()">
+      <uib-tab-heading>
+        <i class="glyphicon glyphicon-bell"></i> Alert!
+      </uib-tab-heading>
+      I've got an HTML heading, and a select callback. Pretty cool!
+    </uib-tab>
+  </uib-tabset>
+  <hr />
+  <uib-tabset active="activeJustified" justified="true">
+    <uib-tab index="0" heading="Justified">Justified content</uib-tab>
+    <uib-tab index="1" heading="SJ">Short Labeled Justified content</uib-tab>
+    <uib-tab index="2" heading="Long Justified">Long Labeled Justified content</uib-tab>
+  </uib-tabset>
+  <hr />
+
+  Tabs using nested forms:
+  <form name="outerForm" class="tab-form-demo">
+    <uib-tabset active="activeForm">
+      <uib-tab index="0" heading="Form Tab">
+        <ng-form name="nestedForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" required ng-model="model.name"/>
+          </div>
+        </ng-form>
+      </uib-tab>
+      <uib-tab index="1" heading="Tab One">
+        Some Tab Content
+      </uib-tab>
+      <uib-tab index="2" heading="Tab Two">
+        More Tab Content
+      </uib-tab>
+    </uib-tabset>
+  </form>
+  Model:
+  <pre>[[ model | json ]]</pre>
+  Nested Form:
+  <pre>[[ outerForm.nestedForm | json ]]</pre>
+          
+          </div>
+          <div class="tab-pane fade" id="tab-tab-1">
+          <pre><code data-language="html">&lt;p&gt;Select a tab by setting active binding to true:&lt;/p&gt;
+  &lt;p&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;active = 1&quot;&gt;Select second tab&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;active = 2&quot;&gt;Select third tab&lt;/button&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;tabs[1].disabled = ! tabs[1].disabled&quot;&gt;Enable / Disable third tab&lt;/button&gt;
+  &lt;/p&gt;
+  &lt;hr /&gt;
+
+  &lt;uib-tabset active=&quot;active&quot;&gt;
+    &lt;uib-tab index=&quot;0&quot; heading=&quot;Static title&quot;&gt;Static content&lt;/uib-tab&gt;
+    &lt;uib-tab index=&quot;$index + 1&quot; ng-repeat=&quot;tab in tabs&quot; heading=&quot;&#123;&#123;tab.title&#125;&#125;&quot; disable=&quot;tab.disabled&quot;&gt;
+      &#123;&#123;tab.content&#125;&#125;
+    &lt;/uib-tab&gt;
+    &lt;uib-tab index=&quot;3&quot; select=&quot;alertMe()&quot;&gt;
+      &lt;uib-tab-heading&gt;
+        &lt;i class=&quot;glyphicon glyphicon-bell&quot;&gt;&lt;/i&gt; Alert!
+      &lt;/uib-tab-heading&gt;
+      I've got an HTML heading, and a select callback. Pretty cool!
+    &lt;/uib-tab&gt;
+  &lt;/uib-tabset&gt;
+  &lt;hr /&gt;
+  &lt;uib-tabset active=&quot;activeJustified&quot; justified=&quot;true&quot;&gt;
+    &lt;uib-tab index=&quot;0&quot; heading=&quot;Justified&quot;&gt;Justified content&lt;/uib-tab&gt;
+    &lt;uib-tab index=&quot;1&quot; heading=&quot;SJ&quot;&gt;Short Labeled Justified content&lt;/uib-tab&gt;
+    &lt;uib-tab index=&quot;2&quot; heading=&quot;Long Justified&quot;&gt;Long Labeled Justified content&lt;/uib-tab&gt;
+  &lt;/uib-tabset&gt;
+  &lt;hr /&gt;
+
+  Tabs using nested forms:
+  &lt;form name=&quot;outerForm&quot; class=&quot;tab-form-demo&quot;&gt;
+    &lt;uib-tabset active=&quot;activeForm&quot;&gt;
+      &lt;uib-tab index=&quot;0&quot; heading=&quot;Form Tab&quot;&gt;
+        &lt;ng-form name=&quot;nestedForm&quot;&gt;
+          &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label&gt;Name&lt;/label&gt;
+            &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required ng-model=&quot;model.name&quot;/&gt;
+          &lt;/div&gt;
+        &lt;/ng-form&gt;
+      &lt;/uib-tab&gt;
+      &lt;uib-tab index=&quot;1&quot; heading=&quot;Tab One&quot;&gt;
+        Some Tab Content
+      &lt;/uib-tab&gt;
+      &lt;uib-tab index=&quot;2&quot; heading=&quot;Tab Two&quot;&gt;
+        More Tab Content
+      &lt;/uib-tab&gt;
+    &lt;/uib-tabset&gt;
+  &lt;/form&gt;
+  Model:
+  &lt;pre&gt;&#123;&#123; model | json &#125;&#125;&lt;/pre&gt;
+  Nested Form:
+  &lt;pre&gt;&#123;&#123; outerForm.nestedForm | json &#125;&#125;&lt;/pre&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="tab-tab-2">
+           <pre><code data-language="javascript">app.controller(&#27;&#27;TabsDemoCtrl&#27;&#27;, function ($scope, $window) {
+  $scope.tabs = [
+    { title:&#27;&#27;Dynamic Title 1&#27;&#27;, content:&#27;&#27;Dynamic content 1&#27;&#27; },
+    { title:&#27;&#27;Dynamic Title 2&#27;&#27;, content:&#27;&#27;Dynamic content 2&#27;&#27;, disabled: true }
+  ];
+
+  $scope.alertMe = function() {
+    setTimeout(function() {
+      $window.alert(&#27;&#27;You\&#27;&#27;ve selected the alert tab!&#27;&#27;);
+    });
+  };
+
+  $scope.model = {
+    name: &#27;&#27;Tabs&#27;&#27;
+  };
+});</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="tab-tab-3">
+          <h3 id="uib-tabset-settings">uib-tabset settings</h3>
+<ul>
+<li><p><code>active</code>
+<i class="glyphicon glyphicon-eye-open"></i>
+<em>(Default: <code>Index of first tab</code>)</em> -
+Active index of tab. Setting this to an existing tab index will make that tab active.</p>
+</li>
+<li><p><code>justified</code>
+<small class="badge">$</small>
+<em>(Default: <code>false</code>)</em> -
+Whether tabs fill the container and have a consistent width.</p>
+<ul>
+<li><code>template-url</code>
+<em>(Default: <code>uib/template/tabs/tabset.html</code>)</em> -
+A URL representing the location of a template to use for the main component.</li>
+</ul>
+</li>
+<li><p><code>type</code>
+<em>(Defaults: <code>tabs</code>)</em> -
+Navigation type. Possible values are &#39;tabs&#39; and &#39;pills&#39;.</p>
+</li>
+<li><p><code>vertical</code>
+<small class="badge">$</small>
+<em>(Default: <code>false</code>)</em> -
+Whether tabs appear vertically stacked.</p>
+</li>
+</ul>
+<h3 id="uib-tab-settings">uib-tab settings</h3>
+<ul>
+<li><p><code>classes</code>
+<small class="badge">$</small> -
+ An optional string of space-separated CSS classes.</p>
+</li>
+<li><p><code>deselect()</code>
+<small class="badge">$</small> -
+An optional expression called when tab is deactivated. Supports <code>$event</code> and <code>$selectedIndex</code> in template for expression. You may call <code>$event.preventDefault()</code> in this event handler to prevent a tab change from occurring. The <code>$selectedIndex</code> can be used to determine which tab was attempted to be opened.</p>
+</li>
+<li><p><code>disable</code>
+<small class="badge">$</small>
+<i class="glyphicon glyphicon-eye-open"></i>
+<em>(Default: <code>false</code>)</em> -
+Whether tab is clickable and can be activated.</p>
+</li>
+<li><p><code>heading</code> -
+Heading text.</p>
+</li>
+<li><p><code>index</code> -
+Tab index. Must be unique number or string.</p>
+</li>
+<li><p><code>select()</code>
+<small class="badge">$</small> -
+An optional expression called when tab is activated. Supports $event in template for expression.</p>
+</li>
+<li><p><code>template-url</code>
+<em>(Default: <code>uib/template/tabs/tab.html</code>)</em> -
+A URL representing the location of a template to use for the tab heading.</p>
+</li>
+</ul>
+<h3 id="tabset-heading">Tabset heading</h3>
+<p>Instead of the <code>heading</code> attribute on the <code>uib-tabset</code>, you can use an <code>uib-tab-heading</code> element inside a tabset that will be used as the tabset&#39;s header. There you can use HTML as well.</p>
+<h3 id="known-issues">Known issues</h3>
+<p>To use clickable elements within the tab, you have override the tab template to use div elements instead of anchor elements, and replicate the desired styles from Bootstrap&#39;s CSS. This is due to browsers interpreting anchor elements as the target of any click event, which triggers routing when certain elements such as buttons are nested inside the anchor element.</p>
+        	</div> <!-- end tab-pane -->
+    	</div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+</div> <!-- end panel -->
+
+</div>
+
+</section>
