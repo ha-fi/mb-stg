@@ -407,12 +407,3 @@ gulp.task(Tasks.DevelopmentServer, [Tasks.MineralBay], function() {
  */
 // Just run compilation by default
 gulp.task('default', [Tasks.MineralBay]);
-
-// Deploy to our github pages page
-gulp.task('website', function() {
-  // Run our gulp tasks
-  // gulp.run('grunt-tasks-ngdocs');
-  // return gulp.run('grunt-tasks-gh-pages');
-  return gulp.src('./docs/**/*')
-    .pipe(ghpages());
-});
