@@ -79,6 +79,11 @@
 		"header": "Components",
 		"sources": [
 			{
+				"source": "views/components/glyphicon.html",
+				"css_id": "#glyphicon",
+				"nav_header": "Glyphicons"
+			},
+			{
 				"source": "views/components/alerts.html",
 				"css_id": "#alerts",
 				"nav_header": "Alerts"
