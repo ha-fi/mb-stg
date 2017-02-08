@@ -10,11 +10,10 @@
     <input class="btn btn-default" type="button" value="Input">
     <input class="btn btn-default" type="submit" value="Submit">
   </form>
-  <div class="pl-code"><pre><code class="language-html" data-lang="html">&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-flag&quot;&gt;&lt;/span&gt; Language&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-user&quot;&gt;&lt;/span&gt; Sign Up&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-log-in&quot;&gt;&lt;/span&gt; Login&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;</code></pre></div>
+  <div class="pl-code"><pre><code data-language="html" data-lang="html">&lt;a class=&quot;btn btn-default&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Link&lt;/a&gt;
+&lt;button class=&quot;btn btn-default&quot; type=&quot;submit&quot;&gt;Button&lt;/button&gt;
+&lt;input class=&quot;btn btn-default&quot; type=&quot;button&quot; value=&quot;Input&quot;&gt;
+&lt;input class=&quot;btn btn-default&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;</code></pre></div>
 
   <div class="callout callout-warning" id="callout-buttons-context-usage">
     <h4>Context-specific usage</h4>
@@ -84,30 +83,29 @@
   <p>Add <code>.btn-icon</code> for icon-only buttons. The <code>.btn-icon</code> class reduces left and right button padding so that the button shape is square. In the example below, notice that <strong>contextual color classes</strong> can be added to any icon.</p>
   <div class="pl-example">
     <p>
-      <button type="button" class="btn btn-default btn-lg btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
-      <button type="button" class="btn btn-default btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
-      <button type="button" class="btn btn-default btn-sm btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
-      <button type="button" class="btn btn-default btn-xs btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-lg btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+      <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+      <button type="button" class="btn btn-default btn-sm btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
+      <button type="button" class="btn btn-default btn-xs btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
     </p>
     <hr>
     <p>
-      <button type="button" class="btn btn-default btn-lg btn-icon"><svg class="icon icon-heart text-danger"><use xlink:href="#icon-heart"/></svg></button>
-      <button type="button" class="btn btn-default btn-icon"><svg class="icon icon-heart text-success"><use xlink:href="#icon-heart"/></svg></button>
-      <button type="button" class="btn btn-default btn-sm btn-icon"><svg class="icon icon-heart text-attention"><use xlink:href="#icon-heart"/></svg></button>
-      <button type="button" class="btn btn-default btn-xs btn-icon"><svg class="icon icon-heart text-info"><use xlink:href="#icon-heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-lg btn-icon"><span class="glyphicon glyphicon-heart text-danger"></span></button>
+      <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-heart text-success"></span></button>
+      <button type="button" class="btn btn-default btn-sm btn-icon"><span class="glyphicon glyphicon-heart text-attention"></span></button>
+      <button type="button" class="btn btn-default btn-xs btn-icon"><span class="glyphicon glyphicon-heart text-info"></span></button>
     </p>
   </div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-
-&lt;!-- with contextual colors --&gt;
-&lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;svg class="icon icon-heart text-danger"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;svg class="icon icon-heart text-success"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;svg class="icon icon-heart text-attention"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;svg class="icon icon-heart text-info"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-</code></pre></div>
+<div class="pl-code"><pre><code data-language="html">&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart text-danger&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart text-success&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart text-attention&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart text-info&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+  </code></pre></div>
 
   <h2 id="buttons-sizes">Sizes</h2>
   <p>Fancy larger or smaller buttons? Add <code>.btn-lg</code>, <code>.btn-sm</code>, or <code>.btn-xs</code> for additional sizes.</p>
@@ -115,52 +113,49 @@
     <p>
       <button type="button" class="btn btn-primary btn-lg">Large button</button>
       <button type="button" class="btn btn-default btn-lg">Large button</button>
-      <button type="button" class="btn btn-default btn-lg"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg> Large button</button>
-      <button type="button" class="btn btn-default btn-lg btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Large button</button>
+      <button type="button" class="btn btn-default btn-lg btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
     </p>
     <p>
       <button type="button" class="btn btn-primary">Default button</button>
       <button type="button" class="btn btn-default">Default button</button>
-      <button type="button" class="btn btn-default"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg> Default button</button>
-      <button type="button" class="btn btn-default btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
+      <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Default button</button>
+      <button type="button" class="btn btn-default btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
     </p>
     <p>
       <button type="button" class="btn btn-primary btn-sm">Small button</button>
       <button type="button" class="btn btn-default btn-sm">Small button</button>
-      <button type="button" class="btn btn-default btn-sm"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg> Small button</button>
-      <button type="button" class="btn btn-default btn-sm btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Small button</button>
+      <button type="button" class="btn btn-default btn-sm btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
     </p>
     <p>
       <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
       <button type="button" class="btn btn-default btn-xs">Extra small button</button>
-      <button type="button" class="btn btn-default btn-xs"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg> Extra Small button</button>
-      <button type="button" class="btn btn-default btn-xs btn-icon"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg></button>
+      <button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Extra Small button</button>
+      <button type="button" class="btn btn-default btn-xs btn-icon"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button>
     </p>
   </div>
-<div class="pl-code"><pre class="prettyprint"><code>
-&lt;button type="button" class="btn btn-primary btn-lg"&gt;Large button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-lg"&gt;Large button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-lg"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt; Large button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-lg btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-
-
-&lt;button type="button" class="btn btn-primary"&gt;Default button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default"&gt;Default button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt; Default button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-
-
-&lt;button type="button" class="btn btn-primary btn-sm"&gt;Small button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-sm"&gt;Small button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-sm"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt; Small button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-sm btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-
-
-&lt;button type="button" class="btn btn-primary btn-xs"&gt;Extra small button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-xs"&gt;Extra small button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-xs"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt; Extra Small button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-xs btn-icon"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt;&lt;/button&gt;
-
+<div class="pl-code"><pre><code data-language="html">
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Large button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;Large button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Large button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+    
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Default button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Default button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Default button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+    
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot;&gt;Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+    
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-xs&quot;&gt;Extra small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot;&gt;Extra small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Extra Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-xs btn-icon&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+   
 
 </code></pre></div>
 
@@ -169,12 +164,12 @@
     <div class="well" style="max-width: 400px; margin: 0 auto 10px;">
       <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
       <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
-      <button type="button" class="btn btn-default btn-lg btn-block"><svg class="icon icon-heart"><use xlink:href="#icon-heart"/></svg> Block level button</button>
+      <button type="button" class="btn btn-default btn-lg btn-block"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Block level button</button>
     </div>
   </div>
-<div class="pl-code"><pre class="prettyprint"><code>&lt;button type="button" class="btn btn-primary btn-lg btn-block"&gt;Block level button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-lg btn-block"&gt;Block level button&lt;/button&gt;
-&lt;button type="button" class="btn btn-default btn-lg btn-block"&gt;&lt;svg class="icon icon-heart"&gt;&lt;use xlink:href="#icon-heart"/&gt;&lt;/svg&gt; Block level button&lt;/button&gt;
+<div><pre data-language="html"><code>&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg btn-block&quot;&gt;Block level button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-block&quot;&gt;Block level button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg btn-block&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt; Block level button&lt;/button&gt;
 </code></pre></div>
 
 
