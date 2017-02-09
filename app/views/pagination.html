@@ -139,7 +139,7 @@ Also displays ellipses when <code>rotate</code> is true and <code>max-size</code
 <li><p><code>items-per-page</code>
 <small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>10</code>)</em> -
 Maximum number of items per page. A value less than one indicates all items on one page.</p>
 </li>
@@ -150,7 +150,7 @@ Text for Last button.</p>
 </li>
 <li><p><code>max-size</code>
 <small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>null</code>)</em> -
 Limit number for pagination size.</p>
 </li>
@@ -165,18 +165,18 @@ This can be used to call a function whenever the page changes.</p>
 </li>
 <li><p><code>ng-disabled</code>
 <small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>false</code>)</em> -
 Used to disable the pagination component.</p>
 </li>
 <li><p><code>ng-model</code>
 <small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
-<i class="glyphicon glyphicon-eye-open"></i> -
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i> -
 Current page number. First page is 1.</p>
 </li>
 <li><p><code>num-pages</code>
 <small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
-<small class="badge">readonly</small>
+<small class="badge" uib-tooltip="This setting is readonly.">readonly</small>
 <em>(Default: <code>angular.noop</code>)</em> -
 An optional expression assigned the total number of pages to display.</p>
 </li>
@@ -201,7 +201,7 @@ Override the template for the component with a custom provided template</p>
 </li>
 <li><p><code>total-items</code>
 <small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
-<i class="glyphicon glyphicon-eye-open"></i> -
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i> -
 Total number of items in all pages.</p>
 </li>
 </ul>

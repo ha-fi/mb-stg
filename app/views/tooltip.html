@@ -41,10 +41,10 @@ directive supports multiple placements, optional transition animation, and more.
 <li><code>uib-tooltip</code> -
 Takes text only and will escape any HTML provided.</li>
 <li><code>uib-tooltip-html</code>
-<small class="badge">$</small> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
 Takes an expression that evaluates to an HTML string. Note that this HTML is not compiled. If compilation is required, please use the <code>uib-tooltip-template</code> attribute option instead. <em>The user is responsible for ensuring the content is safe to put into the DOM!</em></li>
 <li><code>uib-tooltip-template</code>
-<small class="badge">$</small> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
 Takes text that specifies the location of a template to use for the tooltip. Note that this needs to be wrapped in a tag.</li>
 </ul>
 <div class="panel panel-default">
@@ -244,14 +244,14 @@ Takes text that specifies the location of a template to use for the tooltip. Not
 <p>All these settings are available for the three types of tooltips.</p>
 <ul>
 <li><p><code>tooltip-animation</code>
-<small class="badge">$</small>
-<small class="badge">C</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small>
 <em>(Default: <code>true</code>, Config: <code>animation</code>)</em> -
 Should it fade in and out?</p>
 </li>
 <li><p><code>tooltip-append-to-body</code>
-<small class="badge">$</small>
-<small class="badge">C</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small>
 <em>(Default: <code>false</code>, Config: <code>appendToBody</code>)</em> -
 Should the tooltip be appended to &#39;$body&#39; instead of the parent element?</p>
 </li>
@@ -259,17 +259,17 @@ Should the tooltip be appended to &#39;$body&#39; instead of the parent element?
 Custom class to be applied to the tooltip.</p>
 </li>
 <li><p><code>tooltip-enable</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>true</code>)</em> -
 Is it enabled? It will enable or disable the configured tooltip-trigger.</p>
 </li>
 <li><p><code>tooltip-is-open</code>
-<i class="glyphicon glyphicon-eye-open"></i>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>false</code>)</em> -
 Whether to show the tooltip.</p>
 </li>
 <li><p><code>tooltip-placement</code>
-<small class="badge">C</small>
+<small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small>
 <em>(Default: <code>top</code>, Config: <code>placement</code>)</em> -
 Passing in &#39;auto&#39; separated by a space before the placement will enable auto positioning, e.g: &quot;auto bottom-left&quot;. The tooltip will attempt to position where it fits in the closest scrollable ancestor. Accepts:</p>
 <ul>
@@ -288,17 +288,17 @@ Passing in &#39;auto&#39; separated by a space before the placement will enable 
 </ul>
 </li>
 <li><p><code>tooltip-popup-close-delay</code>
-<small class="badge">C</small>
+<small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small>
 <em>(Default: <code>0</code>, Config: <code>popupCloseDelay</code>)</em> -
 For how long should the tooltip remain open after the close trigger event?</p>
 </li>
 <li><p><code>tooltip-popup-delay</code>
-<small class="badge">C</small>
+<small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small>
 <em>(Default: <code>0</code>, Config: <code>popupDelay</code>)</em> -
 Popup delay in milliseconds until it opens.</p>
 </li>
 <li><p><code>tooltip-trigger</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>&#39;mouseenter&#39;</code>)</em> -
 What should trigger a show of the tooltip? Supports a space separated list of event names, or objects (see below).</p>
 </li>
@@ -327,7 +327,7 @@ methods are available:</p>
 Extends the default trigger mappings mentioned above with mappings of your own.</p>
 </li>
 <li><p><code>options(obj)</code> -
-Provide a set of defaults for certain tooltip and popover attributes. Currently supports the ones with the <small class="badge">C</small> badge.</p>
+Provide a set of defaults for certain tooltip and popover attributes. Currently supports the ones with the <small class="badge" uib-tooltip="This setting can be configured globally in a constant service. Some directives have a config service that follows the next pattern: uibDirectiveConfig. The service's settings use camel case. The services can be configured in a .config function for example." tooltip-placement="top">C</small> badge.</p>
 </li>
 </ul>
 <h3 id="known-issues">Known issues</h3>

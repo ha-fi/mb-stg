@@ -195,6 +195,11 @@
 				"nav_header": "Popover"
 			},
 			{
+				"source": "app/views/progressbar.html",
+				"css_id": "#progressbar",
+				"nav_header": "Progressbar"
+			},
+			{
 				"source": "app/views/select.html",
 				"css_id": "#select",
 				"nav_header": "Select"

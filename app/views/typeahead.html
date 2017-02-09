@@ -273,33 +273,33 @@ $scope.statesWithFlags = [{&#x27;name&#x27;:&#x27;Alabama&#x27;,&#x27;flag&#x27;
               <h3 id="uib-typeahead-settings">uib-typeahead settings</h3>
 <ul>
 <li><p><code>ng-model</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i> -
 Assignable angular expression to data-bind to.</p>
 </li>
 <li><p><code>ng-model-options</code>
-<small class="badge">$</small> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
 Options for ng-model (see <a href="https://docs.angularjs.org/api/ng/directive/ngModelOptions">ng-model-options directive</a>). Currently supports the <code>debounce</code> and <code>getterSetter</code> options.</p>
 </li>
 <li><p><code>typeahead-append-to</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>null</code>)</em> -
 Should the typeahead popup be appended to an element instead of the parent element?</p>
 </li>
 <li><p><code>typeahead-append-to-body</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>false</code>)</em> -
 Should the typeahead popup be appended to $body instead of the parent element?</p>
 </li>
 <li><p><code>typeahead-editable</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>true</code>)</em> -
 Should it restrict model values to the ones selected from the popup only?</p>
 </li>
 <li><p><code>typeahead-focus-first</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>true</code>)</em> -
 Should the first match automatically be focused as you type?</p>
 </li>
@@ -308,41 +308,41 @@ Should the first match automatically be focused as you type?</p>
 On selection, focus the input element the typeahead directive is associated with.</p>
 </li>
 <li><p><code>typeahead-input-formatter</code>
-<i class="glyphicon glyphicon-eye-open"></i>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>undefined</code>)</em> -
 Format the ng-model result after selection.</p>
 </li>
 <li><p><code>typeahead-is-open</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>angular.noop</code>)</em> -
 Binding to a variable that indicates if the dropdown is open.</p>
 </li>
 <li><p><code>typeahead-loading</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>angular.noop</code>)</em> -
 Binding to a variable that indicates if matches are being retrieved asynchronously.</p>
 </li>
 <li><p><code>typeahead-min-length</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>1</code>)</em> -
 Minimal no of characters that needs to be entered before typeahead kicks-in. Must be greater than or equal to 0.</p>
 </li>
 <li><p><code>typeahead-no-results</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>angular.noop</code>)</em> -
 Binding to a variable that indicates if no matching results were found.</p>
 </li>
 <li><p><code>typeahead-should-select($event)</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>null</code>)</em> -
 A callback executed when a <code>keyup</code> event that might trigger a selection occurs. Selection will only occur if this function returns true.</p>
 </li>
 <li><p><code>typeahead-on-select($item, $model, $label, $event)</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>null</code>)</em> -
 A callback executed when a match is selected. $event can be undefined if selection not triggered from a user event.</p>
 </li>
@@ -351,17 +351,17 @@ A callback executed when a match is selected. $event can be undefined if selecti
 Set custom popup template.</p>
 </li>
 <li><p><code>typeahead-select-on-blur</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>false</code>)</em> -
 On blur, select the currently highlighted match.</p>
 </li>
 <li><p><code>typeahead-select-on-exact</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>false</code>)</em> -
 Automatically select the item when it is the only one that exactly matches the user input.</p>
 </li>
 <li><p><code>typeahead-show-hint</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>false</code>)</em> -
 Show hint when the first option matches.</p>
 </li>
@@ -370,14 +370,14 @@ Show hint when the first option matches.</p>
 Set custom item template.</p>
 </li>
 <li><p><code>typeahead-wait-ms</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>0</code>)</em> -
 Minimal wait time after last character typed before typeahead kicks-in.</p>
 </li>
 <li><p><code>uib-typeahead</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i> -
 Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.directive:select">select directive</a>).</p>
 </li>
 </ul>

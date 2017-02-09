@@ -175,12 +175,12 @@
           <h3 id="uib-tabset-settings">uib-tabset settings</h3>
 <ul>
 <li><p><code>active</code>
-<i class="glyphicon glyphicon-eye-open"></i>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>Index of first tab</code>)</em> -
 Active index of tab. Setting this to an existing tab index will make that tab active.</p>
 </li>
 <li><p><code>justified</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>false</code>)</em> -
 Whether tabs fill the container and have a consistent width.</p>
 <ul>
@@ -194,7 +194,7 @@ A URL representing the location of a template to use for the main component.</li
 Navigation type. Possible values are &#39;tabs&#39; and &#39;pills&#39;.</p>
 </li>
 <li><p><code>vertical</code>
-<small class="badge">$</small>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
 <em>(Default: <code>false</code>)</em> -
 Whether tabs appear vertically stacked.</p>
 </li>
@@ -202,16 +202,16 @@ Whether tabs appear vertically stacked.</p>
 <h3 id="uib-tab-settings">uib-tab settings</h3>
 <ul>
 <li><p><code>classes</code>
-<small class="badge">$</small> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
  An optional string of space-separated CSS classes.</p>
 </li>
 <li><p><code>deselect()</code>
-<small class="badge">$</small> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
 An optional expression called when tab is deactivated. Supports <code>$event</code> and <code>$selectedIndex</code> in template for expression. You may call <code>$event.preventDefault()</code> in this event handler to prevent a tab change from occurring. The <code>$selectedIndex</code> can be used to determine which tab was attempted to be opened.</p>
 </li>
 <li><p><code>disable</code>
-<small class="badge">$</small>
-<i class="glyphicon glyphicon-eye-open"></i>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
 <em>(Default: <code>false</code>)</em> -
 Whether tab is clickable and can be activated.</p>
 </li>
@@ -222,7 +222,7 @@ Heading text.</p>
 Tab index. Must be unique number or string.</p>
 </li>
 <li><p><code>select()</code>
-<small class="badge">$</small> -
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
 An optional expression called when tab is activated. Supports $event in template for expression.</p>
 </li>
 <li><p><code>template-url</code>
