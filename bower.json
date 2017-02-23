@@ -25,6 +25,7 @@
     "bootstrap": "3.3.4",
     "angular-float-labels": "^0.1.0",
     "angular-animate": "^1.6.1",
-    "boomsvgloader": "^0.0.2"
+    "boomsvgloader": "^0.0.2",
+    "ng-table": "1.0.0"
   }
 }

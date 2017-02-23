@@ -2308,11 +2308,11 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #999;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #999;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -2323,7 +2323,7 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #ddd;
+  border-top: 2px solid #999;
 }
 .table .table {
   background-color: #fff;
@@ -2337,7 +2337,7 @@ th {
   padding: 5px;
 }
 .table-bordered {
-  border: 1px solid #ddd;
+  border: 1px solid #999;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -2345,7 +2345,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #ddd;
+  border: 1px solid #999;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -2483,7 +2483,7 @@ table th[class*="col-"] {
     margin-bottom: 15px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #ddd;
+    border: 1px solid #999;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -5255,6 +5255,67 @@ a.thumbnail.active {
 .alert-danger .alert-link {
   color: #843534;
 }
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+.progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #b20001;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  transition: width 0.6s ease;
+}
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+.progress.active .progress-bar,
+.progress-bar.active {
+  animation: progress-bar-stripes 2s linear infinite;
+}
+.progress-bar-success {
+  background-color: #669900;
+}
+.progress-striped .progress-bar-success {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-info {
+  background-color: #5bc0de;
+}
+.progress-striped .progress-bar-info {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-warning {
+  background-color: #ffcc33;
+}
+.progress-striped .progress-bar-warning {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress-bar-danger {
+  background-color: #cb2027;
+}
+.progress-striped .progress-bar-danger {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
 .media {
   margin-top: 15px;
 }
@@ -5615,7 +5676,7 @@ a.list-group-item-danger.active:focus {
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .table-responsive + .panel-body {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #999;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
@@ -10072,72 +10133,6 @@ a.list-group-item.active:after {
 .log-call--modal-sm .log-call__checkbox + .log-call__checkbox {
   padding-left: 0;
 }
-.progress-bar {
-  border-radius: 4px;
-  box-shadow: inset 0 0.5em 0.5em rgba(0, 0, 0, 0.05);
-  height: 20px;
-  overflow: hidden;
-  position: relative;
-  transform: translateZ(0);
-}
-.progress-bar--attention {
-  background-color: #ee6023;
-}
-.progress-bar--danger {
-  background-color: #cb2027;
-}
-.progress-bar--info {
-  background-color: #5bc0de;
-}
-.progress-bar--primary {
-  background-color: #b20001;
-}
-.progress-bar--success {
-  background-color: #669900;
-}
-.progress-bar--warning {
-  background-color: #ffcc33;
-}
-.progress-bar--success-to-danger {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%220%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23669900%22%2F%3E%3Cstop%20offset%3D%2275%25%22%20stop-color%3D%22%23ffcc33%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb2027%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-}
-.progress-bar--lg {
-  height: 26px;
-}
-.progress-bar--lg .progress-bar__bar__label {
-  font-size: 17px;
-  top: 1px;
-}
-.progress-bar--sm {
-  height: 14px;
-}
-.progress-bar--sm .progress-bar__bar__label {
-  font-size: 11px;
-}
-.progress-bar--xs {
-  height: 10px;
-}
-.progress-bar__bar {
-  background-color: #ececec;
-  bottom: 0;
-  box-shadow: inset 0 0.5em 0.5em rgba(0, 0, 0, 0.05);
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transition: transform 500ms ease-out;
-}
-/*.progress-bar__label {
-  color: @white;
-  padding-left: 4px;
-  ~ .progress-bar__bar { left: 34px; }
-}*/
-.progress-bar__bar__label {
-  color: #ffffff;
-  padding: 0 4px;
-  position: absolute;
-  right: 100%;
-}
 .message-face {
   background-color: #cccccc;
   border-radius: 6px;
@@ -10568,67 +10563,6 @@ a.list-group-item.active:after {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.score {
-  background-color: #ffffff;
-  border-color: #cccccc;
-  border-style: solid;
-  border-width: 1px;
-  color: #cccccc;
-  display: inline-block;
-  text-align: center;
-  padding: 6px 0;
-  width: 36px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-radius: 3px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.score-excellent {
-  background-color: #669900;
-  border-color: #669900;
-  color: #ffffff;
-}
-.score-good {
-  background-color: #ffcc33;
-  border-color: #ffcc33;
-  color: #ffffff;
-}
-.score-average {
-  background-color: #cccccc;
-  border-color: #cccccc;
-  color: #ffffff;
-}
-.score-lg {
-  padding: 10px 0;
-  width: 48px;
-  font-size: 18px;
-  line-height: 1.34;
-  border-radius: 4px;
-}
-.score-sm {
-  padding: 5px 0;
-  width: 32px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-.score-xs {
-  padding: 1px 0;
-  width: 24px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-}
-/*.btn-sm {
-  // line-height: ensure proper height of button next to small input
-  .button-size(@padding-small-vertical; @padding-small-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-}
-.btn-xs {
-  .button-size(@padding-xs-vertical; @padding-xs-horizontal; @font-size-small; @line-height-small; @border-radius-small);
-}*/
 .baron {
   overflow: hidden;
   position: relative;
@@ -11595,4 +11529,229 @@ textarea {
 }
 textarea ~ .form-control-highlight {
   margin-top: -11px;
+}
+.ng-table th {
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ng-table th.sortable {
+  cursor: pointer;
+}
+.ng-table th.sortable .sort-indicator {
+  padding-right: 18px;
+  position: relative;
+}
+.ng-table th.sortable .sort-indicator:after,
+.ng-table th.sortable .sort-indicator:before {
+  content: "";
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: #000 transparent;
+  visibility: visible;
+  right: 5px;
+  top: 50%;
+  position: absolute;
+  opacity: .3;
+  margin-top: -4px;
+}
+.ng-table th.sortable .sort-indicator:before {
+  margin-top: 2px;
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000;
+}
+.ng-table th.sortable .sort-indicator:hover:after,
+.ng-table th.sortable .sort-indicator:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+.ng-table th.sortable.sort-desc,
+.ng-table th.sortable.sort-asc {
+  background-color: rgba(141, 192, 219, 0.25);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+.ng-table th.sortable.sort-desc .sort-indicator:after,
+.ng-table th.sortable.sort-asc .sort-indicator:after {
+  margin-top: -2px;
+}
+.ng-table th.sortable.sort-desc .sort-indicator:before,
+.ng-table th.sortable.sort-asc .sort-indicator:before {
+  visibility: hidden;
+}
+.ng-table th.sortable.sort-asc .sort-indicator:after,
+.ng-table th.sortable.sort-asc .sort-indicator:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+.ng-table th.sortable.sort-desc .sort-indicator:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000;
+  visibility: visible;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+.ng-table th.filter .input-filter {
+  margin: 0;
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  box-sizing: border-box;
+}
+.ng-table .ng-table-group-header th {
+  text-align: left;
+}
+.ng-table .ng-table-group-selector {
+  display: block;
+}
+.ng-table .ng-table-group-close,
+.ng-table .ng-table-group-toggle {
+  float: right;
+}
+.ng-table .ng-table-group-toggle {
+  margin-right: 5px;
+}
+@media only screen and (max-width: 800px) {
+  .ng-table-responsive {
+    border-bottom: 1px solid #999;
+  }
+  .ng-table-responsive tr {
+    border-top: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+  }
+  .ng-table-responsive td:before {
+    position: absolute;
+    padding: 8px;
+    left: 0;
+    top: 0;
+    width: 50%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+  .ng-table-responsive thead tr th {
+    text-align: left;
+  }
+  .ng-table-responsive thead tr.ng-table-filters th {
+    padding: 0;
+  }
+  .ng-table-responsive thead tr.ng-table-filters th form > div {
+    padding: 8px;
+  }
+  .ng-table-responsive td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+  .ng-table-responsive td:before {
+    content: attr(data-title-text);
+  }
+  .ng-table-responsive,
+  .ng-table-responsive thead,
+  .ng-table-responsive tbody,
+  .ng-table-responsive th,
+  .ng-table-responsive td,
+  .ng-table-responsive tr {
+    display: block;
+  }
+}
+.ng-table-pagination {
+  margin-top: 0;
+}
+.ng-table-group-selector:before,
+.ng-table-group-selector:after,
+.filter:before,
+.filter:after {
+  display: table;
+  content: " ";
+}
+.ng-table-group-selector:after,
+.filter:after {
+  clear: both;
+}
+.filter > .filter-cell {
+  float: left;
+  box-sizing: border-box;
+}
+.filter-horizontal > .filter-cell {
+  padding: 0 2px;
+}
+.filter-horizontal > .filter-cell:first-child {
+  padding-left: 0;
+}
+.filter-horizontal > .filter-cell:last-child,
+.filter-horizontal > .filter-cell.last {
+  padding-right: 0;
+}
+.s12 {
+  width: 100%;
+}
+.s11 {
+  width: 91.66666666666666%;
+}
+.s10 {
+  width: 83.33333333333334%;
+}
+.s9 {
+  width: 75%;
+}
+.s8 {
+  width: 66.66666666666666%;
+}
+.s7 {
+  width: 58.333333333333336%;
+}
+.s6 {
+  width: 50%;
+}
+.s5 {
+  width: 41.66666666666667%;
+}
+.s4 {
+  width: 33.33333333333333%;
+}
+.s3 {
+  width: 25%;
+}
+.s2 {
+  width: 16.666666666666664%;
+}
+.s1 {
+  width: 8.333333333333332%;
+}
+@media all and (max-width: 468px) {
+  .s12,
+  .s11,
+  .s10,
+  .s9,
+  .s8,
+  .s7,
+  .s6,
+  .s5,
+  .s4,
+  .s3,
+  .s2,
+  .s1 {
+    width: 100%;
+  }
+  .filter > .filter-cell {
+    padding: 0px;
+  }
 }

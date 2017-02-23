@@ -7,6 +7,7 @@
     'angularMoment',
     'ngSanitize',
     'ngAnimate',
+    'ngTable',
     'ngRoute'
   ])
   .value('AUTO_START_TOUR', {

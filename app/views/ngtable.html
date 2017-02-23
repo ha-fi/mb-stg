@@ -1,0 +1,192 @@
+<section id="ngtable">
+<div ng-controller="tableController">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('tableController', ['$scope','$http', 'NgTableParams', function ($scope, $http, NgTableParams) {
+	  
+	 $scope.users = [{"name":"Karen","age":45,"money":798,"country":"Czech Republic"},
+	 				 {"name":"Cat","age":49,"money":749,"country":"Czech Republic"},
+	 				 {"name":"Bismark","age":48,"money":672,"country":"Denmark"},
+	 				 {"name":"Markus","age":41,"money":695,"country":"Costa Rica"},
+	 				 {"name":"Anthony","age":45,"money":559,"country":"Japan"},
+	 				 {"name":"Alex","age":55,"money":645,"country":"Czech Republic"},
+	 				 {"name":"Stephane","age":57,"money":662,"country":"Japan"},
+	 				 {"name":"Alex","age":59,"money":523,"country":"American Samoa"},
+	 				 {"name":"Tony","age":56,"money":540,"country":"Canada"},
+	 				 {"name":"Cat","age":57,"money":746,"country":"China"},
+	 				 {"name":"Christian","age":59,"money":572,"country":"Canada"},
+	 				 {"name":"Tony","age":60,"money":649,"country":"Japan"},
+	 				 {"name":"Cat","age":47,"money":675,"country":"Denmark"},
+	 				 {"name":"Stephane","age":50,"money":674,"country":"China"},
+	 				 {"name":"Markus","age":40,"money":549,"country":"Portugal"},
+	 				 {"name":"Anthony","age":53,"money":660,"country":"Bahamas"},
+	 				 {"name":"Stephane","age":54,"money":549,"country":"China"},
+	 				 {"name":"Karen","age":50,"money":611,"country":"American Samoa"},
+	 				 {"name":"Therese","age":53,"money":754,"country":"China"},
+	 				 {"name":"Bismark","age":49,"money":791,"country":"Canada"},
+	 				 {"name":"Daraek","age":56,"money":640,"country":"Costa Rica"},
+	 				 {"name":"Tony","age":43,"money":674,"country":"Canada"},
+	 				 {"name":"Karen","age":47,"money":700,"country":"Portugal"},
+	 				 {"name":"Therese","age":47,"money":718,"country":"Czech Republic"},
+	 				 {"name":"Karen","age":50,"money":655,"country":"Japan"},
+	 				 {"name":"Daraek","age":59,"money":581,"country":"American Samoa"},
+	 				 {"name":"Daraek","age":60,"money":595,"country":"Portugal"},
+	 				 {"name":"Markus","age":44,"money":607,"country":"China"},
+	 				 {"name":"Simon","age":58,"money":728,"country":"Japan"},
+	 				 {"name":"Simon","age":49,"money":655,"country":"Bahamas"}];
+            
+    $scope.usersTable = new NgTableParams({
+					// initial grouping
+					group: {
+						country: "desc"
+					}
+				}, {
+					dataset: $scope.users,
+					groupOptions: {
+						isExpanded: true
+					}
+				});               
+                
+}]);
+  
+</script>
+    <div class="page-header">
+        <h1>Ng-Table<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/alert">ui.bootstrap.alert</a>)
+        </small></h1>
+    </div>
+    
+
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#table-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#table-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#table-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#table-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="table-tab-0">
+
+		<table ng-table="usersTable" class="table table-condensed table-bordered table-hover">
+        <colgroup>
+          <col width="60%" />
+          <col width="20%" />
+          <col width="20%" />
+        </colgroup>
+        <tr class="ng-table-group" ng-repeat-start="group in $groups">
+          <td colspan="3">
+            <a href="" ng-click="group.$hideRows = !group.$hideRows">
+              <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+              <strong>[[ group.value ]]</strong>
+            </a>
+          </td>
+        </tr>
+        <tr ng-hide="group.$hideRows" ng-repeat="user in group.data" ng-repeat-end>
+          <td sortable="'country'" data-title="'Country'" groupable="'country'" ng-if="false">
+            [[user.country]]
+          </td>
+          <td sortable="'name'" data-title="'Name'" groupable="'name'">
+            [[user.name]]
+          </td>
+          <td sortable="'age'" data-title="'Age'" groupable="'age'">
+            [[user.age]]
+          </td>
+          <td sortable="'money'" data-title="'Money'">
+            [[user.money]]
+          </td>
+        </tr>
+      </table>
+		
+    
+          </div>
+          <div class="tab-pane fade" id="table-tab-1">
+             <pre><code data-language="html">&lt;table ng-table=&quot;usersTable&quot; class=&quot;table table-condensed table-bordered table-hover&quot;&gt;
+        &lt;colgroup&gt;
+          &lt;col width=&quot;60%&quot; /&gt;
+          &lt;col width=&quot;20%&quot; /&gt;
+          &lt;col width=&quot;20%&quot; /&gt;
+        &lt;/colgroup&gt;
+        &lt;tr class=&quot;ng-table-group&quot; ng-repeat-start=&quot;group in $groups&quot;&gt;
+          &lt;td colspan=&quot;3&quot;&gt;
+            &lt;a href=&quot;&quot; ng-click=&quot;group.$hideRows = !group.$hideRows&quot;&gt;
+              &lt;span class=&quot;glyphicon&quot; ng-class=&quot;{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }&quot;&gt;&lt;/span&gt;
+              &lt;strong&gt;&#123;&#123; group.value &#125;&#125;&lt;/strong&gt;
+            &lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr ng-hide=&quot;group.$hideRows&quot; ng-repeat=&quot;user in group.data&quot; ng-repeat-end&gt;
+          &lt;td sortable=&quot;'country'&quot; data-title=&quot;'Country'&quot; groupable=&quot;'country'&quot; ng-if=&quot;false&quot;&gt;
+            &#123;&#123;user.country&#125;&#125;
+          &lt;/td&gt;
+          &lt;td sortable=&quot;'name'&quot; data-title=&quot;'Name'&quot; groupable=&quot;'name'&quot;&gt;
+            &#123;&#123;user.name&#125;&#125;
+          &lt;/td&gt;
+          &lt;td sortable=&quot;'age'&quot; data-title=&quot;'Age'&quot; groupable=&quot;'age'&quot;&gt;
+            &#123;&#123;user.age&#125;&#125;
+          &lt;/td&gt;
+          &lt;td sortable=&quot;'money'&quot; data-title=&quot;'Money'&quot;&gt;
+            &#123;&#123;user.money&#125;&#125;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="table-tab-2">
+            <pre ng-non-bindable><code data-language="javascript">angular.module(&#39;mineralbay&#39;).controller(&#39;tableController&#39;, &#91;&#39;$scope&#39;,&#39;$http&#39;, &#39;NgTableParams&#39;, function ($scope, $http, NgTableParams) &#123;
+	  
+	 $scope.users = &#91;&#123;&quot;name&quot;:&quot;Karen&quot;,&quot;age&quot;:45,&quot;money&quot;:798,&quot;country&quot;:&quot;Czech Republic&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Cat&quot;,&quot;age&quot;:49,&quot;money&quot;:749,&quot;country&quot;:&quot;Czech Republic&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Bismark&quot;,&quot;age&quot;:48,&quot;money&quot;:672,&quot;country&quot;:&quot;Denmark&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Markus&quot;,&quot;age&quot;:41,&quot;money&quot;:695,&quot;country&quot;:&quot;Costa Rica&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Anthony&quot;,&quot;age&quot;:45,&quot;money&quot;:559,&quot;country&quot;:&quot;Japan&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Alex&quot;,&quot;age&quot;:55,&quot;money&quot;:645,&quot;country&quot;:&quot;Czech Republic&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Stephane&quot;,&quot;age&quot;:57,&quot;money&quot;:662,&quot;country&quot;:&quot;Japan&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Alex&quot;,&quot;age&quot;:59,&quot;money&quot;:523,&quot;country&quot;:&quot;American Samoa&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Tony&quot;,&quot;age&quot;:56,&quot;money&quot;:540,&quot;country&quot;:&quot;Canada&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Cat&quot;,&quot;age&quot;:57,&quot;money&quot;:746,&quot;country&quot;:&quot;China&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Christian&quot;,&quot;age&quot;:59,&quot;money&quot;:572,&quot;country&quot;:&quot;Canada&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Tony&quot;,&quot;age&quot;:60,&quot;money&quot;:649,&quot;country&quot;:&quot;Japan&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Cat&quot;,&quot;age&quot;:47,&quot;money&quot;:675,&quot;country&quot;:&quot;Denmark&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Stephane&quot;,&quot;age&quot;:50,&quot;money&quot;:674,&quot;country&quot;:&quot;China&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Markus&quot;,&quot;age&quot;:40,&quot;money&quot;:549,&quot;country&quot;:&quot;Portugal&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Anthony&quot;,&quot;age&quot;:53,&quot;money&quot;:660,&quot;country&quot;:&quot;Bahamas&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Stephane&quot;,&quot;age&quot;:54,&quot;money&quot;:549,&quot;country&quot;:&quot;China&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Karen&quot;,&quot;age&quot;:50,&quot;money&quot;:611,&quot;country&quot;:&quot;American Samoa&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Therese&quot;,&quot;age&quot;:53,&quot;money&quot;:754,&quot;country&quot;:&quot;China&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Bismark&quot;,&quot;age&quot;:49,&quot;money&quot;:791,&quot;country&quot;:&quot;Canada&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Daraek&quot;,&quot;age&quot;:56,&quot;money&quot;:640,&quot;country&quot;:&quot;Costa Rica&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Tony&quot;,&quot;age&quot;:43,&quot;money&quot;:674,&quot;country&quot;:&quot;Canada&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Karen&quot;,&quot;age&quot;:47,&quot;money&quot;:700,&quot;country&quot;:&quot;Portugal&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Therese&quot;,&quot;age&quot;:47,&quot;money&quot;:718,&quot;country&quot;:&quot;Czech Republic&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Karen&quot;,&quot;age&quot;:50,&quot;money&quot;:655,&quot;country&quot;:&quot;Japan&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Daraek&quot;,&quot;age&quot;:59,&quot;money&quot;:581,&quot;country&quot;:&quot;American Samoa&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Daraek&quot;,&quot;age&quot;:60,&quot;money&quot;:595,&quot;country&quot;:&quot;Portugal&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Markus&quot;,&quot;age&quot;:44,&quot;money&quot;:607,&quot;country&quot;:&quot;China&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Simon&quot;,&quot;age&quot;:58,&quot;money&quot;:728,&quot;country&quot;:&quot;Japan&quot;&#125;,
+	 		&#123;&quot;name&quot;:&quot;Simon&quot;,&quot;age&quot;:49,&quot;money&quot;:655,&quot;country&quot;:&quot;Bahamas&quot;&#125;&#93;;
+            
+    $scope.usersTable = new NgTableParams(&#123;
+					// initial grouping
+					group: &#123;
+						country: &quot;desc&quot;
+					&#125;
+				&#125;, &#123;
+					dataset: $scope.users,
+					groupOptions: &#123;
+						isExpanded: true
+					&#125;
+				&#125;);               
+                
+&#125;&#93;);</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="table-tab-3">
+            
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  
+</div>
+</section>

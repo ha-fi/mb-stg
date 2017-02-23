@@ -67,6 +67,7 @@
     "gulp-svg-sprite": "^1.2.3",
     "gulp-uglify": "^1.2.0",
     "jshint-stylish": "^2.0.0",
+    "ng-table": "^3.0.1",
     "rainbow-code": "^2.1.2",
     "rainbowjs": "^0.4.0"
   }

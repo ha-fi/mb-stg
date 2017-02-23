@@ -180,6 +180,11 @@
 				"nav_header": "Modals"
 			},
 			{
+				"source": "app/views/ngtable.html",
+				"css_id": "#ngtable",
+				"nav_header": "NgTable"
+			},
+			{
 				"source": "app/views/pager.html",
 				"css_id": "#pager",
 				"nav_header": "Pager"
