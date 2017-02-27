@@ -1,160 +1,57 @@
-# AngularJS ui-select [![Build Status](https://travis-ci.org/angular-ui/ui-select.svg?branch=master)](https://travis-ci.org/angular-ui/ui-select)
+# AngularJS ui-select [![Build Status](https://travis-ci.org/angular-ui/ui-select.svg?branch=master)](https://travis-ci.org/angular-ui/ui-select) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/angular-ui/ui-select?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-AngularJS-native version of [Select2](http://ivaynberg.github.io/select2/) and [Selectize](http://brianreavis.github.io/selectize.js/).
+AngularJS-native version of [Select2](http://ivaynberg.github.io/select2/) and [Selectize](http://brianreavis.github.io/selectize.js/). [http://angular-ui.github.io/ui-select/](http://angular-ui.github.io/ui-select/)
 
-- [Demo](http://plnkr.co/edit/a3KlK8dKH3wwiiksDSn2?p=preview)
-- [Bootstrap theme](http://plnkr.co/edit/QCwSM75ilH2Vh6D9aMA4?p=preview)
+[Getting Started](https://github.com/angular-ui/ui-select/wiki/Getting-Started) 
+
+- [Examples](http://angular-ui.github.io/ui-select/#examples)
+- [Examples Source](./docs/examples)
+- [Documentation](https://github.com/angular-ui/ui-select/wiki)
+
+## Latest Changes
+
+- Check [CHANGELOG.md](/CHANGELOG.md)
 
 ## Features
 
-- Search and select
-- Available themes: Bootstrap, Select2 and Selectize
+- Search, Select, Multi-select and Tagging
+- Multiple Themes: Bootstrap, Select2 and Selectize
 - Keyboard support
-- jQuery not required (except for old browsers)
-- Small code base: 400 lines of JavaScript vs 20 KB for select2.min.js
+- No jQuery required (except for old browsers)
+- Small code base: 4.57KB min/gzipped vs 20KB for select2
 
 For the roadmap, check [issue #3](https://github.com/angular-ui/ui-select/issues/3) and the [Wiki page](https://github.com/angular-ui/ui-select/wiki/Roadmap).
 
-## Browser compatibility
+## Installation Methods
 
-Starting from Internet Explorer 8 and Firefox 3.6 included.
-
-## Installation using [Bower](http://bower.io/)
-
-Check the [examples](https://github.com/angular-ui/ui-select/blob/master/examples).
-
-- `bower install angular-ui-select`
-- Inside your HTML add
-  - select.js: `<script src="bower_components/angular-ui-select/dist/select.min.js"></script>`
-  - select.css: `<link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.min.css">`
-- Add the `ui.select` module as a dependency: `angular.module("myApp", ["ui.select"]);`
-
-### Bootstrap theme
-
-If you already use Bootstrap, this theme will save you a lot of CSS code compared to the Select2 and Selectize themes.
-
-Bower:
-- `bower install bootstrap`
-- `<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">`
-- Or the [LESS](http://lesscss.org/) version: `@import "bower_components/bootstrap/less/bootstrap.less";`
-
-[Bootstrap CDN](http://www.bootstrapcdn.com/):
-- `<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">`
-
-Configuration:
-```JavaScript
-app.config(function(uiSelectConfig) {
-  uiSelectConfig.theme = 'bootstrap';
-});
+### npm
 ```
-
-### Select2 theme
-
-Bower:
-- `bower install select2#~3.4.5`
-- `<link rel="stylesheet" href="bower_components/select2/select2.css">`
-
-[cdnjs](http://cdnjs.com/):
-- `<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">`
-
-Configuration:
-```JavaScript
-app.config(function(uiSelectConfig) {
-  uiSelectConfig.theme = 'select2';
-});
+$ npm install ui-select
 ```
-
-### Selectize theme
-
-Bower:
-- `bower install selectize#~0.8.5`
-- `<link rel="stylesheet" href="bower_components/selectize/dist/css/selectize.default.css">`
-- Or the [LESS](http://lesscss.org/) version: `@import "bower_components/selectize/dist/less/selectize.default.less";`
-
-[cdnjs](http://cdnjs.com/):
-- `<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">`
-
-Configuration:
-```JavaScript
-app.config(function(uiSelectConfig) {
-  uiSelectConfig.theme = 'selectize';
-});
+### bower
 ```
-
-## FAQ
-
-### ng-model not working with a simple variable on $scope
-
-You cannot write:
-```HTML
-<ui-select ng-model="item"> <!-- Wrong -->
-  [...]
-</ui-select>
-```
-
-You need to write:
-```HTML
-<ui-select ng-model="item.selected"> <!-- Correct -->
-  [...]
-</ui-select>
-```
-
-Or:
-```HTML
-<ui-select ng-model="$parent.item"> <!-- Hack -->
-  [...]
-</ui-select>
-```
-
-For more explanations, check [ui-select #18](https://github.com/angular-ui/ui-select/issues/18) and [angular.js #6199](https://github.com/angular/angular.js/issues/6199).
-
-### ng-bind-html gives me "Error: [$sce:unsafe] Attempting to use an unsafe value in a safe context"
-
-You need to use module [ngSanitize](http://docs.angularjs.org/api/ngSanitize) (recommended) or [$sce](http://docs.angularjs.org/api/ng/service/$sce):
-
-```JavaScript
-$scope.trustAsHtml = function(value) {
-  return $sce.trustAsHtml(value);
-};
-```
-
-```HTML
-<div ng-bind-html="trustAsHtml((item | highlight: $select.search))"></div>
-```
-
-### I get "TypeError: Object [...] has no method 'indexOf' at htmlParser"
-
-You are using ng-bind-html with a number:
-```HTML
-<div ng-bind-html="person.age | highlight: $select.search"></div>
-```
-
-You should write instead:
-```HTML
-<div ng-bind-html="''+person.age | highlight: $select.search"></div>
-```
-
-Or:
-```HTML
-<div ng-bind-html="person.age.toString() | highlight: $select.search"></div>
+$ bower install angular-ui-select
 ```
 
 ## Development
+
 ### Prepare your environment
 * Install [Node.js](http://nodejs.org/) and NPM (should come with)
-* Install global dev dependencies: `npm install -g bower gulp`
-* Install local dev dependencies: `npm install && bower install` in repository directory
+* Install global dev dependencies: `npm install -g gulp`
+* Install local dev dependencies: `npm install` in repository directory
 
 ### Development Commands
 
 * `gulp` to jshint, build and test
 * `gulp build` to jshint and build
 * `gulp test` for one-time test with karma (also build and jshint)
-* `gulp watch` to watch src files to jshin, build and test when changed
+* `gulp watch` to watch src files to jshint, build and test when changed
+* `gulp docs` build docs and examples
 
 ## Contributing
 
+- Check [CONTRIBUTING.md](/CONTRIBUTING.md)
 - Run the tests
-- Try the [examples](https://github.com/angular-ui/ui-select/blob/master/examples)
+- Try the [examples](./docs/examples)
 
 When issuing a pull request, please exclude changes from the "dist" folder to avoid merge conflicts.

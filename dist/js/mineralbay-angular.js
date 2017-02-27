@@ -37,6 +37,78 @@
 
 (function (Mineralbay) {
   'use strict';
+  Mineralbay.filter('btCurrency', function ($filter, $locale) {
+    var formats = $locale.NUMBER_FORMATS;
+    var currencyFilter = $filter('currency');
+    return function (amount, currencySymbol) {
+      amount = amount ? (amount * 1).toFixed(2) : 0;
+      var value = currencyFilter(amount, currencySymbol);
+      var parts = value.split(formats.DECIMAL_SEP);
+      var dollar = parts[0];
+      var cents = parts[1] || '00';
+      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
+      return dollar + cents;
+    };
+  });
+}(angular.module('mineralbay')));
+(function (Mineralbay) {
+  'use strict';
+  Mineralbay.filter('btFormatDateToLocal', function ($filter) {
+    return function (utcDate, params) {
+      var formattedDate;
+      var defaultFilter;
+      if (utcDate) {
+        utcDate = utcDate.replace(/Z$/, '') + 'Z';
+        defaultFilter = params ? params : 'EEEE, MMMM d, y \'at\' h:mma';
+        formattedDate = $filter('date')(utcDate, defaultFilter);
+      } else {
+        formattedDate = '';
+      }
+      return formattedDate;
+    };
+  });
+}(angular.module('mineralbay')));
+(function (Mineralbay) {
+  'use strict';
+  Mineralbay.filter('btPhoneNumber', function () {
+    return function (string, params) {
+      var number = string || '';
+      var formattedNumber;
+      var localPrefix;
+      var localMain;
+      var area;
+      switch (params) {
+      case 'remove':
+        formattedNumber = number.replace(/\D/g, '');
+        if (formattedNumber.length > 10 && formattedNumber.indexOf('1') === 0) {
+          formattedNumber = formattedNumber.substring(1);
+        }
+        break;
+      case 'add':
+        number = number.replace(/\D/g, '');
+        area = number.substring(0, 3);
+        localPrefix = number.substring(3, 6);
+        localMain = number.substring(6);
+        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
+        break;
+      default:
+        formattedNumber = string;
+        break;
+      }
+      return formattedNumber;
+    };
+  });
+}(angular.module('mineralbay')));
+(function (Mineralbay) {
+  'use strict';
+  Mineralbay.filter('capitalize', function () {
+    return function (str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+  });
+}(angular.module('mineralbay')));
+(function (Mineralbay) {
+  'use strict';
   Mineralbay.directive('btAddClassOnLoad', function () {
     return {
       link: function (scope, element, attrs) {
@@ -1410,78 +1482,6 @@
     }
   ]);
 }(angular.module('mineralbay')));
-(function (Mineralbay) {
-  'use strict';
-  Mineralbay.filter('btCurrency', function ($filter, $locale) {
-    var formats = $locale.NUMBER_FORMATS;
-    var currencyFilter = $filter('currency');
-    return function (amount, currencySymbol) {
-      amount = amount ? (amount * 1).toFixed(2) : 0;
-      var value = currencyFilter(amount, currencySymbol);
-      var parts = value.split(formats.DECIMAL_SEP);
-      var dollar = parts[0];
-      var cents = parts[1] || '00';
-      cents = cents.substring(0, 2) === '00' ? cents.substring(2) : '.' + cents;
-      return dollar + cents;
-    };
-  });
-}(angular.module('mineralbay')));
-(function (Mineralbay) {
-  'use strict';
-  Mineralbay.filter('btFormatDateToLocal', function ($filter) {
-    return function (utcDate, params) {
-      var formattedDate;
-      var defaultFilter;
-      if (utcDate) {
-        utcDate = utcDate.replace(/Z$/, '') + 'Z';
-        defaultFilter = params ? params : 'EEEE, MMMM d, y \'at\' h:mma';
-        formattedDate = $filter('date')(utcDate, defaultFilter);
-      } else {
-        formattedDate = '';
-      }
-      return formattedDate;
-    };
-  });
-}(angular.module('mineralbay')));
-(function (Mineralbay) {
-  'use strict';
-  Mineralbay.filter('btPhoneNumber', function () {
-    return function (string, params) {
-      var number = string || '';
-      var formattedNumber;
-      var localPrefix;
-      var localMain;
-      var area;
-      switch (params) {
-      case 'remove':
-        formattedNumber = number.replace(/\D/g, '');
-        if (formattedNumber.length > 10 && formattedNumber.indexOf('1') === 0) {
-          formattedNumber = formattedNumber.substring(1);
-        }
-        break;
-      case 'add':
-        number = number.replace(/\D/g, '');
-        area = number.substring(0, 3);
-        localPrefix = number.substring(3, 6);
-        localMain = number.substring(6);
-        formattedNumber = '(' + area + ') ' + localPrefix + '-' + localMain;
-        break;
-      default:
-        formattedNumber = string;
-        break;
-      }
-      return formattedNumber;
-    };
-  });
-}(angular.module('mineralbay')));
-(function (Mineralbay) {
-  'use strict';
-  Mineralbay.filter('capitalize', function () {
-    return function (str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    };
-  });
-}(angular.module('mineralbay')));
 (function (Mineralbay, Tour) {
   'use strict';
   Mineralbay.service('bootstrapTourService', function ($templateCache, $rootScope, $http, AUTO_START_TOUR) {
@@ -1609,5 +1609,5 @@ $templateCache.put("template/dropdown/bt-dropdown.tpl.html","<div class=\"dropdo
 $templateCache.put("template/loader/bt-loader.tpl.html","<div class=\"loader\">\n  <span class=\"loader-pulse\"></span>\n  <span class=\"loader-pulse\"></span>\n  <span class=\"loader-pulse\"></span>\n</div>");
 $templateCache.put("template/popover/popover-bootstrap-tour.html","<div class=\"popover\">\n    <div class=\"arrow\"></div>\n    <div class=\"popover-close\">\n        <svg class=\"icon property-close\" data-role=\"end\"><use xlink:href=\"#icon-cross\"/></svg>\n    </div>\n    <h3 class=\"popover-title\">Tour</h3>\n    <div class=\"tour-popover popover-content\"></div>\n    <div class=\"popover-navigation\">\n        <button class=\"btn btn-sm btn-default\" data-role=\"prev\">Prev</button>\n        <button class=\"btn btn-sm btn-primary\" data-role=\"next\"><span>Next</span></button>\n    </div>\n</div>");
 $templateCache.put("template/popover/template-popover.html","<div class=\"popover {{placement}}\" ng-class=\"{ in: isOpen(), fade: animation() }\">\n  <div class=\"arrow\"></div>\n\n  <div class=\"popover-close\" ng-click=\"$popover.close($event)\" aria-hidden=\"true\"><svg class=\"icon\"><use xlink:href=\"#icon-cross\"/></svg></div>\n\n  <h3 class=\"popover-title\" ng-bind=\"title\" ng-show=\"title\"></h3>\n\n  <div class=\"popover-content\" ng-include=\"content\"></div>\n</div>");
-$templateCache.put("template/scrollbar/bt-scrollbar.tpl.html","<div class=\"baron\">\n  <div class=\"baron-scroller\" ng-transclude></div>\n  <div class=\"baron-scroller-track\">\n    <div class=\"baron-scroller-bar\"></div>\n  </div>\n</div>\n");
-$templateCache.put("template/bootstrap/pager/bt-pager.tpl.html","<div class=\"btn-group minimal-pager\">\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noPrevious() }\"\n        ng-click=\"selectPage(page - 1)\"><svg class=\"icon\"><use xlink:href=\"#icon-chevron-left\"/></svg></button>\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noNext() }\"\n        ng-click=\"selectPage(page + 1)\"><svg class=\"icon\"><use xlink:href=\"#icon-chevron-right\"/></svg></i></button>\n</div>");}]);
+$templateCache.put("template/bootstrap/pager/bt-pager.tpl.html","<div class=\"btn-group minimal-pager\">\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noPrevious() }\"\n        ng-click=\"selectPage(page - 1)\"><svg class=\"icon\"><use xlink:href=\"#icon-chevron-left\"/></svg></button>\n    <button\n        type=\"button\"\n        class=\"btn btn-default btn-icon\"\n        ng-class=\"{ \'disabled\': noNext() }\"\n        ng-click=\"selectPage(page + 1)\"><svg class=\"icon\"><use xlink:href=\"#icon-chevron-right\"/></svg></i></button>\n</div>");
+$templateCache.put("template/scrollbar/bt-scrollbar.tpl.html","<div class=\"baron\">\n  <div class=\"baron-scroller\" ng-transclude></div>\n  <div class=\"baron-scroller-track\">\n    <div class=\"baron-scroller-bar\"></div>\n  </div>\n</div>\n");}]);

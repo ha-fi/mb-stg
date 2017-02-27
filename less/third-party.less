@@ -26,32 +26,5 @@
 @import "bower_components/bootstrap-tour/src/less/bootstrap-tour.less";
 
 
-// Angular UI-Select (this thing is garbage)
-// -------------------------
-@import (less) "bower_components/angular-ui-select/dist/select.css";
-.ui-select-match.btn-lg {
-  ~ .ui-select-search {
-    .input-lg;
-  }
-}
-.ui-select-match.btn-sm {
-  ~ .ui-select-search {
-    .input-sm;
-  }
-}
-.ui-select-match {
-  padding-right: 25px; // account for caret
-  &:extend(.text-overflow);
-}
-// Inline-block modifier. Must set width of the select or the width of the container.
-.ui-select-bootstrap--inline-block {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  > .ui-select-choices {
-    width: auto;
-  }
-}
-
 
 

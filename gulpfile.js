@@ -80,10 +80,10 @@ gulp.task(Tasks.MineralBayJavascriptVendor, function() {
     'js/generic.js',
     'js/javascript.js',
     'js/html.js',
-    'bower_components/angular/angular.js',
+    'bower_components/angular/angular.js',// No minified version
     'bower_components/angular/angular-animate.min.js',
     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-    'bower_components/angular-ui-select/dist/select.js', // No minified version
+    'bower_components/angular-ui-select/dist/select.js', 
     'bower_components/angular-moment/angular-moment.min.js',
     'bower_components/angular-sanitize/angular-sanitize.min.js',
     'bower_components/angular-route/angular-route.min.js',
