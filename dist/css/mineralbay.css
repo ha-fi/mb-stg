@@ -11219,7 +11219,7 @@ pre {
   padding: 6px 10px;
   line-height: 19px;
   margin-bottom: 20px;
-  font-family: 'Glyphicons Halflings';
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
   color: #333;
   background: #f8f8f8;
   border-radius: 3px;
@@ -11318,7 +11318,7 @@ code {
   margin: 0 2px;
   padding: 0 5px;
   font-size: 12px;
-  font-family: 'Glyphicons Halflings';
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
   color: #333;
   background: #f8f8f8;
   border-radius: 3px;

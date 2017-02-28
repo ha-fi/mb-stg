@@ -397,15 +397,24 @@ angular.module('mineralbay').filter('propsFilter', function() {
     {name: 'Zambia', code: 'ZM'},
     {name: 'Zimbabwe', code: 'ZW'}
   ];
+  
+   $scope.selectedIcon = '';
+  $scope.selectedIcons = ['Globe', 'Heart'];
+  $scope.icons = [
+    {value: 'Gear', label: '<i class="glyphicon glyphicon-cog"></i> Gear'},
+    {value: 'Globe', label: '<i class="glyphicon glyphicon-globe"></i> Globe'},
+    {value: 'Heart', label: '<i class="glyphicon glyphicon-heart"></i> Heart'},
+    {value: 'Camera', label: '<i class="glyphicon glyphicon-camera"></i> Camera'}
+  ];
+
 });
 	  
   
 </script>
 
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
 <div class="page-header">
         <h1>Select<small>
-            (<a target="_blank" href="https://github.com/angular-ui/ui-select">ui.select</a>)
+            (<a target="_blank" href="https://github.com/angular-ui/ui-select">ui.select</a>, <a target="_blank" href="http://mgcrea.github.io/angular-strap/#/selects">AngularStrap</a>)
         </small></h1>
     </div>
 	
@@ -425,7 +434,10 @@ angular.module('mineralbay').filter('propsFilter', function() {
 
   <form class="form-horizontal">
     <fieldset>
+    
       <legend>ui-select inside a Bootstrap form</legend>
+      
+    <!-- ui-select inside a Bootstrap form -->  
   	<p>Selected: [[person.selected.name]]</p>
 
       <div class="form-group">
@@ -495,18 +507,60 @@ angular.module('mineralbay').filter('propsFilter', function() {
 
         </div>
       </div>
+      
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Multiple Select - Array of objects (sorting enabled)</label>
+        <div class="col-sm-6">
+        <ui-select multiple ng-model="multipleDemo.selectedPeople" theme="bootstrap" ng-disabled="disabled" sortable="true" close-on-select="false">
+    <ui-select-match placeholder="Select person...">[[$item.name]] &lt;[[$item.email]]&gt;</ui-select-match>
+    <ui-select-choices repeat="person in people | propsFilter: {name: $select.search, age: $select.search}">
+      <div ng-bind-html="person.name | highlight: $select.search"></div>
+      <small>
+        email: [[person.email]]
+        age: <span ng-bind-html="''+person.age | highlight: $select.search"></span>
+      </small>
+    </ui-select-choices>
+  </ui-select>
+  <p>Selected: [[multipleDemo.selectedPeople]]</p>
+      </div>
+      </div>
+      
+      
+  
+      
+      <legend>AngularStrap select</legend>
+       <!-- AngularStrap select --> 
+      <div class="form-group">
+     	 <label class="col-sm-3 control-label">Single select:&nbsp;</label>
+     	 <div class="col-sm-6">
+    		<button type="button" class="btn btn-default" ng-model="selectedIcon" data-html="1" bs-options="icon.value as icon.label for icon in icons" bs-select> Action <span class="caret"></span>
+    		</button>
+    	 </div>
+    	</div>
+    	
+    	
+    <div class="form-group">	
+    	<label class="col-sm-3 control-label">Multiple select:&nbsp;</label>
+    	<div class="col-sm-6">
+    		<button type="button" class="btn btn-default" ng-model="selectedIcons" data-html="1" data-multiple="1" data-animation="am-flip-x" bs-options="icon.value as icon.label for icon in icons" bs-select> Action <span class="caret"></span>
+   			</button>
+    	</div>
+    </div>
 
     </fieldset>
   </form>
           </div>
           <div class="tab-pane fade" id="select-tab-1">
-          <pre><code data-language="html">	&lt;div class=&quot;form-group&quot;&gt;
+          <pre><code data-language="html">  &lt;!-- ui-select inside a Bootstrap form --&gt;  
+  	&lt;p&gt;Selected: &#123;&#123;person.selected.name&#125;&#125;&lt;/p&gt;
+
+      &lt;div class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Default&lt;/label&gt;
         &lt;div class=&quot;col-sm-6&quot;&gt;
 
-          &lt;ui-select ng-model=&quot;ctrl.person.selected&quot; theme=&quot;bootstrap&quot;&gt;
-            &lt;ui-select-match placeholder=&quot;Select or search a person in the list...&quot;&gt;{{$select.selected.name}}&lt;/ui-select-match&gt;
-            &lt;ui-select-choices repeat=&quot;item in ctrl.people | filter: $select.search&quot;&gt;
+          &lt;ui-select ng-model=&quot;person.selected&quot; theme=&quot;bootstrap&quot;&gt;
+            &lt;ui-select-match placeholder=&quot;Select or search a person in the list...&quot; class=&quot;ui-select-match&quot;&gt;&#123;&#123;$select.selected.name&#125;&#125;&lt;/ui-select-match&gt;
+            &lt;ui-select-choices class=&quot;ui-select-choices&quot; repeat=&quot;item in people | filter: $select.search&quot;&gt;
               &lt;div ng-bind-html=&quot;item.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
               &lt;small ng-bind-html=&quot;item.email | highlight: $select.search&quot;&gt;&lt;/small&gt;
             &lt;/ui-select-choices&gt;
@@ -519,9 +573,9 @@ angular.module('mineralbay').filter('propsFilter', function() {
         &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Grouped&lt;/label&gt;
         &lt;div class=&quot;col-sm-6&quot;&gt;
 
-          &lt;ui-select ng-model=&quot;ctrl.person.selected&quot; theme=&quot;bootstrap&quot;&gt;
-            &lt;ui-select-match placeholder=&quot;Select or search a person in the list...&quot;&gt;{{$select.selected.name}}&lt;/ui-select-match&gt;
-            &lt;ui-select-choices group-by=&quot;'country'&quot; repeat=&quot;item in ctrl.people | filter: $select.search&quot;&gt;
+          &lt;ui-select ng-model=&quot;person.selected&quot;&gt;
+            &lt;ui-select-match class=&quot;ui-select-match&quot; placeholder=&quot;Select or search a person in the list...&quot;&gt;&#123;&#123;$select.selected.name&#125;&#125;&lt;/ui-select-match&gt;
+            &lt;ui-select-choices class=&quot;ui-select-choices&quot; group-by=&quot;'country'&quot; repeat=&quot;item in people | filter: $select.search&quot;&gt;
               &lt;span ng-bind-html=&quot;item.name | highlight: $select.search&quot;&gt;&lt;/span&gt;
               &lt;small ng-bind-html=&quot;item.email | highlight: $select.search&quot;&gt;&lt;/small&gt;
             &lt;/ui-select-choices&gt;
@@ -535,16 +589,16 @@ angular.module('mineralbay').filter('propsFilter', function() {
         &lt;div class=&quot;col-sm-6&quot;&gt;
           &lt;div class=&quot;input-group&quot;&gt;
 
-            &lt;ui-select allow-clear ng-model=&quot;ctrl.person.selected&quot; theme=&quot;bootstrap&quot;&gt;
-              &lt;ui-select-match placeholder=&quot;Select or search a person in the list...&quot;&gt;{{$select.selected.name}}&lt;/ui-select-match&gt;
-              &lt;ui-select-choices repeat=&quot;item in ctrl.people | filter: $select.search&quot;&gt;
+            &lt;ui-select ng-model=&quot;person.selected&quot; theme=&quot;bootstrap&quot;&gt;
+              &lt;ui-select-match placeholder=&quot;Select or search a person in the list...&quot;&gt;&#123;&#123;$select.selected.name&#125;&#125;&lt;/ui-select-match&gt;
+              &lt;ui-select-choices repeat=&quot;item in people | filter: $select.search&quot;&gt;
                 &lt;span ng-bind-html=&quot;item.name | highlight: $select.search&quot;&gt;&lt;/span&gt;
                 &lt;small ng-bind-html=&quot;item.email | highlight: $select.search&quot;&gt;&lt;/small&gt;
               &lt;/ui-select-choices&gt;
+              
             &lt;/ui-select&gt;
-
             &lt;span class=&quot;input-group-btn&quot;&gt;
-              &lt;button type=&quot;button&quot; ng-click=&quot;ctrl.person.selected = undefined&quot; class=&quot;btn btn-default&quot;&gt;
+              &lt;button ng-click=&quot;person.selected = undefined&quot; class=&quot;btn btn-default&quot;&gt;
                 &lt;span class=&quot;glyphicon glyphicon-trash&quot;&gt;&lt;/span&gt;
               &lt;/button&gt;
             &lt;/span&gt;
@@ -552,42 +606,70 @@ angular.module('mineralbay').filter('propsFilter', function() {
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-
+      
       &lt;div class=&quot;form-group&quot;&gt;
         &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Disabled&lt;/label&gt;
         &lt;div class=&quot;col-sm-6&quot;&gt;
 
-          &lt;ui-select ng-model=&quot;ctrl.person.selected&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;true&quot;&gt;
-            &lt;ui-select-match placeholder=&quot;Select or search a person in the list...&quot;&gt;{{$select.selected.name}}&lt;/ui-select-match&gt;
-            &lt;ui-select-choices repeat=&quot;item in ctrl.people | filter: $select.search&quot;&gt;
+          &lt;ui-select ng-model=&quot;person.selected&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;true&quot;&gt;
+            &lt;ui-select-match class=&quot;ui-select-match&quot; placeholder=&quot;Select or search a person in the list...&quot;&gt;&#123;&#123;$select.selected.name&#125;&#125;&lt;/ui-select-match&gt;
+            &lt;ui-select-choices class=&quot;ui-select-choices&quot; repeat=&quot;item in people | filter: $select.search&quot;&gt;
               &lt;div ng-bind-html=&quot;item.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
               &lt;small ng-bind-html=&quot;item.email | highlight: $select.search&quot;&gt;&lt;/small&gt;
             &lt;/ui-select-choices&gt;
           &lt;/ui-select&gt;
 
         &lt;/div&gt;
-      &lt;/div&gt;</code></pre>
+      &lt;/div&gt;
+      
+      
+       &lt;div class=&quot;form-group&quot;&gt;
+        &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Multiple Select - Array of objects (sorting enabled)&lt;/label&gt;
+        &lt;div class=&quot;col-sm-6&quot;&gt;
+        &lt;ui-select multiple ng-model=&quot;multipleDemo.selectedPeople&quot; theme=&quot;bootstrap&quot; ng-disabled=&quot;disabled&quot; sortable=&quot;true&quot; close-on-select=&quot;false&quot;&gt;
+    &lt;ui-select-match placeholder=&quot;Select person...&quot;&gt;&#123;&#123;$item.name&#125;&#125; &amp;lt;&#123;&#123;$item.email&#125;&#125;&amp;gt;&lt;/ui-select-match&gt;
+    &lt;ui-select-choices repeat=&quot;person in people | propsFilter: {name: $select.search, age: $select.search}&quot;&gt;
+      &lt;div ng-bind-html=&quot;person.name | highlight: $select.search&quot;&gt;&lt;/div&gt;
+      &lt;small&gt;
+        email: &#123;&#123;person.email&#125;&#125;
+        age: &lt;span ng-bind-html=&quot;''+person.age | highlight: $select.search&quot;&gt;&lt;/span&gt;
+      &lt;/small&gt;
+    &lt;/ui-select-choices&gt;
+  &lt;/ui-select&gt;
+  &lt;p&gt;Selected: &#123;&#123;multipleDemo.selectedPeople&#125;&#125;&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;legend&gt;AngularStrap select&lt;/legend&gt;
+       &lt;!-- AngularStrap select --&gt; 
+      &lt;div class=&quot;form-group&quot;&gt;
+     	 &lt;label class=&quot;col-sm-3 control-label&quot;&gt;Single select:&amp;nbsp;&lt;/label&gt;
+     	 &lt;div class=&quot;col-sm-6&quot;&gt;
+    		&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-model=&quot;selectedIcon&quot; data-html=&quot;1&quot; bs-options=&quot;icon.value as icon.label for icon in icons&quot; bs-select&gt; Action &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+    		&lt;/button&gt;
+    	 &lt;/div&gt;
+    	&lt;/div&gt;
+    	
+    	
+    &lt;div class=&quot;form-group&quot;&gt;	
+    	&lt;label class=&quot;col-sm-3 control-label&quot;&gt;Multiple select:&amp;nbsp;&lt;/label&gt;
+    	&lt;div class=&quot;col-sm-6&quot;&gt;
+    		&lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-model=&quot;selectedIcons&quot; data-html=&quot;1&quot; data-multiple=&quot;1&quot; data-animation=&quot;am-flip-x&quot; bs-options=&quot;icon.value as icon.label for icon in icons&quot; bs-select&gt; Action &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+   			&lt;/button&gt;
+    	&lt;/div&gt;
+    &lt;/div&gt;</code></pre>
           </div> <!-- end tab-pane -->
           <div class="tab-pane fade" id="select-tab-2">
-          <pre><code data-language="javascript">var app = angular.module(&#x27;demo&#x27;, [&#x27;ngSanitize&#x27;, &#x27;ui.select&#x27;]);
-
-/**
- * AngularJS default filter with the following expression:
- * "person in people | filter: {name: $select.search, age: $select.search}"
- * performs an AND between &#x27;name: $select.search&#x27; and &#x27;age: $select.search&#x27;.
- * We want to perform an OR.
- */
-app.filter(&#x27;propsFilter&#x27;, function() {
+          <pre><code data-language="javascript">angular.module('mineralbay').filter('propsFilter', function() {
   return function(items, props) {
     var out = [];
 
     if (angular.isArray(items)) {
-      var keys = Object.keys(props);
-
       items.forEach(function(item) {
         var itemMatches = false;
 
-        for (var i = 0; i < keys.length; i++) {
+        var keys = Object.keys(props);
+        for (var i = 0; i &lt; keys.length; i++) {
           var prop = keys[i];
           var text = props[prop].toLowerCase();
           if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
@@ -609,428 +691,357 @@ app.filter(&#x27;propsFilter&#x27;, function() {
   };
 });
 
-app.controller(&#x27;DemoCtrl&#x27;, function ($scope, $http, $timeout, $interval) {
-  var vm = this;
 
-  vm.disabled = undefined;
-  vm.searchEnabled = undefined;
+  angular.module('mineralbay').controller('DemoCtrl', function($scope, $http, $timeout) {
+	  
+  $scope.disabled = undefined;
+  $scope.searchEnabled = undefined;
 
-  vm.setInputFocus = function (){
-    $scope.$broadcast(&#x27;UiSelectDemo1&#x27;);
+  $scope.enable = function() {
+    $scope.disabled = false;
   };
 
-  vm.enable = function() {
-    vm.disabled = false;
+  $scope.disable = function() {
+    $scope.disabled = true;
   };
 
-  vm.disable = function() {
-    vm.disabled = true;
+  $scope.enableSearch = function() {
+    $scope.searchEnabled = true;
+  }
+
+  $scope.disableSearch = function() {
+    $scope.searchEnabled = false;
+  }
+
+  $scope.clear = function() {
+    $scope.person.selected = undefined;
+    $scope.address.selected = undefined;
+    $scope.country.selected = undefined;
   };
 
-  vm.enableSearch = function() {
-    vm.searchEnabled = true;
-  };
+  $scope.someGroupFn = function (item){
 
-  vm.disableSearch = function() {
-    vm.searchEnabled = false;
-  };
+    if (item.name[0] &gt;= 'A' &amp;&amp; item.name[0] &lt;= 'M')
+        return 'From A - M';
 
-  vm.clear = function() {
-    vm.person.selected = undefined;
-    vm.address.selected = undefined;
-    vm.country.selected = undefined;
-  };
-
-  vm.someGroupFn = function (item){
-
-    if (item.name[0] >= &#x27;A&#x27; && item.name[0] <= &#x27;M&#x27;)
-        return &#x27;From A - M&#x27;;
-
-    if (item.name[0] >= &#x27;N&#x27; && item.name[0] <= &#x27;Z&#x27;)
-        return &#x27;From N - Z&#x27;;
+    if (item.name[0] &gt;= 'N' &amp;&amp; item.name[0] &lt;= 'Z')
+        return 'From N - Z';
 
   };
 
-  vm.firstLetterGroupFn = function (item){
+  $scope.firstLetterGroupFn = function (item){
       return item.name[0];
   };
 
-  vm.reverseOrderFilterFn = function(groups) {
+  $scope.reverseOrderFilterFn = function(groups) {
     return groups.reverse();
   };
 
-  vm.personAsync = {selected : "wladimir@email.com"};
-  vm.peopleAsync = [];
+  $scope.personAsync = {selected : &quot;wladimir@email.com&quot;};
+  $scope.peopleAsync = [];
 
   $timeout(function(){
-   vm.peopleAsync = [
-        { name: &#x27;Adam&#x27;,      email: &#x27;adam@email.com&#x27;,      age: 12, country: &#x27;United States&#x27; },
-        { name: &#x27;Amalie&#x27;,    email: &#x27;amalie@email.com&#x27;,    age: 12, country: &#x27;Argentina&#x27; },
-        { name: &#x27;Estefanía&#x27;, email: &#x27;estefania@email.com&#x27;, age: 21, country: &#x27;Argentina&#x27; },
-        { name: &#x27;Adrian&#x27;,    email: &#x27;adrian@email.com&#x27;,    age: 21, country: &#x27;Ecuador&#x27; },
-        { name: &#x27;Wladimir&#x27;,  email: &#x27;wladimir@email.com&#x27;,  age: 30, country: &#x27;Ecuador&#x27; },
-        { name: &#x27;Samantha&#x27;,  email: &#x27;samantha@email.com&#x27;,  age: 30, country: &#x27;United States&#x27; },
-        { name: &#x27;Nicole&#x27;,    email: &#x27;nicole@email.com&#x27;,    age: 43, country: &#x27;Colombia&#x27; },
-        { name: &#x27;Natasha&#x27;,   email: &#x27;natasha@email.com&#x27;,   age: 54, country: &#x27;Ecuador&#x27; },
-        { name: &#x27;Michael&#x27;,   email: &#x27;michael@email.com&#x27;,   age: 15, country: &#x27;Colombia&#x27; },
-        { name: &#x27;Nicolás&#x27;,   email: &#x27;nicole@email.com&#x27;,    age: 43, country: &#x27;Colombia&#x27; }
+   $scope.peopleAsync = [
+        { name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
+        { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
+        { name: 'Estefan&iacute;a', email: 'estefania@email.com', age: 21, country: 'Argentina' },
+        { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador' },
+        { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador' },
+        { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States' },
+        { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia' },
+        { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador' },
+        { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia' },
+        { name: 'Nicol&aacute;s',   email: 'nicole@email.com',    age: 43, country: 'Colombia' }
       ];
   },3000);
 
-  vm.counter = 0;
-  vm.onSelectCallback = function (item, model){
-    vm.counter++;
-    vm.eventResult = {item: item, model: model};
+  $scope.counter = 0;
+  $scope.someFunction = function (item, model){
+    $scope.counter++;
+    $scope.eventResult = {item: item, model: model};
   };
 
-  vm.removed = function (item, model) {
-    vm.lastRemoved = {
-        item: item,
-        model: model
-    };
-  };
-
-  vm.tagTransform = function (newTag) {
-    var item = {
-        name: newTag,
-        email: newTag.toLowerCase()+&#x27;@email.com&#x27;,
-        age: &#x27;unknown&#x27;,
-        country: &#x27;unknown&#x27;
-    };
-
-    return item;
-  };
-
-  vm.peopleObj = {
-    &#x27;1&#x27; : { name: &#x27;Adam&#x27;,      email: &#x27;adam@email.com&#x27;,      age: 12, country: &#x27;United States&#x27; },
-    &#x27;2&#x27; : { name: &#x27;Amalie&#x27;,    email: &#x27;amalie@email.com&#x27;,    age: 12, country: &#x27;Argentina&#x27; },
-    &#x27;3&#x27; : { name: &#x27;Estefanía&#x27;, email: &#x27;estefania@email.com&#x27;, age: 21, country: &#x27;Argentina&#x27; },
-    &#x27;4&#x27; : { name: &#x27;Adrian&#x27;,    email: &#x27;adrian@email.com&#x27;,    age: 21, country: &#x27;Ecuador&#x27; },
-    &#x27;5&#x27; : { name: &#x27;Wladimir&#x27;,  email: &#x27;wladimir@email.com&#x27;,  age: 30, country: &#x27;Ecuador&#x27; },
-    &#x27;6&#x27; : { name: &#x27;Samantha&#x27;,  email: &#x27;samantha@email.com&#x27;,  age: 30, country: &#x27;United States&#x27; },
-    &#x27;7&#x27; : { name: &#x27;Nicole&#x27;,    email: &#x27;nicole@email.com&#x27;,    age: 43, country: &#x27;Colombia&#x27; },
-    &#x27;8&#x27; : { name: &#x27;Natasha&#x27;,   email: &#x27;natasha@email.com&#x27;,   age: 54, country: &#x27;Ecuador&#x27; },
-    &#x27;9&#x27; : { name: &#x27;Michael&#x27;,   email: &#x27;michael@email.com&#x27;,   age: 15, country: &#x27;Colombia&#x27; },
-    &#x27;10&#x27; : { name: &#x27;Nicolás&#x27;,   email: &#x27;nicolas@email.com&#x27;,    age: 43, country: &#x27;Colombia&#x27; }
-  };
-
-  vm.person = {};
-
-  vm.person.selectedValue = vm.peopleObj[3];
-  vm.person.selectedSingle = &#x27;Samantha&#x27;;
-  vm.person.selectedSingleKey = &#x27;5&#x27;;
-  // To run the demos with a preselected person object, uncomment the line below.
-  //vm.person.selected = vm.person.selectedValue;
-
-  vm.people = [
-    { name: &#x27;Adam&#x27;,      email: &#x27;adam@email.com&#x27;,      age: 12, country: &#x27;United States&#x27; },
-    { name: &#x27;Amalie&#x27;,    email: &#x27;amalie@email.com&#x27;,    age: 12, country: &#x27;Argentina&#x27; },
-    { name: &#x27;Estefanía&#x27;, email: &#x27;estefania@email.com&#x27;, age: 21, country: &#x27;Argentina&#x27; },
-    { name: &#x27;Adrian&#x27;,    email: &#x27;adrian@email.com&#x27;,    age: 21, country: &#x27;Ecuador&#x27; },
-    { name: &#x27;Wladimir&#x27;,  email: &#x27;wladimir@email.com&#x27;,  age: 30, country: &#x27;Ecuador&#x27; },
-    { name: &#x27;Samantha&#x27;,  email: &#x27;samantha@email.com&#x27;,  age: 30, country: &#x27;United States&#x27; },
-    { name: &#x27;Nicole&#x27;,    email: &#x27;nicole@email.com&#x27;,    age: 43, country: &#x27;Colombia&#x27; },
-    { name: &#x27;Natasha&#x27;,   email: &#x27;natasha@email.com&#x27;,   age: 54, country: &#x27;Ecuador&#x27; },
-    { name: &#x27;Michael&#x27;,   email: &#x27;michael@email.com&#x27;,   age: 15, country: &#x27;Colombia&#x27; },
-    { name: &#x27;Nicolás&#x27;,   email: &#x27;nicolas@email.com&#x27;,    age: 43, country: &#x27;Colombia&#x27; }
+  $scope.person = {};
+  $scope.people = [
+    { name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
+    { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
+    { name: 'Estefan&iacute;a', email: 'estefania@email.com', age: 21, country: 'Argentina' },
+    { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador' },
+    { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador' },
+    { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States' },
+    { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia' },
+    { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador' },
+    { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia' },
+    { name: 'Nicol&aacute;s',   email: 'nicolas@email.com',    age: 43, country: 'Colombia' }
   ];
 
-  vm.availableColors = [&#x27;Red&#x27;,&#x27;Green&#x27;,&#x27;Blue&#x27;,&#x27;Yellow&#x27;,&#x27;Magenta&#x27;,&#x27;Maroon&#x27;,&#x27;Umbra&#x27;,&#x27;Turquoise&#x27;];
+  $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
 
-  vm.singleDemo = {};
-  vm.singleDemo.color = &#x27;&#x27;;
-  vm.multipleDemo = {};
-  vm.multipleDemo.colors = [&#x27;Blue&#x27;,&#x27;Red&#x27;];
-  vm.multipleDemo.colors2 = [&#x27;Blue&#x27;,&#x27;Red&#x27;];
-  vm.multipleDemo.selectedPeople = [vm.people[5], vm.people[4]];
-  vm.multipleDemo.selectedPeople2 = vm.multipleDemo.selectedPeople;
-  vm.multipleDemo.selectedPeopleWithGroupBy = [vm.people[8], vm.people[6]];
-  vm.multipleDemo.selectedPeopleSimple = [&#x27;samantha@email.com&#x27;,&#x27;wladimir@email.com&#x27;];
-  vm.multipleDemo.removeSelectIsFalse = [vm.people[2], vm.people[0]];
+  $scope.multipleDemo = {};
+  $scope.multipleDemo.colors = ['Blue','Red'];
+  $scope.multipleDemo.selectedPeople = [$scope.people[5], $scope.people[4]];
+  $scope.multipleDemo.selectedPeopleWithGroupBy = [$scope.people[8], $scope.people[6]];
+  $scope.multipleDemo.selectedPeopleSimple = ['samantha@email.com','wladimir@email.com'];
 
-  vm.appendToBodyDemo = {
-    remainingToggleTime: 0,
-    present: true,
-    startToggleTimer: function() {
-      var scope = vm.appendToBodyDemo;
-      var promise = $interval(function() {
-        if (scope.remainingTime < 1000) {
-          $interval.cancel(promise);
-          scope.present = !scope.present;
-          scope.remainingTime = 0;
-        } else {
-          scope.remainingTime -= 1000;
-        }
-      }, 1000);
-      scope.remainingTime = 3000;
-    }
-  };
-
-  vm.address = {};
-  vm.refreshAddresses = function(address) {
-    var params = {address: address, sensor: false};
-    return $http.get(
-      &#x27;http://maps.googleapis.com/maps/api/geocode/json&#x27;,
-      {params: params}
-    ).then(function(response) {
-      vm.addresses = response.data.results;
-    });
-  };
-
-  vm.addPerson = function(item, model){
-    if(item.hasOwnProperty(&#x27;isTag&#x27;)) {
-      delete item.isTag;
-      vm.people.push(item);
-    }
-  }
-
-  vm.country = {};
-  vm.countries = [ // Taken from https://gist.github.com/unceus/6501985
-    {name: &#x27;Afghanistan&#x27;, code: &#x27;AF&#x27;},
-    {name: &#x27;Åland Islands&#x27;, code: &#x27;AX&#x27;},
-    {name: &#x27;Albania&#x27;, code: &#x27;AL&#x27;},
-    {name: &#x27;Algeria&#x27;, code: &#x27;DZ&#x27;},
-    {name: &#x27;American Samoa&#x27;, code: &#x27;AS&#x27;},
-    {name: &#x27;Andorra&#x27;, code: &#x27;AD&#x27;},
-    {name: &#x27;Angola&#x27;, code: &#x27;AO&#x27;},
-    {name: &#x27;Anguilla&#x27;, code: &#x27;AI&#x27;},
-    {name: &#x27;Antarctica&#x27;, code: &#x27;AQ&#x27;},
-    {name: &#x27;Antigua and Barbuda&#x27;, code: &#x27;AG&#x27;},
-    {name: &#x27;Argentina&#x27;, code: &#x27;AR&#x27;},
-    {name: &#x27;Armenia&#x27;, code: &#x27;AM&#x27;},
-    {name: &#x27;Aruba&#x27;, code: &#x27;AW&#x27;},
-    {name: &#x27;Australia&#x27;, code: &#x27;AU&#x27;},
-    {name: &#x27;Austria&#x27;, code: &#x27;AT&#x27;},
-    {name: &#x27;Azerbaijan&#x27;, code: &#x27;AZ&#x27;},
-    {name: &#x27;Bahamas&#x27;, code: &#x27;BS&#x27;},
-    {name: &#x27;Bahrain&#x27;, code: &#x27;BH&#x27;},
-    {name: &#x27;Bangladesh&#x27;, code: &#x27;BD&#x27;},
-    {name: &#x27;Barbados&#x27;, code: &#x27;BB&#x27;},
-    {name: &#x27;Belarus&#x27;, code: &#x27;BY&#x27;},
-    {name: &#x27;Belgium&#x27;, code: &#x27;BE&#x27;},
-    {name: &#x27;Belize&#x27;, code: &#x27;BZ&#x27;},
-    {name: &#x27;Benin&#x27;, code: &#x27;BJ&#x27;},
-    {name: &#x27;Bermuda&#x27;, code: &#x27;BM&#x27;},
-    {name: &#x27;Bhutan&#x27;, code: &#x27;BT&#x27;},
-    {name: &#x27;Bolivia&#x27;, code: &#x27;BO&#x27;},
-    {name: &#x27;Bosnia and Herzegovina&#x27;, code: &#x27;BA&#x27;},
-    {name: &#x27;Botswana&#x27;, code: &#x27;BW&#x27;},
-    {name: &#x27;Bouvet Island&#x27;, code: &#x27;BV&#x27;},
-    {name: &#x27;Brazil&#x27;, code: &#x27;BR&#x27;},
-    {name: &#x27;British Indian Ocean Territory&#x27;, code: &#x27;IO&#x27;},
-    {name: &#x27;Brunei Darussalam&#x27;, code: &#x27;BN&#x27;},
-    {name: &#x27;Bulgaria&#x27;, code: &#x27;BG&#x27;},
-    {name: &#x27;Burkina Faso&#x27;, code: &#x27;BF&#x27;},
-    {name: &#x27;Burundi&#x27;, code: &#x27;BI&#x27;},
-    {name: &#x27;Cambodia&#x27;, code: &#x27;KH&#x27;},
-    {name: &#x27;Cameroon&#x27;, code: &#x27;CM&#x27;},
-    {name: &#x27;Canada&#x27;, code: &#x27;CA&#x27;},
-    {name: &#x27;Cape Verde&#x27;, code: &#x27;CV&#x27;},
-    {name: &#x27;Cayman Islands&#x27;, code: &#x27;KY&#x27;},
-    {name: &#x27;Central African Republic&#x27;, code: &#x27;CF&#x27;},
-    {name: &#x27;Chad&#x27;, code: &#x27;TD&#x27;},
-    {name: &#x27;Chile&#x27;, code: &#x27;CL&#x27;},
-    {name: &#x27;China&#x27;, code: &#x27;CN&#x27;},
-    {name: &#x27;Christmas Island&#x27;, code: &#x27;CX&#x27;},
-    {name: &#x27;Cocos (Keeling) Islands&#x27;, code: &#x27;CC&#x27;},
-    {name: &#x27;Colombia&#x27;, code: &#x27;CO&#x27;},
-    {name: &#x27;Comoros&#x27;, code: &#x27;KM&#x27;},
-    {name: &#x27;Congo&#x27;, code: &#x27;CG&#x27;},
-    {name: &#x27;Congo, The Democratic Republic of the&#x27;, code: &#x27;CD&#x27;},
-    {name: &#x27;Cook Islands&#x27;, code: &#x27;CK&#x27;},
-    {name: &#x27;Costa Rica&#x27;, code: &#x27;CR&#x27;},
-    {name: &#x27;Cote D\&#x27;Ivoire&#x27;, code: &#x27;CI&#x27;},
-    {name: &#x27;Croatia&#x27;, code: &#x27;HR&#x27;},
-    {name: &#x27;Cuba&#x27;, code: &#x27;CU&#x27;},
-    {name: &#x27;Cyprus&#x27;, code: &#x27;CY&#x27;},
-    {name: &#x27;Czech Republic&#x27;, code: &#x27;CZ&#x27;},
-    {name: &#x27;Denmark&#x27;, code: &#x27;DK&#x27;},
-    {name: &#x27;Djibouti&#x27;, code: &#x27;DJ&#x27;},
-    {name: &#x27;Dominica&#x27;, code: &#x27;DM&#x27;},
-    {name: &#x27;Dominican Republic&#x27;, code: &#x27;DO&#x27;},
-    {name: &#x27;Ecuador&#x27;, code: &#x27;EC&#x27;},
-    {name: &#x27;Egypt&#x27;, code: &#x27;EG&#x27;},
-    {name: &#x27;El Salvador&#x27;, code: &#x27;SV&#x27;},
-    {name: &#x27;Equatorial Guinea&#x27;, code: &#x27;GQ&#x27;},
-    {name: &#x27;Eritrea&#x27;, code: &#x27;ER&#x27;},
-    {name: &#x27;Estonia&#x27;, code: &#x27;EE&#x27;},
-    {name: &#x27;Ethiopia&#x27;, code: &#x27;ET&#x27;},
-    {name: &#x27;Falkland Islands (Malvinas)&#x27;, code: &#x27;FK&#x27;},
-    {name: &#x27;Faroe Islands&#x27;, code: &#x27;FO&#x27;},
-    {name: &#x27;Fiji&#x27;, code: &#x27;FJ&#x27;},
-    {name: &#x27;Finland&#x27;, code: &#x27;FI&#x27;},
-    {name: &#x27;France&#x27;, code: &#x27;FR&#x27;},
-    {name: &#x27;French Guiana&#x27;, code: &#x27;GF&#x27;},
-    {name: &#x27;French Polynesia&#x27;, code: &#x27;PF&#x27;},
-    {name: &#x27;French Southern Territories&#x27;, code: &#x27;TF&#x27;},
-    {name: &#x27;Gabon&#x27;, code: &#x27;GA&#x27;},
-    {name: &#x27;Gambia&#x27;, code: &#x27;GM&#x27;},
-    {name: &#x27;Georgia&#x27;, code: &#x27;GE&#x27;},
-    {name: &#x27;Germany&#x27;, code: &#x27;DE&#x27;},
-    {name: &#x27;Ghana&#x27;, code: &#x27;GH&#x27;},
-    {name: &#x27;Gibraltar&#x27;, code: &#x27;GI&#x27;},
-    {name: &#x27;Greece&#x27;, code: &#x27;GR&#x27;},
-    {name: &#x27;Greenland&#x27;, code: &#x27;GL&#x27;},
-    {name: &#x27;Grenada&#x27;, code: &#x27;GD&#x27;},
-    {name: &#x27;Guadeloupe&#x27;, code: &#x27;GP&#x27;},
-    {name: &#x27;Guam&#x27;, code: &#x27;GU&#x27;},
-    {name: &#x27;Guatemala&#x27;, code: &#x27;GT&#x27;},
-    {name: &#x27;Guernsey&#x27;, code: &#x27;GG&#x27;},
-    {name: &#x27;Guinea&#x27;, code: &#x27;GN&#x27;},
-    {name: &#x27;Guinea-Bissau&#x27;, code: &#x27;GW&#x27;},
-    {name: &#x27;Guyana&#x27;, code: &#x27;GY&#x27;},
-    {name: &#x27;Haiti&#x27;, code: &#x27;HT&#x27;},
-    {name: &#x27;Heard Island and Mcdonald Islands&#x27;, code: &#x27;HM&#x27;},
-    {name: &#x27;Holy See (Vatican City State)&#x27;, code: &#x27;VA&#x27;},
-    {name: &#x27;Honduras&#x27;, code: &#x27;HN&#x27;},
-    {name: &#x27;Hong Kong&#x27;, code: &#x27;HK&#x27;},
-    {name: &#x27;Hungary&#x27;, code: &#x27;HU&#x27;},
-    {name: &#x27;Iceland&#x27;, code: &#x27;IS&#x27;},
-    {name: &#x27;India&#x27;, code: &#x27;IN&#x27;},
-    {name: &#x27;Indonesia&#x27;, code: &#x27;ID&#x27;},
-    {name: &#x27;Iran, Islamic Republic Of&#x27;, code: &#x27;IR&#x27;},
-    {name: &#x27;Iraq&#x27;, code: &#x27;IQ&#x27;},
-    {name: &#x27;Ireland&#x27;, code: &#x27;IE&#x27;},
-    {name: &#x27;Isle of Man&#x27;, code: &#x27;IM&#x27;},
-    {name: &#x27;Israel&#x27;, code: &#x27;IL&#x27;},
-    {name: &#x27;Italy&#x27;, code: &#x27;IT&#x27;},
-    {name: &#x27;Jamaica&#x27;, code: &#x27;JM&#x27;},
-    {name: &#x27;Japan&#x27;, code: &#x27;JP&#x27;},
-    {name: &#x27;Jersey&#x27;, code: &#x27;JE&#x27;},
-    {name: &#x27;Jordan&#x27;, code: &#x27;JO&#x27;},
-    {name: &#x27;Kazakhstan&#x27;, code: &#x27;KZ&#x27;},
-    {name: &#x27;Kenya&#x27;, code: &#x27;KE&#x27;},
-    {name: &#x27;Kiribati&#x27;, code: &#x27;KI&#x27;},
-    {name: &#x27;Korea, Democratic People\&#x27;s Republic of&#x27;, code: &#x27;KP&#x27;},
-    {name: &#x27;Korea, Republic of&#x27;, code: &#x27;KR&#x27;},
-    {name: &#x27;Kuwait&#x27;, code: &#x27;KW&#x27;},
-    {name: &#x27;Kyrgyzstan&#x27;, code: &#x27;KG&#x27;},
-    {name: &#x27;Lao People\&#x27;s Democratic Republic&#x27;, code: &#x27;LA&#x27;},
-    {name: &#x27;Latvia&#x27;, code: &#x27;LV&#x27;},
-    {name: &#x27;Lebanon&#x27;, code: &#x27;LB&#x27;},
-    {name: &#x27;Lesotho&#x27;, code: &#x27;LS&#x27;},
-    {name: &#x27;Liberia&#x27;, code: &#x27;LR&#x27;},
-    {name: &#x27;Libyan Arab Jamahiriya&#x27;, code: &#x27;LY&#x27;},
-    {name: &#x27;Liechtenstein&#x27;, code: &#x27;LI&#x27;},
-    {name: &#x27;Lithuania&#x27;, code: &#x27;LT&#x27;},
-    {name: &#x27;Luxembourg&#x27;, code: &#x27;LU&#x27;},
-    {name: &#x27;Macao&#x27;, code: &#x27;MO&#x27;},
-    {name: &#x27;Macedonia, The Former Yugoslav Republic of&#x27;, code: &#x27;MK&#x27;},
-    {name: &#x27;Madagascar&#x27;, code: &#x27;MG&#x27;},
-    {name: &#x27;Malawi&#x27;, code: &#x27;MW&#x27;},
-    {name: &#x27;Malaysia&#x27;, code: &#x27;MY&#x27;},
-    {name: &#x27;Maldives&#x27;, code: &#x27;MV&#x27;},
-    {name: &#x27;Mali&#x27;, code: &#x27;ML&#x27;},
-    {name: &#x27;Malta&#x27;, code: &#x27;MT&#x27;},
-    {name: &#x27;Marshall Islands&#x27;, code: &#x27;MH&#x27;},
-    {name: &#x27;Martinique&#x27;, code: &#x27;MQ&#x27;},
-    {name: &#x27;Mauritania&#x27;, code: &#x27;MR&#x27;},
-    {name: &#x27;Mauritius&#x27;, code: &#x27;MU&#x27;},
-    {name: &#x27;Mayotte&#x27;, code: &#x27;YT&#x27;},
-    {name: &#x27;Mexico&#x27;, code: &#x27;MX&#x27;},
-    {name: &#x27;Micronesia, Federated States of&#x27;, code: &#x27;FM&#x27;},
-    {name: &#x27;Moldova, Republic of&#x27;, code: &#x27;MD&#x27;},
-    {name: &#x27;Monaco&#x27;, code: &#x27;MC&#x27;},
-    {name: &#x27;Mongolia&#x27;, code: &#x27;MN&#x27;},
-    {name: &#x27;Montserrat&#x27;, code: &#x27;MS&#x27;},
-    {name: &#x27;Morocco&#x27;, code: &#x27;MA&#x27;},
-    {name: &#x27;Mozambique&#x27;, code: &#x27;MZ&#x27;},
-    {name: &#x27;Myanmar&#x27;, code: &#x27;MM&#x27;},
-    {name: &#x27;Namibia&#x27;, code: &#x27;NA&#x27;},
-    {name: &#x27;Nauru&#x27;, code: &#x27;NR&#x27;},
-    {name: &#x27;Nepal&#x27;, code: &#x27;NP&#x27;},
-    {name: &#x27;Netherlands&#x27;, code: &#x27;NL&#x27;},
-    {name: &#x27;Netherlands Antilles&#x27;, code: &#x27;AN&#x27;},
-    {name: &#x27;New Caledonia&#x27;, code: &#x27;NC&#x27;},
-    {name: &#x27;New Zealand&#x27;, code: &#x27;NZ&#x27;},
-    {name: &#x27;Nicaragua&#x27;, code: &#x27;NI&#x27;},
-    {name: &#x27;Niger&#x27;, code: &#x27;NE&#x27;},
-    {name: &#x27;Nigeria&#x27;, code: &#x27;NG&#x27;},
-    {name: &#x27;Niue&#x27;, code: &#x27;NU&#x27;},
-    {name: &#x27;Norfolk Island&#x27;, code: &#x27;NF&#x27;},
-    {name: &#x27;Northern Mariana Islands&#x27;, code: &#x27;MP&#x27;},
-    {name: &#x27;Norway&#x27;, code: &#x27;NO&#x27;},
-    {name: &#x27;Oman&#x27;, code: &#x27;OM&#x27;},
-    {name: &#x27;Pakistan&#x27;, code: &#x27;PK&#x27;},
-    {name: &#x27;Palau&#x27;, code: &#x27;PW&#x27;},
-    {name: &#x27;Palestinian Territory, Occupied&#x27;, code: &#x27;PS&#x27;},
-    {name: &#x27;Panama&#x27;, code: &#x27;PA&#x27;},
-    {name: &#x27;Papua New Guinea&#x27;, code: &#x27;PG&#x27;},
-    {name: &#x27;Paraguay&#x27;, code: &#x27;PY&#x27;},
-    {name: &#x27;Peru&#x27;, code: &#x27;PE&#x27;},
-    {name: &#x27;Philippines&#x27;, code: &#x27;PH&#x27;},
-    {name: &#x27;Pitcairn&#x27;, code: &#x27;PN&#x27;},
-    {name: &#x27;Poland&#x27;, code: &#x27;PL&#x27;},
-    {name: &#x27;Portugal&#x27;, code: &#x27;PT&#x27;},
-    {name: &#x27;Puerto Rico&#x27;, code: &#x27;PR&#x27;},
-    {name: &#x27;Qatar&#x27;, code: &#x27;QA&#x27;},
-    {name: &#x27;Reunion&#x27;, code: &#x27;RE&#x27;},
-    {name: &#x27;Romania&#x27;, code: &#x27;RO&#x27;},
-    {name: &#x27;Russian Federation&#x27;, code: &#x27;RU&#x27;},
-    {name: &#x27;Rwanda&#x27;, code: &#x27;RW&#x27;},
-    {name: &#x27;Saint Helena&#x27;, code: &#x27;SH&#x27;},
-    {name: &#x27;Saint Kitts and Nevis&#x27;, code: &#x27;KN&#x27;},
-    {name: &#x27;Saint Lucia&#x27;, code: &#x27;LC&#x27;},
-    {name: &#x27;Saint Pierre and Miquelon&#x27;, code: &#x27;PM&#x27;},
-    {name: &#x27;Saint Vincent and the Grenadines&#x27;, code: &#x27;VC&#x27;},
-    {name: &#x27;Samoa&#x27;, code: &#x27;WS&#x27;},
-    {name: &#x27;San Marino&#x27;, code: &#x27;SM&#x27;},
-    {name: &#x27;Sao Tome and Principe&#x27;, code: &#x27;ST&#x27;},
-    {name: &#x27;Saudi Arabia&#x27;, code: &#x27;SA&#x27;},
-    {name: &#x27;Senegal&#x27;, code: &#x27;SN&#x27;},
-    {name: &#x27;Serbia and Montenegro&#x27;, code: &#x27;CS&#x27;},
-    {name: &#x27;Seychelles&#x27;, code: &#x27;SC&#x27;},
-    {name: &#x27;Sierra Leone&#x27;, code: &#x27;SL&#x27;},
-    {name: &#x27;Singapore&#x27;, code: &#x27;SG&#x27;},
-    {name: &#x27;Slovakia&#x27;, code: &#x27;SK&#x27;},
-    {name: &#x27;Slovenia&#x27;, code: &#x27;SI&#x27;},
-    {name: &#x27;Solomon Islands&#x27;, code: &#x27;SB&#x27;},
-    {name: &#x27;Somalia&#x27;, code: &#x27;SO&#x27;},
-    {name: &#x27;South Africa&#x27;, code: &#x27;ZA&#x27;},
-    {name: &#x27;South Georgia and the South Sandwich Islands&#x27;, code: &#x27;GS&#x27;},
-    {name: &#x27;Spain&#x27;, code: &#x27;ES&#x27;},
-    {name: &#x27;Sri Lanka&#x27;, code: &#x27;LK&#x27;},
-    {name: &#x27;Sudan&#x27;, code: &#x27;SD&#x27;},
-    {name: &#x27;Suriname&#x27;, code: &#x27;SR&#x27;},
-    {name: &#x27;Svalbard and Jan Mayen&#x27;, code: &#x27;SJ&#x27;},
-    {name: &#x27;Swaziland&#x27;, code: &#x27;SZ&#x27;},
-    {name: &#x27;Sweden&#x27;, code: &#x27;SE&#x27;},
-    {name: &#x27;Switzerland&#x27;, code: &#x27;CH&#x27;},
-    {name: &#x27;Syrian Arab Republic&#x27;, code: &#x27;SY&#x27;},
-    {name: &#x27;Taiwan, Province of China&#x27;, code: &#x27;TW&#x27;},
-    {name: &#x27;Tajikistan&#x27;, code: &#x27;TJ&#x27;},
-    {name: &#x27;Tanzania, United Republic of&#x27;, code: &#x27;TZ&#x27;},
-    {name: &#x27;Thailand&#x27;, code: &#x27;TH&#x27;},
-    {name: &#x27;Timor-Leste&#x27;, code: &#x27;TL&#x27;},
-    {name: &#x27;Togo&#x27;, code: &#x27;TG&#x27;},
-    {name: &#x27;Tokelau&#x27;, code: &#x27;TK&#x27;},
-    {name: &#x27;Tonga&#x27;, code: &#x27;TO&#x27;},
-    {name: &#x27;Trinidad and Tobago&#x27;, code: &#x27;TT&#x27;},
-    {name: &#x27;Tunisia&#x27;, code: &#x27;TN&#x27;},
-    {name: &#x27;Turkey&#x27;, code: &#x27;TR&#x27;},
-    {name: &#x27;Turkmenistan&#x27;, code: &#x27;TM&#x27;},
-    {name: &#x27;Turks and Caicos Islands&#x27;, code: &#x27;TC&#x27;},
-    {name: &#x27;Tuvalu&#x27;, code: &#x27;TV&#x27;},
-    {name: &#x27;Uganda&#x27;, code: &#x27;UG&#x27;},
-    {name: &#x27;Ukraine&#x27;, code: &#x27;UA&#x27;},
-    {name: &#x27;United Arab Emirates&#x27;, code: &#x27;AE&#x27;},
-    {name: &#x27;United Kingdom&#x27;, code: &#x27;GB&#x27;},
-    {name: &#x27;United States&#x27;, code: &#x27;US&#x27;},
-    {name: &#x27;United States Minor Outlying Islands&#x27;, code: &#x27;UM&#x27;},
-    {name: &#x27;Uruguay&#x27;, code: &#x27;UY&#x27;},
-    {name: &#x27;Uzbekistan&#x27;, code: &#x27;UZ&#x27;},
-    {name: &#x27;Vanuatu&#x27;, code: &#x27;VU&#x27;},
-    {name: &#x27;Venezuela&#x27;, code: &#x27;VE&#x27;},
-    {name: &#x27;Vietnam&#x27;, code: &#x27;VN&#x27;},
-    {name: &#x27;Virgin Islands, British&#x27;, code: &#x27;VG&#x27;},
-    {name: &#x27;Virgin Islands, U.S.&#x27;, code: &#x27;VI&#x27;},
-    {name: &#x27;Wallis and Futuna&#x27;, code: &#x27;WF&#x27;},
-    {name: &#x27;Western Sahara&#x27;, code: &#x27;EH&#x27;},
-    {name: &#x27;Yemen&#x27;, code: &#x27;YE&#x27;},
-    {name: &#x27;Zambia&#x27;, code: &#x27;ZM&#x27;},
-    {name: &#x27;Zimbabwe&#x27;, code: &#x27;ZW&#x27;}
+ 
+  $scope.country = {};
+  $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
+    {name: 'Afghanistan', code: 'AF'},
+    {name: '&Aring;land Islands', code: 'AX'},
+    {name: 'Albania', code: 'AL'},
+    {name: 'Algeria', code: 'DZ'},
+    {name: 'American Samoa', code: 'AS'},
+    {name: 'Andorra', code: 'AD'},
+    {name: 'Angola', code: 'AO'},
+    {name: 'Anguilla', code: 'AI'},
+    {name: 'Antarctica', code: 'AQ'},
+    {name: 'Antigua and Barbuda', code: 'AG'},
+    {name: 'Argentina', code: 'AR'},
+    {name: 'Armenia', code: 'AM'},
+    {name: 'Aruba', code: 'AW'},
+    {name: 'Australia', code: 'AU'},
+    {name: 'Austria', code: 'AT'},
+    {name: 'Azerbaijan', code: 'AZ'},
+    {name: 'Bahamas', code: 'BS'},
+    {name: 'Bahrain', code: 'BH'},
+    {name: 'Bangladesh', code: 'BD'},
+    {name: 'Barbados', code: 'BB'},
+    {name: 'Belarus', code: 'BY'},
+    {name: 'Belgium', code: 'BE'},
+    {name: 'Belize', code: 'BZ'},
+    {name: 'Benin', code: 'BJ'},
+    {name: 'Bermuda', code: 'BM'},
+    {name: 'Bhutan', code: 'BT'},
+    {name: 'Bolivia', code: 'BO'},
+    {name: 'Bosnia and Herzegovina', code: 'BA'},
+    {name: 'Botswana', code: 'BW'},
+    {name: 'Bouvet Island', code: 'BV'},
+    {name: 'Brazil', code: 'BR'},
+    {name: 'British Indian Ocean Territory', code: 'IO'},
+    {name: 'Brunei Darussalam', code: 'BN'},
+    {name: 'Bulgaria', code: 'BG'},
+    {name: 'Burkina Faso', code: 'BF'},
+    {name: 'Burundi', code: 'BI'},
+    {name: 'Cambodia', code: 'KH'},
+    {name: 'Cameroon', code: 'CM'},
+    {name: 'Canada', code: 'CA'},
+    {name: 'Cape Verde', code: 'CV'},
+    {name: 'Cayman Islands', code: 'KY'},
+    {name: 'Central African Republic', code: 'CF'},
+    {name: 'Chad', code: 'TD'},
+    {name: 'Chile', code: 'CL'},
+    {name: 'China', code: 'CN'},
+    {name: 'Christmas Island', code: 'CX'},
+    {name: 'Cocos (Keeling) Islands', code: 'CC'},
+    {name: 'Colombia', code: 'CO'},
+    {name: 'Comoros', code: 'KM'},
+    {name: 'Congo', code: 'CG'},
+    {name: 'Congo, The Democratic Republic of the', code: 'CD'},
+    {name: 'Cook Islands', code: 'CK'},
+    {name: 'Costa Rica', code: 'CR'},
+    {name: 'Cote D\'Ivoire', code: 'CI'},
+    {name: 'Croatia', code: 'HR'},
+    {name: 'Cuba', code: 'CU'},
+    {name: 'Cyprus', code: 'CY'},
+    {name: 'Czech Republic', code: 'CZ'},
+    {name: 'Denmark', code: 'DK'},
+    {name: 'Djibouti', code: 'DJ'},
+    {name: 'Dominica', code: 'DM'},
+    {name: 'Dominican Republic', code: 'DO'},
+    {name: 'Ecuador', code: 'EC'},
+    {name: 'Egypt', code: 'EG'},
+    {name: 'El Salvador', code: 'SV'},
+    {name: 'Equatorial Guinea', code: 'GQ'},
+    {name: 'Eritrea', code: 'ER'},
+    {name: 'Estonia', code: 'EE'},
+    {name: 'Ethiopia', code: 'ET'},
+    {name: 'Falkland Islands (Malvinas)', code: 'FK'},
+    {name: 'Faroe Islands', code: 'FO'},
+    {name: 'Fiji', code: 'FJ'},
+    {name: 'Finland', code: 'FI'},
+    {name: 'France', code: 'FR'},
+    {name: 'French Guiana', code: 'GF'},
+    {name: 'French Polynesia', code: 'PF'},
+    {name: 'French Southern Territories', code: 'TF'},
+    {name: 'Gabon', code: 'GA'},
+    {name: 'Gambia', code: 'GM'},
+    {name: 'Georgia', code: 'GE'},
+    {name: 'Germany', code: 'DE'},
+    {name: 'Ghana', code: 'GH'},
+    {name: 'Gibraltar', code: 'GI'},
+    {name: 'Greece', code: 'GR'},
+    {name: 'Greenland', code: 'GL'},
+    {name: 'Grenada', code: 'GD'},
+    {name: 'Guadeloupe', code: 'GP'},
+    {name: 'Guam', code: 'GU'},
+    {name: 'Guatemala', code: 'GT'},
+    {name: 'Guernsey', code: 'GG'},
+    {name: 'Guinea', code: 'GN'},
+    {name: 'Guinea-Bissau', code: 'GW'},
+    {name: 'Guyana', code: 'GY'},
+    {name: 'Haiti', code: 'HT'},
+    {name: 'Heard Island and Mcdonald Islands', code: 'HM'},
+    {name: 'Holy See (Vatican City State)', code: 'VA'},
+    {name: 'Honduras', code: 'HN'},
+    {name: 'Hong Kong', code: 'HK'},
+    {name: 'Hungary', code: 'HU'},
+    {name: 'Iceland', code: 'IS'},
+    {name: 'India', code: 'IN'},
+    {name: 'Indonesia', code: 'ID'},
+    {name: 'Iran, Islamic Republic Of', code: 'IR'},
+    {name: 'Iraq', code: 'IQ'},
+    {name: 'Ireland', code: 'IE'},
+    {name: 'Isle of Man', code: 'IM'},
+    {name: 'Israel', code: 'IL'},
+    {name: 'Italy', code: 'IT'},
+    {name: 'Jamaica', code: 'JM'},
+    {name: 'Japan', code: 'JP'},
+    {name: 'Jersey', code: 'JE'},
+    {name: 'Jordan', code: 'JO'},
+    {name: 'Kazakhstan', code: 'KZ'},
+    {name: 'Kenya', code: 'KE'},
+    {name: 'Kiribati', code: 'KI'},
+    {name: 'Korea, Democratic People\'s Republic of', code: 'KP'},
+    {name: 'Korea, Republic of', code: 'KR'},
+    {name: 'Kuwait', code: 'KW'},
+    {name: 'Kyrgyzstan', code: 'KG'},
+    {name: 'Lao People\'s Democratic Republic', code: 'LA'},
+    {name: 'Latvia', code: 'LV'},
+    {name: 'Lebanon', code: 'LB'},
+    {name: 'Lesotho', code: 'LS'},
+    {name: 'Liberia', code: 'LR'},
+    {name: 'Libyan Arab Jamahiriya', code: 'LY'},
+    {name: 'Liechtenstein', code: 'LI'},
+    {name: 'Lithuania', code: 'LT'},
+    {name: 'Luxembourg', code: 'LU'},
+    {name: 'Macao', code: 'MO'},
+    {name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK'},
+    {name: 'Madagascar', code: 'MG'},
+    {name: 'Malawi', code: 'MW'},
+    {name: 'Malaysia', code: 'MY'},
+    {name: 'Maldives', code: 'MV'},
+    {name: 'Mali', code: 'ML'},
+    {name: 'Malta', code: 'MT'},
+    {name: 'Marshall Islands', code: 'MH'},
+    {name: 'Martinique', code: 'MQ'},
+    {name: 'Mauritania', code: 'MR'},
+    {name: 'Mauritius', code: 'MU'},
+    {name: 'Mayotte', code: 'YT'},
+    {name: 'Mexico', code: 'MX'},
+    {name: 'Micronesia, Federated States of', code: 'FM'},
+    {name: 'Moldova, Republic of', code: 'MD'},
+    {name: 'Monaco', code: 'MC'},
+    {name: 'Mongolia', code: 'MN'},
+    {name: 'Montserrat', code: 'MS'},
+    {name: 'Morocco', code: 'MA'},
+    {name: 'Mozambique', code: 'MZ'},
+    {name: 'Myanmar', code: 'MM'},
+    {name: 'Namibia', code: 'NA'},
+    {name: 'Nauru', code: 'NR'},
+    {name: 'Nepal', code: 'NP'},
+    {name: 'Netherlands', code: 'NL'},
+    {name: 'Netherlands Antilles', code: 'AN'},
+    {name: 'New Caledonia', code: 'NC'},
+    {name: 'New Zealand', code: 'NZ'},
+    {name: 'Nicaragua', code: 'NI'},
+    {name: 'Niger', code: 'NE'},
+    {name: 'Nigeria', code: 'NG'},
+    {name: 'Niue', code: 'NU'},
+    {name: 'Norfolk Island', code: 'NF'},
+    {name: 'Northern Mariana Islands', code: 'MP'},
+    {name: 'Norway', code: 'NO'},
+    {name: 'Oman', code: 'OM'},
+    {name: 'Pakistan', code: 'PK'},
+    {name: 'Palau', code: 'PW'},
+    {name: 'Palestinian Territory, Occupied', code: 'PS'},
+    {name: 'Panama', code: 'PA'},
+    {name: 'Papua New Guinea', code: 'PG'},
+    {name: 'Paraguay', code: 'PY'},
+    {name: 'Peru', code: 'PE'},
+    {name: 'Philippines', code: 'PH'},
+    {name: 'Pitcairn', code: 'PN'},
+    {name: 'Poland', code: 'PL'},
+    {name: 'Portugal', code: 'PT'},
+    {name: 'Puerto Rico', code: 'PR'},
+    {name: 'Qatar', code: 'QA'},
+    {name: 'Reunion', code: 'RE'},
+    {name: 'Romania', code: 'RO'},
+    {name: 'Russian Federation', code: 'RU'},
+    {name: 'Rwanda', code: 'RW'},
+    {name: 'Saint Helena', code: 'SH'},
+    {name: 'Saint Kitts and Nevis', code: 'KN'},
+    {name: 'Saint Lucia', code: 'LC'},
+    {name: 'Saint Pierre and Miquelon', code: 'PM'},
+    {name: 'Saint Vincent and the Grenadines', code: 'VC'},
+    {name: 'Samoa', code: 'WS'},
+    {name: 'San Marino', code: 'SM'},
+    {name: 'Sao Tome and Principe', code: 'ST'},
+    {name: 'Saudi Arabia', code: 'SA'},
+    {name: 'Senegal', code: 'SN'},
+    {name: 'Serbia and Montenegro', code: 'CS'},
+    {name: 'Seychelles', code: 'SC'},
+    {name: 'Sierra Leone', code: 'SL'},
+    {name: 'Singapore', code: 'SG'},
+    {name: 'Slovakia', code: 'SK'},
+    {name: 'Slovenia', code: 'SI'},
+    {name: 'Solomon Islands', code: 'SB'},
+    {name: 'Somalia', code: 'SO'},
+    {name: 'South Africa', code: 'ZA'},
+    {name: 'South Georgia and the South Sandwich Islands', code: 'GS'},
+    {name: 'Spain', code: 'ES'},
+    {name: 'Sri Lanka', code: 'LK'},
+    {name: 'Sudan', code: 'SD'},
+    {name: 'Suriname', code: 'SR'},
+    {name: 'Svalbard and Jan Mayen', code: 'SJ'},
+    {name: 'Swaziland', code: 'SZ'},
+    {name: 'Sweden', code: 'SE'},
+    {name: 'Switzerland', code: 'CH'},
+    {name: 'Syrian Arab Republic', code: 'SY'},
+    {name: 'Taiwan, Province of China', code: 'TW'},
+    {name: 'Tajikistan', code: 'TJ'},
+    {name: 'Tanzania, United Republic of', code: 'TZ'},
+    {name: 'Thailand', code: 'TH'},
+    {name: 'Timor-Leste', code: 'TL'},
+    {name: 'Togo', code: 'TG'},
+    {name: 'Tokelau', code: 'TK'},
+    {name: 'Tonga', code: 'TO'},
+    {name: 'Trinidad and Tobago', code: 'TT'},
+    {name: 'Tunisia', code: 'TN'},
+    {name: 'Turkey', code: 'TR'},
+    {name: 'Turkmenistan', code: 'TM'},
+    {name: 'Turks and Caicos Islands', code: 'TC'},
+    {name: 'Tuvalu', code: 'TV'},
+    {name: 'Uganda', code: 'UG'},
+    {name: 'Ukraine', code: 'UA'},
+    {name: 'United Arab Emirates', code: 'AE'},
+    {name: 'United Kingdom', code: 'GB'},
+    {name: 'United States', code: 'US'},
+    {name: 'United States Minor Outlying Islands', code: 'UM'},
+    {name: 'Uruguay', code: 'UY'},
+    {name: 'Uzbekistan', code: 'UZ'},
+    {name: 'Vanuatu', code: 'VU'},
+    {name: 'Venezuela', code: 'VE'},
+    {name: 'Vietnam', code: 'VN'},
+    {name: 'Virgin Islands, British', code: 'VG'},
+    {name: 'Virgin Islands, U.S.', code: 'VI'},
+    {name: 'Wallis and Futuna', code: 'WF'},
+    {name: 'Western Sahara', code: 'EH'},
+    {name: 'Yemen', code: 'YE'},
+    {name: 'Zambia', code: 'ZM'},
+    {name: 'Zimbabwe', code: 'ZW'}
   ];
-});</code></pre>
+  
+   $scope.selectedIcon = '';
+  $scope.selectedIcons = ['Globe', 'Heart'];
+  $scope.icons = [
+    {value: 'Gear', label: '&lt;i class=&quot;glyphicon glyphicon-cog&quot;&gt;&lt;/i&gt; Gear'},
+    {value: 'Globe', label: '&lt;i class=&quot;glyphicon glyphicon-globe&quot;&gt;&lt;/i&gt; Globe'},
+    {value: 'Heart', label: '&lt;i class=&quot;glyphicon glyphicon-heart&quot;&gt;&lt;/i&gt; Heart'},
+    {value: 'Camera', label: '&lt;i class=&quot;glyphicon glyphicon-camera&quot;&gt;&lt;/i&gt; Camera'}
+  ];
+
+});
+</code></pre>
           </div> <!-- end tab-pane -->
     	</div> <!-- end tab-content -->
       </div> <!-- end panel-body -->

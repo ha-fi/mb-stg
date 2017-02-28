@@ -8,7 +8,8 @@
     'ngSanitize',
     'ngAnimate',
     'ngTable',
-    'ngRoute'
+    'ngRoute',
+    'mgcrea.ngStrap'
   ])
   .value('AUTO_START_TOUR', {
     value: false
