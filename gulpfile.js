@@ -43,7 +43,9 @@ var Tasks = {
 
   MineralBayCleanSvgIcons:     'cleansvgicons',
   MineralBaySvgIcons:          'svgicons',
-  Fonts:					  'fonts',
+  Fonts:					   'fonts',
+  
+  Languages:				   'languages',
 
 
   CreateDocumentationHTML:    'Create Documentation HTML Files',
@@ -326,7 +328,7 @@ gulp.task(Tasks.MineralBayCleanSvgIcons, function () {
 /*
 * Common build task run by all tasks
 */
-gulp.task(Tasks.MineralBay, [Tasks.MineralBayStyles, Tasks.MineralBaySvgIcons, Tasks.Fonts, Tasks.MineralBayJavascript, Tasks.CreateDocumentationHTML, Tasks.AngularApiDocumentation], function() {
+gulp.task(Tasks.MineralBay, [Tasks.MineralBayStyles, Tasks.MineralBaySvgIcons, Tasks.Fonts, Tasks.Languages, Tasks.MineralBayJavascript, Tasks.CreateDocumentationHTML, Tasks.AngularApiDocumentation], function() {
   var IMAGES_DIR   = 'docs/images',
   FONTS_DOCS_DIR = 'docs/css/fonts',
   FONTS_DIST_DIR = 'dist/css/fonts';
@@ -361,6 +363,12 @@ gulp.task(Tasks.Fonts, function(){
 		    .pipe(imagemin())
 		    .pipe(gulp.dest('docs/fonts'))
 		    .pipe(gulp.dest('dist/fonts'));
+});
+
+gulp.task(Tasks.Languages, function(){
+	return gulp.src('bower_components/bootstrap-languages/languages.png')
+		    .pipe(imagemin())
+		    .pipe(gulp.dest('docs/css'))
 });
 
 gulp.task('bower', function() {

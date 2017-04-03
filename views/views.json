@@ -236,5 +236,27 @@
 			},
 			{ "source": "app/views/angular-footer.html" }
 		]
+	},
+	"examples": {
+		"header": "Examples",
+		"sources": [
+			{ "source": "app/views/angular-header.html" },
+			{
+				"source": "views/examples/navbar.html",
+				"css_id": "#navbar",
+				"nav_header": "navbar"
+			},
+			{
+				"source": "views/examples/matching.html",
+				"css_id": "#matching",
+				"nav_header": "matching"
+			},
+			{
+				"source": "views/examples/sorting.html",
+				"css_id": "#sorting",
+				"nav_header": "sorting"
+			},
+			{ "source": "app/views/angular-footer.html" }
+		]
 	}
 }

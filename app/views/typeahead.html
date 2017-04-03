@@ -148,55 +148,55 @@ This directive can be used to quickly create elegant typeaheads with any form te
     <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
           </div>
           <div class="tab-pane fade" id="type-tab-1">
-             <pre><code data-language="html">&lt;script type=&quot;text/ng-template&quot; id=&quot;customTemplate.html&quot;&gt;
+             <pre><code data-language="html">&lt;script type&#61;&quot;text/ng-template&quot; id&#61;&quot;customTemplate.html&quot;&gt;
   &lt;a&gt;
-      &lt;img ng-src=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/&#123;&#123;match.model.flag&#125;&#125;&quot; width=&quot;16&quot;&gt;
-      &lt;span ng-bind-html=&quot;match.label | uibTypeaheadHighlight:query&quot;&gt;&lt;/span&gt;
+      &lt;img ng-src&#61;&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/&#123;&#123;match.model.flag&#125;&#125;&quot; width&#61;&quot;16&quot;&gt;
+      &lt;span ng-bind-html&#61;&quot;match.label | uibTypeaheadHighlight:query&quot;&gt;&lt;/span&gt;
   &lt;/a&gt;
 &lt;/script&gt;
 
-&lt;script type=&quot;text/ng-template&quot; id=&quot;customPopupTemplate.html&quot;&gt;
-  &lt;div class=&quot;custom-popup-wrapper&quot;
-     ng-style=&quot;{top: position().top+&#x27;px&#x27;, left: position().left+&#x27;px&#x27;}&quot;
-     style=&quot;display: block;&quot;
-     ng-show=&quot;isOpen() &amp;&amp; !moveInProgress&quot;
-     aria-hidden=&quot;&#123;&#123;!isOpen()&#125;&#125;&quot;&gt;
-    &lt;p class=&quot;message&quot;&gt;select location from drop down.&lt;/p&gt;
+&lt;script type&#61;&quot;text/ng-template&quot; id&#61;&quot;customPopupTemplate.html&quot;&gt;
+  &lt;div class&#61;&quot;custom-popup-wrapper&quot;
+     ng-style&#61;&quot;{top: position().top+&#x27;px&#x27;, left: position().left+&#x27;px&#x27;}&quot;
+     style&#61;&quot;display: block;&quot;
+     ng-show&#61;&quot;isOpen() &amp;&amp; !moveInProgress&quot;
+     aria-hidden&#61;&quot;&#123;&#123;!isOpen()&#125;&#125;&quot;&gt;
+    &lt;p class&#61;&quot;message&quot;&gt;select location from drop down.&lt;/p&gt;
 
-    &lt;ul class=&quot;dropdown-menu&quot; role=&quot;listbox&quot;&gt;
-      &lt;li class=&quot;uib-typeahead-match&quot; ng-repeat=&quot;match in matches track by $index&quot; ng-class=&quot;{active: isActive($index) }&quot;
-        ng-mouseenter=&quot;selectActive($index)&quot; ng-click=&quot;selectMatch($index)&quot; role=&quot;option&quot; id=&quot;&#123;&#123;::match.id&#125;&#125;&quot;&gt;
-        &lt;div uib-typeahead-match index=&quot;$index&quot; match=&quot;match&quot; query=&quot;query&quot; template-url=&quot;templateUrl&quot;&gt;&lt;/div&gt;
+    &lt;ul class&#61;&quot;dropdown-menu&quot; role&#61;&quot;listbox&quot;&gt;
+      &lt;li class&#61;&quot;uib-typeahead-match&quot; ng-repeat&#61;&quot;match in matches track by $index&quot; ng-class&#61;&quot;{active: isActive($index) }&quot;
+        ng-mouseenter&#61;&quot;selectActive($index)&quot; ng-click&#61;&quot;selectMatch($index)&quot; role&#61;&quot;option&quot; id&#61;&quot;&#123;&#123;::match.id&#125;&#125;&quot;&gt;
+        &lt;div uib-typeahead-match index&#61;&quot;$index&quot; match&#61;&quot;match&quot; query&#61;&quot;query&quot; template-url&#61;&quot;templateUrl&quot;&gt;&lt;/div&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/script&gt;
 
-&lt;div class=&#x27;container-fluid typeahead-demo&#x27; ng-controller=&quot;TypeaheadCtrl&quot;&gt;
+&lt;div class&#61;&#x27;container-fluid typeahead-demo&#x27; ng-controller&#61;&quot;TypeaheadCtrl&quot;&gt;
 
     &lt;h4&gt;Static arrays&lt;/h4&gt;
     &lt;pre&gt;Model: &#123;&#123;selected | json&#125;&#125;&lt;/pre&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;selected&quot; uib-typeahead=&quot;state for state in states | filter:$viewValue | limitTo:8&quot; class=&quot;form-control&quot;&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;selected&quot; uib-typeahead&#61;&quot;state for state in states | filter:$viewValue | limitTo:8&quot; class&#61;&quot;form-control&quot;&gt;
 
     &lt;h4&gt;Asynchronous results&lt;/h4&gt;
     &lt;pre&gt;Model: &#123;&#123;asyncSelected | json&#125;&#125;&lt;/pre&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;asyncSelected&quot; placeholder=&quot;Locations loaded via $http&quot; uib-typeahead=&quot;address for address in getLocation($viewValue)&quot; typeahead-loading=&quot;loadingLocations&quot; typeahead-no-results=&quot;noResults&quot; class=&quot;form-control&quot;&gt;
-    &lt;i ng-show=&quot;loadingLocations&quot; class=&quot;glyphicon glyphicon-refresh&quot;&gt;&lt;/i&gt;
-    &lt;div ng-show=&quot;noResults&quot;&gt;
-      &lt;i class=&quot;glyphicon glyphicon-remove&quot;&gt;&lt;/i&gt; No Results Found
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;asyncSelected&quot; placeholder&#61;&quot;Locations loaded via $http&quot; uib-typeahead&#61;&quot;address for address in getLocation($viewValue)&quot; typeahead-loading&#61;&quot;loadingLocations&quot; typeahead-no-results&#61;&quot;noResults&quot; class&#61;&quot;form-control&quot;&gt;
+    &lt;i ng-show&#61;&quot;loadingLocations&quot; class&#61;&quot;glyphicon glyphicon-refresh&quot;&gt;&lt;/i&gt;
+    &lt;div ng-show&#61;&quot;noResults&quot;&gt;
+      &lt;i class&#61;&quot;glyphicon glyphicon-remove&quot;&gt;&lt;/i&gt; No Results Found
     &lt;/div&gt;
 
     &lt;h4&gt;ngModelOptions support&lt;/h4&gt;
     &lt;pre&gt;Model: &#123;&#123;ngModelOptionsSelected | json&#125;&#125;&lt;/pre&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;ngModelOptionsSelected&quot; ng-model-options=&quot;modelOptions&quot; uib-typeahead=&quot;state for state in states | filter:$viewValue | limitTo:8&quot; class=&quot;form-control&quot;&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;ngModelOptionsSelected&quot; ng-model-options&#61;&quot;modelOptions&quot; uib-typeahead&#61;&quot;state for state in states | filter:$viewValue | limitTo:8&quot; class&#61;&quot;form-control&quot;&gt;
 
     &lt;h4&gt;Custom templates for results&lt;/h4&gt;
     &lt;pre&gt;Model: &#123;&#123;customSelected | json&#125;&#125;&lt;/pre&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;customSelected&quot; placeholder=&quot;Custom template&quot; uib-typeahead=&quot;state as state.name for state in statesWithFlags | filter:{name:$viewValue}&quot; typeahead-template-url=&quot;customTemplate.html&quot; class=&quot;form-control&quot; typeahead-show-hint=&quot;true&quot; typeahead-min-length=&quot;0&quot;&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;customSelected&quot; placeholder&#61;&quot;Custom template&quot; uib-typeahead&#61;&quot;state as state.name for state in statesWithFlags | filter:{name:$viewValue}&quot; typeahead-template-url&#61;&quot;customTemplate.html&quot; class&#61;&quot;form-control&quot; typeahead-show-hint&#61;&quot;true&quot; typeahead-min-length&#61;&quot;0&quot;&gt;
 
     &lt;h4&gt;Custom popup templates for typeahead&#x27;s dropdown&lt;/h4&gt;
     &lt;pre&gt;Model: &#123;&#123;customPopupSelected | json&#125;&#125;&lt;/pre&gt;
-    &lt;input type=&quot;text&quot; ng-model=&quot;customPopupSelected&quot; placeholder=&quot;Custom popup template&quot; uib-typeahead=&quot;state as state.name for state in statesWithFlags | filter:{name:$viewValue}&quot; typeahead-popup-template-url=&quot;customPopupTemplate.html&quot; class=&quot;form-control&quot;&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;customPopupSelected&quot; placeholder&#61;&quot;Custom popup template&quot; uib-typeahead&#61;&quot;state as state.name for state in statesWithFlags | filter:{name:$viewValue}&quot; typeahead-popup-template-url&#61;&quot;customPopupTemplate.html&quot; class&#61;&quot;form-control&quot;&gt;
 &lt;/div&gt;</code></pre>
           </div> <!-- end tab-pane -->
           <div class="tab-pane fade" id="type-tab-2">
