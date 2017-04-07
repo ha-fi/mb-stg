@@ -174,6 +174,9 @@
 
   > img {
     display: block;
+    display: inline-block;
+  	margin-top: -4px;
+  	max-width: 110px;
   }
 
   @media (min-width: @grid-float-breakpoint) {
@@ -388,6 +391,7 @@
 }
 
 
+
 // Alternate navbars
 // --------------------------------------------------
 
@@ -413,10 +417,13 @@
     > li > a {
       color: @navbar-default-link-color;
 
-      &:hover,
+      &:hover {
+        color: @navbar-default-link-hover-color;
+        background-color: @navbar-default-link-active-bg;
+      }
       &:focus {
         color: @navbar-default-link-hover-color;
-        background-color: @navbar-default-link-hover-bg;
+        background-color: @navbar-default-link-active-bg;
       }
     }
     > .active > a {

@@ -16,6 +16,30 @@
   color: @gray-lightest;
 }
 
+// Making background colors gradient 
+// --------------------------------------------------
+.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+    .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
+ 
+    @prefix  : extract(@prefixes, @index);
+    @dir-old : 90 - (@dir);
+ 
+    background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+  & when ( @index = length(@prefixes) ) {
+        background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+    }
+}
+
+.radial( @direction: 50% 50%, @origin: #fff, @end: #000 ) {
+    background-color: #e9b90f;
+    background-image: -webkit-gradient(radial, @direction,0,@direction,200, from(@end), to(@origin));
+    background-image: -webkit-radial-gradient(@direction, @origin, @end);
+    background-image: -moz-radial-gradient(@direction, @origin, @end);
+    background-image: -o-radial-gradient(@direction, @origin, @end);
+    background-image: -ms-radial-gradient(@direction, @origin, @end);
+    background-image: radial-gradient(@direction, @origin, @end);
+}
+
 
 // Borders
 // -------------------------
@@ -25,6 +49,8 @@
   border-style: @style;
   border-width: @width;
 }
+
+
 
 
 // Buttons

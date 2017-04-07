@@ -32,7 +32,7 @@
   </div>
 
   <div class="pl-example" data-example-id="default-navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Link</a></li>
@@ -144,12 +144,13 @@
   <h2 id="navbar-brand-image">Brand image</h2>
   <p>Replace the navbar brand with your own image by swapping the text for an <code>&lt;img&gt;</code>. Since the <code>.navbar-brand</code> has its own padding and height, you may need to override some CSS depending on your image.</p>
   <div class="pl-example" data-example-id="navbar-with-image-brand">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001); height: 80px;">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" width="20" height="20" src="images/mineralbay_logo.png">
-          </a>
+          <a href="#" class="navbar-brand" >
+  		<img class="navbar-brand-logo" src="images/logo_whiteback.png" onmouseover="this.src='images/logo_hover_whiteback.png'" onmouseout="this.src='images/logo_whiteback.png'">
+		</a>
+		</br>
         </div>
       </div>
     </nav>
@@ -169,7 +170,7 @@
   <p>Place form content within <code>.navbar-form</code> for proper vertical alignment and collapsed behavior in narrow viewports. Use the alignment options to decide where it resides within the navbar content.</p>
   <p>As a heads up, <code>.navbar-form</code> shares much of its code with <code>.form-inline</code> via mixin. <strong class="text-danger">Some form controls, like input groups, may require fixed widths to be show up properly within a navbar.</strong></p>
   <div class="pl-example" data-example-id="navbar-form">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -207,7 +208,7 @@
   <h2 id="navbar-buttons">Buttons</h2>
   <p>Add the <code>.navbar-btn</code> class to <code>&lt;button&gt;</code> elements not residing in a <code>&lt;form&gt;</code> to vertically center them in the navbar.</p>
   <div class="pl-example" data-example-id="navbar-button">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
@@ -234,7 +235,7 @@
   <h2 id="navbar-text">Text</h2>
   <p>Wrap strings of text in an element with <code>.navbar-text</code>, usually on a <code>&lt;p&gt;</code> tag for proper leading and color.</p>
   <div class="pl-example" data-example-id="navbar-text">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-4">
@@ -257,7 +258,7 @@
   <h2 id="navbar-links">Non-nav links</h2>
   <p>For folks using standard links that are not within the regular navbar navigation component, use the <code>.navbar-link</code> class to add the proper colors for the default and inverse navbar options.</p>
   <div class="pl-example" data-example-id="navbar-link">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-5">
@@ -290,7 +291,7 @@
   <h2 id="navbar-fixed-top">Fixed to top</h2>
   <p>Add <code>.navbar-fixed-top</code> and include a <code>.container</code> or <code>.container-fluid</code> to center and pad navbar content.</p>
   <div class="pl-example bs-navbar-top-example" data-example-id="navbar-fixed-to-top">
-    <nav class="navbar navbar-default navbar-fixed-topX">
+    <nav class="navbar navbar-default navbar-fixed-topX" style="background: radial-gradient(#7f0001, #b20001);">
       <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
       <div class="container-fluid">
         <div class="navbar-header">
@@ -326,7 +327,7 @@
   <h2 id="navbar-fixed-bottom">Fixed to bottom</h2>
   <p>Add <code>.navbar-fixed-bottom</code> and include a <code>.container</code> or <code>.container-fluid</code> to center and pad navbar content.</p>
   <div class="pl-example bs-navbar-bottom-example" data-example-id="navbar-fixed-to-bottom">
-    <nav class="navbar navbar-default navbar-fixed-bottomX">
+    <nav class="navbar navbar-default navbar-fixed-bottomX" style="background: radial-gradient(#7f0001, #b20001);">
       <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
       <div class="container-fluid">
         <div class="navbar-header">
@@ -367,7 +368,7 @@
   <p>Create a full-width navbar that scrolls away with the page by adding <code>.navbar-static-top</code> and include a <code>.container</code> or <code>.container-fluid</code> to center and pad navbar content.</p>
   <p>Unlike the <code>.navbar-fixed-*</code> classes, you do not need to change any padding on the <code>body</code>.</p>
   <div class="pl-example bs-navbar-top-example" data-example-id="navbar-static-top">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top" style="background: radial-gradient(#7f0001, #b20001);">
       <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
       <div class="container-fluid">
         <div class="navbar-header">
@@ -431,7 +432,7 @@
 
   <h2 id="navbar-inverted">Static menu elements with gylphicons</h2>
 <div class="pl-example" data-example-id="inverted-navbar">
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-default navbar-static-top" style="background: radial-gradient(#7f0001, #b20001);">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Brand</a>
