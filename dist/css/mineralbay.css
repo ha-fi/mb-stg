@@ -1344,7 +1344,7 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid #eeeeee;
 }
 ul,
 ol {
@@ -1412,7 +1412,7 @@ blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   font-size: 17.5px;
-  border-left: 5px solid #ececec;
+  border-left: 5px solid #eeeeee;
 }
 blockquote p:last-child,
 blockquote ul:last-child,
@@ -1436,7 +1436,7 @@ blockquote .small:before {
 blockquote.pull-right {
   padding-right: 15px;
   padding-left: 0;
-  border-right: 5px solid #ececec;
+  border-right: 5px solid #eeeeee;
   border-left: 0;
   text-align: right;
 }
@@ -2512,7 +2512,7 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #ececec;
+  background-color: #eeeeee;
   opacity: 1;
 }
 .form-control[disabled],
@@ -2827,7 +2827,7 @@ select[multiple].form-group-lg .form-control {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #848484;
+  color: #8c8c8c;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4025,7 +4025,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 1;
   color: #696969;
   text-align: center;
-  background-color: #ececec;
+  background-color: #eeeeee;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -4110,7 +4110,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #ececec;
+  background-color: #eeeeee;
 }
 .nav > li.disabled > a {
   color: #cccccc;
@@ -4125,7 +4125,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #ececec;
+  background-color: #eeeeee;
   border-color: #b20001;
 }
 .nav .nav-divider {
@@ -4844,7 +4844,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   color: #660001;
-  background-color: #ececec;
+  background-color: #eeeeee;
   border-color: #ddd;
 }
 .pagination > .active > a,
@@ -4920,7 +4920,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #ececec;
+  background-color: #eeeeee;
 }
 .pager .next > a,
 .pager .next > span {
@@ -5076,7 +5076,7 @@ a.thumbnail.active {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #444444;
+  color: #4c4c4c;
 }
 .alert {
   padding: 15px;
@@ -5295,7 +5295,7 @@ a.list-group-item:focus {
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
 .list-group-item.disabled:focus {
-  background-color: #ececec;
+  background-color: #eeeeee;
   color: #cccccc;
   cursor: not-allowed;
 }
@@ -7782,7 +7782,7 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #444444;
+  color: #4c4c4c;
   background-color: #fafafa;
 }
 input,
@@ -7845,7 +7845,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #ececec;
+  border-top: 1px solid #eeeeee;
 }
 .sr-only {
   position: absolute;
@@ -7978,7 +7978,7 @@ hr {
 }
 .datepicker table tr td.day:hover,
 .datepicker table tr td.day.focused {
-  background: #ececec;
+  background: #eeeeee;
   cursor: pointer;
 }
 .datepicker table tr td.old,
@@ -8253,7 +8253,7 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .datepicker table tr td.range:hover,
 .datepicker table tr td.range.disabled,
 .datepicker table tr td.range.disabled:hover {
-  background: #ececec;
+  background: #eeeeee;
   border-radius: 0;
 }
 .datepicker table tr td.range.today,
@@ -8261,11 +8261,11 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .datepicker table tr td.range.today.disabled,
 .datepicker table tr td.range.today.disabled:hover {
   color: #000;
-  background-color: #f6c976;
-  border-color: #efa317;
-  background-image: linear-gradient(to bottom, #f6c976 0%, #f3bb55 100%);
+  background-color: #f7ca77;
+  border-color: #f1a417;
+  background-image: linear-gradient(to bottom, #f7ca77 0%, #f4bc55 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6c976', endColorstr='#fff3bb55', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff7ca77', endColorstr='#fff4bc55', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   border-radius: 0;
 }
@@ -8294,8 +8294,8 @@ fieldset[disabled] .datepicker table tr td.today.disabled:hover.active {
 .open > .dropdown-toggle.datepicker table tr td.range.today.disabled,
 .open > .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
   color: #000;
-  background-color: #f2b646;
-  border-color: #bb7e0d;
+  background-color: #f4b747;
+  border-color: #be7f0c;
 }
 .datepicker table tr td.range.today:active,
 .datepicker table tr td.range.today:hover:active,
@@ -8383,14 +8383,14 @@ fieldset[disabled] .datepicker table tr td.range.today.active,
 fieldset[disabled] .datepicker table tr td.range.today:hover.active,
 fieldset[disabled] .datepicker table tr td.range.today.disabled.active,
 fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
-  background-color: #f6c976;
-  border-color: #efa317;
+  background-color: #f7ca77;
+  border-color: #f1a417;
 }
 .datepicker table tr td.range.today .badge,
 .datepicker table tr td.range.today:hover .badge,
 .datepicker table tr td.range.today.disabled .badge,
 .datepicker table tr td.range.today.disabled:hover .badge {
-  color: #f6c976;
+  color: #f7ca77;
   background-color: #000;
 }
 .datepicker table tr td.range.today:hover,
@@ -8414,11 +8414,11 @@ fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled,
 .open .dropdown-toggle.datepicker table tr td.range.today.disabled:hover {
   color: #000;
-  background-color: #f2b646;
-  border-color: #efa317;
-  background-image: linear-gradient(to bottom, #f4c163 0%, #f1ae33 100%);
+  background-color: #f4b747;
+  border-color: #f1a417;
+  background-image: linear-gradient(to bottom, #f5c264 0%, #f2af34 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff4c163', endColorstr='#fff1ae33', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5c264', endColorstr='#fff2af34', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .datepicker table tr td.range.today:active,
@@ -8495,8 +8495,8 @@ fieldset[disabled] .datepicker table tr td.range.today.active,
 fieldset[disabled] .datepicker table tr td.range.today:hover.active,
 fieldset[disabled] .datepicker table tr td.range.today.disabled.active,
 fieldset[disabled] .datepicker table tr td.range.today.disabled:hover.active {
-  background-color: #f6c976;
-  border-color: #efa317;
+  background-color: #f7ca77;
+  border-color: #f1a417;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .datepicker table tr td.range.today .badge-outline,
@@ -9028,7 +9028,7 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
   border-radius: 4px;
 }
 .datepicker table tr td span:hover {
-  background: #ececec;
+  background: #eeeeee;
 }
 .datepicker table tr td span.disabled,
 .datepicker table tr td span.disabled:hover {
@@ -9304,7 +9304,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 }
 .datepicker thead tr:first-child th:hover,
 .datepicker tfoot tr th:hover {
-  background: #ececec;
+  background: #eeeeee;
 }
 .datepicker .cw {
   font-size: 10px;
@@ -9337,7 +9337,7 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   vertical-align: middle;
-  background-color: #ececec;
+  background-color: #eeeeee;
   border: solid #ccc;
   border-width: 1px 0;
   margin-left: -5px;
@@ -9956,11 +9956,11 @@ fieldset[disabled] .btn-highlight.active {
 }
 .btn-desaturated {
   color: #696969;
-  background-color: #ececec;
+  background-color: #eeeeee;
   border-color: #999999;
-  background-image: linear-gradient(to bottom, #ececec 0%, #dadada 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 0%, #dcdcdc 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffececec', endColorstr='#ffdadada', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdcdcdc', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-desaturated:hover,
@@ -9970,7 +9970,7 @@ fieldset[disabled] .btn-highlight.active {
 .btn-desaturated.active,
 .open > .dropdown-toggle.btn-desaturated {
   color: #696969;
-  background-color: #d3d3d3;
+  background-color: #d5d5d5;
   border-color: #7a7a7a;
 }
 .btn-desaturated:active,
@@ -9996,11 +9996,11 @@ fieldset[disabled] .btn-desaturated:active,
 .btn-desaturated.disabled.active,
 .btn-desaturated[disabled].active,
 fieldset[disabled] .btn-desaturated.active {
-  background-color: #ececec;
+  background-color: #eeeeee;
   border-color: #999999;
 }
 .btn-desaturated .badge {
-  color: #ececec;
+  color: #eeeeee;
   background-color: #696969;
 }
 .btn-desaturated:hover,
@@ -10009,11 +10009,11 @@ fieldset[disabled] .btn-desaturated.active {
 .btn-desaturated.active,
 .open .dropdown-toggle.btn-desaturated {
   color: #696969;
-  background-color: #d3d3d3;
+  background-color: #d5d5d5;
   border-color: #999999;
-  background-image: linear-gradient(to bottom, #e2e2e2 0%, #c8c8c8 100%);
+  background-image: linear-gradient(to bottom, #e4e4e4 0%, #cacaca 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe2e2e2', endColorstr='#ffc8c8c8', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe4e4e4', endColorstr='#ffcacaca', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-desaturated:active,
@@ -10036,7 +10036,7 @@ fieldset[disabled] .btn-desaturated:active,
 .btn-desaturated.disabled.active,
 .btn-desaturated[disabled].active,
 fieldset[disabled] .btn-desaturated.active {
-  background-color: #ececec;
+  background-color: #eeeeee;
   border-color: #999999;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
@@ -10100,7 +10100,7 @@ fieldset[disabled] .btn-desaturated.active {
 .callout-success {
   background-color: #eef7ea;
   border-color: #669900;
-  color: #444444;
+  color: #4c4c4c;
 }
 .callout-success h1,
 .callout-success h2,
@@ -10118,7 +10118,7 @@ fieldset[disabled] .btn-desaturated.active {
 .callout-info {
   background-color: #f2f9fc;
   border-color: #5bc0de;
-  color: #444444;
+  color: #4c4c4c;
 }
 .callout-info h1,
 .callout-info h2,
@@ -10136,7 +10136,7 @@ fieldset[disabled] .btn-desaturated.active {
 .callout-warning {
   background-color: #fcf8e3;
   border-color: #ffcc33;
-  color: #444444;
+  color: #4c4c4c;
 }
 .callout-warning h1,
 .callout-warning h2,
@@ -10154,7 +10154,7 @@ fieldset[disabled] .btn-desaturated.active {
 .callout-danger {
   background-color: #f9f0f0;
   border-color: #cb2027;
-  color: #444444;
+  color: #4c4c4c;
 }
 .callout-danger h1,
 .callout-danger h2,
@@ -10172,7 +10172,7 @@ fieldset[disabled] .btn-desaturated.active {
 .callout-attention {
   background-color: #fbd8c9;
   border-color: #ee6023;
-  color: #444444;
+  color: #4c4c4c;
 }
 .callout-attention h1,
 .callout-attention h2,
@@ -10216,7 +10216,7 @@ fieldset[disabled] .btn-desaturated.active {
 }
 .card-detail {
   background-color: #ffffff;
-  border-top: #ececec 1px solid;
+  border-top: #eeeeee 1px solid;
 }
 .card-img {
   border: none;
@@ -10248,7 +10248,7 @@ fieldset[disabled] .btn-desaturated.active {
 }
 .card-toggle {
   background-color: #f6f6f6;
-  border-top: #ececec 1px solid;
+  border-top: #eeeeee 1px solid;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
   cursor: pointer;
@@ -10277,12 +10277,12 @@ fieldset[disabled] .btn-desaturated.active {
 }
 .card-stats {
   font-size: 11px;
-  border-top: #ececec 1px solid;
+  border-top: #eeeeee 1px solid;
   text-align: center;
   text-transform: uppercase;
 }
 .card-stats + * {
-  border-top: #ececec 1px solid;
+  border-top: #eeeeee 1px solid;
 }
 .card-stat {
   display: inline-block;
@@ -10297,8 +10297,8 @@ fieldset[disabled] .btn-desaturated.active {
 }
 .card-title {
   background-color: #f6f6f6;
-  border-bottom: #ececec 1px solid;
-  border-top: #ececec 1px solid;
+  border-bottom: #eeeeee 1px solid;
+  border-top: #eeeeee 1px solid;
   font-size: 13px;
   font-weight: 500;
   padding: 5px 6px;
@@ -10316,7 +10316,7 @@ fieldset[disabled] .btn-desaturated.active {
   padding: 1px 0 5px 0;
 }
 .card-sm-activity {
-  border-top: #ececec 1px solid;
+  border-top: #eeeeee 1px solid;
 }
 .card-sm-activity:before,
 .card-sm-activity:after {
@@ -10363,7 +10363,7 @@ fieldset[disabled] .btn-desaturated.active {
   font-weight: 500;
 }
 .card-sm-stats {
-  border-top: #ececec 1px solid;
+  border-top: #eeeeee 1px solid;
   font-size: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -10398,7 +10398,7 @@ fieldset[disabled] .btn-desaturated.active {
   cursor: pointer;
 }
 .carousel-control > .icon {
-  background-color: #444444;
+  background-color: #4c4c4c;
   display: inline-block;
   font-size: 36px;
   margin-top: -18px;
@@ -11195,7 +11195,7 @@ a.list-group-item.active:after {
 }
 .nav-blocks > li > a:focus,
 .nav-blocks > li > a:hover {
-  background-color: #ececec;
+  background-color: #eeeeee;
 }
 .nav-blocks-light > li > a:focus,
 .nav-blocks-light > li > a:hover {
@@ -12157,7 +12157,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   cursor: pointer;
 }
 .sortable:hover {
-  background-color: #ececec;
+  background-color: #eeeeee;
 }
 .sortable.is-sorting {
   font-weight: 700;
@@ -12310,7 +12310,7 @@ a.texting__charcount--danger:hover,
   text-align: right;
 }
 .texting__msg__bubble {
-  background-color: #ececec;
+  background-color: #eeeeee;
   border-radius: 3px;
   display: inline-block;
   font-size: 13px;
@@ -12337,7 +12337,7 @@ a.texting__charcount--danger:hover,
 }
 .texting__msg__bubble__avatar .icon {
   border-radius: 50%;
-  color: #ececec;
+  color: #eeeeee;
   font-size: 40px;
   left: 1px;
   top: 6px;
@@ -12605,10 +12605,10 @@ a.bg-gray-lightest:hover {
   background-color: #dddddd;
 }
 .bg-gray-lighter {
-  background-color: #ececec;
+  background-color: #eeeeee;
 }
 a.bg-gray-lighter:hover {
-  background-color: #d3d3d3;
+  background-color: #d5d5d5;
 }
 .bg-gray-light {
   background-color: #cccccc;
@@ -12631,11 +12631,11 @@ a.bg-gray-dark:hover {
   background-color: #505050;
 }
 .bg-gray-darker {
-  background-color: #444444;
+  background-color: #4c4c4c;
   color: #ffffff;
 }
 a.bg-gray-darker:hover {
-  background-color: #2b2b2b;
+  background-color: #333333;
 }
 .bg-white {
   background-color: #ffffff;
