@@ -1,5 +1,5 @@
-<section id="sorting">
-<div ng-controller="SortingDemoCtrl">
+<section id="fixedTableHeader">
+<div ng-controller="FixedHeaderDemoCtrl">
 <script type="text/javascript">
   angular
   .module('mineralbay')
@@ -8,7 +8,7 @@
   angular
 	.module('mineralbay')
 	.factory('peopleFactory', peopleFactory)
-	.controller('SortingDemoCtrl', SortingDemoCtrl)
+	.controller('FixedHeaderDemoCtrl', SortingDemoCtrl)
 ;
 
 function SortingDemoCtrl($scope, $filter, peopleFactory) {
@@ -29,7 +29,7 @@ function SortingDemoCtrl($scope, $filter, peopleFactory) {
 	$scope.currentPage = 1;
 	// max size of the pagination bar
 	$scope.maxPaginationSize = 100;
-	$scope.itemsPerPage = 10;
+	$scope.itemsPerPage = 20;
 	
 	// update the beginning and end points for shown people
 	// this will be called when the user changes page in the pagination bar
@@ -372,13 +372,13 @@ function peopleFactory() {
 		return peopleArray;
 	}
 	
-	return createPeopleArray(10);
+	return createPeopleArray(20);
 	
 }
   
 </script>
     <div class="page-header">
-        <h1>Sorting Demo<small></small></h1>
+        <h1>Fixed table header <small>(<a target="_blank" href="https://github.com/daniel-nagy/fixed-table-header">Fixed-Table-Header</a>)</small></h1>
     </div>
     
 <style>
@@ -386,6 +386,7 @@ function peopleFactory() {
 .table {
 	font-size: 13px;
 	table-layout: fixed;
+	margin-bottom: 0px;
 }
 th.sortable {
 	text-align: center;
@@ -395,19 +396,6 @@ th.sortable:hover {
 	color: #23527c;
 	text-align: center;
 }
-
-th.sortable:active {
-	background: #C5E3EA;
-	color: #23527c;
-	text-align: center;
-}
-
-th.sortable:focus {
-	background: #C5E3EA;
-	color: #23527c;
-	text-align: center;
-}
-
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
   background-color:rgba(141, 192, 219, 0.25);
@@ -418,17 +406,17 @@ th.sortable:focus {
 
 <!-- Tabs -->
       <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
-      <li class="active"><a href="#sort-tab-0" role="tab" data-toggle="tab">Preview</a></li>
-        <li ><a href="#sort-tab-1" role="tab" data-toggle="tab">Markup</a></li>
-        <li><a href="#sort-tab-2" role="tab" data-toggle="tab">CSS</a></li>
+      <li class="active"><a href="#fixed-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#fixed-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#fixed-tab-2" role="tab" data-toggle="tab">Installation</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
           <!-- Tab Panes -->
-          <div class="tab-pane fade in active" id="sort-tab-0">
-<div class="table-responsive">
+          <div class="tab-pane fade in active" id="fixed-tab-0">
+<div class="table-responsive" style="overflow: auto; max-height: 300px;">
 <table class="table table-condensed table-bordered table-striped">
-		<thead>
+		<thead fix-head>
 			<tr>
 				<th class="sortable" style="width: 40px"
 					data-ng-click="singleSort('nr')">
@@ -502,64 +490,52 @@ th.sortable:focus {
 	</table>
 	</div>
 	</div>
-          <div class="tab-pane fade" id="sort-tab-1">
-             <pre><code data-language="html">&lt;div class=&quot;table-responsive&quot;&gt;
-&lt;table class=&quot;table table-condensed table-bordered table-striped&quot;&gt;
-		&lt;thead&gt;
-			&lt;tr&gt;
-                &lt;th&gt;
-                    &lt;sort column-name=&quot;mineralbayApp.xy.name&quot; data-uib-tooltip=&quot;Sort by name&quot; sort-callback=&quot;loadAll()&quot;
-                          order-type=&quot;name&quot; order-model=&quot;orderModel&quot;&gt;&lt;/sort&gt;
-                &lt;/th&gt;
-			&lt;tr&gt;
-		&lt;/thead&gt;
-		&lt;tbody&gt;
-			&lt;tr ng-repeat=&quot;xy in xys&quot;&gt;
-        	        &lt;td&gt;&#123;&#123;tunnelProject.projectName&#125;&#125;&lt;/td&gt;
-				
-			&lt;/tr&gt;
-		&lt;/tbody&gt;
-	&lt;/table&gt;
-&lt;/div&gt;
-
-----------------------------------------------------------------------------------------
-
-sort.template.html: 
-&lt;div class=&quot;breakNotAllowed&quot; ng-click=&quot;sort()&quot;&gt;
-    	&lt;span translate=&quot;&#123;&#123;columnName&#125;&#125;&quot; class=&quot;breakAllowed&quot;&gt;Name&lt;/span&gt;
-        &lt;span class=&quot;glyphicon&quot;
-              ng-class=&quot;(orderType == orderModel.order_type &amp;&amp; orderModel.order_direction=='DESC') ? 'glyphicon-arrow-up' : (orderType == orderModel.order_type &amp;&amp; orderModel.order_direction == 'ASC' ?'glyphicon-arrow-down' : true)&quot;&gt;&lt;/span&gt;
-&lt;/div&gt;
-             </code></pre>
+          <div class="tab-pane fade" id="fixed-tab-1">
+          <h4>Usage</h4>
+          <p>Wrap the table in a element that will scroll vertically. Use the <code>fix-head</code> attribute on a <code>&lt;thead&gt;</code> element to prevent it from scrolling with the rest of the table.</p>
+		<p>A clone of the original <code>&lt;thead&gt;</code> element will be moved outside the scroll container. To ensure valid HTML, the cloned <code>&lt;thead&gt;</code> element will be wrapped in a copy of the <code>&lt;table&gt;</code> element. The new <code>&lt;table&gt;</code> element will be given the <code>clone</code> class.</p>
+          
+          
+          <pre><code data-language="html">&lt;div style=&quot;overflow: auto; max-height: 300px;&quot;&gt;
+  &lt;table&gt;
+    &lt;thead fix-head&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Nr&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Birthday&lt;/th&gt;
+        &lt;th&gt;Citizenship&lt;/th&gt;
+        &lt;th&gt;Favorite Food and Drink&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr ng-repeat=&quot;contact in contacts&quot;&gt;
+        &lt;td&gt;&#123;&#123;contact.nr&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.name&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.birthday&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.citizenship&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.favoritefood&#125;&#125;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
              </div>
-             
-           <div class="tab-pane fade" id="sort-tab-2">
-             <pre><code data-language="css">.table {
-	font-size: 13px;
-	table-layout: fixed;
-}
-
-.table &gt; thead &gt; tr &gt; th &gt; sort {
-	text-align: center;
-}
-
-.table &gt; thead &gt; tr &gt; th &gt; sort:hover {
-	background: #C5E3EA;
-	color: #23527c;
-	cursor: pointer;
-	text-align: center;
-}
-
-.table &gt; thead &gt; tr &gt; th,
-.table &gt; thead &gt; tr &gt; td {
-  background-color:rgba(141, 192, 219, 0.25);
-}
-
-.table &gt; thead &gt; tr &gt; th:hover{
-   background-color: #C5E3EA;
-	color: #23527c;
-
-}</code></pre>
+           <div class="tab-pane fade" id="fixed-tab-2">
+           	<p>This package is installable through the Bower package manager.</p>
+<pre><code>bower install angular-fixed-table-header --save
+</code></pre>
+<h4>Using Bower</h4>
+<p>In your <code>index.html</code> file, include the source file.</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>bower_components/angular-fixed-table-header/src/fixed-table-header.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<p>Include the <code>fixed.table.header</code> module as a dependency in your application.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>myApp<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>fixed.table.header<span class="pl-pds">'</span></span>]);</pre></div>
+<h4>Using npm and Browserify (or JSPM)</h4>
+<p>In addition, this package may be installed using npm.</p>
+<pre><code>npm install angular-fixed-table-header --save
+</code></pre>
+<p>You may use Browserify to inject this module into your application.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>myApp<span class="pl-pds">'</span></span>, [<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>angular-fixed-table-header<span class="pl-pds">'</span></span>)]);</pre></div>
+           	
+           
              </div>  
              
              </div>

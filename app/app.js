@@ -9,7 +9,8 @@
     'ngAnimate',
     'ngTable',
     'ngRoute',
-    'mgcrea.ngStrap'
+    'mgcrea.ngStrap',
+    'fixed.table.header'
   ])
   .value('AUTO_START_TOUR', {
     value: false

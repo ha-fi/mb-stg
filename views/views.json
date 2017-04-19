@@ -256,6 +256,11 @@
 				"css_id": "#sorting",
 				"nav_header": "sorting"
 			},
+			{
+				"source": "views/examples/fixed_theader.html",
+				"css_id": "#fixedTableHeader",
+				"nav_header": "fixed table header"
+			},
 			{ "source": "app/views/angular-footer.html" }
 		]
 	}
