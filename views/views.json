@@ -261,6 +261,11 @@
 				"css_id": "#fixedTableHeader",
 				"nav_header": "fixed table header"
 			},
+			{
+				"source": "views/examples/editEntity.html",
+				"css_id": "#editEntity",
+				"nav_header": "edit Tunnel"
+			},
 			{ "source": "app/views/angular-footer.html" }
 		]
 	}
