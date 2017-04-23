@@ -1,0 +1,287 @@
+// File: mixins.less
+// Note: Custom Mineralbay mixins, overrides, extends
+
+
+// Badges - outline badges
+// -------------------------
+
+// Change outline badge based on containing button
+
+.badge-outline-variant (@a) when (lightness(@a) >= 30%) {
+  .border();
+  color: @gray-dark;
+}
+.badge-outline-variant (@a) when (lightness(@a) < 70%) {
+  border-color: @gray-lightest;
+  color: @gray-lightest;
+}
+
+// Making background colors gradient 
+// --------------------------------------------------
+.gradient(@type; @colors; @dir: 0deg; @prefixes: webkit, moz, ms, o; @index: length(@prefixes)) when (@index > 0) {
+    .gradient(@type; @colors; @dir; @prefixes; (@index - 1));
+ 
+    @prefix  : extract(@prefixes, @index);
+    @dir-old : 90 - (@dir);
+ 
+    background-image: ~"-@{prefix}-@{type}-gradient(@{dir-old}, @{colors})";
+  & when ( @index = length(@prefixes) ) {
+        background-image: ~"@{type}-gradient(@{dir}, @{colors})";
+    }
+}
+
+.radial( @direction: 50% 50%, @origin: #fff, @end: #000 ) {
+    background-color: #e9b90f;
+    background-image: -webkit-gradient(radial, @direction,0,@direction,200, from(@end), to(@origin));
+    background-image: -webkit-radial-gradient(@direction, @origin, @end);
+    background-image: -moz-radial-gradient(@direction, @origin, @end);
+    background-image: -o-radial-gradient(@direction, @origin, @end);
+    background-image: -ms-radial-gradient(@direction, @origin, @end);
+    background-image: radial-gradient(@direction, @origin, @end);
+}
+
+
+// Borders
+// -------------------------
+
+.border(@color: @gray-light, @style: solid, @width: 1px) {
+  border-color: @color;
+  border-style: @style;
+  border-width: @width;
+}
+
+
+
+
+// Buttons
+// -------------------------
+
+// Note: Override Boostrap .button-variant mixin to add gradient
+
+.button-variant(@color; @background; @border) {
+  color: @color;
+  background-color: @background;
+  border-color: @border;
+
+  #gradient > .vertical(@background; darken(@background,7%)); // add gradient
+  .reset-filter(); // reset IE<=9
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    color: @color;
+    background-color: darken(@background, 10%);
+    border-color: @border;
+    #gradient > .vertical(darken(@background,4%); darken(@background,14%)); // add gradient
+    .reset-filter();
+  }
+  &:active,
+  &.active,
+  .open .dropdown-toggle& {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: @background;
+      border-color: @border;
+      //#gradient > .vertical(@background; darken(@background,6%)); // add gradient
+      .reset-filter();
+    }
+  }
+
+  .badge-outline {
+    background-color: transparent; // override default badge's background within a button
+    .badge-outline-variant(@background); // change badge based on containing button's color
+  }
+}
+
+
+// Callouts
+// -------------------------
+
+.callout-variant(@background; @color; @text-color) {
+  background-color: @background;
+  border-color: @color;
+  color: @text-color;
+  h1,h2,h3,h4,h5 {
+    color: darken(@color,5%);
+  }
+  hr {
+    border-top-color: @color;
+  }
+  .callout-link {
+    color: @color;
+  }
+}
+
+// Labels - Outline Variant (lead categories, lead types)
+// -------------------------
+
+.label-variant-outline(@color:@text-color) {
+  background-color: @white;
+  border: 1px solid @color;
+  color: @color;
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken(@color, 10%);
+    }
+  }
+}
+
+// Labels - Disabled Variant (lead categories, lead types)
+// -------------------------
+
+.label-variant-disabled(@color) {
+  @desaturatedColor: screen(multiply(exclusion(@color, #888), #888), #777); 
+  background-color: @desaturatedColor;
+  border: 1px solid @desaturatedColor;
+  color: @white;
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken(@color, 10%);
+    }
+  }
+}
+
+// Markers
+// --------------------------
+
+.marker-variant-solid(@background-color: @text-color) {
+  background-color: screen(@background-color, @gray-light);
+  color: multiply(@background-color, @gray-dark);
+  &[href] {
+    &:hover,
+    &:focus {
+      color: darken(multiply(@background-color, @gray-dark), 10%);
+    }
+  }
+}
+
+// Overflow
+// --------------------------
+
+.overflow-hidden() {
+  overflow: hidden;
+}
+
+// Pointer
+// --------------------------
+
+.pointer() {
+  cursor: pointer;
+}
+
+// Preserve 3D
+// -------------------------
+
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+// Use on container that has element using .vertical-align mixin. Prevents 1/2 pixel positioning.
+
+.preserve-3d() {
+  transform-style: preserve-3d;
+}
+
+
+// Scores
+// -------------------------
+
+.score-size(@padding-vertical; @width; @font-size; @line-height; @border-radius) {
+  padding: @padding-vertical 0;
+  width: @width;
+  font-size: @font-size;
+  line-height: @line-height;
+  border-radius: @border-radius;
+}
+
+// Tab focus
+// -------------------------
+
+// Note: Override Boostrap .tab-focus mixin
+
+.tab-focus() {
+  outline: thin dotted;
+  outline: 2px auto -webkit-focus-ring-color;
+  outline-offset: -3px;
+}
+
+// Tables
+// -------------------------
+
+// used in tables and faubles
+
+.table-heading-typography() {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: @font-weight-semibold;
+}
+
+// SVG Background Fill
+// -------------------------
+
+// for svgs that have fills defined and you want to replace one of the fills
+.svg-bg-replace-fill(@src, @fill-default, @fill-new) {
+    @data-uri: data-uri("image/svg+xml;charset=UTF-8", "@{src}");
+    @replace-src: replace("@{data-uri}", escape('@fill-default'), escape('@fill-new'));
+    background-image:e(@replace-src);
+}
+
+// for svgs that don't have fill defined
+.svg-bg-add-fill(@src, @fill-new) {
+  @data-uri: data-uri("image/svg+xml;charset=UTF-8", "@{src}");
+  @replace-default: escape('<path ');
+  @replace-new: escape('<path fill="@{fill-new}" ');
+  @replace-src: replace("@{data-uri}", @replace-default, @replace-new, "g");
+  background-image: e(@replace-src);
+}
+
+// for svgs that have fills defined and you want to replace all fills
+.svg-bg-fill(@src, @fill-new) {
+  @data-uri: data-uri('image/svg+xml;charset=UTF-8', "@{src}");
+  @replace-src: replace("@{data-uri}", 'fill\%3D\%22\%23[\w]{3,6}\%22', escape('fill="@{fill-new}"'), "g");
+  background-image:e(@replace-src);
+}
+
+// Typography
+// -------------------------
+
+// added clickable
+
+.text-emphasis-variant(@color) {
+  color: @color;
+  a&,.btn-link&,.clickable& {
+    color: @color;
+  }
+  a&:hover,.btn-link&:hover,.clickable&:hover {
+    color: darken(@color, 10%);
+  }
+}
+
+
+// Vertical align
+// -------------------------
+
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
+
+.vert-align(@position:relative) {
+  position: @position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+
+
+
+

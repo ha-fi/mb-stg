@@ -1,0 +1,23 @@
+{
+  "name": "angular-float-labels",
+  "version": "0.1.0",
+  "main": [
+    "angular-float-labels.js",
+    "angular-float-labels.css"
+  ],
+  "homepage": "https://github.com/chrisronline/angular-float-labels",
+  "license": "MIT",
+  "dependencies": {
+    "angular": ">=1",
+    "jquery": ">=1"
+  },
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "776e575b9e133ecb47edc40afa4c06f6d33e2e76"
+  },
+  "_source": "https://github.com/chrisronline/angular-float-labels.git",
+  "_target": "^0.1.0",
+  "_originalSource": "angular-float-labels"
+}

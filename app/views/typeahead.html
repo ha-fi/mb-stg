@@ -1,0 +1,391 @@
+<section id="typeahead">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('TypeaheadCtrl', function($scope, $http) {
+
+  var _selected;
+
+  $scope.selected = undefined;
+  $scope.states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+  // Any function returning a promise object can be used to load values asynchronously
+  $scope.getLocation = function(val) {
+    return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: val,
+        sensor: false
+      }
+    }).then(function(response){
+      return response.data.results.map(function(item){
+        return item.formatted_address;
+      });
+    });
+  };
+
+  $scope.ngModelOptionsSelected = function(value) {
+    if (arguments.length) {
+      _selected = value;
+    } else {
+      return _selected;
+    }
+  };
+
+  $scope.modelOptions = {
+    debounce: {
+      default: 500,
+      blur: 250
+    },
+    getterSetter: true
+  };
+
+  $scope.statesWithFlags = [{'name':'Alabama','flag':'5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},{'name':'Alaska','flag':'e/e6/Flag_of_Alaska.svg/43px-Flag_of_Alaska.svg.png'},{'name':'Arizona','flag':'9/9d/Flag_of_Arizona.svg/45px-Flag_of_Arizona.svg.png'},{'name':'Arkansas','flag':'9/9d/Flag_of_Arkansas.svg/45px-Flag_of_Arkansas.svg.png'},{'name':'California','flag':'0/01/Flag_of_California.svg/45px-Flag_of_California.svg.png'},{'name':'Colorado','flag':'4/46/Flag_of_Colorado.svg/45px-Flag_of_Colorado.svg.png'},{'name':'Connecticut','flag':'9/96/Flag_of_Connecticut.svg/39px-Flag_of_Connecticut.svg.png'},{'name':'Delaware','flag':'c/c6/Flag_of_Delaware.svg/45px-Flag_of_Delaware.svg.png'},{'name':'Florida','flag':'f/f7/Flag_of_Florida.svg/45px-Flag_of_Florida.svg.png'},{'name':'Georgia','flag':'5/54/Flag_of_Georgia_%28U.S._state%29.svg/46px-Flag_of_Georgia_%28U.S._state%29.svg.png'},{'name':'Hawaii','flag':'e/ef/Flag_of_Hawaii.svg/46px-Flag_of_Hawaii.svg.png'},{'name':'Idaho','flag':'a/a4/Flag_of_Idaho.svg/38px-Flag_of_Idaho.svg.png'},{'name':'Illinois','flag':'0/01/Flag_of_Illinois.svg/46px-Flag_of_Illinois.svg.png'},{'name':'Indiana','flag':'a/ac/Flag_of_Indiana.svg/45px-Flag_of_Indiana.svg.png'},{'name':'Iowa','flag':'a/aa/Flag_of_Iowa.svg/44px-Flag_of_Iowa.svg.png'},{'name':'Kansas','flag':'d/da/Flag_of_Kansas.svg/46px-Flag_of_Kansas.svg.png'},{'name':'Kentucky','flag':'8/8d/Flag_of_Kentucky.svg/46px-Flag_of_Kentucky.svg.png'},{'name':'Louisiana','flag':'e/e0/Flag_of_Louisiana.svg/46px-Flag_of_Louisiana.svg.png'},{'name':'Maine','flag':'3/35/Flag_of_Maine.svg/45px-Flag_of_Maine.svg.png'},{'name':'Maryland','flag':'a/a0/Flag_of_Maryland.svg/45px-Flag_of_Maryland.svg.png'},{'name':'Massachusetts','flag':'f/f2/Flag_of_Massachusetts.svg/46px-Flag_of_Massachusetts.svg.png'},{'name':'Michigan','flag':'b/b5/Flag_of_Michigan.svg/45px-Flag_of_Michigan.svg.png'},{'name':'Minnesota','flag':'b/b9/Flag_of_Minnesota.svg/46px-Flag_of_Minnesota.svg.png'},{'name':'Mississippi','flag':'4/42/Flag_of_Mississippi.svg/45px-Flag_of_Mississippi.svg.png'},{'name':'Missouri','flag':'5/5a/Flag_of_Missouri.svg/46px-Flag_of_Missouri.svg.png'},{'name':'Montana','flag':'c/cb/Flag_of_Montana.svg/45px-Flag_of_Montana.svg.png'},{'name':'Nebraska','flag':'4/4d/Flag_of_Nebraska.svg/46px-Flag_of_Nebraska.svg.png'},{'name':'Nevada','flag':'f/f1/Flag_of_Nevada.svg/45px-Flag_of_Nevada.svg.png'},{'name':'New Hampshire','flag':'2/28/Flag_of_New_Hampshire.svg/45px-Flag_of_New_Hampshire.svg.png'},{'name':'New Jersey','flag':'9/92/Flag_of_New_Jersey.svg/45px-Flag_of_New_Jersey.svg.png'},{'name':'New Mexico','flag':'c/c3/Flag_of_New_Mexico.svg/45px-Flag_of_New_Mexico.svg.png'},{'name':'New York','flag':'1/1a/Flag_of_New_York.svg/46px-Flag_of_New_York.svg.png'},{'name':'North Carolina','flag':'b/bb/Flag_of_North_Carolina.svg/45px-Flag_of_North_Carolina.svg.png'},{'name':'North Dakota','flag':'e/ee/Flag_of_North_Dakota.svg/38px-Flag_of_North_Dakota.svg.png'},{'name':'Ohio','flag':'4/4c/Flag_of_Ohio.svg/46px-Flag_of_Ohio.svg.png'},{'name':'Oklahoma','flag':'6/6e/Flag_of_Oklahoma.svg/45px-Flag_of_Oklahoma.svg.png'},{'name':'Oregon','flag':'b/b9/Flag_of_Oregon.svg/46px-Flag_of_Oregon.svg.png'},{'name':'Pennsylvania','flag':'f/f7/Flag_of_Pennsylvania.svg/45px-Flag_of_Pennsylvania.svg.png'},{'name':'Rhode Island','flag':'f/f3/Flag_of_Rhode_Island.svg/32px-Flag_of_Rhode_Island.svg.png'},{'name':'South Carolina','flag':'6/69/Flag_of_South_Carolina.svg/45px-Flag_of_South_Carolina.svg.png'},{'name':'South Dakota','flag':'1/1a/Flag_of_South_Dakota.svg/46px-Flag_of_South_Dakota.svg.png'},{'name':'Tennessee','flag':'9/9e/Flag_of_Tennessee.svg/46px-Flag_of_Tennessee.svg.png'},{'name':'Texas','flag':'f/f7/Flag_of_Texas.svg/45px-Flag_of_Texas.svg.png'},{'name':'Utah','flag':'f/f6/Flag_of_Utah.svg/45px-Flag_of_Utah.svg.png'},{'name':'Vermont','flag':'4/49/Flag_of_Vermont.svg/46px-Flag_of_Vermont.svg.png'},{'name':'Virginia','flag':'4/47/Flag_of_Virginia.svg/44px-Flag_of_Virginia.svg.png'},{'name':'Washington','flag':'5/54/Flag_of_Washington.svg/46px-Flag_of_Washington.svg.png'},{'name':'West Virginia','flag':'2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png'},{'name':'Wisconsin','flag':'2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png'},{'name':'Wyoming','flag':'b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png'}];
+});
+</script>
+
+<style>
+  .typeahead-demo .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+  }
+
+  .typeahead-demo .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+  }
+
+  .typeahead-demo .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+</style>
+
+<script type="text/ng-template" id="customTemplate.html">
+  <a>
+      <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/[[match.model.flag]]" width="16">
+      <span ng-bind-html="match.label | uibTypeaheadHighlight:query"></span>
+  </a>
+</script>
+
+<script type="text/ng-template" id="customPopupTemplate.html">
+  <div class="custom-popup-wrapper"
+     ng-style="{top: position().top+'px', left: position().left+'px'}"
+     style="display: block;"
+     ng-show="isOpen() && !moveInProgress"
+     aria-hidden="[[!isOpen()]]">
+    <p class="message">select location from drop down.</p>
+
+    <ul class="dropdown-menu" role="listbox">
+      <li class="uib-typeahead-match" ng-repeat="match in matches track by $index" ng-class="{active: isActive($index) }"
+        ng-mouseenter="selectActive($index)" ng-click="selectMatch($index)" role="option" id="[[::match.id]]">
+        <div uib-typeahead-match index="$index" match="match" query="query" template-url="templateUrl"></div>
+      </li>
+    </ul>
+  </div>
+</script>
+<div class='container-fluid typeahead-demo' ng-controller="TypeaheadCtrl">
+    <div class="page-header">
+        <h1>Typeahead<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/typeahead">ui.bootstrap.typeahead</a>)
+        </small></h1>
+    </div>
+    
+<p>Typeahead is a AngularJS version of <a href="http://getbootstrap.com/2.3.2/javascript.html#typeahead">Bootstrap v2&#39;s typeahead plugin</a>.
+This directive can be used to quickly create elegant typeaheads with any form text input.</p>
+<p>It is very well integrated into AngularJS as it uses a subset of the
+<a href="http://docs.angularjs.org/api/ng.directive:select">select directive</a> syntax, which is very flexible. Supported expressions are:</p>
+<ul>
+<li><em>label</em> for <em>value</em> in <em>sourceArray</em></li>
+<li><em>select</em> as <em>label</em> for <em>value</em> in <em>sourceArray</em></li>
+</ul>
+<p>The <code>sourceArray</code> expression can use a special <code>$viewValue</code> variable that corresponds to the value entered inside the input.</p>
+<p>This directive works with promises, meaning you can retrieve matches using the <code>$http</code> service with minimal effort.</p>
+
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#type-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#type-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#type-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#type-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#type-tab-4" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="type-tab-0">
+			<h4>Static arrays</h4>
+    <pre>Model: [[selected | json]]</pre>
+    <input type="text" ng-model="selected" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+
+    <h4>Asynchronous results</h4>
+    <pre>Model: [[asyncSelected | json]]</pre>
+    <input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    <div ng-show="noResults">
+      <i class="glyphicon glyphicon-remove"></i> No Results Found
+    </div>
+
+    <h4>ngModelOptions support</h4>
+    <pre>Model: [[ngModelOptionsSelected | json]]</pre>
+    <input type="text" ng-model="ngModelOptionsSelected" ng-model-options="modelOptions" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+
+    <h4>Custom templates for results</h4>
+    <pre>Model: [[customSelected | json]]</pre>
+    <input type="text" ng-model="customSelected" placeholder="Custom template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control" typeahead-show-hint="true" typeahead-min-length="0">
+
+    <h4>Custom popup templates for typeahead's dropdown</h4>
+    <pre>Model: [[customPopupSelected | json]]</pre>
+    <input type="text" ng-model="customPopupSelected" placeholder="Custom popup template" uib-typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-popup-template-url="customPopupTemplate.html" class="form-control">
+          </div>
+          <div class="tab-pane fade" id="type-tab-1">
+             <pre><code data-language="html">&lt;script type&#61;&quot;text/ng-template&quot; id&#61;&quot;customTemplate.html&quot;&gt;
+  &lt;a&gt;
+      &lt;img ng-src&#61;&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/&#123;&#123;match.model.flag&#125;&#125;&quot; width&#61;&quot;16&quot;&gt;
+      &lt;span ng-bind-html&#61;&quot;match.label | uibTypeaheadHighlight:query&quot;&gt;&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/script&gt;
+
+&lt;script type&#61;&quot;text/ng-template&quot; id&#61;&quot;customPopupTemplate.html&quot;&gt;
+  &lt;div class&#61;&quot;custom-popup-wrapper&quot;
+     ng-style&#61;&quot;{top: position().top+&#x27;px&#x27;, left: position().left+&#x27;px&#x27;}&quot;
+     style&#61;&quot;display: block;&quot;
+     ng-show&#61;&quot;isOpen() &amp;&amp; !moveInProgress&quot;
+     aria-hidden&#61;&quot;&#123;&#123;!isOpen()&#125;&#125;&quot;&gt;
+    &lt;p class&#61;&quot;message&quot;&gt;select location from drop down.&lt;/p&gt;
+
+    &lt;ul class&#61;&quot;dropdown-menu&quot; role&#61;&quot;listbox&quot;&gt;
+      &lt;li class&#61;&quot;uib-typeahead-match&quot; ng-repeat&#61;&quot;match in matches track by $index&quot; ng-class&#61;&quot;{active: isActive($index) }&quot;
+        ng-mouseenter&#61;&quot;selectActive($index)&quot; ng-click&#61;&quot;selectMatch($index)&quot; role&#61;&quot;option&quot; id&#61;&quot;&#123;&#123;::match.id&#125;&#125;&quot;&gt;
+        &lt;div uib-typeahead-match index&#61;&quot;$index&quot; match&#61;&quot;match&quot; query&#61;&quot;query&quot; template-url&#61;&quot;templateUrl&quot;&gt;&lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/script&gt;
+
+&lt;div class&#61;&#x27;container-fluid typeahead-demo&#x27; ng-controller&#61;&quot;TypeaheadCtrl&quot;&gt;
+
+    &lt;h4&gt;Static arrays&lt;/h4&gt;
+    &lt;pre&gt;Model: &#123;&#123;selected | json&#125;&#125;&lt;/pre&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;selected&quot; uib-typeahead&#61;&quot;state for state in states | filter:$viewValue | limitTo:8&quot; class&#61;&quot;form-control&quot;&gt;
+
+    &lt;h4&gt;Asynchronous results&lt;/h4&gt;
+    &lt;pre&gt;Model: &#123;&#123;asyncSelected | json&#125;&#125;&lt;/pre&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;asyncSelected&quot; placeholder&#61;&quot;Locations loaded via $http&quot; uib-typeahead&#61;&quot;address for address in getLocation($viewValue)&quot; typeahead-loading&#61;&quot;loadingLocations&quot; typeahead-no-results&#61;&quot;noResults&quot; class&#61;&quot;form-control&quot;&gt;
+    &lt;i ng-show&#61;&quot;loadingLocations&quot; class&#61;&quot;glyphicon glyphicon-refresh&quot;&gt;&lt;/i&gt;
+    &lt;div ng-show&#61;&quot;noResults&quot;&gt;
+      &lt;i class&#61;&quot;glyphicon glyphicon-remove&quot;&gt;&lt;/i&gt; No Results Found
+    &lt;/div&gt;
+
+    &lt;h4&gt;ngModelOptions support&lt;/h4&gt;
+    &lt;pre&gt;Model: &#123;&#123;ngModelOptionsSelected | json&#125;&#125;&lt;/pre&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;ngModelOptionsSelected&quot; ng-model-options&#61;&quot;modelOptions&quot; uib-typeahead&#61;&quot;state for state in states | filter:$viewValue | limitTo:8&quot; class&#61;&quot;form-control&quot;&gt;
+
+    &lt;h4&gt;Custom templates for results&lt;/h4&gt;
+    &lt;pre&gt;Model: &#123;&#123;customSelected | json&#125;&#125;&lt;/pre&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;customSelected&quot; placeholder&#61;&quot;Custom template&quot; uib-typeahead&#61;&quot;state as state.name for state in statesWithFlags | filter:{name:$viewValue}&quot; typeahead-template-url&#61;&quot;customTemplate.html&quot; class&#61;&quot;form-control&quot; typeahead-show-hint&#61;&quot;true&quot; typeahead-min-length&#61;&quot;0&quot;&gt;
+
+    &lt;h4&gt;Custom popup templates for typeahead&#x27;s dropdown&lt;/h4&gt;
+    &lt;pre&gt;Model: &#123;&#123;customPopupSelected | json&#125;&#125;&lt;/pre&gt;
+    &lt;input type&#61;&quot;text&quot; ng-model&#61;&quot;customPopupSelected&quot; placeholder&#61;&quot;Custom popup template&quot; uib-typeahead&#61;&quot;state as state.name for state in statesWithFlags | filter:{name:$viewValue}&quot; typeahead-popup-template-url&#61;&quot;customPopupTemplate.html&quot; class&#61;&quot;form-control&quot;&gt;
+&lt;/div&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="type-tab-2">
+            <pre><code data-language="javascript">app.controller(&#x27;TypeaheadCtrl&#x27;, function($scope, $http) {
+
+  var _selected;
+
+  $scope.selected = undefined;
+  $scope.states = [&#x27;Alabama&#x27;, &#x27;Alaska&#x27;, &#x27;Arizona&#x27;, &#x27;Arkansas&#x27;, &#x27;California&#x27;, &#x27;Colorado&#x27;, &#x27;Connecticut&#x27;, &#x27;Delaware&#x27;, &#x27;Florida&#x27;, &#x27;Georgia&#x27;, &#x27;Hawaii&#x27;, &#x27;Idaho&#x27;, &#x27;Illinois&#x27;, &#x27;Indiana&#x27;, &#x27;Iowa&#x27;, &#x27;Kansas&#x27;, &#x27;Kentucky&#x27;, &#x27;Louisiana&#x27;, &#x27;Maine&#x27;, &#x27;Maryland&#x27;, &#x27;Massachusetts&#x27;, &#x27;Michigan&#x27;, &#x27;Minnesota&#x27;, &#x27;Mississippi&#x27;, &#x27;Missouri&#x27;, &#x27;Montana&#x27;, &#x27;Nebraska&#x27;, &#x27;Nevada&#x27;, &#x27;New Hampshire&#x27;, &#x27;New Jersey&#x27;, &#x27;New Mexico&#x27;, &#x27;New York&#x27;, &#x27;North Dakota&#x27;, &#x27;North Carolina&#x27;, &#x27;Ohio&#x27;, &#x27;Oklahoma&#x27;, &#x27;Oregon&#x27;, &#x27;Pennsylvania&#x27;, &#x27;Rhode Island&#x27;, &#x27;South Carolina&#x27;, &#x27;South Dakota&#x27;, &#x27;Tennessee&#x27;, &#x27;Texas&#x27;, &#x27;Utah&#x27;, &#x27;Vermont&#x27;, &#x27;Virginia&#x27;, &#x27;Washington&#x27;, &#x27;West Virginia&#x27;, &#x27;Wisconsin&#x27;, &#x27;Wyoming&#x27;];
+  // Any function returning a promise object can be used to load values asynchronously
+  $scope.getLocation = function(val) {
+    return $http.get(&#x27;//maps.googleapis.com/maps/api/geocode/json&#x27;, {
+      params: {
+        address: val,
+        sensor: false
+      }
+    }).then(function(response){
+      return response.data.results.map(function(item){
+        return item.formatted_address;
+      });
+    });
+  };
+
+  $scope.ngModelOptionsSelected = function(value) {
+    if (arguments.length) {
+      _selected = value;
+    } else {
+      return _selected;
+    }
+  };
+
+  $scope.modelOptions = {
+    debounce: {
+      default: 500,
+      blur: 250
+    },
+    getterSetter: true
+  };
+
+$scope.statesWithFlags = [{&#x27;name&#x27;:&#x27;Alabama&#x27;,&#x27;flag&#x27;:&#x27;5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Alaska&#x27;,&#x27;flag&#x27;:&#x27;e/e6/Flag_of_Alaska.svg/43px-Flag_of_Alaska.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Arizona&#x27;,&#x27;flag&#x27;:&#x27;9/9d/Flag_of_Arizona.svg/45px-Flag_of_Arizona.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Arkansas&#x27;,&#x27;flag&#x27;:&#x27;9/9d/Flag_of_Arkansas.svg/45px-Flag_of_Arkansas.svg.png&#x27;},{&#x27;name&#x27;:&#x27;California&#x27;,&#x27;flag&#x27;:&#x27;0/01/Flag_of_California.svg/45px-Flag_of_California.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Colorado&#x27;,&#x27;flag&#x27;:&#x27;4/46/Flag_of_Colorado.svg/45px-Flag_of_Colorado.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Connecticut&#x27;,&#x27;flag&#x27;:&#x27;9/96/Flag_of_Connecticut.svg/39px-Flag_of_Connecticut.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Delaware&#x27;,&#x27;flag&#x27;:&#x27;c/c6/Flag_of_Delaware.svg/45px-Flag_of_Delaware.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Florida&#x27;,&#x27;flag&#x27;:&#x27;f/f7/Flag_of_Florida.svg/45px-Flag_of_Florida.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Georgia&#x27;,&#x27;flag&#x27;:&#x27;5/54/Flag_of_Georgia_%28U.S._state%29.svg/46px-Flag_of_Georgia_%28U.S._state%29.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Hawaii&#x27;,&#x27;flag&#x27;:&#x27;e/ef/Flag_of_Hawaii.svg/46px-Flag_of_Hawaii.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Idaho&#x27;,&#x27;flag&#x27;:&#x27;a/a4/Flag_of_Idaho.svg/38px-Flag_of_Idaho.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Illinois&#x27;,&#x27;flag&#x27;:&#x27;0/01/Flag_of_Illinois.svg/46px-Flag_of_Illinois.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Indiana&#x27;,&#x27;flag&#x27;:&#x27;a/ac/Flag_of_Indiana.svg/45px-Flag_of_Indiana.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Iowa&#x27;,&#x27;flag&#x27;:&#x27;a/aa/Flag_of_Iowa.svg/44px-Flag_of_Iowa.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Kansas&#x27;,&#x27;flag&#x27;:&#x27;d/da/Flag_of_Kansas.svg/46px-Flag_of_Kansas.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Kentucky&#x27;,&#x27;flag&#x27;:&#x27;8/8d/Flag_of_Kentucky.svg/46px-Flag_of_Kentucky.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Louisiana&#x27;,&#x27;flag&#x27;:&#x27;e/e0/Flag_of_Louisiana.svg/46px-Flag_of_Louisiana.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Maine&#x27;,&#x27;flag&#x27;:&#x27;3/35/Flag_of_Maine.svg/45px-Flag_of_Maine.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Maryland&#x27;,&#x27;flag&#x27;:&#x27;a/a0/Flag_of_Maryland.svg/45px-Flag_of_Maryland.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Massachusetts&#x27;,&#x27;flag&#x27;:&#x27;f/f2/Flag_of_Massachusetts.svg/46px-Flag_of_Massachusetts.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Michigan&#x27;,&#x27;flag&#x27;:&#x27;b/b5/Flag_of_Michigan.svg/45px-Flag_of_Michigan.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Minnesota&#x27;,&#x27;flag&#x27;:&#x27;b/b9/Flag_of_Minnesota.svg/46px-Flag_of_Minnesota.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Mississippi&#x27;,&#x27;flag&#x27;:&#x27;4/42/Flag_of_Mississippi.svg/45px-Flag_of_Mississippi.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Missouri&#x27;,&#x27;flag&#x27;:&#x27;5/5a/Flag_of_Missouri.svg/46px-Flag_of_Missouri.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Montana&#x27;,&#x27;flag&#x27;:&#x27;c/cb/Flag_of_Montana.svg/45px-Flag_of_Montana.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Nebraska&#x27;,&#x27;flag&#x27;:&#x27;4/4d/Flag_of_Nebraska.svg/46px-Flag_of_Nebraska.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Nevada&#x27;,&#x27;flag&#x27;:&#x27;f/f1/Flag_of_Nevada.svg/45px-Flag_of_Nevada.svg.png&#x27;},{&#x27;name&#x27;:&#x27;New Hampshire&#x27;,&#x27;flag&#x27;:&#x27;2/28/Flag_of_New_Hampshire.svg/45px-Flag_of_New_Hampshire.svg.png&#x27;},{&#x27;name&#x27;:&#x27;New Jersey&#x27;,&#x27;flag&#x27;:&#x27;9/92/Flag_of_New_Jersey.svg/45px-Flag_of_New_Jersey.svg.png&#x27;},{&#x27;name&#x27;:&#x27;New Mexico&#x27;,&#x27;flag&#x27;:&#x27;c/c3/Flag_of_New_Mexico.svg/45px-Flag_of_New_Mexico.svg.png&#x27;},{&#x27;name&#x27;:&#x27;New York&#x27;,&#x27;flag&#x27;:&#x27;1/1a/Flag_of_New_York.svg/46px-Flag_of_New_York.svg.png&#x27;},{&#x27;name&#x27;:&#x27;North Carolina&#x27;,&#x27;flag&#x27;:&#x27;b/bb/Flag_of_North_Carolina.svg/45px-Flag_of_North_Carolina.svg.png&#x27;},{&#x27;name&#x27;:&#x27;North Dakota&#x27;,&#x27;flag&#x27;:&#x27;e/ee/Flag_of_North_Dakota.svg/38px-Flag_of_North_Dakota.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Ohio&#x27;,&#x27;flag&#x27;:&#x27;4/4c/Flag_of_Ohio.svg/46px-Flag_of_Ohio.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Oklahoma&#x27;,&#x27;flag&#x27;:&#x27;6/6e/Flag_of_Oklahoma.svg/45px-Flag_of_Oklahoma.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Oregon&#x27;,&#x27;flag&#x27;:&#x27;b/b9/Flag_of_Oregon.svg/46px-Flag_of_Oregon.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Pennsylvania&#x27;,&#x27;flag&#x27;:&#x27;f/f7/Flag_of_Pennsylvania.svg/45px-Flag_of_Pennsylvania.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Rhode Island&#x27;,&#x27;flag&#x27;:&#x27;f/f3/Flag_of_Rhode_Island.svg/32px-Flag_of_Rhode_Island.svg.png&#x27;},{&#x27;name&#x27;:&#x27;South Carolina&#x27;,&#x27;flag&#x27;:&#x27;6/69/Flag_of_South_Carolina.svg/45px-Flag_of_South_Carolina.svg.png&#x27;},{&#x27;name&#x27;:&#x27;South Dakota&#x27;,&#x27;flag&#x27;:&#x27;1/1a/Flag_of_South_Dakota.svg/46px-Flag_of_South_Dakota.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Tennessee&#x27;,&#x27;flag&#x27;:&#x27;9/9e/Flag_of_Tennessee.svg/46px-Flag_of_Tennessee.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Texas&#x27;,&#x27;flag&#x27;:&#x27;f/f7/Flag_of_Texas.svg/45px-Flag_of_Texas.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Utah&#x27;,&#x27;flag&#x27;:&#x27;f/f6/Flag_of_Utah.svg/45px-Flag_of_Utah.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Vermont&#x27;,&#x27;flag&#x27;:&#x27;4/49/Flag_of_Vermont.svg/46px-Flag_of_Vermont.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Virginia&#x27;,&#x27;flag&#x27;:&#x27;4/47/Flag_of_Virginia.svg/44px-Flag_of_Virginia.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Washington&#x27;,&#x27;flag&#x27;:&#x27;5/54/Flag_of_Washington.svg/46px-Flag_of_Washington.svg.png&#x27;},{&#x27;name&#x27;:&#x27;West Virginia&#x27;,&#x27;flag&#x27;:&#x27;2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Wisconsin&#x27;,&#x27;flag&#x27;:&#x27;2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png&#x27;},{&#x27;name&#x27;:&#x27;Wyoming&#x27;,&#x27;flag&#x27;:&#x27;b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png&#x27;}];
+
+});</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="type-tab-3">
+          <pre><code data-language="javascript">&lt;style&gt;
+  .typeahead-demo .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+  }
+
+  .typeahead-demo .custom-popup-wrapper &gt; .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+  }
+
+  .typeahead-demo .custom-popup-wrapper &gt; .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+&lt;/style&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+              <div class="tab-pane fade" id="type-tab-4">
+              <h3 id="uib-typeahead-settings">uib-typeahead settings</h3>
+<ul>
+<li><p><code>ng-model</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i> -
+Assignable angular expression to data-bind to.</p>
+</li>
+<li><p><code>ng-model-options</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+Options for ng-model (see <a href="https://docs.angularjs.org/api/ng/directive/ngModelOptions">ng-model-options directive</a>). Currently supports the <code>debounce</code> and <code>getterSetter</code> options.</p>
+</li>
+<li><p><code>typeahead-append-to</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>null</code>)</em> -
+Should the typeahead popup be appended to an element instead of the parent element?</p>
+</li>
+<li><p><code>typeahead-append-to-body</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>false</code>)</em> -
+Should the typeahead popup be appended to $body instead of the parent element?</p>
+</li>
+<li><p><code>typeahead-editable</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>true</code>)</em> -
+Should it restrict model values to the ones selected from the popup only?</p>
+</li>
+<li><p><code>typeahead-focus-first</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>true</code>)</em> -
+Should the first match automatically be focused as you type?</p>
+</li>
+<li><p><code>typeahead-focus-on-select</code>
+<em>(Default: <code>true</code>)</em> -
+On selection, focus the input element the typeahead directive is associated with.</p>
+</li>
+<li><p><code>typeahead-input-formatter</code>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>undefined</code>)</em> -
+Format the ng-model result after selection.</p>
+</li>
+<li><p><code>typeahead-is-open</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>angular.noop</code>)</em> -
+Binding to a variable that indicates if the dropdown is open.</p>
+</li>
+<li><p><code>typeahead-loading</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>angular.noop</code>)</em> -
+Binding to a variable that indicates if matches are being retrieved asynchronously.</p>
+</li>
+<li><p><code>typeahead-min-length</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>1</code>)</em> -
+Minimal no of characters that needs to be entered before typeahead kicks-in. Must be greater than or equal to 0.</p>
+</li>
+<li><p><code>typeahead-no-results</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>angular.noop</code>)</em> -
+Binding to a variable that indicates if no matching results were found.</p>
+</li>
+<li><p><code>typeahead-should-select($event)</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>null</code>)</em> -
+A callback executed when a <code>keyup</code> event that might trigger a selection occurs. Selection will only occur if this function returns true.</p>
+</li>
+<li><p><code>typeahead-on-select($item, $model, $label, $event)</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>null</code>)</em> -
+A callback executed when a match is selected. $event can be undefined if selection not triggered from a user event.</p>
+</li>
+<li><p><code>typeahead-popup-template-url</code>
+<em>(Default: <code>uib/template/typeahead/typeahead-popup.html</code>)</em> -
+Set custom popup template.</p>
+</li>
+<li><p><code>typeahead-select-on-blur</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>false</code>)</em> -
+On blur, select the currently highlighted match.</p>
+</li>
+<li><p><code>typeahead-select-on-exact</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>false</code>)</em> -
+Automatically select the item when it is the only one that exactly matches the user input.</p>
+</li>
+<li><p><code>typeahead-show-hint</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>false</code>)</em> -
+Show hint when the first option matches.</p>
+</li>
+<li><p><code>typeahead-template-url</code>
+<em>(Default: <code>uib/template/typeahead/typeahead-match.html</code>)</em> -
+Set custom item template.</p>
+</li>
+<li><p><code>typeahead-wait-ms</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>0</code>)</em> -
+Minimal wait time after last character typed before typeahead kicks-in.</p>
+</li>
+<li><p><code>uib-typeahead</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i> -
+Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.directive:select">select directive</a>).</p>
+</li>
+</ul>
+<p><strong>Notes</strong></p>
+<p>If a custom template for the popup is used, the wrapper selector used for the match items is the <code>uib-typeahead-match</code> class.</p>
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+</div>
+</section>

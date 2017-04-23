@@ -1,0 +1,33 @@
+{
+  "name": "boomsvgloader",
+  "description": "BoomSVGLoader is a simple AJAX solution for your SVG sprite.",
+  "version": "0.0.2",
+  "keywords": [
+    "boomsvgloader",
+    "svg",
+    "sprite",
+    "loader",
+    "ajax"
+  ],
+  "homepage": "http://boomtownroi.github.io/boomsvgloader/",
+  "authors": [
+    "Craig Anthony <craig@boomtownroi.com>",
+    "Zach Schnackel <zach@boomtownroi.com>"
+  ],
+  "main": "dist/*",
+  "license": "MIT",
+  "ignore": [
+    "*",
+    "!dist/js/*.js"
+  ],
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.2",
+    "commit": "e89f242a87387e804d9e5abeb3b4603522ad600b"
+  },
+  "_source": "https://github.com/BoomTownROI/boomsvgloader.git",
+  "_target": "^0.0.2",
+  "_originalSource": "boomsvgloader",
+  "_direct": true
+}

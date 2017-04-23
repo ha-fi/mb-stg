@@ -1,0 +1,96 @@
+<!-- ================================== Scrollbar ================================== -->
+
+
+<section id="scrollbar" class="pl-docs-section">
+    <div class="page-header">
+      <h1>Scrollbar <small>(<a href="https://github.com/Diokuz/baron" target="_blank">baron.js</a>)</small></h1>
+    </div>
+    <p>Adds a simulated scrollbar to any element. It wraps the jQuery baron library.</p>
+    <p>Either add the <code>bt-scrollbar</code> attribute, or use the <code>&lt;bt-scrollbar&gt;</code> element.</p>
+    <div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#scroll-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#scroll-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#scroll-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#scroll-tab-3" role="tab" data-toggle="tab">Template</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="scroll-tab-0">
+            <div class="pl-example">
+      <bt-scrollbar class="scroll-area-1">
+        <p>Bacon ipsum dolor sit amet bresaola meatball ground round pariatur proident mollit prosciutto incididunt exercitation. Short ribs short loin qui jerky culpa. Ut ad hamburger shankle frankfurter aliqua. Kevin anim filet mignon bacon. Hamburger non quis, bacon flank rump commodo magna dolor enim pariatur dolore id nostrud. Short ribs minim adipisicing, boudin commodo dolore irure cillum turducken tail ground round. Do in occaecat quis salami veniam commodo cupidatat in flank spare ribs ham t-bone turducken shoulder.</p>
+        <p>Leberkas irure nisi veniam boudin id tempor eiusmod. Incididunt dolore commodo tongue reprehenderit, leberkas venison. Proident incididunt meatloaf sirloin. Consectetur ut frankfurter, pariatur drumstick enim proident. Swine occaecat beef, deserunt venison culpa corned beef short ribs meatball eu tail dolore filet mignon est kevin.</p>
+        <p>Non capicola velit pork loin. Cupidatat pastrami sausage pork loin ullamco jerky eiusmod. Est sunt ut frankfurter boudin dolore porchetta jowl. Ullamco sed kielbasa irure excepteur sausage. Pariatur bacon beef swine doner nostrud.</p>
+        <p>Minim meatloaf chuck sint, occaecat ea rump drumstick beef cillum salami nisi est. Salami shoulder occaecat turkey ribeye in pancetta est ut drumstick dolor biltong velit. Drumstick brisket adipisicing elit exercitation, in meatball ut ham doner irure pork id et. Turkey tongue elit in, aute kevin andouille biltong flank fugiat ullamco in. Doner hamburger bresaola tail porchetta pork consequat tongue magna pastrami.</p>
+        <p>Venison velit frankfurter, excepteur magna shank dolore. Cillum do short ribs aliqua doner drumstick. Eiusmod labore laboris sed kielbasa short ribs sint bacon corned beef adipisicing aute tri-tip. Ad biltong consequat ball tip sint consectetur, nulla chuck jowl fugiat pig est pork boudin.</p>
+      </bt-scrollbar>
+    </div>
+          </div>
+          <div class="tab-pane fade" id="scroll-tab-1">
+          <pre><code data-language="html">&lt;div bt-scrollbar&gt;
+  scrollable content goes here
+&lt;/div&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="scroll-tab-2">
+          <pre><code data-language="javascript">(function(mineralbayApp, baron) {
+  &#x27;use strict&#x27;;
+  app.directive(&#x27;btScrollbar&#x27;, function($window) {
+    return {
+      restrict: &#x27;EA&#x27;,
+      transclude: true,
+      replace: true,
+      templateUrl: &#x27;template/scrollbar/bt-scrollbar.tpl.html&#x27;,
+      link: function(scope, element) {
+        var $element   = angular.element(element);
+        var $scroller  = $element.find(&#x27;.baron-scroller&#x27;)[0];
+        var $scrollbar = $element.find(&#x27;.baron-scroller-bar&#x27;)[0];
+
+        var scroll = baron({
+          root: element,
+          scroller: &#x27;.baron-scroller&#x27;,
+          track: &#x27;.baron-scroller-track&#x27;,
+          bar: &#x27;.baron-scroller-bar&#x27;,
+          $: angular.element
+        });
+        // Seriously hacky. Need to add a subdirective for elements in the scrollbar that need to trigger the scroller update
+        // And need to bind a more generic event. Here we only update on click.
+        $element.on(&#x27;click&#x27;, function() {
+          $window.setTimeout(function() {
+            scroll.update();
+            checkHeight();
+          }, 400);
+        });
+        $element.on(&#x27;mouseover&#x27;, function() {
+          scroll.update();
+          checkHeight();
+        });
+        function checkHeight(){
+          if ($scroller.scrollHeight &lt;= $scroller.clientHeight) {
+            $scrollbar.classList.add(&#x27;hidden&#x27;);
+          } else {
+            $scrollbar.classList.remove(&#x27;hidden&#x27;);
+          }
+        }
+        scope.$on(&#x27;$destroy&#x27;, function() {
+          scroll.dispose();
+        });
+      }
+    };
+  });
+  })(angular.module(&#x27;mineralbayApp&#x27;), window.baron);</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="scroll-tab-3">
+          <pre><code data-language="html">&lt;div class=&quot;baron&quot;&gt;
+  &lt;div class=&quot;baron-scroller&quot; ng-transclude&gt;&lt;/div&gt;
+  &lt;div class=&quot;baron-scroller-track&quot;&gt;
+    &lt;div class=&quot;baron-scroller-bar&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        	</div> <!-- end tab-pane -->
+    	</div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+</div> <!-- end panel -->
+</section>

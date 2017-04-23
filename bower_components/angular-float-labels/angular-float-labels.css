@@ -1,0 +1,35 @@
+.angular-float-labels-wrapper {
+  position: relative;
+}
+.angular-float-labels-label {
+  position: absolute;
+  left: 12px;
+  top: -17px;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  display: none;
+  color: #ccc;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 90%;
+}
+.angular-float-labels-element {
+  padding: 10px;
+}
+
+.angular-float-labels-label.toggled {
+  display: block;
+}
+.selectize-control .angular-float-labels-label.toggled {
+  z-index: 2;
+}
+.angular-float-labels-label.toggled + .angular-float-labels-element,
+.selectize-control.multi .angular-float-labels-label.toggled + .angular-float-labels-element.has-items {
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+
+.angular-float-labels-label.focused {
+  color: green;
+}

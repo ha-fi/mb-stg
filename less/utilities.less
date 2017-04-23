@@ -1,0 +1,130 @@
+// File: utilities.less
+// Note: Extends Bootstrap utilities.less
+
+// Border (commonly used)
+// -------------------------
+
+.border {
+  .border();
+}
+
+// Inline block
+// -------------------------
+
+.inline-block {
+  display: inline-block;
+}
+
+// Cursor
+// -------------------------
+
+.pointer {
+  .pointer();
+}
+
+
+// Overflow
+// -------------------------
+
+.overflow-hidden {
+  .overflow-hidden();
+}
+
+
+// Preserve 3D
+// -------------------------
+
+.preserve-3d {
+  .preserve-3d();
+}
+
+// Shadows
+// -------------------------
+
+.shadow-depth-1 {
+  .box-shadow(@shadow-depth-1);
+}
+
+.shadow-depth-2 {
+  .box-shadow(@shadow-depth-2);
+}
+
+.shadow-depth-3 {
+  .box-shadow(@shadow-depth-3);
+}
+
+.shadow-depth-4 {
+  .box-shadow(@shadow-depth-4);
+}
+
+.shadow-depth-5 {
+  .box-shadow(@shadow-depth-5);
+}
+
+// Text Overflow
+// -------------------------
+
+.text-overflow {
+  .text-overflow(); // mixin is in Bootstrap
+}
+
+// Vertical align
+// -------------------------
+
+.vert-align {
+  .vert-align();
+}
+
+@color_1: #fff;
+@background_color_1: #f9f9f9;
+@background_color_2: #563d7c;
+
+/*
+ * Glyphicons
+ *
+ * Special styles for displaying the icons and their classes in the docs.
+ */
+.bs-glyphicons {
+	margin: 0 -10px 20px;
+	overflow: hidden;
+	li {
+		float: left;
+		width: 25%;
+		height: 115px;
+		padding: 10px;
+		font-size: 10px;
+		line-height: 1.4;
+		text-align: center;
+		background-color: @background_color_1;
+		border: 1px solid #fff;
+		&:hover {
+			color: @color_1;
+			background-color: @background_color_2;
+		}
+	}
+	.glyphicon {
+		margin-top: 5px;
+		margin-bottom: 10px;
+		font-size: 24px;
+	}
+	.glyphicon-class {
+		display: block;
+		text-align: center;
+		word-wrap: break-word;
+	}
+}
+.bs-glyphicons-list {
+	padding-left: 0;
+	list-style: none;
+}
+@media (min-width: 768px) {
+	.bs-glyphicons {
+		margin-right: 0;
+		margin-left: 0;
+		li {
+			width: 12.5%;
+			font-size: 12px;
+		}
+	}
+}
+

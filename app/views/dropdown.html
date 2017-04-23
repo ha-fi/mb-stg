@@ -1,0 +1,431 @@
+<section id="dropdown">
+<div ng-controller="DropdownCtrl">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('DropdownCtrl', function ($scope, $log) {
+  $scope.items = [
+    'The first choice!',
+    'And another choice for you.',
+    'but wait! A third!'
+  ];
+
+  $scope.status = {
+    isopen: false
+  };
+
+  $scope.toggled = function(open) {
+    $log.log('Dropdown is now: ', open);
+  };
+
+  $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.status.isopen = !$scope.status.isopen;
+  };
+
+  $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
+});
+  
+</script>
+
+    <div class="page-header">
+        <h1>Dropdown<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/dropdownToggle">ui.bootstrap.dropdownToggle</a>)
+        </small></h1>
+    </div>
+
+<p>Dropdown is a simple directive which will toggle a dropdown menu on click or programmatically.</p>
+<p>This directive is composed by three parts:</p>
+<ul>
+<li><code>uib-dropdown</code> which transforms a node into a dropdown.</li>
+<li><code>uib-dropdown-toggle</code> which allows the dropdown to be toggled via click. This directive is optional.</li>
+<li><code>uib-dropdown-menu</code> which transforms a node into the popup menu.</li>
+</ul>
+<p>Each of these parts need to be used as attribute directives.</p>
+
+<div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#dropdown-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#dropdown-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#dropdown-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#dropdown-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="dropdown-tab-0">
+              <script type="text/ng-template" id="dropdown.html">
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="button-template-url">
+          <li role="menuitem"><a href="#">Action in Template</a></li>
+          <li role="menuitem"><a href="#">Another action in Template</a></li>
+          <li role="menuitem"><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li role="menuitem"><a href="#">Separated link in Template</a></li>
+        </ul>
+    </script>
+    <!-- Simple dropdown -->
+    <span uib-dropdown on-toggle="toggled(open)">
+      <a href id="simple-dropdown" uib-dropdown-toggle>
+        Click me for a dropdown, yo!
+      </a>
+      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+        <li ng-repeat="choice in items">
+          <a href><span ng-bind="choice"></span></a>
+        </li>
+      </ul>
+    </span>
+
+    <!-- Single button -->
+    <div class="btn-group" uib-dropdown is-open="status.isopen">
+      <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+        Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <li role="menuitem"><a href="#">Action</a></li>
+        <li role="menuitem"><a href="#">Another action</a></li>
+        <li role="menuitem"><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li role="menuitem"><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <!-- Split button -->
+    <div class="btn-group" uib-dropdown>
+      <button id="split-button" type="button" class="btn btn-danger">Action</button>
+      <button type="button" class="btn btn-danger" uib-dropdown-toggle>
+        <span class="caret"></span>
+        <span class="sr-only">Split button!</span>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
+        <li role="menuitem"><a href="#">Action</a></li>
+        <li role="menuitem"><a href="#">Another action</a></li>
+        <li role="menuitem"><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li role="menuitem"><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <!-- Single button using append-to-body -->
+    <div class="btn-group" uib-dropdown dropdown-append-to-body>
+      <button id="btn-append-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+        Dropdown on Body <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-body">
+        <li role="menuitem"><a href="#">Action</a></li>
+        <li role="menuitem"><a href="#">Another action</a></li>
+        <li role="menuitem"><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li role="menuitem"><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+
+    <!-- Single button using template-url -->
+    <div class="btn-group" uib-dropdown>
+      <button id="button-template-url" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+        Dropdown using template <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" uib-dropdown-menu template-url="dropdown.html" aria-labelledby="button-template-url">
+      </ul>
+    </div>
+
+    <hr />
+    <p>
+        <button type="button" class="btn btn-default btn-sm" ng-click="toggleDropdown($event)">Toggle button dropdown</button>
+        <button type="button" class="btn btn-warning btn-sm" ng-click="disabled = !disabled">Enable/Disable</button>
+    </p>
+
+    <hr>
+    <!-- Single button with keyboard nav -->
+    <div class="btn-group" uib-dropdown keyboard-nav>
+        <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" uib-dropdown-toggle>
+            Dropdown with keyboard navigation <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li role="menuitem"><a href="#">Action</a></li>
+            <li role="menuitem"><a href="#">Another action</a></li>
+            <li role="menuitem"><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+
+    <hr>
+    <!-- AppendTo use case -->
+    <h4>append-to vs. append-to-body vs. inline example</h4>
+    <div id="dropdown-scrollable-container" style="height: 15em; overflow: auto;">
+      <div id="dropdown-long-content">
+        <div id="dropdown-hidden-container">
+          <div class="btn-group" uib-dropdown keyboard-nav dropdown-append-to="appendToEl">
+            <button id="btn-append-to" type="button" class="btn btn-primary" uib-dropdown-toggle>
+              Dropdown in Container <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to">
+              <li role="menuitem"><a href="#">Action</a></li>
+              <li role="menuitem"><a href="#">Another action</a></li>
+              <li role="menuitem"><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li role="menuitem"><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" uib-dropdown dropdown-append-to-body>
+            <button id="btn-append-to-to-body" type="button" class="btn btn-primary" uib-dropdown-toggle>
+              Dropdown on Body <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-to-body">
+              <li role="menuitem"><a href="#">Action</a></li>
+              <li role="menuitem"><a href="#">Another action</a></li>
+              <li role="menuitem"><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li role="menuitem"><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group" uib-dropdown>
+            <button id="btn-append-to-single-button" type="button" class="btn btn-primary" uib-dropdown-toggle>
+              Inline Dropdown <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
+              <li role="menuitem"><a href="#">Action</a></li>
+              <li role="menuitem"><a href="#">Another action</a></li>
+              <li role="menuitem"><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li role="menuitem"><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+          </div>
+          <div class="tab-pane fade" id="dropdown-tab-1">
+          <pre><code data-language="html">&lt;div ng-controller=&quot;DropdownCtrl&quot;&gt;
+    &lt;!-- Simple dropdown --&gt;
+    &lt;span uib-dropdown on-toggle=&quot;toggled(open)&quot;&gt;
+      &lt;a href id=&quot;simple-dropdown&quot; uib-dropdown-toggle&gt;
+        Click me for a dropdown, yo!
+      &lt;/a&gt;
+      &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu aria-labelledby=&quot;simple-dropdown&quot;&gt;
+        &lt;li ng-repeat=&quot;choice in items&quot;&gt;
+          &lt;a href&gt;&#123;&#123;choice&#125;&#125;&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/span&gt;
+
+    &lt;!-- Single button --&gt;
+    &lt;div class=&quot;btn-group&quot; uib-dropdown is-open=&quot;status.isopen&quot;&gt;
+      &lt;button id=&quot;single-button&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle ng-disabled=&quot;disabled&quot;&gt;
+        Button dropdown &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;single-button&quot;&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Split button --&gt;
+    &lt;div class=&quot;btn-group&quot; uib-dropdown&gt;
+      &lt;button id=&quot;split-button&quot; type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Action&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot; uib-dropdown-toggle&gt;
+        &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;sr-only&quot;&gt;Split button!&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;split-button&quot;&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Single button using append-to-body --&gt;
+    &lt;div class=&quot;btn-group&quot; uib-dropdown dropdown-append-to-body&gt;
+      &lt;button id=&quot;btn-append-to-body&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle&gt;
+        Dropdown on Body &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;btn-append-to-body&quot;&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+        &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Single button using template-url --&gt;
+    &lt;div class=&quot;btn-group&quot; uib-dropdown&gt;
+      &lt;button id=&quot;button-template-url&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle ng-disabled=&quot;disabled&quot;&gt;
+        Dropdown using template &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu template-url=&quot;dropdown.html&quot; aria-labelledby=&quot;button-template-url&quot;&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;hr /&gt;
+    &lt;p&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-sm&quot; ng-click=&quot;toggleDropdown($event)&quot;&gt;Toggle button dropdown&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-sm&quot; ng-click=&quot;disabled = !disabled&quot;&gt;Enable/Disable&lt;/button&gt;
+    &lt;/p&gt;
+
+    &lt;hr&gt;
+    &lt;!-- Single button with keyboard nav --&gt;
+    &lt;div class=&quot;btn-group&quot; uib-dropdown keyboard-nav&gt;
+        &lt;button id=&quot;simple-btn-keyboard-nav&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle&gt;
+            Dropdown with keyboard navigation &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;simple-btn-keyboard-nav&quot;&gt;
+            &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+            &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+            &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+    &lt;hr&gt;
+    &lt;!-- AppendTo use case --&gt;
+    &lt;h4&gt;append-to vs. append-to-body vs. inline example&lt;/h4&gt;
+    &lt;div id=&quot;dropdown-scrollable-container&quot; style=&quot;height: 15em; overflow: auto;&quot;&gt;
+      &lt;div id=&quot;dropdown-long-content&quot;&gt;
+        &lt;div id=&quot;dropdown-hidden-container&quot;&gt;
+          &lt;div class=&quot;btn-group&quot; uib-dropdown keyboard-nav dropdown-append-to=&quot;appendToEl&quot;&gt;
+            &lt;button id=&quot;btn-append-to&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle&gt;
+              Dropdown in Container &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;btn-append-to&quot;&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;btn-group&quot; uib-dropdown dropdown-append-to-body&gt;
+            &lt;button id=&quot;btn-append-to-to-body&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle&gt;
+              Dropdown on Body &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;btn-append-to-to-body&quot;&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;btn-group&quot; uib-dropdown&gt;
+            &lt;button id=&quot;btn-append-to-single-button&quot; type=&quot;button&quot; class=&quot;btn btn-primary&quot; uib-dropdown-toggle&gt;
+              Inline Dropdown &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;btn-append-to-single-button&quot;&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+              &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+              &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script type=&quot;text/ng-template&quot; id=&quot;dropdown.html&quot;&gt;
+        &lt;ul class=&quot;dropdown-menu&quot; uib-dropdown-menu role=&quot;menu&quot; aria-labelledby=&quot;button-template-url&quot;&gt;
+          &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Action in Template&lt;/a&gt;&lt;/li&gt;
+          &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Another action in Template&lt;/a&gt;&lt;/li&gt;
+          &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+          &lt;li role=&quot;menuitem&quot;&gt;&lt;a href=&quot;#&quot;&gt;Separated link in Template&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/script&gt;
+&lt;/div&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="dropdown-tab-2">
+          <pre><code data-language="javascript">angular.module(&#x27;ui.bootstrap.demo&#x27;).controller(&#x27;DropdownCtrl&#x27;, function ($scope, $log) {
+  $scope.items = [
+    &#x27;The first choice!&#x27;,
+    &#x27;And another choice for you.&#x27;,
+    &#x27;but wait! A third!&#x27;
+  ];
+
+  $scope.status = {
+    isopen: false
+  };
+
+  $scope.toggled = function(open) {
+    $log.log(&#x27;Dropdown is now: &#x27;, open);
+  };
+
+  $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.status.isopen = !$scope.status.isopen;
+  };
+
+  $scope.appendToEl = angular.element(document.querySelector(&#x27;#dropdown-long-content&#x27;));
+});</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="dropdown-tab-3">
+          <h3 id="uib-dropdown-settings">uib-dropdown settings</h3>
+<ul>
+<li><p><code>auto-close</code>
+<em>(Default: <code>always</code>)</em> -
+Controls the behavior of the menu when clicked.</p>
+<ul>
+<li><code>always</code> - Automatically closes the dropdown when any of its elements is clicked.</li>
+<li><code>disabled</code> - Disables the auto close. You can control it manually with <code>is-open</code>. It still gets closed if the toggle is clicked, <code>esc</code> is pressed or another dropdown is open.</li>
+<li><code>outsideClick</code> - Closes the dropdown automatically only when the user clicks any element outside the dropdown.</li>
+</ul>
+</li>
+<li><p><code>dropdown-append-to</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<em>(Default: <code>null</code>)</em> -
+Appends the inner dropdown-menu to an arbitrary DOM element.</p>
+</li>
+<li><p><code>dropdown-append-to-body</code>
+<small class="badge" uib-tooltip="This setting is a boolean. It doesn't need a parameter." tooltip-placement="top">B</small>
+<em>(Default: <code>false</code>)</em> -
+Appends the inner dropdown-menu to the body element.</p>
+</li>
+<li><p><code>is-open</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small>
+<i class="glyphicon glyphicon-eye-open" uib-tooltip="This setting has an angular $watch listener applied to it."></i>
+<em>(Default: <code>false</code>)</em> -
+Defines whether or not the dropdown-menu is open. The <code>uib-dropdown-toggle</code> will toggle this attribute on click.</p>
+</li>
+<li><p><code>keyboard-nav</code>:
+<small class="badge" uib-tooltip="This setting is a boolean. It doesn't need a parameter." tooltip-placement="top">B</small>
+<em>(Default: <code>false</code>)</em> -
+Enables navigation of dropdown list elements with the arrow keys.</p>
+</li>
+<li><p><code>on-toggle(open)</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+An optional expression called when the dropdown menu is opened or closed.</p>
+</li>
+</ul>
+<h3 id="uib-dropdown-menu-settings">uib-dropdown-menu settings</h3>
+<ul>
+<li><code>template-url</code>
+<em>(Default: <code>none</code>)</em> -
+You may specify a template for the dropdown menu. Check the demos for an example.</li>
+</ul>
+<h3 id="additional-settings-uibdropdownconfig-">Additional settings <code>uibDropdownConfig</code></h3>
+<ul>
+<li><p><code>appendToOpenClass</code>
+<em>(Default: <code>uib-dropdown-open</code>)</em> -
+Class to apply when the dropdown is open and appended to a different DOM element.</p>
+</li>
+<li><p><code>openClass</code>
+<em>(Default: <code>open</code>)</em> -
+Class to apply when the dropdown is open.</p>
+</li>
+</ul>
+<h3 id="known-issues">Known issues</h3>
+<p>For usage with ngTouch, it is recommended to use the programmatic <code>is-open</code> trigger with ng-click - this is due to ngTouch decorating ng-click to prevent propagation of the event.</p>
+          
+        	</div> <!-- end tab-pane -->
+    	</div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+</div> <!-- end panel -->
+</div>
+</section>
