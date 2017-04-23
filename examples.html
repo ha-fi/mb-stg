@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Examples | MineralBay Pattern Library</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:500,300,700,400italic,400'>
+  <link rel="stylesheet" href="css/mineralbay.css">
+  <script src="js/mineralbay.js"></script>
+  <script src="js/mineralbay-angular.js"></script>
+
+
+</head>
+<body class="pl-body">
+  <!-- ================================== Navigation ================================== -->
+  <nav id="top" class="navbar navbar-default" role="navigation" style="background: radial-gradient(#7f0001, #b20001);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="images/logo_whiteback.png" onmouseover="this.src='images/logo_hover_whiteback.png'" onmouseout="this.src='images/logo_whiteback.png'"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="pl-nav">
+        <ul id="pl-docs-nav" class="nav navbar-nav">
+          <li><a href="index.html">Introduction</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="angular.html">Angular</a></li>
+          <li><a href="examples.html">Examples</a></li>
+      </div>
+    </div>
+  </nav> <!-- /navigation -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9" role="main">
+
+<div style="padding-bottom: 48px" ng-app="mineralbay">
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script>
+<section id="navbar">
+<div ng-controller="NavBarDemoCtrl">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('NavBarDemoCtrl', ['$scope','$http', function ($scope) {
+	  
+	  $scope.language = 'English';
+  
+  	  $scope.change = function(name){
+      $scope.language = name;
+  		}}]);
+  
+</script>
+    <div class="page-header">
+        <h1>Static Navbar<small></small></h1>
+    </div>
+    
+<style>
+  .horizontal-collapse {
+    height: 70px;
+  }
+  .navbar-collapse.in {
+    overflow-y: hidden;
+  }
+  
+  
+  
+</style>
+
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#panel-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#panel-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#panel-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#panel-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="panel-tab-0">
+          
+      <nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand" >
+  		<img src="images/logo_whiteback.png" onmouseover="this.src='images/logo_hover_whiteback.png'" onmouseout="this.src='images/logo_whiteback.png'">
+		</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a style="padding-top: 45px;" href="#">Link <span class="sr-only">(current)</span></a></li>
+            <li><a style="padding-top: 45px;" href="#">Link</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a style="padding-top: 45px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> [[language]] <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"> <a href="#" ng-click="change('Deutsch')">Deutsch</a></li>
+                <li role="menuitem"> <a href="#" ng-click="change('English')">English</a></li>
+              </ul>
+            </li>
+            <li><a style="padding-top: 45px;" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+	</br></br></br>
+
+	<nav class="navbar navbar-default" style="background: radial-gradient(#7f0001, #b20001);">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand" >
+  		<img src="images/logo_whiteback.png" onmouseover="this.src='images/logo_hover_whiteback.png'" onmouseout="this.src='images/logo_whiteback.png'">
+		</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a style="padding-top: 45px;" href="#" class="navbar-link"><span class="glyphicon glyphicon-user"></span> Mark Otto</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          
+            <li class="dropdown">
+              <a style="padding-top: 45px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> [[language]] <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem"> <a href="#" ng-click="change('Deutsch')">Deutsch</a></li>
+                <li role="menuitem"> <a href="#" ng-click="change('English')">English</a></li>
+              </ul>
+            </li>
+            
+            <li><a style="padding-top: 45px;" href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            
+           </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+          
+          </div>
+          <div class="tab-pane fade" id="panel-tab-1">
+             <pre><code data-language="html">&lt;nav class=&quot;navbar navbar-default&quot; style=&quot;background: radial-gradient(#7f0001, #b20001);&quot;&gt;
+      &lt;div class=&quot;container-fluid&quot;&gt;
+        &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot;&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;a href=&quot;#&quot; class=&quot;navbar-brand&quot; &gt;
+  		&lt;img src=&quot;images/logo_whiteback.png&quot; onmouseover=&quot;this.src='images/logo_hover_whiteback.png'&quot; onmouseout=&quot;this.src='images/logo_whiteback.png'&quot;&gt;
+		&lt;/a&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+        &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;
+          &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+            &lt;li&gt;&lt;a style=&quot;padding-top: 45px;&quot; href=&quot;#&quot;&gt;Link &lt;span class=&quot;sr-only&quot;&gt;(current)&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a style=&quot;padding-top: 45px;&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+          &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+            &lt;li class=&quot;dropdown&quot;&gt;
+              &lt;a style=&quot;padding-top: 45px;&quot; href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot; role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt; [[language]] &lt;span class=&quot;caret&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+              &lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+                &lt;li role=&quot;menuitem&quot;&gt; &lt;a href=&quot;#&quot; ng-click=&quot;change('Deutsch')&quot;&gt;Deutsch&lt;/a&gt;&lt;/li&gt;
+                &lt;li role=&quot;menuitem&quot;&gt; &lt;a href=&quot;#&quot; ng-click=&quot;change('English')&quot;&gt;English&lt;/a&gt;&lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a style=&quot;padding-top: 45px;&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;glyphicon glyphicon-log-in&quot;&gt;&lt;/span&gt; Login&lt;/a&gt;&lt;/li&gt;
+           &lt;/ul&gt;
+        &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+      &lt;/div&gt;&lt;!-- /.container-fluid --&gt;
+    &lt;/nav&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-2">
+            <pre ng-non-bindable><code data-language="javascript">angular.module('mineralbay').controller('NavBarDemo', ['$scope','$http', function ($scope) {
+	  $scope.language = 'English';
+	  
+	  $scope.change = function(name){
+	  		$scope.language = name;
+	  		}
+
+      }]);</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-tab-3"><pre ng-non-bindable><code data-language="css">
+  .horizontal-collapse {
+    height: 70px;
+  }
+  .navbar-collapse.in {
+    overflow-y: hidden;
+  }
+ 
+.navbar-default .navbar-text {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #333;
+  background-color: #fafafa;
+}
+.navbar-default .navbar-nav > li > a:focus {
+  color: #333;
+  background-color: #fafafa;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #555;
+  background-color: #fafafa;
+}
+
+.navbar-brand > img {
+  display: block;
+  display: inline-block;
+  margin-top: -4px;
+  max-width: 110px;
+}
+
+          </code></pre></div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  
+</div>
+</section>
+
+<section id="sorting">
+<div ng-controller="SortingDemoCtrl">
+<script type="text/javascript">
+  angular
+  .module('mineralbay')
+  .factory('peopleFactory', peopleFactory)
+  
+  angular
+	.module('mineralbay')
+	.factory('peopleFactory', peopleFactory)
+	.controller('SortingDemoCtrl', SortingDemoCtrl)
+;
+
+function SortingDemoCtrl($scope, $filter, peopleFactory) {
+  
+	$scope.sortType = '-nr';
+	// the table will first be sorted by 'sortType' and then by 'secondSortType'
+	// followed by 'thirdSortType'
+	$scope.secondSortType = 'lastName';
+	$scope.thirdSortType = 'firstName';
+	// set the default search/filter term
+	$scope.filterTable = '';
+	
+	// get the people data
+	$scope.peopleArray = peopleFactory;
+	//console.log($scope.dataArray);
+	
+	// pagination settings
+	$scope.currentPage = 1;
+	// max size of the pagination bar
+	$scope.maxPaginationSize = 100;
+	$scope.itemsPerPage = 10;
+	
+	// update the beginning and end points for shown people
+	// this will be called when the user changes page in the pagination bar
+	$scope.updatePageIndexes = function () {
+		$scope.firstIndex = ($scope.currentPage - 1) * $scope.itemsPerPage;
+		$scope.lastIndex = $scope.currentPage * $scope.itemsPerPage;
+	};
+	$scope.updatePageIndexes();
+	
+	// return 1 if the element is filtered
+	// used to hide elements that do not match the search filter
+	$scope.filterSort = function(element) {
+		if ($filter('filter')([element], $scope.filterTable).length > 0) {
+			return 1;
+		}
+		return 2;
+	};
+	
+	// string manipulation functions
+	// primarily used for sorting the table
+	function matchFirstChar(c, string) {
+		return (string.charAt(0) == c);
+	}
+	
+	function removeFirstChar(string) {
+		return string.slice(1);
+	}
+	
+	function removeDash(label) {
+		if (matchFirstChar('-', label)) {
+			return removeFirstChar(label);
+		}
+		return label;
+	}
+	function addDash(label) {
+		if (!matchFirstChar('-', label)) {
+			return '-' + label;
+		}
+		return label;
+	}
+	
+	// formatting functions
+	// for displaying table headers and tooltips
+	function capitalizeFirstLetter(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+	
+	function makeReadableLabel(label) {
+		var formatted = label;
+		switch (label) {
+			case 'firstName':
+				formatted = 'first name';
+				break;
+			case 'lastName':
+				formatted = 'last name';
+		}
+		return formatted;
+	}
+	
+	// sort functions
+	// add or remove '-' to sort up or down
+	$scope.sortReverse = function(set) {
+		set = set || false;
+		if (set || !matchFirstChar('-', $scope.sortType)) {
+			$scope.sortType = addDash($scope.sortType);
+		} else {
+			$scope.sortType = removeDash($scope.sortType);
+		}
+	};
+	
+	// sort a column with a single data attribute
+	$scope.singleSort = function(label) {
+		if ($scope.sortType == label) {
+			$scope.sortReverse();
+		} else {
+			$scope.sortType = label;
+		}
+	};
+	
+	// sort a column with two data attributes
+	// example: first name and last name
+	$scope.doubleSort = function(label1, label2) {
+		if ($scope.sortType == ('-' + label1)) {
+			$scope.sortType = label2;
+		} else if ($scope.sortType == ('-' + label2)) {
+			$scope.sortType = label1;
+		} else if ($scope.sortType != label1 && $scope.sortType != label2) {
+			$scope.sortType = label1;
+		} else {
+			$scope.sortReverse();
+		}
+	};
+	
+	// boolean functions for detecting how a column is sorted
+	// used for the up and down carets next to each column header
+	$scope.sortDescend = function(label1, label2) {
+		label2 = label2 || '';
+		return ($scope.sortType == label1 || $scope.sortType == label2);
+	};
+	
+	$scope.sortAscend = function(label1, label2) {
+		label2 = label2 || '';
+		return ($scope.sortType == ('-' + label1) || $scope.sortType == ('-' + label2));
+	};
+	
+	// show a tooltip displaying how a column is sorted
+	$scope.sortTooltip = function(label1, label2) {
+		label2 = label2 || '';
+		
+		var order = 'descending';
+		if (matchFirstChar('-', $scope.sortType)) {
+			order = 'ascending';
+		}
+		
+		var baseSortType = removeDash($scope.sortType);
+		if (label1 == baseSortType || label2 == baseSortType) {
+			return capitalizeFirstLetter((makeReadableLabel(baseSortType)) + ' ' + order);
+		}
+		return 'Sort by ' + makeReadableLabel(label1) + ' or ' + makeReadableLabel(label2);
+	};
+	
+	// data manipulation
+	// functions for adding data attributes
+	// we use these to add string attributes so that the user can filter the data more easily
+	addFormattedDate = function(attributeToAdd, attributeToRead, dataArray) {
+		var monthNames = [
+			"January", "February", "March",
+			"April", "May", "June", "July",
+			"August", "September", "October",
+			"November", "December"
+		];
+		var tempDate;
+		for (var i = 0; i < dataArray.length; i++) {
+			tempDate = new Date(dataArray[i][attributeToRead]);
+			// will add string in the format 'September 29'
+			dataArray[i][attributeToAdd] = monthNames[tempDate.getMonth()] + ' ' + tempDate.getDate() + ', ' + tempDate.getFullYear();
+		}
+	}
+	addBooleanText = function(attributeToAdd, attributeToRead, dataArray, trueText, falseText) {
+		for (var i = 0; i < dataArray.length; i++) {
+			if (dataArray[i][attributeToRead]) {
+				dataArray[i][attributeToAdd] = trueText;
+			} else {
+				dataArray[i][attributeToAdd] = falseText;
+			}
+		}
+	}
+	// because our first and last names are separate,
+	// we use this function to add a fullName attribute
+	// so that the user can filter by full names
+	addCombinedAttribute = function(attributeToAdd, firstAttributeToCombine, secondAttributeToCombine, dataArray) {
+		for (var i = 0; i < dataArray.length; i++) {
+			dataArray[i][attributeToAdd] = dataArray[i][firstAttributeToCombine] + " " + dataArray[i][secondAttributeToCombine];
+		}
+	}
+	addFormattedDate('formattedBirthday', 'birthday', $scope.peopleArray);
+	addBooleanText('citizenText', 'citizen', $scope.peopleArray, 'United States', 'Other');
+	addCombinedAttribute('fullName', 'firstName', 'lastName', $scope.peopleArray);
+	
+}
+  	  
+  	  // returns an array of random people
+// data generation is slow,
+// this is what causes the delay when loading the page
+// in reality, this factory would connect
+// to a database and return that data
+function peopleFactory() {
+	var index = 0;
+	// return random first name
+	generateFirstName = function() {
+		var names = ["James",
+		             "Christopher",
+		             "Ronald",
+		             "Mary",
+		             "Lisa",
+		             "Michelle",
+		             "John",
+		             "Daniel",
+		             "Anthony",
+		             "Patricia",
+		             "Nancy",
+		             "Laura",
+		             "Robert",
+		             "Paul",
+		             "Kevin",
+		             "Linda",
+		             "Karen",
+		             "Sarah",
+		             "Michael",
+		             "Mark",
+		             "Jason",
+		             "Barbara",
+		             "Betty",
+		             "Kimberly",
+		             "William",
+		             "Donald",
+		             "Jeff",
+		             "Elizabeth",
+		             "Helen",
+		             "Deborah",
+		             "David",
+		             "George",
+		             "Jennifer",
+		             "Sandra",
+		             "Richard",
+		             "Kenneth",
+		             "Maria",
+		             "Donna",
+		             "Charles",
+		             "Steven",
+		             "Susan",
+		             "Carol",
+		             "Joseph",
+		             "Edward",
+		             "Margaret",
+		             "Ruth",
+		             "Thomas",
+		             "Brian",
+		             "Dorothy",
+		             "Sharon"];
+		return names[Math.floor(Math.random()*names.length)];
+	};
+	
+	// return random last name
+	generateLastName = function() {
+		
+		var names = ["Smith",
+		             "Anderson",
+		             "Clark",
+		             "Wright",
+		             "Mitchell",
+		             "Johnson",
+		             "Thomas",
+		             "Rodriguez",
+		             "Lopez",
+		             "Perez",
+		             "Williams",
+		             "Jackson",
+		             "Lewis",
+		             "Hill",
+		             "Roberts",
+		             "Jones",
+		             "White",
+		             "Lee",
+		             "Scott",
+		             "Turner",
+		             "Brown",
+		             "Harris",
+		             "Walker",
+		             "Green",
+		             "Phillips",
+		             "Davis",
+		             "Martin",
+		             "Hall",
+		             "Adams",
+		             "Campbell",
+		             "Miller",
+		             "Thompson",
+		             "Allen",
+		             "Baker",
+		             "Parker",
+		             "Wilson",
+		             "Garcia",
+		             "Young",
+		             "Gonzalez",
+		             "Evans",
+		             "Moore",
+		             "Martinez",
+		             "Hernandez",
+		             "Nelson",
+		             "Edwards",
+		             "Taylor",
+		             "Robinson",
+		             "King",
+		             "Carter",
+		             "Collins"];
+		return names[Math.floor(Math.random()*names.length)];
+	};
+	
+	// randome date
+	generateDate = function() {
+		return new Date(Math.round(Math.random()*100) + 1900,
+										Math.round(Math.random()*12),
+										Math.round(Math.random()*28));
+	};
+	
+	// return random gender
+	generateBoolean = function() {
+		if (Math.round(Math.random())) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
+	// return random food
+	generateFood = function() {
+		var food = ["pizza",
+								"ice cream",
+								"french fries",
+								"hamburger",
+								"cheeseburger",
+								"chicken",
+								"pork",
+								"mac n cheese"];
+		return food[Math.floor(Math.random()*food.length)];
+	};
+	
+	// return random food
+	generateDrink = function() {
+		var drink = ["beer",
+								 "soda",
+								 "milkshake",
+								 "water",
+								 "milk",
+								 "juice",
+								 "iced tea",
+								 "coffee"];
+		return drink[Math.floor(Math.random()*drink.length)];
+	};
+	
+	buildPerson = function() {
+		index=index+1;
+		return {
+			nr: index,
+			firstName: generateFirstName(),
+			lastName: generateLastName(),
+			birthday: generateDate(),
+			citizen: generateBoolean(),
+			food: generateFood(),
+			drink: generateDrink()
+		};
+	}
+	
+	createPeopleArray = function(num) {
+		var peopleArray = [];
+		for (var i=0; i<num; i++) {
+			peopleArray.push(buildPerson());
+		}
+		return peopleArray;
+	}
+	
+	return createPeopleArray(10);
+	
+}
+  
+</script>
+    <div class="page-header">
+        <h1>Sorting Demo<small></small></h1>
+    </div>
+    
+<style>
+
+.table {
+	font-size: 13px;
+	table-layout: fixed;
+}
+th.sortable {
+	text-align: center;
+}
+th.sortable:hover {
+	background: #C5E3EA;
+	color: #23527c;
+	text-align: center;
+}
+
+th.sortable:active {
+	background: #C5E3EA;
+	color: #23527c;
+	text-align: center;
+}
+
+th.sortable:focus {
+	background: #C5E3EA;
+	color: #23527c;
+	text-align: center;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  background-color:rgba(141, 192, 219, 0.25);
+}
+</style>
+
+<div class="panel panel-default">
+
+<!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#sort-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#sort-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#sort-tab-2" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="sort-tab-0">
+<div class="table-responsive">
+<table class="table table-condensed table-bordered table-striped">
+		<thead>
+			<tr>
+				<th class="sortable" style="width: 40px"
+					data-ng-click="singleSort('nr')">
+					&#35;
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('nr'), 'glyphicon glyphicon-arrow-down':sortAscend('nr')}">
+					</span>
+				</th>
+				
+				<th class="sortable" style="width: 15%"
+						data-ng-click="doubleSort('lastName','firstName')"
+						data-uib-tooltip="[[ sortTooltip('firstName','lastName') ]]"
+						data-tooltip-append-to-body="true">
+					Name
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('lastName','firstName'), 'glyphicon glyphicon-arrow-down':sortAscend('lastName','firstName')}">
+					</span>
+				</th>
+				<th class="sortable" style="width: 20%"
+						data-ng-click="singleSort('birthday')"
+						data-uib-tooltip="[[ sortTooltip('birthday') ]]"
+						data-tooltip-append-to-body="true">
+					Birthday
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('birthday'), 'glyphicon glyphicon-arrow-down':sortAscend('birthday')}">
+					</span>
+				</th>
+				<th class="sortable" style="width: 18%"
+						data-ng-click="singleSort('citizen')">
+					Citizenship
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('citizen'), 'glyphicon glyphicon-arrow-down':sortAscend('citizen')}">
+					</span>
+				</th>
+				<th class="sortable"
+						data-ng-click="doubleSort('food','drink')" 
+						data-uib-tooltip="[[ sortTooltip('food','drink') ]]" 
+						data-tooltip-append-to-body="true">
+					Favorite Food and Drink
+					<span  
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('food','drink'), 'glyphicon glyphicon-arrow-down':sortAscend('food','drink')}">
+					</span>
+				</th>
+			<tr>
+		</thead>
+		<tbody>
+			<tr
+					data-ng-repeat="person in peopleArray | orderBy:[filterSort, sortType, secondSortType, thirdSortType]" 
+					data-ng-show="(filterSort(person) == 1) && ($index >= firstIndex) && ($index < lastIndex)">
+				<td class="table-row-index">
+					[[ person.nr ]]
+				</td>
+				<td class="person-name">
+					[[ person.firstName ]] 
+					[[ person.lastName ]]
+				</td>
+				<td class="person-birthday" date>
+					<time datetime="[[person.birthday]]">
+						[[ person.formattedBirthday]]
+					</time>
+				</td>
+				<td class="person-gender">
+					[[ person.citizenText ]]
+				</td>
+				<td class="person-food">
+					[[ person.food ]] <br>
+					[[ person.drink ]]
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+          <div class="tab-pane fade" id="sort-tab-1">
+             <pre><code data-language="html">&lt;div class=&quot;table-responsive&quot;&gt;
+&lt;table class=&quot;table table-condensed table-bordered table-striped&quot;&gt;
+		&lt;thead&gt;
+			&lt;tr&gt;
+                &lt;th&gt;
+                    &lt;sort column-name=&quot;mineralbayApp.xy.name&quot; data-uib-tooltip=&quot;Sort by name&quot; sort-callback=&quot;loadAll()&quot;
+                          order-type=&quot;name&quot; order-model=&quot;orderModel&quot;&gt;&lt;/sort&gt;
+                &lt;/th&gt;
+			&lt;tr&gt;
+		&lt;/thead&gt;
+		&lt;tbody&gt;
+			&lt;tr ng-repeat=&quot;xy in xys&quot;&gt;
+        	        &lt;td&gt;&#123;&#123;tunnelProject.projectName&#125;&#125;&lt;/td&gt;
+				
+			&lt;/tr&gt;
+		&lt;/tbody&gt;
+	&lt;/table&gt;
+&lt;/div&gt;
+
+----------------------------------------------------------------------------------------
+
+sort.template.html: 
+&lt;div class=&quot;breakNotAllowed&quot; ng-click=&quot;sort()&quot;&gt;
+    	&lt;span translate=&quot;&#123;&#123;columnName&#125;&#125;&quot; class=&quot;breakAllowed&quot;&gt;Name&lt;/span&gt;
+        &lt;span class=&quot;glyphicon&quot;
+              ng-class=&quot;(orderType == orderModel.order_type &amp;&amp; orderModel.order_direction=='DESC') ? 'glyphicon-arrow-up' : (orderType == orderModel.order_type &amp;&amp; orderModel.order_direction == 'ASC' ?'glyphicon-arrow-down' : true)&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+             </code></pre>
+             </div>
+             
+           <div class="tab-pane fade" id="sort-tab-2">
+             <pre><code data-language="css">.table {
+	font-size: 13px;
+	table-layout: fixed;
+}
+
+.table &gt; thead &gt; tr &gt; th &gt; sort {
+	text-align: center;
+}
+
+.table &gt; thead &gt; tr &gt; th &gt; sort:hover {
+	background: #C5E3EA;
+	color: #23527c;
+	cursor: pointer;
+	text-align: center;
+}
+
+.table &gt; thead &gt; tr &gt; th,
+.table &gt; thead &gt; tr &gt; td {
+  background-color:rgba(141, 192, 219, 0.25);
+}
+
+.table &gt; thead &gt; tr &gt; th:hover{
+   background-color: #C5E3EA;
+	color: #23527c;
+
+}</code></pre>
+             </div>  
+             
+             </div>
+	</div>
+	
+	</div>
+	</div>
+	</section>
+<section id="fixedTableHeader">
+<div ng-controller="FixedHeaderDemoCtrl">
+<script type="text/javascript">
+  angular
+  .module('mineralbay')
+  .factory('peopleFactory', peopleFactory)
+  
+  angular
+	.module('mineralbay')
+	.factory('peopleFactory', peopleFactory)
+	.controller('FixedHeaderDemoCtrl', SortingDemoCtrl)
+;
+
+function SortingDemoCtrl($scope, $filter, peopleFactory) {
+  
+	$scope.sortType = '-nr';
+	// the table will first be sorted by 'sortType' and then by 'secondSortType'
+	// followed by 'thirdSortType'
+	$scope.secondSortType = 'lastName';
+	$scope.thirdSortType = 'firstName';
+	// set the default search/filter term
+	$scope.filterTable = '';
+	
+	// get the people data
+	$scope.peopleArray = peopleFactory;
+	//console.log($scope.dataArray);
+	
+	// pagination settings
+	$scope.currentPage = 1;
+	// max size of the pagination bar
+	$scope.maxPaginationSize = 100;
+	$scope.itemsPerPage = 20;
+	
+	// update the beginning and end points for shown people
+	// this will be called when the user changes page in the pagination bar
+	$scope.updatePageIndexes = function () {
+		$scope.firstIndex = ($scope.currentPage - 1) * $scope.itemsPerPage;
+		$scope.lastIndex = $scope.currentPage * $scope.itemsPerPage;
+	};
+	$scope.updatePageIndexes();
+	
+	// return 1 if the element is filtered
+	// used to hide elements that do not match the search filter
+	$scope.filterSort = function(element) {
+		if ($filter('filter')([element], $scope.filterTable).length > 0) {
+			return 1;
+		}
+		return 2;
+	};
+	
+	// string manipulation functions
+	// primarily used for sorting the table
+	function matchFirstChar(c, string) {
+		return (string.charAt(0) == c);
+	}
+	
+	function removeFirstChar(string) {
+		return string.slice(1);
+	}
+	
+	function removeDash(label) {
+		if (matchFirstChar('-', label)) {
+			return removeFirstChar(label);
+		}
+		return label;
+	}
+	function addDash(label) {
+		if (!matchFirstChar('-', label)) {
+			return '-' + label;
+		}
+		return label;
+	}
+	
+	// formatting functions
+	// for displaying table headers and tooltips
+	function capitalizeFirstLetter(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+	
+	function makeReadableLabel(label) {
+		var formatted = label;
+		switch (label) {
+			case 'firstName':
+				formatted = 'first name';
+				break;
+			case 'lastName':
+				formatted = 'last name';
+		}
+		return formatted;
+	}
+	
+	// sort functions
+	// add or remove '-' to sort up or down
+	$scope.sortReverse = function(set) {
+		set = set || false;
+		if (set || !matchFirstChar('-', $scope.sortType)) {
+			$scope.sortType = addDash($scope.sortType);
+		} else {
+			$scope.sortType = removeDash($scope.sortType);
+		}
+	};
+	
+	// sort a column with a single data attribute
+	$scope.singleSort = function(label) {
+		if ($scope.sortType == label) {
+			$scope.sortReverse();
+		} else {
+			$scope.sortType = label;
+		}
+	};
+	
+	// sort a column with two data attributes
+	// example: first name and last name
+	$scope.doubleSort = function(label1, label2) {
+		if ($scope.sortType == ('-' + label1)) {
+			$scope.sortType = label2;
+		} else if ($scope.sortType == ('-' + label2)) {
+			$scope.sortType = label1;
+		} else if ($scope.sortType != label1 && $scope.sortType != label2) {
+			$scope.sortType = label1;
+		} else {
+			$scope.sortReverse();
+		}
+	};
+	
+	// boolean functions for detecting how a column is sorted
+	// used for the up and down carets next to each column header
+	$scope.sortDescend = function(label1, label2) {
+		label2 = label2 || '';
+		return ($scope.sortType == label1 || $scope.sortType == label2);
+	};
+	
+	$scope.sortAscend = function(label1, label2) {
+		label2 = label2 || '';
+		return ($scope.sortType == ('-' + label1) || $scope.sortType == ('-' + label2));
+	};
+	
+	// show a tooltip displaying how a column is sorted
+	$scope.sortTooltip = function(label1, label2) {
+		label2 = label2 || '';
+		
+		var order = 'descending';
+		if (matchFirstChar('-', $scope.sortType)) {
+			order = 'ascending';
+		}
+		
+		var baseSortType = removeDash($scope.sortType);
+		if (label1 == baseSortType || label2 == baseSortType) {
+			return capitalizeFirstLetter((makeReadableLabel(baseSortType)) + ' ' + order);
+		}
+		return 'Sort by ' + makeReadableLabel(label1) + ' or ' + makeReadableLabel(label2);
+	};
+	
+	// data manipulation
+	// functions for adding data attributes
+	// we use these to add string attributes so that the user can filter the data more easily
+	addFormattedDate = function(attributeToAdd, attributeToRead, dataArray) {
+		var monthNames = [
+			"January", "February", "March",
+			"April", "May", "June", "July",
+			"August", "September", "October",
+			"November", "December"
+		];
+		var tempDate;
+		for (var i = 0; i < dataArray.length; i++) {
+			tempDate = new Date(dataArray[i][attributeToRead]);
+			// will add string in the format 'September 29'
+			dataArray[i][attributeToAdd] = monthNames[tempDate.getMonth()] + ' ' + tempDate.getDate() + ', ' + tempDate.getFullYear();
+		}
+	}
+	addBooleanText = function(attributeToAdd, attributeToRead, dataArray, trueText, falseText) {
+		for (var i = 0; i < dataArray.length; i++) {
+			if (dataArray[i][attributeToRead]) {
+				dataArray[i][attributeToAdd] = trueText;
+			} else {
+				dataArray[i][attributeToAdd] = falseText;
+			}
+		}
+	}
+	// because our first and last names are separate,
+	// we use this function to add a fullName attribute
+	// so that the user can filter by full names
+	addCombinedAttribute = function(attributeToAdd, firstAttributeToCombine, secondAttributeToCombine, dataArray) {
+		for (var i = 0; i < dataArray.length; i++) {
+			dataArray[i][attributeToAdd] = dataArray[i][firstAttributeToCombine] + " " + dataArray[i][secondAttributeToCombine];
+		}
+	}
+	addFormattedDate('formattedBirthday', 'birthday', $scope.peopleArray);
+	addBooleanText('citizenText', 'citizen', $scope.peopleArray, 'United States', 'Other');
+	addCombinedAttribute('fullName', 'firstName', 'lastName', $scope.peopleArray);
+	
+}
+  	  
+  	  // returns an array of random people
+// data generation is slow,
+// this is what causes the delay when loading the page
+// in reality, this factory would connect
+// to a database and return that data
+function peopleFactory() {
+	var index = 0;
+	// return random first name
+	generateFirstName = function() {
+		var names = ["James",
+		             "Christopher",
+		             "Ronald",
+		             "Mary",
+		             "Lisa",
+		             "Michelle",
+		             "John",
+		             "Daniel",
+		             "Anthony",
+		             "Patricia",
+		             "Nancy",
+		             "Laura",
+		             "Robert",
+		             "Paul",
+		             "Kevin",
+		             "Linda",
+		             "Karen",
+		             "Sarah",
+		             "Michael",
+		             "Mark",
+		             "Jason",
+		             "Barbara",
+		             "Betty",
+		             "Kimberly",
+		             "William",
+		             "Donald",
+		             "Jeff",
+		             "Elizabeth",
+		             "Helen",
+		             "Deborah",
+		             "David",
+		             "George",
+		             "Jennifer",
+		             "Sandra",
+		             "Richard",
+		             "Kenneth",
+		             "Maria",
+		             "Donna",
+		             "Charles",
+		             "Steven",
+		             "Susan",
+		             "Carol",
+		             "Joseph",
+		             "Edward",
+		             "Margaret",
+		             "Ruth",
+		             "Thomas",
+		             "Brian",
+		             "Dorothy",
+		             "Sharon"];
+		return names[Math.floor(Math.random()*names.length)];
+	};
+	
+	// return random last name
+	generateLastName = function() {
+		
+		var names = ["Smith",
+		             "Anderson",
+		             "Clark",
+		             "Wright",
+		             "Mitchell",
+		             "Johnson",
+		             "Thomas",
+		             "Rodriguez",
+		             "Lopez",
+		             "Perez",
+		             "Williams",
+		             "Jackson",
+		             "Lewis",
+		             "Hill",
+		             "Roberts",
+		             "Jones",
+		             "White",
+		             "Lee",
+		             "Scott",
+		             "Turner",
+		             "Brown",
+		             "Harris",
+		             "Walker",
+		             "Green",
+		             "Phillips",
+		             "Davis",
+		             "Martin",
+		             "Hall",
+		             "Adams",
+		             "Campbell",
+		             "Miller",
+		             "Thompson",
+		             "Allen",
+		             "Baker",
+		             "Parker",
+		             "Wilson",
+		             "Garcia",
+		             "Young",
+		             "Gonzalez",
+		             "Evans",
+		             "Moore",
+		             "Martinez",
+		             "Hernandez",
+		             "Nelson",
+		             "Edwards",
+		             "Taylor",
+		             "Robinson",
+		             "King",
+		             "Carter",
+		             "Collins"];
+		return names[Math.floor(Math.random()*names.length)];
+	};
+	
+	// randome date
+	generateDate = function() {
+		return new Date(Math.round(Math.random()*100) + 1900,
+										Math.round(Math.random()*12),
+										Math.round(Math.random()*28));
+	};
+	
+	// return random gender
+	generateBoolean = function() {
+		if (Math.round(Math.random())) {
+			return true;
+		} else {
+			return false;
+		}
+	};
+	
+	// return random food
+	generateFood = function() {
+		var food = ["pizza",
+								"ice cream",
+								"french fries",
+								"hamburger",
+								"cheeseburger",
+								"chicken",
+								"pork",
+								"mac n cheese"];
+		return food[Math.floor(Math.random()*food.length)];
+	};
+	
+	// return random food
+	generateDrink = function() {
+		var drink = ["beer",
+								 "soda",
+								 "milkshake",
+								 "water",
+								 "milk",
+								 "juice",
+								 "iced tea",
+								 "coffee"];
+		return drink[Math.floor(Math.random()*drink.length)];
+	};
+	
+	buildPerson = function() {
+		index=index+1;
+		return {
+			nr: index,
+			firstName: generateFirstName(),
+			lastName: generateLastName(),
+			birthday: generateDate(),
+			citizen: generateBoolean(),
+			food: generateFood(),
+			drink: generateDrink()
+		};
+	}
+	
+	createPeopleArray = function(num) {
+		var peopleArray = [];
+		for (var i=0; i<num; i++) {
+			peopleArray.push(buildPerson());
+		}
+		return peopleArray;
+	}
+	
+	return createPeopleArray(20);
+	
+}
+  
+</script>
+    <div class="page-header">
+        <h1>Fixed table header <small>(<a target="_blank" href="https://github.com/daniel-nagy/fixed-table-header">Fixed-Table-Header</a>)</small></h1>
+    </div>
+    
+<style>
+
+.table {
+	font-size: 13px;
+	table-layout: fixed;
+	margin-bottom: 0px;
+}
+th.sortable {
+	text-align: center;
+}
+th.sortable:hover {
+	background: #C5E3EA;
+	color: #23527c;
+	text-align: center;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  background-color:rgba(141, 192, 219, 0.25);
+}
+</style>
+
+<div class="panel panel-default">
+
+<!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#fixed-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#fixed-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#fixed-tab-2" role="tab" data-toggle="tab">Installation</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="fixed-tab-0">
+<div class="table-responsive" style="overflow: auto; max-height: 300px;">
+<table class="table table-condensed table-bordered table-striped">
+		<thead fix-head>
+			<tr>
+				<th class="sortable" style="width: 40px"
+					data-ng-click="singleSort('nr')">
+					&#35;
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('nr'), 'glyphicon glyphicon-arrow-down':sortAscend('nr')}">
+					</span>
+				</th>
+				
+				<th class="sortable" style="width: 15%"
+						data-ng-click="doubleSort('lastName','firstName')"
+						data-uib-tooltip="[[ sortTooltip('firstName','lastName') ]]"
+						data-tooltip-append-to-body="true">
+					Name
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('lastName','firstName'), 'glyphicon glyphicon-arrow-down':sortAscend('lastName','firstName')}">
+					</span>
+				</th>
+				<th class="sortable" style="width: 20%"
+						data-ng-click="singleSort('birthday')"
+						data-uib-tooltip="[[ sortTooltip('birthday') ]]"
+						data-tooltip-append-to-body="true">
+					Birthday
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('birthday'), 'glyphicon glyphicon-arrow-down':sortAscend('birthday')}">
+					</span>
+				</th>
+				<th class="sortable" style="width: 18%"
+						data-ng-click="singleSort('citizen')">
+					Citizenship
+					<span 
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('citizen'), 'glyphicon glyphicon-arrow-down':sortAscend('citizen')}">
+					</span>
+				</th>
+				<th class="sortable"
+						data-ng-click="doubleSort('food','drink')" 
+						data-uib-tooltip="[[ sortTooltip('food','drink') ]]" 
+						data-tooltip-append-to-body="true">
+					Favorite Food and Drink
+					<span  
+								data-ng-class="{'glyphicon glyphicon-arrow-up':sortDescend('food','drink'), 'glyphicon glyphicon-arrow-down':sortAscend('food','drink')}">
+					</span>
+				</th>
+			<tr>
+		</thead>
+		<tbody>
+			<tr
+					data-ng-repeat="person in peopleArray | orderBy:[filterSort, sortType, secondSortType, thirdSortType]" 
+					data-ng-show="(filterSort(person) == 1) && ($index >= firstIndex) && ($index < lastIndex)">
+				<td class="table-row-index">
+					[[ person.nr ]]
+				</td>
+				<td class="person-name">
+					[[ person.firstName ]] 
+					[[ person.lastName ]]
+				</td>
+				<td class="person-birthday" date>
+					<time datetime="[[person.birthday]]">
+						[[ person.formattedBirthday]]
+					</time>
+				</td>
+				<td class="person-gender">
+					[[ person.citizenText ]]
+				</td>
+				<td class="person-food">
+					[[ person.food ]] <br>
+					[[ person.drink ]]
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	</div>
+          <div class="tab-pane fade" id="fixed-tab-1">
+          <h4>Usage</h4>
+          <p>Wrap the table in a element that will scroll vertically. Use the <code>fix-head</code> attribute on a <code>&lt;thead&gt;</code> element to prevent it from scrolling with the rest of the table.</p>
+		<p>A clone of the original <code>&lt;thead&gt;</code> element will be moved outside the scroll container. To ensure valid HTML, the cloned <code>&lt;thead&gt;</code> element will be wrapped in a copy of the <code>&lt;table&gt;</code> element. The new <code>&lt;table&gt;</code> element will be given the <code>clone</code> class.</p>
+          
+          
+          <pre><code data-language="html">&lt;div style=&quot;overflow: auto; max-height: 300px;&quot;&gt;
+  &lt;table&gt;
+    &lt;thead fix-head&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Nr&lt;/th&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Birthday&lt;/th&gt;
+        &lt;th&gt;Citizenship&lt;/th&gt;
+        &lt;th&gt;Favorite Food and Drink&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr ng-repeat=&quot;contact in contacts&quot;&gt;
+        &lt;td&gt;&#123;&#123;contact.nr&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.name&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.birthday&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.citizenship&#125;&#125;&lt;/td&gt;
+        &lt;td&gt;&#123;&#123;contact.favoritefood&#125;&#125;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+             </div>
+           <div class="tab-pane fade" id="fixed-tab-2">
+           	<p>This package is installable through the Bower package manager.</p>
+<pre><code>bower install angular-fixed-table-header --save
+</code></pre>
+<h4>Using Bower</h4>
+<p>In your <code>index.html</code> file, include the source file.</p>
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>bower_components/angular-fixed-table-header/src/fixed-table-header.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<p>Include the <code>fixed.table.header</code> module as a dependency in your application.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>myApp<span class="pl-pds">'</span></span>, [<span class="pl-s"><span class="pl-pds">'</span>fixed.table.header<span class="pl-pds">'</span></span>]);</pre></div>
+<h4>Using npm and Browserify (or JSPM)</h4>
+<p>In addition, this package may be installed using npm.</p>
+<pre><code>npm install angular-fixed-table-header --save
+</code></pre>
+<p>You may use Browserify to inject this module into your application.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">angular</span>.<span class="pl-en">module</span>(<span class="pl-s"><span class="pl-pds">'</span>myApp<span class="pl-pds">'</span></span>, [<span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>angular-fixed-table-header<span class="pl-pds">'</span></span>)]);</pre></div>
+           	
+           
+             </div>  
+             
+             </div>
+	</div>
+	
+	</div>
+	</div>
+	</section>
+<section id="editEntity">
+<div ng-controller="AccordionDemoCtrl">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('AccordionDemoCtrl', function ($scope, $http, $sce, $timeout) {
+  $scope.oneAtATime = false;
+
+    $scope.getLocation = function(val) {
+    return $http.get('//maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: val,
+        sensor: false
+      }
+    }).then(function(response){
+      return response.data.results.map(function(item){
+        return item.formatted_address;
+      });
+    });
+  };
+  
+  $scope.htmlPopover = $sce.trustAsHtml('<img src="images/map.jpg" style="height: 400px; width: 560px;">');
+
+  $scope.status = {
+    isCustomHeaderOpen: false,
+    isFirstOpen: true,
+    is2ndOpen: true,
+    isFirstDisabled: false
+  };
+  
+  $scope.hoverIn = function(){
+    this.hoverImage = true;
+};
+
+$scope.hoverOut = function(){
+    this.hoverImage = false;
+};
+
+
+
+  $scope.disabled = undefined;
+  $scope.searchEnabled = undefined;
+
+  $scope.enable = function() {
+    $scope.disabled = false;
+  };
+
+  $scope.disable = function() {
+    $scope.disabled = true;
+  };
+
+  $scope.enableSearch = function() {
+    $scope.searchEnabled = true;
+  }
+
+  $scope.disableSearch = function() {
+    $scope.searchEnabled = false;
+  }
+
+  $scope.clear = function() {
+    $scope.person.selected = undefined;
+    $scope.address.selected = undefined;
+    $scope.country.selected = undefined;
+  };
+
+  $scope.someGroupFn = function (item){
+
+    if (item.name[0] >= 'A' && item.name[0] <= 'M')
+        return 'From A - M';
+
+    if (item.name[0] >= 'N' && item.name[0] <= 'Z')
+        return 'From N - Z';
+
+  };
+
+  $scope.firstLetterGroupFn = function (item){
+      return item.name[0];
+  };
+
+  $scope.reverseOrderFilterFn = function(groups) {
+    return groups.reverse();
+  };
+
+  $scope.personAsync = {selected : "wladimir@email.com"};
+  $scope.peopleAsync = [];
+
+  $timeout(function(){
+   $scope.peopleAsync = [
+        { name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
+        { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
+        { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina' },
+        { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador' },
+        { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador' },
+        { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States' },
+        { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia' },
+        { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador' },
+        { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia' },
+        { name: 'Nicolás',   email: 'nicole@email.com',    age: 43, country: 'Colombia' }
+      ];
+  },3000);
+
+  $scope.counter = 0;
+  $scope.someFunction = function (item, model){
+    $scope.counter++;
+    $scope.eventResult = {item: item, model: model};
+  };
+
+  $scope.person = {};
+  $scope.people = [
+    { name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
+    { name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
+    { name: 'Estefanía', email: 'estefania@email.com', age: 21, country: 'Argentina' },
+    { name: 'Adrian',    email: 'adrian@email.com',    age: 21, country: 'Ecuador' },
+    { name: 'Wladimir',  email: 'wladimir@email.com',  age: 30, country: 'Ecuador' },
+    { name: 'Samantha',  email: 'samantha@email.com',  age: 30, country: 'United States' },
+    { name: 'Nicole',    email: 'nicole@email.com',    age: 43, country: 'Colombia' },
+    { name: 'Natasha',   email: 'natasha@email.com',   age: 54, country: 'Ecuador' },
+    { name: 'Michael',   email: 'michael@email.com',   age: 15, country: 'Colombia' },
+    { name: 'Nicolás',   email: 'nicolas@email.com',    age: 43, country: 'Colombia' }
+  ];
+
+  $scope.availableColors = ['Red','Green','Blue','Yellow','Magenta','Maroon','Umbra','Turquoise'];
+
+  $scope.multipleDemo = {};
+  $scope.multipleDemo.colors = ['Blue','Red'];
+  $scope.multipleDemo.selectedPeople = [$scope.people[5], $scope.people[4]];
+  $scope.multipleDemo.selectedPeopleWithGroupBy = [$scope.people[8], $scope.people[6]];
+  $scope.multipleDemo.selectedPeopleSimple = ['samantha@email.com','wladimir@email.com'];
+
+ 
+  $scope.country = {};
+  $scope.countries = [ // Taken from https://gist.github.com/unceus/6501985
+    {name: 'Afghanistan', code: 'AF'},
+    {name: 'Åland Islands', code: 'AX'},
+    {name: 'Albania', code: 'AL'},
+    {name: 'Algeria', code: 'DZ'},
+    {name: 'American Samoa', code: 'AS'},
+    {name: 'Andorra', code: 'AD'},
+    {name: 'Angola', code: 'AO'},
+    {name: 'Anguilla', code: 'AI'},
+    {name: 'Antarctica', code: 'AQ'},
+    {name: 'Antigua and Barbuda', code: 'AG'},
+    {name: 'Argentina', code: 'AR'},
+    {name: 'Armenia', code: 'AM'},
+    {name: 'Aruba', code: 'AW'},
+    {name: 'Australia', code: 'AU'},
+    {name: 'Austria', code: 'AT'},
+    {name: 'Azerbaijan', code: 'AZ'},
+    {name: 'Bahamas', code: 'BS'},
+    {name: 'Bahrain', code: 'BH'},
+    {name: 'Bangladesh', code: 'BD'},
+    {name: 'Barbados', code: 'BB'},
+    {name: 'Belarus', code: 'BY'},
+    {name: 'Belgium', code: 'BE'},
+    {name: 'Belize', code: 'BZ'},
+    {name: 'Benin', code: 'BJ'},
+    {name: 'Bermuda', code: 'BM'},
+    {name: 'Bhutan', code: 'BT'},
+    {name: 'Bolivia', code: 'BO'},
+    {name: 'Bosnia and Herzegovina', code: 'BA'},
+    {name: 'Botswana', code: 'BW'},
+    {name: 'Bouvet Island', code: 'BV'},
+    {name: 'Brazil', code: 'BR'},
+    {name: 'British Indian Ocean Territory', code: 'IO'},
+    {name: 'Brunei Darussalam', code: 'BN'},
+    {name: 'Bulgaria', code: 'BG'},
+    {name: 'Burkina Faso', code: 'BF'},
+    {name: 'Burundi', code: 'BI'},
+    {name: 'Cambodia', code: 'KH'},
+    {name: 'Cameroon', code: 'CM'},
+    {name: 'Canada', code: 'CA'},
+    {name: 'Cape Verde', code: 'CV'},
+    {name: 'Cayman Islands', code: 'KY'},
+    {name: 'Central African Republic', code: 'CF'},
+    {name: 'Chad', code: 'TD'},
+    {name: 'Chile', code: 'CL'},
+    {name: 'China', code: 'CN'},
+    {name: 'Christmas Island', code: 'CX'},
+    {name: 'Cocos (Keeling) Islands', code: 'CC'},
+    {name: 'Colombia', code: 'CO'},
+    {name: 'Comoros', code: 'KM'},
+    {name: 'Congo', code: 'CG'},
+    {name: 'Congo, The Democratic Republic of the', code: 'CD'},
+    {name: 'Cook Islands', code: 'CK'},
+    {name: 'Costa Rica', code: 'CR'},
+    {name: 'Cote D\'Ivoire', code: 'CI'},
+    {name: 'Croatia', code: 'HR'},
+    {name: 'Cuba', code: 'CU'},
+    {name: 'Cyprus', code: 'CY'},
+    {name: 'Czech Republic', code: 'CZ'},
+    {name: 'Denmark', code: 'DK'},
+    {name: 'Djibouti', code: 'DJ'},
+    {name: 'Dominica', code: 'DM'},
+    {name: 'Dominican Republic', code: 'DO'},
+    {name: 'Ecuador', code: 'EC'},
+    {name: 'Egypt', code: 'EG'},
+    {name: 'El Salvador', code: 'SV'},
+    {name: 'Equatorial Guinea', code: 'GQ'},
+    {name: 'Eritrea', code: 'ER'},
+    {name: 'Estonia', code: 'EE'},
+    {name: 'Ethiopia', code: 'ET'},
+    {name: 'Falkland Islands (Malvinas)', code: 'FK'},
+    {name: 'Faroe Islands', code: 'FO'},
+    {name: 'Fiji', code: 'FJ'},
+    {name: 'Finland', code: 'FI'},
+    {name: 'France', code: 'FR'},
+    {name: 'French Guiana', code: 'GF'},
+    {name: 'French Polynesia', code: 'PF'},
+    {name: 'French Southern Territories', code: 'TF'},
+    {name: 'Gabon', code: 'GA'},
+    {name: 'Gambia', code: 'GM'},
+    {name: 'Georgia', code: 'GE'},
+    {name: 'Germany', code: 'DE'},
+    {name: 'Ghana', code: 'GH'},
+    {name: 'Gibraltar', code: 'GI'},
+    {name: 'Greece', code: 'GR'},
+    {name: 'Greenland', code: 'GL'},
+    {name: 'Grenada', code: 'GD'},
+    {name: 'Guadeloupe', code: 'GP'},
+    {name: 'Guam', code: 'GU'},
+    {name: 'Guatemala', code: 'GT'},
+    {name: 'Guernsey', code: 'GG'},
+    {name: 'Guinea', code: 'GN'},
+    {name: 'Guinea-Bissau', code: 'GW'},
+    {name: 'Guyana', code: 'GY'},
+    {name: 'Haiti', code: 'HT'},
+    {name: 'Heard Island and Mcdonald Islands', code: 'HM'},
+    {name: 'Holy See (Vatican City State)', code: 'VA'},
+    {name: 'Honduras', code: 'HN'},
+    {name: 'Hong Kong', code: 'HK'},
+    {name: 'Hungary', code: 'HU'},
+    {name: 'Iceland', code: 'IS'},
+    {name: 'India', code: 'IN'},
+    {name: 'Indonesia', code: 'ID'},
+    {name: 'Iran, Islamic Republic Of', code: 'IR'},
+    {name: 'Iraq', code: 'IQ'},
+    {name: 'Ireland', code: 'IE'},
+    {name: 'Isle of Man', code: 'IM'},
+    {name: 'Israel', code: 'IL'},
+    {name: 'Italy', code: 'IT'},
+    {name: 'Jamaica', code: 'JM'},
+    {name: 'Japan', code: 'JP'},
+    {name: 'Jersey', code: 'JE'},
+    {name: 'Jordan', code: 'JO'},
+    {name: 'Kazakhstan', code: 'KZ'},
+    {name: 'Kenya', code: 'KE'},
+    {name: 'Kiribati', code: 'KI'},
+    {name: 'Korea, Democratic People\'s Republic of', code: 'KP'},
+    {name: 'Korea, Republic of', code: 'KR'},
+    {name: 'Kuwait', code: 'KW'},
+    {name: 'Kyrgyzstan', code: 'KG'},
+    {name: 'Lao People\'s Democratic Republic', code: 'LA'},
+    {name: 'Latvia', code: 'LV'},
+    {name: 'Lebanon', code: 'LB'},
+    {name: 'Lesotho', code: 'LS'},
+    {name: 'Liberia', code: 'LR'},
+    {name: 'Libyan Arab Jamahiriya', code: 'LY'},
+    {name: 'Liechtenstein', code: 'LI'},
+    {name: 'Lithuania', code: 'LT'},
+    {name: 'Luxembourg', code: 'LU'},
+    {name: 'Macao', code: 'MO'},
+    {name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK'},
+    {name: 'Madagascar', code: 'MG'},
+    {name: 'Malawi', code: 'MW'},
+    {name: 'Malaysia', code: 'MY'},
+    {name: 'Maldives', code: 'MV'},
+    {name: 'Mali', code: 'ML'},
+    {name: 'Malta', code: 'MT'},
+    {name: 'Marshall Islands', code: 'MH'},
+    {name: 'Martinique', code: 'MQ'},
+    {name: 'Mauritania', code: 'MR'},
+    {name: 'Mauritius', code: 'MU'},
+    {name: 'Mayotte', code: 'YT'},
+    {name: 'Mexico', code: 'MX'},
+    {name: 'Micronesia, Federated States of', code: 'FM'},
+    {name: 'Moldova, Republic of', code: 'MD'},
+    {name: 'Monaco', code: 'MC'},
+    {name: 'Mongolia', code: 'MN'},
+    {name: 'Montserrat', code: 'MS'},
+    {name: 'Morocco', code: 'MA'},
+    {name: 'Mozambique', code: 'MZ'},
+    {name: 'Myanmar', code: 'MM'},
+    {name: 'Namibia', code: 'NA'},
+    {name: 'Nauru', code: 'NR'},
+    {name: 'Nepal', code: 'NP'},
+    {name: 'Netherlands', code: 'NL'},
+    {name: 'Netherlands Antilles', code: 'AN'},
+    {name: 'New Caledonia', code: 'NC'},
+    {name: 'New Zealand', code: 'NZ'},
+    {name: 'Nicaragua', code: 'NI'},
+    {name: 'Niger', code: 'NE'},
+    {name: 'Nigeria', code: 'NG'},
+    {name: 'Niue', code: 'NU'},
+    {name: 'Norfolk Island', code: 'NF'},
+    {name: 'Northern Mariana Islands', code: 'MP'},
+    {name: 'Norway', code: 'NO'},
+    {name: 'Oman', code: 'OM'},
+    {name: 'Pakistan', code: 'PK'},
+    {name: 'Palau', code: 'PW'},
+    {name: 'Palestinian Territory, Occupied', code: 'PS'},
+    {name: 'Panama', code: 'PA'},
+    {name: 'Papua New Guinea', code: 'PG'},
+    {name: 'Paraguay', code: 'PY'},
+    {name: 'Peru', code: 'PE'},
+    {name: 'Philippines', code: 'PH'},
+    {name: 'Pitcairn', code: 'PN'},
+    {name: 'Poland', code: 'PL'},
+    {name: 'Portugal', code: 'PT'},
+    {name: 'Puerto Rico', code: 'PR'},
+    {name: 'Qatar', code: 'QA'},
+    {name: 'Reunion', code: 'RE'},
+    {name: 'Romania', code: 'RO'},
+    {name: 'Russian Federation', code: 'RU'},
+    {name: 'Rwanda', code: 'RW'},
+    {name: 'Saint Helena', code: 'SH'},
+    {name: 'Saint Kitts and Nevis', code: 'KN'},
+    {name: 'Saint Lucia', code: 'LC'},
+    {name: 'Saint Pierre and Miquelon', code: 'PM'},
+    {name: 'Saint Vincent and the Grenadines', code: 'VC'},
+    {name: 'Samoa', code: 'WS'},
+    {name: 'San Marino', code: 'SM'},
+    {name: 'Sao Tome and Principe', code: 'ST'},
+    {name: 'Saudi Arabia', code: 'SA'},
+    {name: 'Senegal', code: 'SN'},
+    {name: 'Serbia and Montenegro', code: 'CS'},
+    {name: 'Seychelles', code: 'SC'},
+    {name: 'Sierra Leone', code: 'SL'},
+    {name: 'Singapore', code: 'SG'},
+    {name: 'Slovakia', code: 'SK'},
+    {name: 'Slovenia', code: 'SI'},
+    {name: 'Solomon Islands', code: 'SB'},
+    {name: 'Somalia', code: 'SO'},
+    {name: 'South Africa', code: 'ZA'},
+    {name: 'South Georgia and the South Sandwich Islands', code: 'GS'},
+    {name: 'Spain', code: 'ES'},
+    {name: 'Sri Lanka', code: 'LK'},
+    {name: 'Sudan', code: 'SD'},
+    {name: 'Suriname', code: 'SR'},
+    {name: 'Svalbard and Jan Mayen', code: 'SJ'},
+    {name: 'Swaziland', code: 'SZ'},
+    {name: 'Sweden', code: 'SE'},
+    {name: 'Switzerland', code: 'CH'},
+    {name: 'Syrian Arab Republic', code: 'SY'},
+    {name: 'Taiwan, Province of China', code: 'TW'},
+    {name: 'Tajikistan', code: 'TJ'},
+    {name: 'Tanzania, United Republic of', code: 'TZ'},
+    {name: 'Thailand', code: 'TH'},
+    {name: 'Timor-Leste', code: 'TL'},
+    {name: 'Togo', code: 'TG'},
+    {name: 'Tokelau', code: 'TK'},
+    {name: 'Tonga', code: 'TO'},
+    {name: 'Trinidad and Tobago', code: 'TT'},
+    {name: 'Tunisia', code: 'TN'},
+    {name: 'Turkey', code: 'TR'},
+    {name: 'Turkmenistan', code: 'TM'},
+    {name: 'Turks and Caicos Islands', code: 'TC'},
+    {name: 'Tuvalu', code: 'TV'},
+    {name: 'Uganda', code: 'UG'},
+    {name: 'Ukraine', code: 'UA'},
+    {name: 'United Arab Emirates', code: 'AE'},
+    {name: 'United Kingdom', code: 'GB'},
+    {name: 'United States', code: 'US'},
+    {name: 'United States Minor Outlying Islands', code: 'UM'},
+    {name: 'Uruguay', code: 'UY'},
+    {name: 'Uzbekistan', code: 'UZ'},
+    {name: 'Vanuatu', code: 'VU'},
+    {name: 'Venezuela', code: 'VE'},
+    {name: 'Vietnam', code: 'VN'},
+    {name: 'Virgin Islands, British', code: 'VG'},
+    {name: 'Virgin Islands, U.S.', code: 'VI'},
+    {name: 'Wallis and Futuna', code: 'WF'},
+    {name: 'Western Sahara', code: 'EH'},
+    {name: 'Yemen', code: 'YE'},
+    {name: 'Zambia', code: 'ZM'},
+    {name: 'Zimbabwe', code: 'ZW'}
+  ];
+  
+   $scope.selectedIcon = '';
+  $scope.selectedIcons = ['TRUCK_7_5', 'TRUCK_32'];
+  $scope.icons = [
+    {value: 'TRUCK_7_5', label: 'TRUCK_7_5'},
+    {value: 'TRUCK_12', label: 'TRUCK_12'},
+    {value: 'TRUCK_32', label: 'TRUCK_32'},
+    {value: 'TRUCK_40', label: 'TRUCK_40'},
+    {value: 'TRUCK_60', label: 'TRUCK_60'},
+    {value: 'TRAIN', label: 'TRAIN'},
+    {value: 'SHIP', label: 'SHIP'}
+  ];
+  
+});
+
+angular.module('mineralbay').filter('propsFilter', function() {
+  return function(items, props) {
+    var out = [];
+
+    if (angular.isArray(items)) {
+      items.forEach(function(item) {
+        var itemMatches = false;
+
+        var keys = Object.keys(props);
+        for (var i = 0; i < keys.length; i++) {
+          var prop = keys[i];
+          var text = props[prop].toLowerCase();
+          if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+            itemMatches = true;
+            break;
+          }
+        }
+
+        if (itemMatches) {
+          out.push(item);
+        }
+      });
+    } else {
+      // Let the output be the input untouched
+      out = items;
+    }
+
+    return out;
+  };
+});
+
+
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+
+    <div class="page-header">
+        <h1>Edit tunnel project<small>
+            (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/accordion">ui.bootstrap.accordion</a>)
+        </small></h1>
+    </div>
+    
+<style>    
+   .popover { 
+  	 max-width: 600px;
+   }
+   
+    .select2 > .select2-choice.ui-select-match {
+            /* Because of the inclusion of Bootstrap */
+            height: 29px;
+        }
+
+        .selectize-control > .selectize-dropdown {
+            top: 36px;
+        }
+        /* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+        .select-box {
+          background: #fff;
+          position: relative;
+          z-index: 1;
+        }
+        .alert-info.positioned {
+          margin-top: 1em;
+          position: relative;
+          z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
+        }
+   
+</style>
+<div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      	<li class="active"><a href="#accordion-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#accordion-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#accordion-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#accordion-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="accordion-tab-0">
+          <script type="text/ng-template" id="group-template.html">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="color:#fa39c3">
+        <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+          <span uib-accordion-header ng-class="{'text-muted': isDisabled}" ng-cloak>
+            [[heading]]
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse" uib-collapse="!isOpen">
+      <div class="panel-body" style="text-align: right" ng-transclude></div>
+    </div>
+  </script>
+
+  <uib-accordion close-others="true">
+    <div uib-accordion-group class="panel-default" is-open="status.isFirstOpen">
+      <uib-accordion-heading>
+      General project information <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.isFirstOpen, 'glyphicon-chevron-right': !status.isFirstOpen}"></i>
+      </uib-accordion-heading>
+<!--         <h5>Basic</h5> -->
+<!--         <hr> -->
+		 
+   		<h6>ID: 2</h6>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Name</label>
+    			<input value="Albulatunnel ll" type="email" class="form-control" id="exampleInputEmail1">
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Abbreviation</label>
+    			<input type="email" class="form-control" id="exampleInputEmail1" value="ABT">
+  			</div>
+  		</div>
+   	 </div>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Client</label>
+    			<ui-select ng-model="person.selected">
+            <ui-select-match class="ui-select-match" placeholder="Select or search a client in the list...">[[$select.selected.name]]</ui-select-match>
+            <ui-select-choices class="ui-select-choices" group-by="'country'" repeat="item in people | filter: $select.search">
+              <span ng-bind-html="item.name | highlight: $select.search"></span>
+              <small ng-bind-html="item.email | highlight: $select.search"></small>
+            </ui-select-choices>
+          </ui-select>
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Contractor</label>
+    			<ui-select ng-model="person.selected">
+            <ui-select-match class="ui-select-match" placeholder="Select or search a client in the list...">[[$select.selected.name]]</ui-select-match>
+            <ui-select-choices class="ui-select-choices" group-by="'country'" repeat="item in people | filter: $select.search">
+              <span ng-bind-html="item.name | highlight: $select.search"></span>
+              <small ng-bind-html="item.email | highlight: $select.search"></small>
+            </ui-select-choices>
+          </ui-select>
+  			</div>
+  		</div>
+    </div>
+    
+    <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Purpose of Use</label>
+    			<input type="email" class="form-control" id="exampleInputEmail1" value="Other">
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Other purpose of use</label>
+    			<input type="email" class="form-control" id="exampleInputEmail1" value="Enter other purpose of use">
+  			</div>
+  		</div>
+    </div>
+    
+    <div class="row">
+    	<div class="col-md-6">
+            <label>Description</label>
+             <textarea id ="description" rows="3" class="form-control" name="description" value="Albulabahn" ng-maxlength="500">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</textarea>
+        </div>
+        <div class="col-md-6">
+            <label>Additional Information</label>
+             <textarea id ="description" rows="3" class="form-control" name="description" value="Albulabahn" ng-maxlength="500"></textarea>
+        </div>
+	</div>
+	</br>
+	<div class="row">
+		<div class="col-md-6">
+            <label>Start of construction</label>
+            <input type="text" class="form-control" name="birthdate" data-provide="datepicker" value="01.01.2012">
+        </div>
+        <div class="col-md-6">
+            <label>End of construction</label>
+            <input type="text" class="form-control" name="birthdate" data-provide="datepicker" value="01.01.2019">
+        </div>
+	</div>
+	</br>
+	<div class="row">
+		<div class="col-md-6">
+            <label>Start of tunnel driving</label>
+            <input type="text" class="form-control" name="birthdate" data-provide="datepicker" value="01.01.2014">
+        </div>
+        <div class="col-md-6">
+            <label>End of tunnel driving</label>
+            <input type="text" class="form-control" name="birthdate" data-provide="datepicker" value="01.01.2018">
+        </div>
+	</div>
+	
+	<div class="row">
+	</br>
+	<div class="col-md-12">
+	<div class="form-group">
+		<label>Address</label>
+    	<input type="text" ng-model="asyncSelected" value="Karlsplatz 1, 1010 Wien, Österreich" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+   		 <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    		<div ng-show="noResults">
+    	 <i class="glyphicon glyphicon-remove"></i> No Results Found
+    	</div>
+    	</div>
+    	</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<img src="images/map.jpg" style="height: 100%; width: 100%; object-fit: contain;">
+		</div>
+	</div>
+	
+	
+	</br>
+	<div class="row">
+   	 	<div class="col-md-6">
+   	 	
+   	 		<div class="panel panel-info">
+   	 			<div class="panel-heading">Location portal 1<a href="#" popover-placement="bottom" uib-popover-html="htmlPopover" popover-trigger="'mouseenter'" class="pull-right">View <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></a></div>
+   	 				<div class="form-group" style="padding:8px;">
+   	 				
+   	 				<label>Address</label>
+    				<input type="text" ng-model="asyncSelected" value="Karlsplatz 1, 1010 Wien, Österreich" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+   	 				
+   	 				<label for="exampleInputEmail1">Latitude</label>
+    				<input type="email" class="form-control" id="exampleInputEmail1" value="46,8563382">
+
+    				<label for="exampleInputEmail1">Longitude</label>
+    				<input type="email" class="form-control" id="exampleInputEmail1" value="9,890188099999932">
+    				</div>
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="panel panel-info">
+   	 		<div class="panel-heading">Location portal 2<a href="" uib-popover-html="htmlPopover" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" class="pull-right">Show Map <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></a>
+   	 		
+<!--    	 		<span ng-show="hoverImage"> -->
+<!--             <img src="images/map.jpg" style="height: 100%; width: 100%; object-fit: contain;"> -->
+<!--         </span> -->
+   	 		
+   	 		</div>
+   	 			<div class="form-group" style="padding:8px;">
+
+   	 				<label>Address</label>
+    				<input type="text" ng-model="asyncSelected" value="Karlsplatz 1, 1010 Wien, Österreich" uib-typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="form-control">
+   	 		
+   	 				<label for="exampleInputEmail1">Latitude</label>
+    				<input type="email" class="form-control" id="exampleInputEmail1" value="46,8563382">
+<!--   								</br> -->
+    				<label for="exampleInputEmail1">Longitude</label>
+    				<input type="email" class="form-control" id="exampleInputEmail1" value="9,890188099999932">
+    		</div>
+  			</div>
+  		</div>
+    </div>
+
+    
+</div>
+    
+   <div uib-accordion-group class="panel-default" is-open="status.is2ndOpen">
+      <uib-accordion-heading>
+      Structure Information <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.is2ndOpen, 'glyphicon-chevron-right': !status.is2ndOpen}"></i>
+      </uib-accordion-heading>
+      <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Name</label>
+    			</br>
+    		<div class="dropdown clearfix" style="width: 100%;">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu0" data-toggle="dropdown" style="width: 100%;text-align: right;">
+        Other      
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu0">
+    			<li role="presentation"><a role="menuitem" tabindex="1">Conveyor</a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="2">Railmounted</a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="3">Railless</a></li>
+  				</ul>
+    </div>	
+    			
+  			
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		 <div class="form-group">	
+    			<label>Multiple select:&nbsp;</label>
+    			</br>
+    			<button type="button" class="btn btn-default" ng-model="selectedIcons" data-html="1" data-multiple="1" style="width: 100%;" data-animation="am-flip-x" bs-options="icon.value as icon.label for icon in icons" bs-select> Action <span class="caret"></span></button>
+    		</div>
+  		</div>
+   	 </div>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Single tunnel/drift length [m]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="20"
+                       required min="1" >
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Total length of all underground structures [m]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="58"
+                       required min="1" >
+  			</div>
+  		</div>
+   	 </div>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Cross section area type</label>
+    			 <div class="dropdown clearfix" style="width: 100%;">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="width: 100%;text-align: right;">
+        Other      
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    			<li role="presentation"><a role="menuitem" tabindex="1">Circle      </a></li>
+    			<li role="presentation"><a role="menuitem" tabindex="2">Other       </a></li>
+  				</ul>
+    </div>
+    			  
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Outer excavation diameter [m]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="58"
+                       required min="1" >
+  			</div>
+  		</div>
+   	 </div>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Cross section area [m²]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="20"
+                       required min="1" disabled>
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Number of tunnel tubes</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="58"
+                       required min="1" disabled>
+  			</div>
+  		</div>
+   	 </div>
+   	 
+   	  <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Total excavation volume [m³]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="20"
+                       required min="1" >
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Average distance between tunnel tubes [m]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="58"
+                       required min="1" >
+  			</div>
+  		</div>
+   	 </div>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Number of cross passages</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="20"
+                       required min="1" >
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Distance of adjacent cross passages [m]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="58"
+                       required min="1" >
+  			</div>
+  		</div>
+   	 </div>
+   	 
+   	 <div class="row">
+   	 	<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Cross section area of the cross passages [m²]</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="1"
+                       required min="1" >
+  			</div>
+  		</div>
+  		<div class="col-md-6">
+   	 		<div class="form-group">
+    			<label for="exampleInputEmail1">Number of lithologies</label>
+    			 <input id ="galleryLength" type="number" class="form-control" name="galleryLength" value="1"
+                       required min="1" >
+  			</div>
+  		</div>
+   	 </div>
+   	 <div class="row">
+   	 <div class="col-md-12">
+            <label>Additional Information</label>
+             <textarea id ="description" rows="3" class="form-control" name="description" value="Hauptsächlich Fels, 30m Moränestrecke" ng-maxlength="500"></textarea>
+        </div>
+        </div>
+   	 
+    </div>
+    
+       <div uib-accordion-group class="panel-default" is-open="status.is3rdOpen">
+      <uib-accordion-heading>
+      Tunnel sections <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.is3rdOpen, 'glyphicon-chevron-right': !status.is3rdOpen}"></i>
+      </uib-accordion-heading>
+    </div>
+    
+    <div uib-accordion-group class="panel-default" is-open="status.is4Open">
+      <uib-accordion-heading>
+      Excavation Materials <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.is4Open, 'glyphicon-chevron-right': !status.is4Open}"></i>
+      </uib-accordion-heading>
+      
+      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Excavation Material</button>
+      </br>
+      </br>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+          <td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button> <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+          <td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button> <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+       
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+          <td><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button> <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+       
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    
+    <div uib-accordion-group class="panel-default" is-open="status.is5Open">
+      <uib-accordion-heading>
+      Excavation Material Sections <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.is5Open, 'glyphicon-chevron-right': !status.is5Open}"></i>
+      </uib-accordion-heading>
+    </div>
+    
+  </uib-accordion>
+  
+  <button type="button" class="btn btn-primary pull-right">Save</button>
+     
+          </div>
+ 
+          <div class="tab-pane fade" id="accordion-tab-1">
+          <pre><code data-language="html"></code></pre>
+           </div>
+			<div class="tab-pane fade" id="accordion-tab-2">
+			<pre><code data-language="javascript"></code></pre>
+			</div>
+
+          <div class="tab-pane fade" id="accordion-tab-3">
+           	
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+</div> <!-- end panel -->
+  
+</div>
+</section>
+</div>
+    </div> <!-- /column (main content) -->
+    <div class="col-sm-3">
+        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
+            <p class="pl-docs-sidebar-header"><a href="#top">Examples</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="#icon-chevron-up"/></svg></a></p>
+            <ul class="nav nav-pills pl-docs-sidenav">
+                <li>
+                    <a href="#navbar">navbar</a>
+                </li>
+                <li>
+                    <a href="#matching">matching</a>
+                </li>
+                <li>
+                    <a href="#sorting">sorting</a>
+                </li>
+                <li>
+                    <a href="#fixedTableHeader">fixed table header</a>
+                </li>
+                <li>
+                    <a href="#editEntity">edit Tunnel</a>
+                </li>
+            </ul>
+        </div>
+    </div> <!-- /column (sidebar) -->
+</div> <!-- /row -->
+
+</div>
+<script>
+    $( document ).ready(function() {
+
+	boomsvgloader.load('svg/sprite.svg');
+    	// init navs
+      $('.nav-links').btNavLinks();
+      $('.nav-blocks').btNavLinks();
+
+    	$('body').scrollspy({ target: '.pl-docs-sidebar'});
+
+    	///////////// active nav
+
+			var path = location.pathname.split("/");
+			var section = path[path.length-1];
+			if(section == "") {
+				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
+			} else {
+				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
+			}
+			$("[data-toggle=popover]").popover();
+			$('.selectpicker').selectpicker();
+
+		
+			///////////// log call
+
+			// add/remove active class to log call status buttons
+			$('.log-call__status .list-group-item').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.list-group-item').removeClass('active');
+				$this.addClass('active');
+			});
+
+			$('.log-call__status').click(function(e){
+				e.preventDefault();
+				var $theParent = $(this).parent();
+				$theParent.next('#zebracornftw').collapse('show');
+			});
+
+
+    	///////////// to-dos
+
+			// add/remove active class to date buttons
+			$('.set-to-do__date-btns .btn').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.btn').removeClass('active');
+				$this.addClass('active');
+				$this.closest('.set-to-do__body').find('.set-to-do__cancel').removeClass('hide');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Thursday, January 1, 2015');
+			});
+
+			// cancel
+			$('.set-to-do__cancel').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				$this.addClass('hide');
+				$this.closest('.set-to-do__body').find('.set-to-do__date-btns .btn').removeClass('active');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Schedule a To-Do?');
+			});
+
+    	// show/hide specific time options
+			$('#set-to-do__time__radios').click(function() {
+			   if($('#to-do-specific-time').is(':checked')) { 
+			   	$('#set-to-do__time__opts').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts').addClass("hide");
+			   }
+			});
+			$('#set-to-do__time__radios2').click(function() {
+			   if($('#to-do-specific-time2').is(':checked')) { 
+			   	$('#set-to-do__time__opts2').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts2').addClass("hide");
+			   }
+			});
+			$('#set-to-do__time__radios3').click(function() {
+			   if($('#to-do-specific-time3').is(':checked')) { 
+			   	$('#set-to-do__time__opts3').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts3').addClass("hide");
+			   }
+			});
+
+			// progress bars - send to random position
+
+			$('.progress-bar').each(function(){
+				var position = Math.floor(Math.random()*100);
+				if(position<5) { position = 5; }
+			  // add % to label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+
+			// progress bars - click progress bar to transition
+
+			$(".progress-bar").on("click", function(e) {
+			  var offset = $(this).offset(),
+			      position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
+			  // check for label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	// add % to label
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  	/*// if position is less than five, need to prevent label from being hidden
+			  	if(position < 5) {
+			  		// get label's width and divide by width of progress-bar
+				  	var labelWidth = $(this).find('.progress-bar__bar__label').width()/$(this).width()*100;
+				  	// add label's width to position
+				  	position = position + Math.round(labelWidth);
+				  }*/
+				  if (position < 4 ) { position = 4; }
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+			
+
+			// view markup buttons
+			if($(window).width() < 768) {
+				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
+				$('.pl-code pre').hide();
+				$('.btn-showmarkup').click(function(){
+					var prediv = $('pre');
+					$(this).next(prediv).show();
+					$(this).hide();
+				});
+			}
+
+
+
+    });
+
+</script>
+
+<!-- scripts to run bootstrap examples -->
+<script>
+  !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);
+</script>
+
+</body>
+</html>
