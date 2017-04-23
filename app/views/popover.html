@@ -40,6 +40,19 @@
 module.</p>
 <p><strong>Note to mobile developers</strong>:  Please note that while popovers may work correctly on mobile devices (including tablets),
   we have made the decision to not officially support such a use-case because it does not make sense from a UX perspective.</p>   
+
+<p>There are three versions of the popover: <code>uib-popover</code> and <code>uib-popover-template</code>, and <code>uib-popover-html</code>:</p>
+<ul>
+<li><code>uib-popover</code> -
+Takes text only and will escape any HTML provided for the popover body.</li>
+<li><code>uib-popover-html</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+Takes an expression that evaluates to an HTML string. Note that this HTML is not compiled. If compilation is required, please use the <code>uib-popover-template</code> attribute option instead.  <em>The user is responsible for ensuring the content is safe to put into the DOM!</em></li>
+<li><code>uib-popover-template</code>
+<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
+A URL representing the location of a template to use for the popover body. Note that the contents of this template need to be wrapped in a tag, e.g., <code>&lt;div&gt;&lt;/div&gt;</code>.</li>
+</ul>
+
  <div class="panel panel-default">
 
       <!-- Tabs -->
@@ -155,44 +168,34 @@ module.</p>
           <div class="tab-pane fade" id="pop-tab-2">
             <pre><code data-language="javascript">angular.module(&#x27ui.bootstrap.demo&#x27).controller(&#x27PopoverDemoCtrl&#x27, function ($scope, $sce) {
   $scope.dynamicPopover = {
-    content: &#x27Hello, World!&#x27,
-    templateUrl: &#x27myPopoverTemplate.html&#x27,
-    title: &#x27Title&#x27
+    content: &#39;Hello, World!&#39;,
+    templateUrl: &#39;myPopoverTemplate.html&#39;,
+    title: &#39;Title&#39;
   };
 
   $scope.placement = {
     options: [
-      &#x27top&#x27,
-      &#x27top-left&#x27,
-      &#x27top-right&#x27,
-      &#x27bottom&#x27,
-      &#x27bottom-left&#x27,
-      &#x27bottom-right&#x27,
-      &#x27left&#x27,
-      &#x27left-top&#x27,
-      &#x27left-bottom&#x27,
-      &#x27right&#x27,
-      &#x27right-top&#x27,
-      &#x27right-bottom&#x27
+      &#39;top&#39;,
+      &#39;top-left&#39;,
+      &#39;top-right&#39;,
+      &#x27;bottom&#39;,
+      &#39;bottom-left&#39;,
+      &#39;bottom-right&#39;,
+      &#39;left&#39;,
+      &#39;left-top&#39;,
+      &#39;left-bottom&#39;,
+      &#39;right&#39;,
+      &#39;right-top&#39;,
+      &#39;right-bottom&#39;
     ],
-    selected: &#x27top&#x27
+    selected: &#39;top&#39;
   };
   
-  $scope.htmlPopover = $sce.trustAsHtml(&#x27&lt;b style=&quot;color: red&quot;&gt;I can&lt;/b&gt; have &lt;div class=&quot;label label-success&quot;&gt;HTML&lt;/div&gt; content&#x27);
+  $scope.htmlPopover = $sce.trustAsHtml(&#39;&lt;b style=&quot;color: red&quot;&gt;I can&lt;/b&gt; have &lt;div class=&quot;label label-success&quot;&gt;HTML&lt;/div&gt; content&#39;);
 });</code></pre>
           </div> <!-- end tab-pane -->
           <div class="tab-pane fade" id="pop-tab-3">
-            <p>There are three versions of the popover: <code>uib-popover</code> and <code>uib-popover-template</code>, and <code>uib-popover-html</code>:</p>
-<ul>
-<li><code>uib-popover</code> -
-Takes text only and will escape any HTML provided for the popover body.</li>
-<li><code>uib-popover-html</code>
-<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
-Takes an expression that evaluates to an HTML string. Note that this HTML is not compiled. If compilation is required, please use the <code>uib-popover-template</code> attribute option instead.  <em>The user is responsible for ensuring the content is safe to put into the DOM!</em></li>
-<li><code>uib-popover-template</code>
-<small class="badge" uib-tooltip="This setting expects an angular expression instead of a literal string. If the expression supports a boolean / integer, you can pass it directly." tooltip-placement="top">$</small> -
-A URL representing the location of a template to use for the popover body. Note that the contents of this template need to be wrapped in a tag, e.g., <code>&lt;div&gt;&lt;/div&gt;</code>.</li>
-</ul>
+            
 <h3 id="uib-popover-settings">uib-popover-* settings</h3>
 <p>All these settings are available for the three types of popovers.</p>
 <ul>

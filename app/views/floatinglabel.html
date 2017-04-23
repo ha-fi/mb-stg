@@ -10,8 +10,7 @@
       <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
       <li class="active"><a href="#floating-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#floating-tab-1" role="tab" data-toggle="tab">Markup</a></li>
-        <li><a href="#floating-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#floating-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#floating-tab-2" role="tab" data-toggle="tab">CSS</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -44,34 +43,8 @@
 
 </code></pre>
           </div> <!-- end tab-pane -->
+         
           <div class="tab-pane fade" id="floating-tab-2">
-          <pre><code data-language="javascript">app.directive(&#x27;withFloatingLabel&#x27;, function () {
-	    return {
-	        restrict: &#x27;A&#x27;,
-	        link: function ($scope, $element, attrs) {
-	            var template = &#x27;<div class="floating-label">&#x27; + attrs.placeholder +&#x27;</div>&#x27;;
-
-	            //append floating label template
-	            $element.after(template);
-
-	            //remove placeholder
-	            $element.removeAttr(&#x27;placeholder&#x27;);
-
-	            //hide label tag assotiated with given input
-	            document.querySelector(&#x27;label[for="&#x27; +  attrs.id +  &#x27;"]&#x27;).style.display = &#x27;none&#x27;;
-
-	            $scope.$watch(function () {
-	                if($element.val().toString().length < 1) {
-	                    $element.addClass(&#x27;empty&#x27;);
-	                } else {
-	                    $element.removeClass(&#x27;empty&#x27;);
-	                }
-	            });
-	        }
-	    };
-	});</code></pre>
-          </div> <!-- end tab-pane -->
-          <div class="tab-pane fade" id="floating-tab-3">
           <pre><code data-language="css">.well {
     margin: 10px;
 }

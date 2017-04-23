@@ -55,6 +55,23 @@
         </small></h1>
     </div>
     
+    <p><code>ngTable</code> provides a header template that adds grouping to a html table. To configure a table for groups:</p>
+            <ul>
+              <li>Markup your html table as per the example below</li>
+              <li>Specify which column should be groupable
+                <ul>
+                  <li><code>ngTable</code> - specify this in the html markup</li>
+                  <li><code>ngTableDynamic</code> - specify this in the JS column definitions</li>
+                </ul>
+              </li>
+              <li>Supply the initial column to group on to the <code>NgTableParams</code> constructor call</li>
+              <li>Optionally supply <code>groupOptions</code> as a setting value to the <code>NgTableParams</code></li>
+            </ul>
+            
+            <h4>Got a <code>getData</code> function?</h4>
+            <p>In this case be aware that paging of data will be applied <em>after</em> the call to your <code>getData</code> function. This might be a problem where your <code>getData</code> returns large number of records.</p> 
+          
+    
     For more examples see <a href="http://ng-table.com/#/" target="_blank">http://ng-table.com/#/</a></p>
 	
 
@@ -65,7 +82,6 @@
       <li class="active"><a href="#table-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#table-tab-1" role="tab" data-toggle="tab">Markup</a></li>
         <li><a href="#table-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#table-tab-3" role="tab" data-toggle="tab">Settings</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -183,24 +199,7 @@
                 
 &#125;&#93;);</code></pre>
           </div> <!-- end tab-pane -->
-          <div class="tab-pane fade" id="table-tab-3">
-           <h4>Overview</h4>
-            <p><code>ngTable</code> provides a header template that adds grouping to a html table. To configure a table for groups:</p>
-            <ul>
-              <li>Markup your html table as per the example below</li>
-              <li>Specify which column should be groupable
-                <ul>
-                  <li><code>ngTable</code> - specify this in the html markup</li>
-                  <li><code>ngTableDynamic</code> - specify this in the JS column definitions</li>
-                </ul>
-              </li>
-              <li>Supply the initial column to group on to the <code>NgTableParams</code> constructor call</li>
-              <li>Optionally supply <code>groupOptions</code> as a setting value to the <code>NgTableParams</code></li>
-            </ul>
-            
-            <h4>Got a <code>getData</code> function?</h4>
-            <p>In this case be aware that paging of data will be applied <em>after</em> the call to your <code>getData</code> function. This might be a problem where your <code>getData</code> returns large number of records.</p> 
-          </div> <!-- end tab-pane -->
+
         </div> <!-- end tab-content -->
       </div> <!-- end panel-body -->
     </div> <!-- end panel -->

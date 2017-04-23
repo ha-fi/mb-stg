@@ -133,9 +133,12 @@ angular.module('mineralbay').component('modalComponent', {
         </small></h1>
     </div>
     
+    	<p><code>$uibModal</code> is a service to create modal windows.
+Creating modals is straightforward: create a template and controller, and reference them when using <code>$uibModal</code>.</p>
+<p>The <code>$uibModal</code> service has only one method: <code>open(options)</code>.</p>
 
 <div class="panel panel-default">
-
+		
       <!-- Tabs -->
       <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
       <li class="active"><a href="#modal-tab-0" role="tab" data-toggle="tab">Preview</a></li>
@@ -147,6 +150,7 @@ angular.module('mineralbay').component('modalComponent', {
         <div class="tab-content">
           <!-- Tab Panes -->
           <div class="tab-pane fade in active" id="modal-tab-0">
+          
            <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
@@ -367,9 +371,6 @@ app.component(&#x27;modalComponent&#x27;, {
 });</code></pre>
           </div> <!-- end tab-pane -->
           <div class="tab-pane fade" id="modal-tab-3">
-            <p><code>$uibModal</code> is a service to create modal windows.
-Creating modals is straightforward: create a template and controller, and reference them when using <code>$uibModal</code>.</p>
-<p>The <code>$uibModal</code> service has only one method: <code>open(options)</code>.</p>
 <h3 id="-uibmodal-s-open-function">$uibModal&#39;s open function</h3>
 <h4 id="options-parameter">options parameter</h4>
 <ul>

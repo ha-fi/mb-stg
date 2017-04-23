@@ -142,7 +142,7 @@ Takes text that specifies the location of a template to use for the tooltip. Not
       &lt;label&gt;Tooltip placement&lt;/label&gt;
       &lt;select class=&quot;form-control&quot; ng-model=&quot;placement.selected&quot; ng-options=&quot;o as o for o in placement.options&quot;&gt;&lt;/select&gt;
     &lt;/div&gt;
-    &lt;button tooltip-placement=&quot;&#x123;&#x123;placement.selected&#x125;&#x125;&quot; uib-tooltip=&quot;On the &#x123;&#x123;placement.selected&#x125;&#x125;&quot; type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Tooltip &#x123;&#x123;placement.selected&#x125;&#x125;&lt;/button&gt;
+    &lt;button tooltip-placement=&quot;&#123;&#123;placement.selected&#125;&#125;&quot; uib-tooltip=&quot;On the &#123;&#123;placement.selected&#125;&#125;&quot; type=&quot;button&quot; class=&quot;btn btn-default&quot;&gt;Tooltip &#123;&#123;placement.selected&#125;&#125;&lt;/button&gt;
 
     &lt;hr /&gt;
     &lt;div class=&quot;form-group&quot;&gt;
@@ -154,7 +154,7 @@ Takes text that specifies the location of a template to use for the tooltip. Not
       &lt;input type=&quot;text&quot; ng-model=&quot;dynamicTooltip&quot; class=&quot;form-control&quot;&gt;
     &lt;/div&gt;
     &lt;p&gt;
-      Pellentesque &lt;a href=&quot;#&quot; uib-tooltip=&quot;&#x123;&#x123;dynamicTooltip&#x125;&#x125;&quot;&gt;&#x123;&#x123;dynamicTooltipText&#x125;&#x125;&lt;/a&gt;,
+      Pellentesque &lt;a href=&quot;#&quot; uib-tooltip=&quot;&#123;&#123;dynamicTooltip&#125;&#125;&quot;&gt;&#123;&#123;dynamicTooltipText&#125;&#125;&lt;/a&gt;,
       sit amet venenatis urna cursus eget nunc scelerisque viverra mauris, in
       aliquam. Tincidunt lobortis feugiat vivamus at
       &lt;a href=&quot;#&quot; tooltip-animation=&quot;false&quot; uib-tooltip=&quot;I don't fade. :-(&quot;&gt;fading&lt;/a&gt;
@@ -170,7 +170,7 @@ Takes text that specifies the location of a template to use for the tooltip. Not
     &lt;p&gt;
         I can even contain HTML as a
         &lt;a href=&quot;#&quot; uib-tooltip-html=&quot;htmlTooltip&quot;&gt;scope variable&lt;/a&gt; or
-        &lt;a href=&quot;#&quot; uib-tooltip-html=&quot;'static. &#x123;&#x123;dynamicTooltipText&#x125;&#x125;. &lt;b&gt;bold.&lt;/b&gt;'&quot;&gt;inline string&lt;/a&gt;
+        &lt;a href=&quot;#&quot; uib-tooltip-html=&quot;'static. &#123;&#123;dynamicTooltipText&#125;&#125;. &lt;b&gt;bold.&lt;/b&gt;'&quot;&gt;inline string&lt;/a&gt;
     &lt;/p&gt;
 
     &lt;p&gt;
@@ -211,7 +211,7 @@ Takes text that specifies the location of a template to use for the tooltip. Not
       &lt;button ng-click=&quot;tooltipIsOpen = !tooltipIsOpen&quot;&gt;Toggle tooltip&lt;/button&gt;
     &lt;/div&gt;
     &lt;script type=&quot;text/ng-template&quot; id=&quot;myTooltipTemplate.html&quot;&gt;
-      &lt;span&gt;Special Tooltip with &lt;strong&gt;markup&lt;/strong&gt; and &#x123;&#x123; dynamicTooltipText &#x125;&#x125;&lt;/span&gt;
+      &lt;span&gt;Special Tooltip with &lt;strong&gt;markup&lt;/strong&gt; and &#123;&#123; dynamicTooltipText &#125;&#125;&lt;/span&gt;
     &lt;/script&gt;
 &lt;/div&gt;</code></pre>
           </div> <!-- end tab-pane -->

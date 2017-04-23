@@ -37,7 +37,8 @@
       <li class="active"><a href="#tab-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#tab-tab-1" role="tab" data-toggle="tab">Markup</a></li>
         <li><a href="#tab-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#tab-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+        <li><a href="#tab-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#tab-tab-4" role="tab" data-toggle="tab">Settings</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -172,6 +173,75 @@
 });</code></pre>
           </div> <!-- end tab-pane -->
           <div class="tab-pane fade" id="tab-tab-3">
+    		<pre><code data-language="css">
+.nav-tabs {
+  margin-bottom: 10px;
+}
+
+.nav-tabs > li > a {
+  border-radius: 0;
+  color: #337ab7;
+  cursor: pointer;
+  margin-right: -1px;
+}
+
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:focus {
+  box-shadow: none;
+  background-color: #fefefe;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  border-top-color: #ee6023;
+}
+
+.nav-tabs > li.active > a:after,
+.nav-tabs > li.active > a:hover:after,
+.nav-tabs > li.active > a:focus:after {
+  content: "";
+  height: 2px;
+  left: -1px;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  background-color: #ee6023;
+}
+
+.nav-tabs > li.open > a,
+.nav-tabs > li.open > a:hover,
+.nav-tabs > li.open > a:focus {
+  background-color: #fefefe;
+  border-color: #cccccc;
+}
+
+.nav-tabs.nav-justified > li > a {
+  border-bottom: 1px solid #cccccc;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: -1px;
+  border-radius: 0;
+}
+
+.nav-tabs.nav-justified > li:first-child > a {
+  margin-left: 0;
+}
+
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border-top-color: #ee6023;
+  border-bottom-color: #ffffff;
+}
+
+.nav-tabs > li.active > a:focus {
+  color: #ee6023;
+}
+    			
+    		</code></pre>
+    		</div>
+          <div class="tab-pane fade" id="tab-tab-4">
           <h3 id="uib-tabset-settings">uib-tabset settings</h3>
 <ul>
 <li><p><code>active</code>
@@ -235,6 +305,7 @@ A URL representing the location of a template to use for the tab heading.</p>
 <h3 id="known-issues">Known issues</h3>
 <p>To use clickable elements within the tab, you have override the tab template to use div elements instead of anchor elements, and replicate the desired styles from Bootstrap&#39;s CSS. This is due to browsers interpreting anchor elements as the target of any click event, which triggers routing when certain elements such as buttons are nested inside the anchor element.</p>
         	</div> <!-- end tab-pane -->
+    		
     	</div> <!-- end tab-content -->
       </div> <!-- end panel-body -->
 </div> <!-- end panel -->
