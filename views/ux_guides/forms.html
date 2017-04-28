@@ -1,0 +1,63 @@
+<section id="forms">
+<style>
+.imageCaption {
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: 0;
+    margin-top: 10px;
+    color: rgba(0,0,0,.6);
+    outline: 0;
+    text-align: center;
+    z-index: 300;
+}
+</style>
+
+    <div class="page-header">
+        <h1>Forms<small> (<a href="https://www.nngroup.com/articles/web-form-design/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>)</small></h1>
+    </div>
+    <p>The best design solution for any given form depends on many factors: the length of the form, the context of use, and the data being collected. The exact implementation you should use may vary in certain circumstances, but this is no excuse for ignoring guidelines altogether. Instead, use these recommendations as a starting point, and if you stray from these established best practices make certain you have a good reason for doing so.</p>
+	
+	<div class="callout callout-warning">
+		<h3>Only Ask What’s Required</h3>
+		<p>Make sure you only ask what you really need. Every extra field you add to a form will affect its <a href="https://www.nngroup.com/articles/conversion-rates/"> conversion rate</a>. That’s why you should always question why and how the information you request from your users is being used. Remove fields which collect information that can be (a) derived in some other way, (b) collected more conveniently at a later date, or (c) simply omitted.</p>
+	</div>
+
+	<div class="callout callout-warning">
+		<h3>Order the Form Logically</h3>
+		<p>Details should be asked logically from a user’s perspective, not the application or database logic. Typically, it’s unusual to ask for someone’s address before their name.</p>
+	</div>
+	
+	<h3>Group Related Information</h3>
+	<p>You should group related information in logical blocks or sets. The flow from one set of questions to the next will better resemble a conversation. Grouping related fields together also helps users make sense of the information that they must fill in. Below is an example for Contact Information.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/groupingFields.jpeg">
+	<figcaption class="imageCaption">Group together related fields. Image credits:&nbsp;<a href="https://www.nngroup.com" target="_blank">NNGroup</a></figcaption>
+	</div></div>
+	
+	<div class="callout callout-warning">
+		<p>Improve the layout of your online forms by placing form labels near the associated text field and by grouping similar fields.</p>
+	</div>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/labelGroupingDont.png" style="max-width:100%; max-height:100%;">
+	<img src="images/usability/labelGroupingDo.png" style="max-height:100%;">
+	<figcaption class="imageCaption">Place the label closer to the associated text field than to other text fields. Image credits:&nbsp;<a href="https://www.nngroup.com"  target="_blank">NNGroup</a></figcaption>
+	
+	</div></div>
+	
+	<h3>One Column vs. Multiple Columns</h3>
+		<p>Forms should never consist of more than one column. One of the problems with form fields in multiple columns is that your users are likely to interpret the fields inconsistently. If a form has horizontally adjacent fields, the user must scan in Z patterns, slowing the speed of comprehension and muddying the clear path to completion. But if a form is in a single column, the path to completion is a straight line down the page. (Exceptions to this rule: short and/or logically related fields such as City, State, and Zip Code can be presented on the same row.) </p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/singleVSmultiple.jpeg" vertical-align="middle" align="middle">
+	<figcaption class="imageCaption">Left: One (of many) way to interpret how the form fields relate when they are arranged in a standard two column layout. Right: Straing line down the page.. Image credits:&nbsp;<a href="https://uxplanet.org" data-href="https://uxplanet.org" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	<h3>Use logical sequencing</h3>
+	<p>Stick to standard sequences both for fields (e.g., Credit-card number, Expiration date, Security code) and for value choices (e.g., Standard shipping, 2-day shipping, 1-day shipping). But for field values, also consider usage frequency, and list the most common values first when possible. Help keyboard users by testing the Tab-key navigation to ensure it follows the correct field sequence.</p>
+
+	<h3>Avoid Reset and Clear buttons</h3>
+	<p>The risk of accidental deletion outweighs the unlikely need to ‘start over’ on a web form. In forms that collect extremely sensitive input such as financial information, provide a ‘Cancel’ button to support those users who abandon the form and want to delete their information. But make sure that the Cancel button has significantly less visual prominence than the Submit button, to avoid accidental clicks.</p>
+
+	</section>

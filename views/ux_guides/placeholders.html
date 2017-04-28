@@ -1,0 +1,70 @@
+<section id="placeholders">
+    <div class="page-header">
+        <h1>Inline Labels (Placeholder Text)<small> (<a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>, <a href="http://www.uxmatters.com/mt/archives/2013/02/dont-put-labels-inside-text-boxes-unless-youre-luke-w.php" target="_blank">UXMatters</a>)</small></h1>
+    </div>
+    
+   <div class="callout callout-warning">
+   		<h3>Placeholders in Form Fields Are Harmful</h3>
+    	<p>Placeholder text within a form field makes it difficult for people to remember what information belongs in a field, and to check for and fix errors. It also poses additional burdens for users with visual and cognitive impairments.
+   </div>
+   
+   <h3>Labels and Placeholders</h3>
+   <p>Labels tell users what information belongs in a given form field and are usually positioned outside the form field. Placeholder text, located inside a form field, is an additional hint, description, or example of the information required for a particular field. These hints typically disappear when the user types in the field.</p>
+    <div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/labelPlaceholderDesc.png">
+		<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a></figcaption>
+	</div></div>
+	
+	<h3>Placeholders that Replace Labels</h3>
+	<p>Some forms replace field labels with in-field placeholder text to reduce clutter on the page, or to shorten the length of the form. </p>
+	<p>According the <a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a> there are 7 main reasons why placeholders should not be used as replacements for field labels:</p>
+	<ol>
+	<li>Disappearing placeholder text strains users’ <a href="http://www.nngroup.com/articles/short-term-memory-and-web-usability/">short-term memory</a>.</li>
+	<li>Without labels, users cannot check their work before submitting a form.</li>
+	<li>When error messages occur, people don’t know how to fix the problem.</li>
+	<li>Placeholder text that disappears when the cursor is placed in a form field is irritating for users <a href="http://www.nngroup.com/articles/keyboard-accessibility/">navigating with the keyboard</a>.</li>
+	<li>Fields with stuff in them are less noticeable.</li>
+	<li>Users may mistake a placeholder for data that was automatically filled in.</li>
+	<li>Occasionally users have to delete placeholder text manually.</li>
+	</ol>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/placeholderOnly.png">
+		<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	
+	<h3>Placeholder Text in Addition to Labels</h3>
+	<p>Using placeholder text in combination with form labels is a step in the right direction. Labels outside the form fields make the essential information visible at all times, while placeholder text inside form fields is reserved for supplementary information. However, even when using labels, placing important hints or instructions within a form field can still cause the 7 issues mentioned above, albeit with less severity. If some of the fields require an extra description that is essential to completing the form correctly, it’s best to place that text outside the field so that it is always visible. </p>
+	 <div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/plHolderWithLabel.png">
+		<figcaption class="imageCaption">Better: Here, placeholder text is used as a hint in addition to the label. Image credit:&nbsp;<a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a></figcaption>
+	</div></div>
+	
+	<h3>Placeholders and Accessibility</h3>
+	<p>One last issue to consider is that placeholder text is generally bad for accessibility.Three of the biggest problems for accessibility are as follows:</p>
+	<ol>
+		<li>The default light-grey color of placeholder text has poor color contrast against most backgrounds.</li>
+		<li>Users with cognitive or motor impairments are more heavily burdened.</li>
+		<li>Not all screen readers read placeholder text aloud.</li>
+	</ol>
+	
+	<h3>Floatling Labels (Adaptive Placeholders)</h3>
+	<p>Good solution for the placeholder text is a floating label (also known as adaptive placeholder). The placeholder text is showing by default, but once an input field is tapped and text is entered the placeholder text fades out and a top aligned label animates in.  As a result, the adaptive placeholder (also known as the float label) is always visible, either in the center of the form field, or above the text that the user entered.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/adaptive.gif">
+<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://www.npmjs.com/package/adaptive-placeholders" target="_blank">NPMJS</a></figcaption>
+	</div></div>
+	
+	<p>There are two main advantages to this approach:</p>
+	<ul>
+		<li>It can save space on mobile devices, by not requiring extra vertical space to put the label above the field.</li>
+		<li>The visible label serves as a memory aid while people are in the typing stage. This therefore addresses points 1-4 from the list of pitfalls above.</li>
+	</ul>
+	
+	<p>However, issues #5 and #6 from above are still a problem: fields with text in them are less noticeable, and users might think there is already a default value entered in the field.</p>
+	<p>Ultimately, adaptive placeholders do offer a better user experience than the label as a placeholder. But if you have the screen space, placing the label and hint outside the field is still the best way to go.  </p>
+
+</section>

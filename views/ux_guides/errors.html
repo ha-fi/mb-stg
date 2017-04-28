@@ -1,0 +1,52 @@
+<section id="errors">
+    <div class="page-header">
+        <h1>Error Message Guidelines<small> (<a href="https://www.nngroup.com/articles/error-message-guidelines/" target="_blank">NNGroup</a>, <a href="https://material.io/guidelines/patterns/errors.html" target="_blank">Material.io</a>)</small></h1>
+    </div>
+    
+    <div class="callout callout-warning">
+    	<p>Good error messages are polite, precise, and constructive. The Web brings a few new guidelines: Make error messages clearly visible, reduce the work required to fix the problem, and educate users along the way.</p>
+    </div>
+    
+    <p>One of the <a href="https://uxplanet.org/golden-rules-of-user-interface-design-19282aeb06b#.klnla5vhp" data-href="https://uxplanet.org/golden-rules-of-user-interface-design-19282aeb06b#.klnla5vhp" target="_blank">10 Usability Heuristics</a> advises that it’s important to communicate errors to users gracefully and clearly. An effective error message provides following information:</p>
+	
+	<p>User input validations are meant to have conversations with users and guide them through the difficult times of errors and uncertainty. The output of this process is emotional rather than technical.
+The primary principle of input validation is this: “Talk to the users! Tell when them what is wrong!”</p>
+		
+	
+	<h3>Right Time and Place (Inline Validation)<small> (<a href="https://alistapart.com/article/inline-validation-in-web-forms" target="_blank">AListAPart</a>, <a href="https://conversionxl.com/form-validation/" target="_blank">ConversationXL</a>, <a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" target="_blank">Material.io</a>)</small></h3>
+	<p>Real-time inline validation immediately informs users about the correctness of provided data. If you are performing inline form validation, and the field with the error is clearly marked, the submit button may be disabled until the error is corrected. It allows users to correct the errors they make faster without having to wait until they press the submit button to see the errors.</p>
+	<div class="callout callout-warning">
+		<p>Instant validation should be implemented carefully and in appropriate cases because it might be distracting if overused or misused.</p>
+	</div>
+	
+	<div class="row">
+	<div class="col-md-12 text-center"><img src="images/usability/inline.png" style="max-width:100%; max-height:100%;"></div>
+	<figcaption class="imageCaption">Real-time inline validation. Image credits:&nbsp;<a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div>
+	</br>
+	<div class="row">
+	<div class="col-md-6 text-right"><img src="images/usability/incompatibleValues.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Example of errors detected before form submission. Image credit:&nbsp;<a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div>
+	<div class="col-md-6 text-left"><img src="images/usability/overUnderCharacter.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Example of an input field with character counter and error text. Image credit:&nbsp;<a href="https://uxplanet.org" data-href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors"  rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div>
+	</div>
+	
+	<div class="callout callout-warning">
+	<p>The best error message is the one that never shows up. It is always best to prevent errors from happening in the first place by guiding users in the right direction ahead of time. But when errors do arise, a well-designed error handling not only help teach users how to use the app as you intended, but they also prevent users from feeling ignorant.</p>
+	</div>
+	
+	<h3>Right Color (Intuitive Design)</h3>
+	<p>Color is one of the best tools to use when designing validation. Because it works on an instinctual level, adding red to error messages and yellow to warning messages is incredibly powerful. Error text should be legible, with noticeable contrast against its background color. But <a href="https://uxplanet.org/accessible-interface-design-3c59ee3ec730#.budh6j6jf" data-href="https://uxplanet.org/accessible-interface-design-3c59ee3ec730#.budh6j6jf" target="_blank">make sure that colors in your digital interface are accessible for your users</a>, it’s a really important aspect of a well executed visual design.</p>
+	
+	<h3>Clear Message (What Happened)</h3>
+	<p>Make sure to use a human-readable language, instead of obscure codes or abbreviations such as "An error of type 2 has occurred." 
+	</br>
+	Your validation message should clearly state (a) What went wrong and possibly why and (b) What’s the next step the user should take to fix the error.</p>
+
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/clearMessage.png" align="middle"><figcaption class="imageCaption">A typical error might state that “the data is invalid” without telling the user why it’s invalid (Is it a typo? Is it occupied?). Make sure the message is clear. Image credit:&nbsp;<a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" data-href="https://uxplanet.org"rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div></div>
+	
+	
+</section>

@@ -170,6 +170,11 @@
 				"nav_header": "Dropdown"
 			},
 			{
+				"source": "app/views/fixed_theader.html",
+				"css_id": "#fixedTableHeader",
+				"nav_header": "fixed table header"
+			},
+			{
 				"source": "app/views/floatinglabel.html",
 				"css_id": "#floatinglabel",
 				"nav_header": "Floating Labels"
@@ -215,6 +220,11 @@
 				"nav_header": "Scrollbar"
 			},
 			{
+				"source": "app/views/sorting.html",
+				"css_id": "#sorting",
+				"nav_header": "sorting"
+			},
+			{
 				"source": "app/views/tabs.html",
 				"css_id": "#tabs",
 				"nav_header": "Tabs"
@@ -237,36 +247,40 @@
 			{ "source": "app/views/angular-footer.html" }
 		]
 	},
-	"examples": {
-		"header": "Examples",
+
+	"ux_guides": {
+		"header": "UX Guidelines",
 		"sources": [
-			{ "source": "app/views/angular-header.html" },
 			{
-				"source": "views/examples/navbar.html",
-				"css_id": "#navbar",
-				"nav_header": "navbar"
+				"source": "views/ux_guides/forms.html",
+				"css_id": "#forms",
+				"nav_header": "Forms"
 			},
 			{
-				"source": "views/examples/matching.html",
-				"css_id": "#matching",
-				"nav_header": "matching"
+				"source": "views/ux_guides/inputFields.html",
+				"css_id": "#inputFields",
+				"nav_header": "Input Fields"
 			},
 			{
-				"source": "views/examples/sorting.html",
-				"css_id": "#sorting",
-				"nav_header": "sorting"
+				"source": "views/ux_guides/labels.html",
+				"css_id": "#labels",
+				"nav_header": "Labels"
 			},
 			{
-				"source": "views/examples/fixed_theader.html",
-				"css_id": "#fixedTableHeader",
-				"nav_header": "fixed table header"
+				"source": "views/ux_guides/placeholders.html",
+				"css_id": "#placeholders",
+				"nav_header": "Placeholders"
 			},
 			{
-				"source": "views/examples/editEntity.html",
-				"css_id": "#editEntity",
-				"nav_header": "edit Tunnel"
+				"source": "views/ux_guides/actionButtons.html",
+				"css_id": "#actionbuttons",
+				"nav_header": "Action Buttons"
 			},
-			{ "source": "app/views/angular-footer.html" }
+			{
+				"source": "views/ux_guides/errors.html",
+				"css_id": "#errors",
+				"nav_header": "Error Messages"
+			}
 		]
 	}
 }
