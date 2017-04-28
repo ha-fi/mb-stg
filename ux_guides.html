@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UX Guidelines | MineralBay Pattern Library</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href='//fonts.googleapis.com/css?family=Roboto:500,300,700,400italic,400'>
+  <link rel="stylesheet" href="css/mineralbay.css">
+  <script src="js/mineralbay.js"></script>
+  <script src="js/mineralbay-angular.js"></script>
+
+
+</head>
+<body class="pl-body">
+  <!-- ================================== Navigation ================================== -->
+  <nav id="top" class="navbar navbar-default" role="navigation" style="background: radial-gradient(#7f0001, #b20001);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pl-nav">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="images/logo_whiteback.png" onmouseover="this.src='images/logo_hover_whiteback.png'" onmouseout="this.src='images/logo_whiteback.png'"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="pl-nav">
+        <ul id="pl-docs-nav" class="nav navbar-nav">
+          <li><a href="index.html">Introduction</a></li>
+          <li><a href="css.html">CSS</a></li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="angular.html">Angular</a></li>
+<!--           <li><a href="examples.html">Examples</a></li> -->
+          <li><a href="ux_guides.html">UX Guidelines</a></li>
+      </div>
+    </div>
+  </nav> <!-- /navigation -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9" role="main">
+
+<section id="forms">
+<style>
+.imageCaption {
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: 0;
+    margin-top: 10px;
+    color: rgba(0,0,0,.6);
+    outline: 0;
+    text-align: center;
+    z-index: 300;
+}
+</style>
+
+    <div class="page-header">
+        <h1>Forms<small> (<a href="https://www.nngroup.com/articles/web-form-design/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>)</small></h1>
+    </div>
+    <p>The best design solution for any given form depends on many factors: the length of the form, the context of use, and the data being collected. The exact implementation you should use may vary in certain circumstances, but this is no excuse for ignoring guidelines altogether. Instead, use these recommendations as a starting point, and if you stray from these established best practices make certain you have a good reason for doing so.</p>
+	
+	<div class="callout callout-warning">
+		<h3>Only Ask What’s Required</h3>
+		<p>Make sure you only ask what you really need. Every extra field you add to a form will affect its <a href="https://www.nngroup.com/articles/conversion-rates/"> conversion rate</a>. That’s why you should always question why and how the information you request from your users is being used. Remove fields which collect information that can be (a) derived in some other way, (b) collected more conveniently at a later date, or (c) simply omitted.</p>
+	</div>
+
+	<div class="callout callout-warning">
+		<h3>Order the Form Logically</h3>
+		<p>Details should be asked logically from a user’s perspective, not the application or database logic. Typically, it’s unusual to ask for someone’s address before their name.</p>
+	</div>
+	
+	<h3>Group Related Information</h3>
+	<p>You should group related information in logical blocks or sets. The flow from one set of questions to the next will better resemble a conversation. Grouping related fields together also helps users make sense of the information that they must fill in. Below is an example for Contact Information.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/groupingFields.jpeg">
+	<figcaption class="imageCaption">Group together related fields. Image credits:&nbsp;<a href="https://www.nngroup.com" target="_blank">NNGroup</a></figcaption>
+	</div></div>
+	
+	<div class="callout callout-warning">
+		<p>Improve the layout of your online forms by placing form labels near the associated text field and by grouping similar fields.</p>
+	</div>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/labelGroupingDont.png" style="max-width:100%; max-height:100%;">
+	<img src="images/usability/labelGroupingDo.png" style="max-height:100%;">
+	<figcaption class="imageCaption">Place the label closer to the associated text field than to other text fields. Image credits:&nbsp;<a href="https://www.nngroup.com"  target="_blank">NNGroup</a></figcaption>
+	
+	</div></div>
+	
+	<h3>One Column vs. Multiple Columns</h3>
+		<p>Forms should never consist of more than one column. One of the problems with form fields in multiple columns is that your users are likely to interpret the fields inconsistently. If a form has horizontally adjacent fields, the user must scan in Z patterns, slowing the speed of comprehension and muddying the clear path to completion. But if a form is in a single column, the path to completion is a straight line down the page. (Exceptions to this rule: short and/or logically related fields such as City, State, and Zip Code can be presented on the same row.) </p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/singleVSmultiple.jpeg" vertical-align="middle" align="middle">
+	<figcaption class="imageCaption">Left: One (of many) way to interpret how the form fields relate when they are arranged in a standard two column layout. Right: Straing line down the page.. Image credits:&nbsp;<a href="https://uxplanet.org" data-href="https://uxplanet.org" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	<h3>Use logical sequencing</h3>
+	<p>Stick to standard sequences both for fields (e.g., Credit-card number, Expiration date, Security code) and for value choices (e.g., Standard shipping, 2-day shipping, 1-day shipping). But for field values, also consider usage frequency, and list the most common values first when possible. Help keyboard users by testing the Tab-key navigation to ensure it follows the correct field sequence.</p>
+
+	<h3>Avoid Reset and Clear buttons</h3>
+	<p>The risk of accidental deletion outweighs the unlikely need to ‘start over’ on a web form. In forms that collect extremely sensitive input such as financial information, provide a ‘Cancel’ button to support those users who abandon the form and want to delete their information. But make sure that the Cancel button has significantly less visual prominence than the Submit button, to avoid accidental clicks.</p>
+
+	</section>
+<section id="inputFields">
+    <div class="page-header">
+        <h1>Input Fields<small>(<a href="https://www.nngroup.com/articles/web-form-design/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>)</small></h1>
+    </div>
+    
+   <h3>Number of Fields</h3>
+	<p>Try to minimize the number of fields as much as possible. This makes your form less loaded, especially when you request a lot of information from your users. However don’t over do it, no one likes a three field form that turns into a 30 field interrogation.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/numberFields.png">
+	<figcaption class="imageCaption">Combine multiple fields in one easy-to-fill field. Image credits:&nbsp;<a href="https://uxplanet.org" data-href="https://uxplanet.org" target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	
+
+	<h3>Mandatory vs Optional</h3>
+	<p>Try to avoid optional fields in forms. But if you use them, you should at least clearly distinguish which input fields cannot be left blank by the user. The convention is to use an asterisk (*) or ‘optional’ (which is a preferable for long forms with multiple required fields)</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/optional_mandatory.jpeg">
+	<figcaption class="imageCaption">Mailchimp subscribe to mailing list form. Image credits:&nbsp;<a href="https://uxplanet.org" data-href="https://uxplanet.org" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	
+	<h3>Setting Default Values</h3>
+	<p>You should avoid having a static default unless you believe a large portion of your user’s (e.g. 90%) will select that value. Particularly if it’s a required field. Why? Because you’re likely to introduce errors because people scan forms quickly online — don’t assume they will take the time to parse through all the choices. They simply may blithely skip by something that already has a value.
+But smart defaults can make the user’s completion of the form faster and more accurate. For example, pre-select the user’s country based on their geo location data. But still you should use these with caution, because users tend to leave pre-selected fields as they are.
+	</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/preSelected.png">
+	<figcaption class="imageCaption">Intelligently pre-selected country in the checkout form. Image credits:&nbsp;<a href="https://uxplanet.org" data-href="https://uxplanet.org" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	
+	<h3>Desktop-only: Make Form Keyboard-friendly</h3>
+	<p>Users should be able to trigger and edit every field using only the keyboard. Power users, who tend to use keyboards heavily, should be able to easily tab through the fields and make necessary edits, all without lifting their fingers off the keyboard. You can find detailed requirements for keyboard interaction pattern in <a href="http://www.w3.org/TR/wai-aria-practices/#aria_ex" data-href="http://www.w3.org/TR/wai-aria-practices/#aria_ex" class="markup--anchor markup--p-anchor" rel="nofollow noopener" target="_blank">W3C’s Authoring Practices for Design Patterns</a></p>
+	
+	<h3>Desktop-only: Autofocus for Input Field</h3>
+	<p>Autofocusing a field gives the users an indication and a starting point to quickly begin to fill out the form. You should provide a clear visual ‘notification’ that the focus has moved there — change color, fade in a box, flash in an arrow, whatever. Amazon registration form has both autofocus and visual notification for the user.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/amzon.png">
+	</div></div>	  
+	
+	<h3>Mobile-only: Match the Keyboard With the Required Text Inputs</h3>
+	<p>App users appreciate apps that provide an appropriate keyboard for text entry. Ensure that this is implemented consistently throughout the app rather than only for certain tasks but not others.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/mobileInputFields.png">
+	</div></div>	
+	
+	<h3>Explain any input or formatting requirements.</h3>
+	<p>If a field requires a specific format or type of input, state the exact instructions. Don’t make users guess your obscure password requirements. The same applies to syntax rules such as punctuation or spacing for phone numbers or credit cards. (Though as much as possible you should eliminate these arbitrary formatting rules: death to parentheses for phone-number area codes!)</p>
+    
+    
+</section>
+<section id="labels">
+    <div class="page-header">
+        <h1>Labels<small> (<a href="https://www.nngroup.com/articles/form-design-white-space/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXMatters</a>)</small></h1>
+    </div>
+    
+   <h3>Number of Words</h3>
+   <p>Labels are not help texts. You should use succinct, short and descriptive labels (a word or two) so users can quickly scan your form. Previous version of the Amazon registration form contained a lot of extra words which resulted in slow completion rates.
+   </p>
+   
+   <div class="row">
+	<div class="col-md-6 text-right"><img src="images/usability/labelLongText.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Example of labels with too much text. Image credit:&nbsp;<a href="https://uxplanet.org"  target="_blank">UXPlanet</a></figcaption>
+	</div>
+	<div class="col-md-6 text-left"><img src="images/usability/labelShortText.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Current version is much better and has short labels. Image credit:&nbsp;<a href="https://uxplanet.org" target="_blank">UXPlanet</a></figcaption>
+	</div>
+	</div>
+	
+	<h3>Sentence Case vs Title Case</h3>
+	<p>Should it be “Full Name” or “Full name”? Sentence case is slightly easier (and thus faster) for reading than title case. But one thing for sure — you should never use all caps, or else the form would be difficult to read and much harder to quickly scan, as there are no differences in character height any more.</p>
+
+	<h3>Alignment of Labels: Left vs Right Aligned vs Top</h3>
+	<p>Matteo Penzo’s 2006 <a href="http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php" target="_blank">article</a> on label placement implies that forms are completed faster if the labels are on top of the fields. They are good if you want users to eye-scan the form as fast as possible.</p>
+	 <div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/labelAlignment.jpeg" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Left-aligned labels, right-aligned labels and top labels. Image credits::&nbsp;<a href="http://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php"  target="_blank">UXMatters</a></figcaption>
+	</div>
+	</div>
+	</br>
+	<p>However further research mentioned <a href="http://www.slideshare.net/cjforms/labels-and-buttons-on-forms" target="_blank">found</a> no difference between labels above the fields and right-aligned labels.</p>
+
+	<div class="row">
+	<div class="col-md-12 text-center"><img src="images/usability/topAligned.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Image credit:&nbsp;<a href="https://css-tricks.com/label-placement-on-forms/"  target="_blank">CSSTricks</a></figcaption>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="col-md-12 text-center"><img src="images/usability/leftAligned.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Image credit:&nbsp;<a href="https://css-tricks.com/label-placement-on-forms/"  target="_blank">CSSTricks</a></figcaption>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="col-md-12 text-center"><img src="images/usability/rightAligned.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Image credit:&nbsp;<a href="https://css-tricks.com/label-placement-on-forms/"  target="_blank">CSSTricks</a></figcaption>
+	</div>
+	</div>
+	
+</section>
+<section id="placeholders">
+    <div class="page-header">
+        <h1>Inline Labels (Placeholder Text)<small> (<a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>, <a href="http://www.uxmatters.com/mt/archives/2013/02/dont-put-labels-inside-text-boxes-unless-youre-luke-w.php" target="_blank">UXMatters</a>)</small></h1>
+    </div>
+    
+   <div class="callout callout-warning">
+   		<h3>Placeholders in Form Fields Are Harmful</h3>
+    	<p>Placeholder text within a form field makes it difficult for people to remember what information belongs in a field, and to check for and fix errors. It also poses additional burdens for users with visual and cognitive impairments.
+   </div>
+   
+   <h3>Labels and Placeholders</h3>
+   <p>Labels tell users what information belongs in a given form field and are usually positioned outside the form field. Placeholder text, located inside a form field, is an additional hint, description, or example of the information required for a particular field. These hints typically disappear when the user types in the field.</p>
+    <div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/labelPlaceholderDesc.png">
+		<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a></figcaption>
+	</div></div>
+	
+	<h3>Placeholders that Replace Labels</h3>
+	<p>Some forms replace field labels with in-field placeholder text to reduce clutter on the page, or to shorten the length of the form. </p>
+	<p>According the <a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a> there are 7 main reasons why placeholders should not be used as replacements for field labels:</p>
+	<ol>
+	<li>Disappearing placeholder text strains users’ <a href="http://www.nngroup.com/articles/short-term-memory-and-web-usability/">short-term memory</a>.</li>
+	<li>Without labels, users cannot check their work before submitting a form.</li>
+	<li>When error messages occur, people don’t know how to fix the problem.</li>
+	<li>Placeholder text that disappears when the cursor is placed in a form field is irritating for users <a href="http://www.nngroup.com/articles/keyboard-accessibility/">navigating with the keyboard</a>.</li>
+	<li>Fields with stuff in them are less noticeable.</li>
+	<li>Users may mistake a placeholder for data that was automatically filled in.</li>
+	<li>Occasionally users have to delete placeholder text manually.</li>
+	</ol>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/placeholderOnly.png">
+		<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	
+	<h3>Placeholder Text in Addition to Labels</h3>
+	<p>Using placeholder text in combination with form labels is a step in the right direction. Labels outside the form fields make the essential information visible at all times, while placeholder text inside form fields is reserved for supplementary information. However, even when using labels, placing important hints or instructions within a form field can still cause the 7 issues mentioned above, albeit with less severity. If some of the fields require an extra description that is essential to completing the form correctly, it’s best to place that text outside the field so that it is always visible. </p>
+	 <div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/plHolderWithLabel.png">
+		<figcaption class="imageCaption">Better: Here, placeholder text is used as a hint in addition to the label. Image credit:&nbsp;<a href="https://www.nngroup.com/articles/form-design-placeholders/" target="_blank">NNGroup</a></figcaption>
+	</div></div>
+	
+	<h3>Placeholders and Accessibility</h3>
+	<p>One last issue to consider is that placeholder text is generally bad for accessibility.Three of the biggest problems for accessibility are as follows:</p>
+	<ol>
+		<li>The default light-grey color of placeholder text has poor color contrast against most backgrounds.</li>
+		<li>Users with cognitive or motor impairments are more heavily burdened.</li>
+		<li>Not all screen readers read placeholder text aloud.</li>
+	</ol>
+	
+	<h3>Floatling Labels (Adaptive Placeholders)</h3>
+	<p>Good solution for the placeholder text is a floating label (also known as adaptive placeholder). The placeholder text is showing by default, but once an input field is tapped and text is entered the placeholder text fades out and a top aligned label animates in.  As a result, the adaptive placeholder (also known as the float label) is always visible, either in the center of the form field, or above the text that the user entered.</p>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/adaptive.gif">
+<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://www.npmjs.com/package/adaptive-placeholders" target="_blank">NPMJS</a></figcaption>
+	</div></div>
+	
+	<p>There are two main advantages to this approach:</p>
+	<ul>
+		<li>It can save space on mobile devices, by not requiring extra vertical space to put the label above the field.</li>
+		<li>The visible label serves as a memory aid while people are in the typing stage. This therefore addresses points 1-4 from the list of pitfalls above.</li>
+	</ul>
+	
+	<p>However, issues #5 and #6 from above are still a problem: fields with text in them are less noticeable, and users might think there is already a default value entered in the field.</p>
+	<p>Ultimately, adaptive placeholders do offer a better user experience than the label as a placeholder. But if you have the screen space, placing the label and hint outside the field is still the best way to go.  </p>
+
+</section>
+<section id="actionbuttons">
+    <div class="page-header">
+        <h1>Action Buttons<small> (<a href="https://www.nngroup.com/articles/ok-cancel-or-cancel-ok/" target="_blank">NNGroup</a>, <a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a>, <a href="http://www.uxmatters.com/mt/archives/2012/05/7-basic-best-practices-for-buttons.php" target="_blank">UXMatters</a>)</small></h1>
+    </div>
+
+    <p>When clicked, these buttons trigger an action such as submitting the form.</p>
+    
+    <h3>Visual Appearance</h3>
+    <p>Make sure action buttons look like buttons—with a bit of shading on their surface or around their edges to make them stand out from the background and look clickable. For more information about button you can read article <a href="https://uxplanet.org/button-ux-design-best-practices-types-and-states-647cf4ae0fc6#.g2spn689u" target="_blank">Button UX Design: Best Practices, Types and States</a></p>
+   
+   	 <div class="row">
+	<div class="col-md-6 text-right">
+	<img src="images/usability/noButton.png">
+		<figcaption class="imageCaption">Image credit:&nbsp;<a href="http://www.uxmatters.com/mt/archives/2012/05/7-basic-best-practices-for-buttons.php" target="_blank">UXMatters</a></figcaption>
+	</div>
+	<div class="col-md-6 text-left">
+	<img src="images/usability/Button.png">
+		<figcaption class="imageCaption">Image credit:&nbsp;<a href="http://www.uxmatters.com/mt/archives/2012/05/7-basic-best-practices-for-buttons.php" target="_blank">UXMatters</a></figcaption>
+	</div>
+	</div>
+	<h3>Visual Feedback</h3>
+	<p>You should design your submit button in a way that it should clearly indicate that the form is being processed after user’s action. This provides feedback to the user whilst also avoiding double posts.</p>
+	
+	<h3>Primary vs Secondary Actions</h3>
+	<p>Lack of visual distinction between primary and secondary actions can easily lead to failure. Reducing the visual prominence of secondary actions minimizes the risk for potential errors and further directs people toward a successful outcome.</p>
+   
+   <div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/primaryVSsecondary.gif">
+<figcaption class="imageCaption">Image credit:&nbsp;<a href="https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f" target="_blank">UXPlanet</a></figcaption>
+	</div></div>
+	
+	<h3>Button Location</h3>
+	<div class="callout callout-warning">
+	<p>On a Web page, it’s all about knowing what catches your users’ attention and inspires them to action.</p>
+	</div>
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/buttonLocation.png">
+<figcaption class="imageCaption">A black Next button hidden in a footer. Image credit:&nbsp;<a href="http://www.uxmatters.com/mt/archives/2012/05/7-basic-best-practices-for-buttons.php" target="_blank">UXMatters</a></figcaption>
+	</div></div>
+	
+
+	<h4>OK-Cancel or Cancel-OK?</h4>
+	<p>Both are reasonable choices, and people can argue for hours about their preferences:</p>
+	<ul>
+		<li>Listing OK first supports the natural reading order in English and other languages that read left-to-right. Many other button sets have a natural progression (say, Yes/No or Previous/Next). You should always list these so that the reading order matches the logical order — in this case, OK/Cancel . Further, assuming users need OK much more frequently than Cancel, it's better to place this option first so that keyboard-driven users who tab to the buttons can get to their preferred choice with one less keystroke.</li>
+		</br>
+		<li>Listing OK last improves the flow, because the dialog box "ends" with its conclusion. Also, as with Previous/Next, you could argue that OK is the choice that moves the user forward, whereas Cancel moves the user back. Thus, OK should be in the same location as Next: on the right.</li>
+	</ul>
+	In cases like this, it often doesn't matter what you do.Following platform conventions is more important than suboptimizing an individual dialog box.
+	
+	<h3>Put buttons in a sensible order</h3>
+	<p>If the primary action button needs to be where users look next, where should the other buttons go?
+You should tuck the other buttons away somewhere users won’t stumble upon them too easily.</p>
+	 <div class="row">
+	<div class="col-md-6 text-right"><img src="images/usability/surveyWrong.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">A survey page with the Previous button on the right. Image credit:&nbsp;<a href="http://www.uxmatters.com/mt/archives/2012/05/7-basic-best-practices-for-buttons.php"  target="_blank">UXMatters</a></figcaption>
+	</div>
+	<div class="col-md-6 text-left"><img src="images/usability/surveyRight.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Rearranging the survey page, putting Previous on the left. Image credit:&nbsp;<a href="http://www.uxmatters.com/mt/archives/2012/05/7-basic-best-practices-for-buttons.php" target="_blank">UXMatters</a></figcaption>
+	</div>
+	</div>
+	
+	<h3>Naming Conventions</h3>
+	<p>Avoid generic words such as “Submit” for actions, because they give the impression that the form itself is generic. Instead state what actions the buttons do when clicked, such as ‘Create my FREE account’ or ‘Send me weekly offers’.</p>
+   	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/namingConvention.png">
+	<figcaption class="imageCaption">Image credit:&nbsp;<a href="http://uxmovement.com/forms/why-your-form-buttons-should-never-say-submit/" target="_blank">UXMovement</a></figcaption>
+	</div></div>
+	
+	<div class="callout callout-warning">
+	<h3>Multiple Action Buttons</h3>	
+	<p>Avoid multiple action buttons since it might distract users from the goal (submitting the form).</p>
+	</div>
+	
+	<div class="callout callout-danger">
+	<h3>Reset: Don't Use</h3>
+	<p>Don't use a reset button. The web would be a happier place if virtually all Reset buttons were removed. This button almost never helps users, but often hurts them.</p>
+   	</br>
+   </div>
+
+	<div class="callout callout-warning">
+	<h3>Cancel: Use Sparingly</h3>	
+	<p>The Web is not an application environment, and it usually doesn't have dialog boxes. Instead, the Web is a navigation environment where users move between pages of information. Since hypertext navigation is the dominant user behavior, users have learned to rely on the Back button for getting out of unpleasant situations. Whenever users arrive at pages they don't want, they slam their mouse directly onto the Back button.</p>
+	<p>Cancel is mainly useful for multi-step dialogs where the user has progressed past one or more pages with actions. At this time, pressing the Back button will not undo these actions and it would be better if the user would click Cancel.</p>
+	</div>
+	
+   
+</section>
+<section id="errors">
+    <div class="page-header">
+        <h1>Error Message Guidelines<small> (<a href="https://www.nngroup.com/articles/error-message-guidelines/" target="_blank">NNGroup</a>, <a href="https://material.io/guidelines/patterns/errors.html" target="_blank">Material.io</a>)</small></h1>
+    </div>
+    
+    <div class="callout callout-warning">
+    	<p>Good error messages are polite, precise, and constructive. The Web brings a few new guidelines: Make error messages clearly visible, reduce the work required to fix the problem, and educate users along the way.</p>
+    </div>
+    
+    <p>One of the <a href="https://uxplanet.org/golden-rules-of-user-interface-design-19282aeb06b#.klnla5vhp" data-href="https://uxplanet.org/golden-rules-of-user-interface-design-19282aeb06b#.klnla5vhp" target="_blank">10 Usability Heuristics</a> advises that it’s important to communicate errors to users gracefully and clearly. An effective error message provides following information:</p>
+	
+	<p>User input validations are meant to have conversations with users and guide them through the difficult times of errors and uncertainty. The output of this process is emotional rather than technical.
+The primary principle of input validation is this: “Talk to the users! Tell when them what is wrong!”</p>
+		
+	
+	<h3>Right Time and Place (Inline Validation)<small> (<a href="https://alistapart.com/article/inline-validation-in-web-forms" target="_blank">AListAPart</a>, <a href="https://conversionxl.com/form-validation/" target="_blank">ConversationXL</a>, <a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" target="_blank">Material.io</a>)</small></h3>
+	<p>Real-time inline validation immediately informs users about the correctness of provided data. If you are performing inline form validation, and the field with the error is clearly marked, the submit button may be disabled until the error is corrected. It allows users to correct the errors they make faster without having to wait until they press the submit button to see the errors.</p>
+	<div class="callout callout-warning">
+		<p>Instant validation should be implemented carefully and in appropriate cases because it might be distracting if overused or misused.</p>
+	</div>
+	
+	<div class="row">
+	<div class="col-md-12 text-center"><img src="images/usability/inline.png" style="max-width:100%; max-height:100%;"></div>
+	<figcaption class="imageCaption">Real-time inline validation. Image credits:&nbsp;<a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" class="markup--anchor markup--figure-anchor" rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div>
+	</br>
+	<div class="row">
+	<div class="col-md-6 text-right"><img src="images/usability/incompatibleValues.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Example of errors detected before form submission. Image credit:&nbsp;<a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div>
+	<div class="col-md-6 text-left"><img src="images/usability/overUnderCharacter.png" style="max-width:100%; max-height:100%;"><figcaption class="imageCaption">Example of an input field with character counter and error text. Image credit:&nbsp;<a href="https://uxplanet.org" data-href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors"  rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div>
+	</div>
+	
+	<div class="callout callout-warning">
+	<p>The best error message is the one that never shows up. It is always best to prevent errors from happening in the first place by guiding users in the right direction ahead of time. But when errors do arise, a well-designed error handling not only help teach users how to use the app as you intended, but they also prevent users from feeling ignorant.</p>
+	</div>
+	
+	<h3>Right Color (Intuitive Design)</h3>
+	<p>Color is one of the best tools to use when designing validation. Because it works on an instinctual level, adding red to error messages and yellow to warning messages is incredibly powerful. Error text should be legible, with noticeable contrast against its background color. But <a href="https://uxplanet.org/accessible-interface-design-3c59ee3ec730#.budh6j6jf" data-href="https://uxplanet.org/accessible-interface-design-3c59ee3ec730#.budh6j6jf" target="_blank">make sure that colors in your digital interface are accessible for your users</a>, it’s a really important aspect of a well executed visual design.</p>
+	
+	<h3>Clear Message (What Happened)</h3>
+	<p>Make sure to use a human-readable language, instead of obscure codes or abbreviations such as "An error of type 2 has occurred." 
+	</br>
+	Your validation message should clearly state (a) What went wrong and possibly why and (b) What’s the next step the user should take to fix the error.</p>
+
+	<div class="row">
+	<div class="col-md-12 text-center">
+	<img src="images/usability/clearMessage.png" align="middle"><figcaption class="imageCaption">A typical error might state that “the data is invalid” without telling the user why it’s invalid (Is it a typo? Is it occupied?). Make sure the message is clear. Image credit:&nbsp;<a href="https://material.io/guidelines/patterns/errors.html#errors-user-input-errors" data-href="https://uxplanet.org"rel="noopener" target="_blank">Material.io</a></figcaption>
+	</div></div>
+	
+	
+</section>
+    </div> <!-- /column (main content) -->
+    <div class="col-sm-3">
+        <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
+            <p class="pl-docs-sidebar-header"><a href="#top">UX Guidelines</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="#icon-chevron-up"/></svg></a></p>
+            <ul class="nav nav-pills pl-docs-sidenav">
+                <li>
+                    <a href="#forms">Forms</a>
+                </li>
+                <li>
+                    <a href="#inputFields">Input Fields</a>
+                </li>
+                <li>
+                    <a href="#labels">Labels</a>
+                </li>
+                <li>
+                    <a href="#placeholders">Placeholders</a>
+                </li>
+                <li>
+                    <a href="#actionbuttons">Action Buttons</a>
+                </li>
+                <li>
+                    <a href="#errors">Error Messages</a>
+                </li>
+            </ul>
+        </div>
+    </div> <!-- /column (sidebar) -->
+</div> <!-- /row -->
+
+</div>
+<script>
+    $( document ).ready(function() {
+
+	boomsvgloader.load('svg/sprite.svg');
+    	// init navs
+      $('.nav-links').btNavLinks();
+      $('.nav-blocks').btNavLinks();
+
+    	$('body').scrollspy({ target: '.pl-docs-sidebar'});
+
+    	///////////// active nav
+
+			var path = location.pathname.split("/");
+			var section = path[path.length-1];
+			if(section == "") {
+				$('#pl-docs-nav a[href^="index.html"]').closest('li').addClass('active');
+			} else {
+				$('#pl-docs-nav a[href^="' + section + '"]').closest('li').addClass('active');
+			}
+			$("[data-toggle=popover]").popover();
+			$('.selectpicker').selectpicker();
+
+		
+			///////////// log call
+
+			// add/remove active class to log call status buttons
+			$('.log-call__status .list-group-item').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.list-group-item').removeClass('active');
+				$this.addClass('active');
+			});
+
+			$('.log-call__status').click(function(e){
+				e.preventDefault();
+				var $theParent = $(this).parent();
+				$theParent.next('#zebracornftw').collapse('show');
+			});
+
+
+    	///////////// to-dos
+
+			// add/remove active class to date buttons
+			$('.set-to-do__date-btns .btn').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				var $theParent = $this.parent();
+				$theParent.find('.btn').removeClass('active');
+				$this.addClass('active');
+				$this.closest('.set-to-do__body').find('.set-to-do__cancel').removeClass('hide');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Thursday, January 1, 2015');
+			});
+
+			// cancel
+			$('.set-to-do__cancel').click(function(e){
+				e.preventDefault();
+				var $this = $(this);
+				$this.addClass('hide');
+				$this.closest('.set-to-do__body').find('.set-to-do__date-btns .btn').removeClass('active');
+    		$this.closest('.set-to-do__body').find('.set-to-do__date').text('Schedule a To-Do?');
+			});
+
+    	// show/hide specific time options
+			$('#set-to-do__time__radios').click(function() {
+			   if($('#to-do-specific-time').is(':checked')) { 
+			   	$('#set-to-do__time__opts').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts').addClass("hide");
+			   }
+			});
+			$('#set-to-do__time__radios2').click(function() {
+			   if($('#to-do-specific-time2').is(':checked')) { 
+			   	$('#set-to-do__time__opts2').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts2').addClass("hide");
+			   }
+			});
+			$('#set-to-do__time__radios3').click(function() {
+			   if($('#to-do-specific-time3').is(':checked')) { 
+			   	$('#set-to-do__time__opts3').removeClass("hide");
+			   } else {
+			   	$('#set-to-do__time__opts3').addClass("hide");
+			   }
+			});
+
+			// progress bars - send to random position
+
+			$('.progress-bar').each(function(){
+				var position = Math.floor(Math.random()*100);
+				if(position<5) { position = 5; }
+			  // add % to label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+
+			// progress bars - click progress bar to transition
+
+			$(".progress-bar").on("click", function(e) {
+			  var offset = $(this).offset(),
+			      position = Math.floor((e.pageX - offset.left)/$(this).width()*100) + 1;
+			  // check for label
+			  if($(this).find('.progress-bar__bar__label').length > 0) {
+			  	// add % to label
+			  	$(this).find('.progress-bar__bar__label').html(position+'%');
+			  	/*// if position is less than five, need to prevent label from being hidden
+			  	if(position < 5) {
+			  		// get label's width and divide by width of progress-bar
+				  	var labelWidth = $(this).find('.progress-bar__bar__label').width()/$(this).width()*100;
+				  	// add label's width to position
+				  	position = position + Math.round(labelWidth);
+				  }*/
+				  if (position < 4 ) { position = 4; }
+			  }
+			  // position bar
+			  $(this).find('.progress-bar__bar').css('transform','translateX('+position+'%)'); 
+			  $(this).find('.progress-bar__bar').css('-webkit-transform','translateX('+position+'%)');
+			});
+			
+
+			// view markup buttons
+			if($(window).width() < 768) {
+				$('.pl-code').prepend("<button class='btn btn-default btn-sm btn-showmarkup'>view markup</button>");
+				$('.pl-code pre').hide();
+				$('.btn-showmarkup').click(function(){
+					var prediv = $('pre');
+					$(this).next(prediv).show();
+					$(this).hide();
+				});
+			}
+
+
+
+    });
+
+</script>
+
+<!-- scripts to run bootstrap examples -->
+<script>
+  !function(a){a(function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var b=document.createElement("style");b.appendChild(document.createTextNode("@-ms-viewport{width:auto!important}")),document.querySelector("head").appendChild(b)}{var c=a(window),d=a(document.body);a(".navbar").outerHeight(!0)+10}d.scrollspy({target:".pl-docs-sidebar"}),c.on("load",function(){d.scrollspy("refresh")}),a(".pl-docs-container [href=#]").click(function(a){a.preventDefault()}),setTimeout(function(){var b=a(".pl-docs-sidebar");b.affix({offset:{top:function(){var c=b.offset().top,d=parseInt(b.children(0).css("margin-top"),10),e=a(".pl-docs-nav").height();return this.top=c-e-d},bottom:function(){return this.bottom=a(".pl-docs-footer").outerHeight(!0)}}})},100),setTimeout(function(){a(".pl-top").affix()},100),a(".tooltip-demo").tooltip({selector:"[data-toggle=tooltip]",container:"body"}),a(".tooltip-test").tooltip(),a(".popover-test").popover(),a(".pl-docs-navbar").tooltip({selector:"a[data-toggle=tooltip]",container:".pl-docs-navbar .nav"}),a("#loading-example-btn").click(function(){var b=a(this);b.button("loading"),setTimeout(function(){b.button("reset")},3e3)})})}(jQuery);
+</script>
+
+</body>
+</html>
