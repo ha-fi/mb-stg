@@ -4550,6 +4550,9 @@ a.responsive-utilities td.is-visible:hover {
 .pl-swatch--bt-blue {
   background-color: #337ab7;
 }
+.pl-swatch--bt-red {
+  background-color: #b20001;
+}
 .pl-swatch--primary {
   background-color: #337ab7;
 }
