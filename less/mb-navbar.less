@@ -1,0 +1,138 @@
+@color_1: #555;
+@color_2: #ccc;
+@color_3: #999;
+@color_4: #333;
+@color_5: #005999;
+@color_6: #ffffff;
+@color_7: #696969;
+@background_color_1: transparent;
+
+.mineralbay-navbar {
+	.navbar-brand {
+		>img {
+			margin-top: -70px;
+			max-width: 140px;
+			margin-left: -20px;
+		}
+	}
+	.navbar-nav {
+		>.active {
+			>a {
+				color: @color_1;
+				background-color: @background_color_1;
+				color: @color_1;
+				background-color: @background_color_1;
+				border-bottom: 3px solid #cb2027 !important;
+				margin-right: 10px;
+				&:hover {
+					color: @color_1;
+					background-color: @background_color_1;
+					color: @color_1;
+					background-color: @background_color_1;
+					border-bottom: 3px solid #cb2027 !important;
+					margin-right: 10px;
+				}
+				&:focus {
+					color: @color_1;
+					background-color: @background_color_1;
+					color: @color_1;
+					background-color: @background_color_1;
+					border-bottom: 3px solid #cb2027 !important;
+					margin-right: 10px;
+				}
+			}
+		}
+		>.disabled {
+			>a {
+				color: @color_2;
+				background-color: @background_color_1;
+				margin-right: 10px;
+				&:hover {
+					color: @color_2;
+					background-color: @background_color_1;
+					margin-right: 10px;
+				}
+				&:focus {
+					color: @color_2;
+					background-color: @background_color_1;
+					margin-right: 10px;
+				}
+			}
+		}
+		>li {
+			>a {
+				color: @color_3;
+				&:hover {
+					color: @color_4;
+					background-color: @background_color_1;
+					border-bottom: 3px solid #ee6023 !important;
+				}
+			}
+		}
+	}
+	ul.nav {
+		li.dropdown {
+			&:hover {
+				ul.dropdown-menu {
+					display: block;
+				}
+			}
+		}
+	}
+}
+.mineralbay-righttext {
+	.navbar-link {
+		color: @color_5;
+	}
+	
+	.navbar-text {
+			color: @color_7;
+	}
+}
+.mineralbay-rightmenu {
+	.navbar-nav {
+		>li {
+			>a {
+				color: @color_6;
+				&:hover {
+					color: @color_4;
+					background-color: @background_color_1;
+				}
+				&:focus {
+					color: @color_4;
+					background-color: @background_color_1;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.mineralbay-navbar {
+		.navbar-nav {
+			>li {
+				>a {
+					margin-top: 0px;
+				}
+			}
+		}
+	}
+	.mineralbay-rightmenu {
+	
+	
+		.navbar-nav {
+			>li {
+				>a {
+					margin-top: -10px;
+				}
+			}
+		}
+		.navbar-right {
+			float: right !important;
+			margin-right: -30px;
+			background: #cb2027;
+			border-radius: 10px 0 0 10px;
+			font-size: 12px;
+			height: 32px;
+		}
+	}
+}

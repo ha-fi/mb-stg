@@ -39,7 +39,8 @@
       <li class="active"><a href="#button-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#button-tab-1" role="tab" data-toggle="tab">Markup</a></li>
         <li><a href="#button-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#button-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+        <li><a href="#button-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#button-tab-4" role="tab" data-toggle="tab">Settings</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -134,7 +135,164 @@
   });
 });</code></pre>
           </div> <!-- end tab-pane -->
+          
           <div class="tab-pane fade" id="button-tab-3">
+          <pre><code data-language="css">
+          .btn-primary {
+  color: #fff;
+  background-color: #ee6023;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ee6023 0%, #dc4e11 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee6023', endColorstr='#ffdc4e11', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open &gt; .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #ce4910;
+  border-color: #8a2d06;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open &gt; .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #ee6023;
+  border-color: #c54008;
+}
+.btn-primary .badge {
+  color: #ee6023;
+  background-color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #ce4910;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ea5312 0%, #bb420e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffea5312', endColorstr='#ffbb420e', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #f5a482;
+  border-color: #f5a482;
+  background-image: linear-gradient(to bottom, #f5a482 0%, #f38c61 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5a482', endColorstr='#fff38c61', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active,
+.open &gt; .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #f28252;
+  border-color: #f17b49;
+}
+.btn-info:active,
+.btn-info.active,
+.open &gt; .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #f5a482;
+  border-color: #f5a482;
+}
+.btn-info .badge {
+  color: #f5a482;
+  background-color: #fff;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #f28252;
+  border-color: #f5a482;
+  background-image: linear-gradient(to bottom, #f4976f 0%, #f0753f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff4976f', endColorstr='#fff0753f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #f5a482;
+  border-color: #f5a482;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+          </code>
+          </pre>
+          
+          </div>
+          <div class="tab-pane fade" id="button-tab-4">
           <h3 id="uib-btn-checkbox-settings">uib-btn-checkbox settings</h3>
 <ul>
 <li><p><code>btn-checkbox-false</code>

@@ -76,7 +76,7 @@
 		]
 	},
 	"components":  {
-		"header": "Components",
+		"header": "UI Components",
 		"sources": [
 			{
 				"source": "views/components/glyphicon.html",
@@ -131,7 +131,7 @@
 		]
 	},
 	"angular": {
-		"header": "Angular",
+		"header": "Angular Components",
 		"sources": [
 			{ "source": "app/views/angular-header.html" },
 			{
@@ -220,6 +220,11 @@
 				"nav_header": "Scrollbar"
 			},
 			{
+				"source": "app/views/slider.html",
+				"css_id": "#slider",
+				"nav_header": "Slider"
+			},
+			{
 				"source": "app/views/sorting.html",
 				"css_id": "#sorting",
 				"nav_header": "sorting"
@@ -243,6 +248,16 @@
 				"source": "app/views/typeahead.html",
 				"css_id": "#typeahead",
 				"nav_header": "Typeahead"
+			},
+			{
+				"source": "app/views/wizard.html",
+				"css_id": "#wizard",
+				"nav_header": "Wizard"
+			},
+			{
+				"source": "app/views/xeditable.html",
+				"css_id": "#xeditable",
+				"nav_header": "Xeditable"
 			},
 			{ "source": "app/views/angular-footer.html" }
 		]

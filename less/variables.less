@@ -53,6 +53,14 @@
 @btn-highlight-border:        #8ab7e0;
 
 
+@btn-primary-bg:			  #ee6023;
+@btn-primary-border:		  #c54008;
+
+@btn-info-bg:				  lighten(@btn-primary-bg,20%);
+@btn-info-border:			  lighten(@btn-primary-bg,20%);
+
+@pagination-active-bg: 		  #ee6023;
+@pagination-active-border:	  #ee6023;
 // -------------------------
 // Colors
 // -------------------------
@@ -469,5 +477,43 @@
 @well-bg:                     @white;
 @well-border:                 @gray-light;
 
+
+// -------------------------
+// RZSlider
+// -------------------------
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+@handleActiveColor: #b20001;
+@handleHoverColor: #fff;
+@labelTextColor: #55637d;
+@handleBgColor: #ee6023;
+@handleInnerColor: #fff;
+@handleDisabledColor: #d8e0f3;
+@limitLabelTextColor: @labelTextColor;
+@barFillColor: @handleBgColor;
+@barDisabledFillColor: #8b91a2;
+@barNormalColor: #d8e0f3;
+@barLeftOutSelectionColor: #df002d;
+@barRightOutSelectionColor: #03a688;
+
+@ticksColor: @barNormalColor;
+@selectedTicksColor: @barFillColor;
+@ticksWidth: 10px;
+@ticksHeight: 10px;
+@ticksValuePosition: -30px;
+@ticksLegendPosition: 24px;
+@ticksValuePositionOnVertical: 24px;
+
+@handleSize: 32px;
+@handlePointerSize: 8px;
+@bubblePadding: 1px 3px;
+@barDimension: 4px;
+
+@withLegendMargin: 40px;
 
 

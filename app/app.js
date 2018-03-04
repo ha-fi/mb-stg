@@ -9,8 +9,10 @@
     'ngAnimate',
     'ngTable',
     'ngRoute',
+    'rzModule',
     'mgcrea.ngStrap',
-    'fixed.table.header'
+    'fixed.table.header',
+    'mgo-angular-wizard'
   ])
   .value('AUTO_START_TOUR', {
     value: false

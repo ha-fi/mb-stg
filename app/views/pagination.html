@@ -34,7 +34,8 @@ angular.module('mineralbay').controller('PaginationDemoCtrl', function ($scope, 
       <li class="active"><a href="#pag-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#pag-tab-1" role="tab" data-toggle="tab">Markup</a></li>
         <li><a href="#pag-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#pag-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+        <li><a href="#pag-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#pag-tab-4" role="tab" data-toggle="tab">Settings</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -106,6 +107,21 @@ angular.module('mineralbay').controller('PaginationDemoCtrl', function ($scope, 
 });</code></pre>
           </div>
           <div class="tab-pane fade" id="pag-tab-3">
+          <pre><code data-language="css">.pagination &gt; .active &gt; a,
+.pagination &gt; .active &gt; span,
+.pagination &gt; .active &gt; a:hover,
+.pagination &gt; .active &gt; span:hover,
+.pagination &gt; .active &gt; a:focus,
+.pagination &gt; .active &gt; span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #ee6023;
+  border-color: #ee6023;
+  cursor: default;
+}
+          </code></pre>
+          </div>
+          <div class="tab-pane fade" id="pag-tab-4">
             <h3 id="uib-pagination-settings">uib-pagination settings</h3>
 <ul>
 <li><p><code>boundary-links</code>

@@ -28,6 +28,7 @@
     "boomsvgloader": "^0.0.2",
     "ng-table": "1.0.0",
     "angular-strap": "^2.3.12",
-    "angular-fixed-table-header": "^0.2.1"
+    "angular-fixed-table-header": "^0.2.1",
+    "angularjs-slider": "^6.4.4"
   }
 }

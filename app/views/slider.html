@@ -1,0 +1,968 @@
+<section id="slider">
+<div ng-controller="SliderDemoCtrl">
+<script type="text/javascript">
+angular.module('mineralbay').controller('SliderDemoCtrl', function ($scope, $log) {
+  $scope.slider = {
+    value: 10
+};
+
+$scope.rangeSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minLimit: 10,
+      	maxLimit: 90
+    }
+};
+
+$scope.rangeMinMaxSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 50
+    }
+};
+
+$scope.rangeNoSwitchingSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        noSwitching: true
+    }
+};
+
+$scope.rangePushRangeSlider = {
+    minValue: 60,
+    maxValue: 60,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 30,
+        pushRange: true
+    }
+};
+
+$scope.selectionBarSlider = {
+    value: 10,
+    options: {
+        showSelectionBar: true
+    }
+};
+
+$scope.selectionBarFromAValueSlider = {
+  value: 5,
+  options: {
+    floor: -10,
+    ceil: 10,
+    showSelectionBarFromValue: 0
+  }
+};
+
+$scope.selectionBarWithGradientSlider = {
+  minValue: 0,
+  maxValue: 80,
+  options: {
+    ceil: 100,
+    showSelectionBar: true,
+    selectionBarGradient: {
+      from: 'white',
+      to: '#FC0'
+    }
+  }
+};
+
+$scope.customDisplaySlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value) {
+      return '$' + value;
+    }
+  }
+};
+
+$scope.customDisplayUsingHTMLSlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value, sliderId, label) {
+      switch (label) {
+        case 'model':
+          return '<b>Min price:</b> $' + value;
+        case 'high':
+          return '<b>Max price:</b> $' + value;
+        default:
+          return '$' + value
+      }
+    }
+  }
+};
+
+$scope.ticksSlider = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    showTicks: true
+  }
+};
+
+$scope.ticksIntermediateSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    showTicks: 10
+  }
+};
+
+$scope.ticksSpecificSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    ticksArray: [0, 10, 25, 50, 100]
+  }
+};
+
+$scope.ticksAndLegendsAndTooltipsSlider = {
+  value: 5,
+  options: {
+    showTicksValues: true,
+    ticksTooltip: function(v) {
+      return 'Tooltip for ' + v;
+    },
+    stepsArray: [
+      {value: 1, legend: 'Very poor'},
+      {value: 2},
+      {value: 3, legend: 'Fair'},
+      {value: 4},
+      {value: 5, legend: 'Average'},
+      {value: 6},
+      {value: 7, legend: 'Good'},
+      {value: 8},
+      {value: 9, legend: 'Excellent'}
+    ]
+  }
+};
+
+$scope.draggableRangeSlider = {
+  minValue: 1,
+  maxValue: 8,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRange: true
+  }
+};
+
+$scope.draggableRangeOnlySlider = {
+  minValue: 4,
+  maxValue: 6,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRangeOnly: true
+  }
+};
+
+$scope.verticalSlider1 = {
+  value: 0,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true
+  }
+};
+$scope.verticalSlider2 = {
+  minValue: 20,
+  maxValue: 80,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true
+  }
+};
+$scope.verticalSlider3 = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true,
+    showTicks: true
+  }
+};
+$scope.verticalSlider4 = {
+  minValue: 1,
+  maxValue: 5,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showTicksValues: true
+  }
+};
+$scope.verticalSlider5 = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true,
+    showSelectionBar: true
+  }
+};
+$scope.verticalSlider6 = {
+  value: 6,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showSelectionBar: true,
+    showTicksValues: true,
+    ticksValuesTooltip: function (v) {
+      return 'Tooltip for ' + v;
+    }
+  }
+};
+
+$scope.readOnlySlider = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    readOnly: true
+  }
+};
+
+});
+</script>
+    <div class="page-header">
+        <h1>Slider<small>
+            (<a target="_blank" href="https://github.com/angular-slider/angularjs-slider">angularjs-slider</a>)
+        </small></h1>
+    </div>
+    
+
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#panel-slider-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#panel-slider-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#panel-slider-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#panel-slider-3" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="panel-slider-0">
+           
+           <h4>Simple slider</h4>
+            <rzslider rz-slider-model="slider.value"></rzslider>
+            
+            <h4>Range slider with min limit set to 10 and max limit set to 90</h4>
+            <rzslider rz-slider-model="rangeSlider.minValue"
+          rz-slider-high="rangeSlider.maxValue"
+          rz-slider-options="rangeSlider.options"></rzslider>
+
+			<h4>Range slider with a minimal range set to 10 and maximum of 50</h4>
+			<rzslider rz-slider-model="rangeMinMaxSlider.minValue"
+          rz-slider-high="rangeMinMaxSlider.maxValue"
+          rz-slider-options="rangeMinMaxSlider.options"></rzslider>
+          
+          
+          <h4> Range slider with noSwitching=true</h4>
+          <rzslider rz-slider-model="rangeNoSwitchingSlider.minValue"
+          rz-slider-high="rangeNoSwitchingSlider.maxValue"
+          rz-slider-options="rangeNoSwitchingSlider.options"></rzslider>
+          
+          <h4>Range slider with minimum range of 10, maximum of 30 and pushRange option</h4>
+          <rzslider rz-slider-model="rangePushRangeSlider.minValue"
+          rz-slider-high="rangePushRangeSlider.maxValue"
+          rz-slider-options="rangePushRangeSlider.options"></rzslider>
+          
+          <h4>Slider with visible selection bar</h4>
+          <rzslider rz-slider-model="selectionBarSlider.value"
+          rz-slider-options="selectionBarSlider.options"></rzslider>
+          
+          <h4>Slider with visible selection bar from a value</h4>
+          <rzslider rz-slider-model="selectionBarFromAValueSlider.value"
+          rz-slider-options="selectionBarFromAValueSlider.options"></rzslider>
+          
+          <h4>Slider with selection bar gradient</h4>
+          <rzslider rz-slider-model="selectionBarWithGradientSlider.minValue"
+          rz-slider-high="selectionBarWithGradientSlidermaxValue"
+          rz-slider-options="selectionBarWithGradientSlider.options"></rzslider>
+          
+          <h4>Slider with custom display function</h4>
+          <rzslider rz-slider-model="customDisplaySlider.minValue"
+          rz-slider-high="customDisplaySlider.maxValue"
+          rz-slider-options="customDisplaySlider.options"></rzslider>
+          
+          <h4>Slider with custom display function using HTML formatting</h4>
+          <rzslider rz-slider-model="customDisplayUsingHTMLSlider.minValue"
+          rz-slider-high="customDisplayUsingHTMLSlider.maxValue"
+          rz-slider-options="customDisplayUsingHTMLSlider.options"></rzslider>       
+         
+          <h4>Slider with ticks</h4>
+          <rzslider rz-slider-model="ticksSlider.value"
+          rz-slider-options="ticksSlider.options"></rzslider>
+          
+          <h4>Slider with ticks at intermediate positions</h4>
+          <rzslider rz-slider-model="ticksIntermediateSlider.value"
+          rz-slider-options="ticksIntermediateSlider.options"></rzslider>
+          
+          <h4>Slider with ticks at specific positions</h4>
+          <rzslider rz-slider-model="ticksSpecificSlider.value"
+          rz-slider-options="ticksSpecificSlider.options"></rzslider>
+          
+          <h4>Slider with ticks values, legend and tooltips</h4>
+          <rzslider rz-slider-model="ticksAndLegendsAndTooltipsSlider.value"
+          rz-slider-options="ticksAndLegendsAndTooltipsSlider.options"></rzslider>
+          
+          
+
+          <h4 style="padding-top:50px">Slider with draggable range</h4>
+          <rzslider rz-slider-model="draggableRangeSlider.minValue"
+          rz-slider-high="draggableRangeSlider.maxValue"
+          rz-slider-options="draggableRangeSlider.options"></rzslider>
+          
+          <h4>Slider with draggable range only</h4>
+          <rzslider rz-slider-model="draggableRangeOnlySlider.minValue"
+          rz-slider-high="draggableRangeOnlySlider.maxValue"
+          rz-slider-options="draggableRangeOnlySlider.options"></rzslider>
+          
+          <h4>Vertical sliders</h4>
+          <p style="height: 400px;width:600px;">
+          <rzslider style="padding-right:30px;" rz-slider-model="verticalSlider1.value"
+          rz-slider-options="verticalSlider1.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider2.minValue" rz-slider-high="verticalSlider2.maxValue"
+          rz-slider-options="verticalSlider2.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider3.value"
+          rz-slider-options="verticalSlider3.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider4.minValue" rz-slider-high="verticalSlider4.maxValue"
+          rz-slider-options="verticalSlider4.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider5.value"
+          rz-slider-options="verticalSlider5.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider6.value"
+          rz-slider-options="verticalSlider6.options"></rzslider>
+          
+          </p>
+          <h4>Read-only slider</h4>
+          
+          <label>Read-only <input type="checkbox" ng-model="readOnlySlider.options.readOnly"></label>
+<rzslider rz-slider-model="readOnlySlider.value"
+          rz-slider-options="readOnlySlider.options"></rzslider>
+          
+          
+          </div>
+          <div class="tab-pane fade" id="panel-slider-1">
+             <pre><code data-language="html">
+             &lt;h4&gt;Simple slider&lt;/h4&gt;
+            &lt;rzslider rz-slider-model=&quot;slider.value&quot;&gt;&lt;/rzslider&gt;
+            
+            &lt;h4&gt;Range slider with min limit set to 10 and max limit set to 90&lt;/h4&gt;
+            &lt;rzslider rz-slider-model=&quot;rangeSlider.minValue&quot;
+          rz-slider-high=&quot;rangeSlider.maxValue&quot;
+          rz-slider-options=&quot;rangeSlider.options&quot;&gt;&lt;/rzslider&gt;
+
+			&lt;h4&gt;Range slider with a minimal range set to 10 and maximum of 50&lt;/h4&gt;
+			&lt;rzslider rz-slider-model=&quot;rangeMinMaxSlider.minValue&quot;
+          rz-slider-high=&quot;rangeMinMaxSlider.maxValue&quot;
+          rz-slider-options=&quot;rangeMinMaxSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          
+          &lt;h4&gt; Range slider with noSwitching=true&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;rangeNoSwitchingSlider.minValue&quot;
+          rz-slider-high=&quot;rangeNoSwitchingSlider.maxValue&quot;
+          rz-slider-options=&quot;rangeNoSwitchingSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Range slider with minimum range of 10, maximum of 30 and pushRange option&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;rangePushRangeSlider.minValue&quot;
+          rz-slider-high=&quot;rangePushRangeSlider.maxValue&quot;
+          rz-slider-options=&quot;rangePushRangeSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with visible selection bar&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;selectionBarSlider.value&quot;
+          rz-slider-options=&quot;selectionBarSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with visible selection bar from a value&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;selectionBarFromAValueSlider.value&quot;
+          rz-slider-options=&quot;selectionBarFromAValueSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with selection bar gradient&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;selectionBarWithGradientSlider.minValue&quot;
+          rz-slider-high=&quot;selectionBarWithGradientSlidermaxValue&quot;
+          rz-slider-options=&quot;selectionBarWithGradientSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with custom display function&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;customDisplaySlider.minValue&quot;
+          rz-slider-high=&quot;customDisplaySlider.maxValue&quot;
+          rz-slider-options=&quot;customDisplaySlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with custom display function using HTML formatting&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;customDisplayUsingHTMLSlider.minValue&quot;
+          rz-slider-high=&quot;customDisplayUsingHTMLSlider.maxValue&quot;
+          rz-slider-options=&quot;customDisplayUsingHTMLSlider.options&quot;&gt;&lt;/rzslider&gt;       
+         
+          &lt;h4&gt;Slider with ticks&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksSlider.value&quot;
+          rz-slider-options=&quot;ticksSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with ticks at intermediate positions&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksIntermediateSlider.value&quot;
+          rz-slider-options=&quot;ticksIntermediateSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with ticks at specific positions&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksSpecificSlider.value&quot;
+          rz-slider-options=&quot;ticksSpecificSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with ticks values, legend and tooltips&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksAndLegendsAndTooltipsSlider.value&quot;
+          rz-slider-options=&quot;ticksAndLegendsAndTooltipsSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          
+
+          &lt;h4 style=&quot;padding-top:50px&quot;&gt;Slider with draggable range&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;draggableRangeSlider.minValue&quot;
+          rz-slider-high=&quot;draggableRangeSlider.maxValue&quot;
+          rz-slider-options=&quot;draggableRangeSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with draggable range only&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;draggableRangeOnlySlider.minValue&quot;
+          rz-slider-high=&quot;draggableRangeOnlySlider.maxValue&quot;
+          rz-slider-options=&quot;draggableRangeOnlySlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Vertical sliders&lt;/h4&gt;
+          &lt;p style=&quot;height: 400px;width:600px;&quot;&gt;
+          &lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider1.value&quot;
+          rz-slider-options=&quot;verticalSlider1.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider2.minValue&quot; rz-slider-high=&quot;verticalSlider2.maxValue&quot;
+          rz-slider-options=&quot;verticalSlider2.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider3.value&quot;
+          rz-slider-options=&quot;verticalSlider3.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider4.minValue&quot; rz-slider-high=&quot;verticalSlider4.maxValue&quot;
+          rz-slider-options=&quot;verticalSlider4.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider5.value&quot;
+          rz-slider-options=&quot;verticalSlider5.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider6.value&quot;
+          rz-slider-options=&quot;verticalSlider6.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;/p&gt;
+          &lt;h4&gt;Read-only slider&lt;/h4&gt;
+          
+          &lt;label&gt;Read-only &lt;input type=&quot;checkbox&quot; ng-model=&quot;readOnlySlider.options.readOnly&quot;&gt;&lt;/label&gt;
+&lt;rzslider rz-slider-model=&quot;readOnlySlider.value&quot;
+          rz-slider-options=&quot;readOnlySlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+             </code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-slider-2">
+            <pre ng-non-bindable><code data-language="javascript">$scope.slider = {
+    value: 10
+};
+
+$scope.rangeSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minLimit: 10,
+      	maxLimit: 90
+    }
+};
+
+$scope.rangeMinMaxSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 50
+    }
+};
+
+$scope.rangeNoSwitchingSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        noSwitching: true
+    }
+};
+
+$scope.rangePushRangeSlider = {
+    minValue: 60,
+    maxValue: 60,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 30,
+        pushRange: true
+    }
+};
+
+$scope.selectionBarSlider = {
+    value: 10,
+    options: {
+        showSelectionBar: true
+    }
+};
+
+$scope.selectionBarFromAValueSlider = {
+  value: 5,
+  options: {
+    floor: -10,
+    ceil: 10,
+    showSelectionBarFromValue: 0
+  }
+};
+
+$scope.selectionBarWithGradientSlider = {
+  minValue: 0,
+  maxValue: 80,
+  options: {
+    ceil: 100,
+    showSelectionBar: true,
+    selectionBarGradient: {
+      from: 'white',
+      to: '#FC0'
+    }
+  }
+};
+
+$scope.customDisplaySlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value) {
+      return '$' + value;
+    }
+  }
+};
+
+$scope.customDisplayUsingHTMLSlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value, sliderId, label) {
+      switch (label) {
+        case 'model':
+          return '&lt;b&gt;Min price:&lt;/b&gt; $' + value;
+        case 'high':
+          return '&lt;b&gt;Max price:&lt;/b&gt; $' + value;
+        default:
+          return '$' + value
+      }
+    }
+  }
+};
+
+$scope.ticksSlider = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    showTicks: true
+  }
+};
+
+$scope.ticksIntermediateSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    showTicks: 10
+  }
+};
+
+$scope.ticksSpecificSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    ticksArray: [0, 10, 25, 50, 100]
+  }
+};
+
+$scope.ticksAndLegendsAndTooltipsSlider = {
+  value: 5,
+  options: {
+    showTicksValues: true,
+    ticksTooltip: function(v) {
+      return 'Tooltip for ' + v;
+    },
+    stepsArray: [
+      {value: 1, legend: 'Very poor'},
+      {value: 2},
+      {value: 3, legend: 'Fair'},
+      {value: 4},
+      {value: 5, legend: 'Average'},
+      {value: 6},
+      {value: 7, legend: 'Good'},
+      {value: 8},
+      {value: 9, legend: 'Excellent'}
+    ]
+  }
+};
+
+$scope.draggableRangeSlider = {
+  minValue: 1,
+  maxValue: 8,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRange: true
+  }
+};
+
+$scope.draggableRangeOnlySlider = {
+  minValue: 4,
+  maxValue: 6,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRangeOnly: true
+  }
+};
+
+$scope.verticalSlider1 = {
+  value: 0,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true
+  }
+};
+$scope.verticalSlider2 = {
+  minValue: 20,
+  maxValue: 80,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true
+  }
+};
+$scope.verticalSlider3 = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true,
+    showTicks: true
+  }
+};
+$scope.verticalSlider4 = {
+  minValue: 1,
+  maxValue: 5,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showTicksValues: true
+  }
+};
+$scope.verticalSlider5 = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true,
+    showSelectionBar: true
+  }
+};
+$scope.verticalSlider6 = {
+  value: 6,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showSelectionBar: true,
+    showTicksValues: true,
+    ticksValuesTooltip: function (v) {
+      return 'Tooltip for ' + v;
+    }
+  }
+};
+
+$scope.readOnlySlider = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    readOnly: true
+  }
+};</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-slider-3">
+          <pre><code class="scss">.rzslider {
+  display: inline-block;
+  position: relative;
+  height: 4px;
+  width: 100%;
+  margin: 35px 0 15px 0;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.rzslider.with-legend {
+  margin-bottom: 40px;
+}
+.rzslider[disabled] {
+  cursor: not-allowed;
+}
+.rzslider[disabled] .rz-pointer {
+  cursor: not-allowed;
+  background-color: #d8e0f3;
+}
+.rzslider[disabled] .rz-draggable {
+  cursor: not-allowed;
+}
+.rzslider[disabled] .rz-selection {
+  background: #8b91a2;
+}
+.rzslider[disabled] .rz-tick {
+  cursor: not-allowed;
+}
+.rzslider[disabled] .rz-tick.rz-selected {
+  background: #8b91a2;
+}
+.rzslider span {
+  white-space: nowrap;
+  position: absolute;
+  display: inline-block;
+}
+.rzslider .rz-base {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.rzslider .rz-bar-wrapper {
+  left: 0;
+  box-sizing: border-box;
+  margin-top: -16px;
+  padding-top: 16px;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+}
+.rzslider .rz-draggable {
+  cursor: move;
+}
+.rzslider .rz-bar {
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1;
+  background: #d8e0f3;
+  border-radius: 2px;
+}
+.rzslider .rz-bar-wrapper.rz-transparent .rz-bar {
+  background: transparent;
+}
+.rzslider .rz-bar-wrapper.rz-left-out-selection .rz-bar {
+  background: #df002d;
+}
+.rzslider .rz-bar-wrapper.rz-right-out-selection .rz-bar {
+  background: #03a688;
+}
+.rzslider .rz-selection {
+  z-index: 2;
+  background: #ee6023;
+  border-radius: 2px;
+}
+.rzslider .rz-pointer {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  top: -14px;
+  background-color: #ee6023;
+  z-index: 3;
+  border-radius: 16px;
+}
+.rzslider .rz-pointer:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border-radius: 4px;
+  background: #fff;
+}
+.rzslider .rz-pointer:hover:after {
+  background-color: #fff;
+}
+.rzslider .rz-pointer.rz-active {
+  z-index: 4;
+}
+.rzslider .rz-pointer.rz-active:after {
+  background-color: #b20001;
+}
+.rzslider .rz-bubble {
+  cursor: default;
+  bottom: 16px;
+  padding: 1px 3px;
+  color: #55637d;
+}
+.rzslider .rz-bubble.rz-limit {
+  color: #55637d;
+}
+.rzslider .rz-ticks {
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: -3px;
+  margin: 0;
+  z-index: 1;
+  list-style: none;
+}
+.rzslider .rz-ticks-values-under .rz-tick-value {
+  top: auto;
+  bottom: -32px;
+}
+.rzslider .rz-tick {
+  text-align: center;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background: #d8e0f3;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 11px;
+}
+.rzslider .rz-tick.rz-selected {
+  background: #ee6023;
+}
+.rzslider .rz-tick-value {
+  position: absolute;
+  top: -30px;
+  transform: translate(-50%, 0);
+}
+.rzslider .rz-tick-legend {
+  position: absolute;
+  top: 24px;
+  transform: translate(-50%, 0);
+  max-width: 50px;
+  white-space: normal;
+}
+.rzslider.rz-vertical {
+  position: relative;
+  width: 4px;
+  height: 100%;
+  margin: 0 20px;
+  padding: 0;
+  vertical-align: baseline;
+}
+.rzslider.rz-vertical .rz-base {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.rzslider.rz-vertical .rz-bar-wrapper {
+  top: auto;
+  left: 0;
+  margin: 0 0 0 -16px;
+  padding: 0 0 0 16px;
+  height: 100%;
+  width: 32px;
+}
+.rzslider.rz-vertical .rz-bar {
+  bottom: 0;
+  left: auto;
+  width: 4px;
+  height: 100%;
+}
+.rzslider.rz-vertical .rz-pointer {
+  left: -14px !important;
+  top: auto;
+  bottom: 0;
+}
+.rzslider.rz-vertical .rz-bubble {
+  left: 16px !important;
+  margin-left: 3px;
+  bottom: 0;
+}
+.rzslider.rz-vertical .rz-ticks {
+  height: 100%;
+  width: 0;
+  left: -3px;
+  top: 0;
+  z-index: 1;
+}
+.rzslider.rz-vertical .rz-tick {
+  vertical-align: middle;
+  margin-left: auto;
+  margin-top: 11px;
+}
+.rzslider.rz-vertical .rz-tick-value {
+  left: 24px;
+  top: auto;
+  transform: translate(0, -28%);
+}
+.rzslider.rz-vertical .rz-tick-legend {
+  top: auto;
+  right: 24px;
+  transform: translate(0, -28%);
+  max-width: none;
+  white-space: nowrap;
+}
+.rzslider.rz-vertical .rz-ticks-values-under .rz-tick-value {
+  bottom: auto;
+  left: auto;
+  right: 24px;
+}
+          </code>
+          
+          </pre>
+            
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  </div>
+</section>

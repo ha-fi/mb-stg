@@ -93,7 +93,9 @@ gulp.task(Tasks.MineralBayJavascriptVendor, function() {
     'bower_components/ng-table/dist/ng-table.min.js',
     'bower_components/angular-strap/dist/angular-strap.min.js',
     'bower_components/angular-strap/dist/angular-strap.tpl.min.js',
-    'bower_components/angular-fixed-table-header/src/fixed-table-header.min.js'
+    'bower_components/angular-fixed-table-header/src/fixed-table-header.min.js',
+    'bower_components/angularjs-slider/dist/rzslider.min.js',
+    'bower_components/angular-wizard/dist/angular-wizard.min.js'
   ])
   .pipe(concat('mineralbay.js'))
   .pipe(insert.prepend(MineralBayVersion))

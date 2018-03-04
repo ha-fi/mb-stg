@@ -1,0 +1,132 @@
+<section id="xeditable">
+
+
+
+<div class='container-fluid typeahead-demo' ng-controller="XeditableCtrl">
+    <div class="page-header">
+        <h1>Angular-xeditable<small>
+            (<a target="_blank" href="https://vitalets.github.io/angular-xeditable/">angular-xeditable</a>)
+        </small></h1>
+    </div>
+    
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#xedit-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#xedit-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#xedit-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="xedit-tab-0">
+          
+        
+			<script async src="//jsfiddle.net/ckosloski/NfPcH/19058/embed/result/"></script>
+			
+      	</div>
+          <div class="tab-pane fade" id="xedit-tab-1">
+          <pre><code data-language="html">&lt;form editable-form name=&quot;editableForm&quot; onaftersave=&quot;saveUser()&quot;&gt;
+    &lt;div&gt;
+      &lt;!-- editable username (text with validation) --&gt;
+      &lt;span class=&quot;title&quot;&gt;User name: &lt;/span&gt;
+      &lt;span editable-text=&quot;user.name&quot; e-name=&quot;name&quot; onbeforesave=&quot;checkName($data)&quot; e-required&gt;{{ user.name || 'empty' }}&lt;/span&gt;
+    &lt;/div&gt; 
+
+    &lt;div&gt;
+      &lt;!-- editable status (select-local) --&gt;
+      &lt;span class=&quot;title&quot;&gt;Status: &lt;/span&gt;
+      &lt;span editable-select=&quot;user.status&quot; e-name=&quot;status&quot; e-ng-options=&quot;s.value as s.text for s in statuses&quot;&gt;
+        &#123;&#123; (statuses | filter:{value: user.status})[0].text || 'Not set' &#125;&#125;
+      &lt;/span&gt;
+    &lt;/div&gt;  
+
+    &lt;div&gt;
+      &lt;!-- editable group (select-remote) --&gt;
+      &lt;span class=&quot;title&quot;&gt;Group: &lt;/span&gt;
+      &lt;span editable-select=&quot;user.group&quot; e-name=&quot;group&quot; onshow=&quot;loadGroups()&quot; e-ng-options=&quot;g.id as g.text for g in groups&quot;&gt;
+        &#123;&#123; showGroup() &#125;&#125;
+      &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+      &lt;!-- button to show form --&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;editableForm.$show()&quot; ng-show=&quot;!editableForm.$visible&quot;&gt;
+        Edit
+      &lt;/button&gt;
+      &lt;!-- buttons to submit / cancel form --&gt;
+      &lt;span ng-show=&quot;editableForm.$visible&quot;&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-disabled=&quot;editableForm.$waiting&quot;&gt;
+          Save
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-disabled=&quot;editableForm.$waiting&quot; ng-click=&quot;editableForm.$cancel()&quot;&gt;
+          Cancel
+        &lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;  
+  </code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="xedit-tab-2">
+            <pre><code data-language="javascript">var app = angular.module(&quot;app&quot;, [&quot;xeditable&quot;, &quot;ngMockE2E&quot;]);
+
+
+app.controller('Ctrl', function($scope, $filter, $http) {
+ $scope.user = {
+    id: 1,
+    name: 'awesome user',
+    status: 2,
+    group: 4,
+    groupName: 'admin'
+  }; 
+
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.groups = [];
+  $scope.loadGroups = function() {
+    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
+      $scope.groups = data;
+    });
+  };
+
+  $scope.showGroup = function() {
+    if($scope.groups.length) {
+      var selected = $filter('filter')($scope.groups, {id: $scope.user.group});
+      return selected.length ? selected[0].text : 'Not set';
+    } else {
+      return $scope.user.groupName;
+    }
+  };
+
+  $scope.checkName = function(data) {
+    if (data !== 'awesome' &amp;&amp; data !== 'error') {
+      return &quot;Username should be `awesome` or `error`&quot;;
+    }
+  };
+
+  $scope.saveUser = function() {
+    // $scope.user already updated!
+    return $http.post('/saveUser', $scope.user).error(function(err) {
+      if(err.field &amp;&amp; err.msg) {
+        // err like {field: &quot;name&quot;, msg: &quot;Server-side error for this username!&quot;} 
+        $scope.editableForm.$setError(err.field, err.msg);
+      } else { 
+        // unknown error
+        $scope.editableForm.$setError('name', 'Unknown error!');
+      }
+    });
+  };
+});
+            </code></pre>
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+</div>
+</section>
