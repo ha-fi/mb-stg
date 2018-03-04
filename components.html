@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Components | MineralBay Pattern Library</title>
+  <title>UI Components | MineralBay Pattern Library</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -1087,6 +1087,238 @@
     &lt;/nav&gt;</span></code></pre></div>
 
 
+<h2 id="navbar-mineralbay">Mineralbay Navbar</h2>
+<div class="panel panel-default">
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#navbar-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#navbar-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#navbar-tab-2" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="navbar-tab-0">
+
+					<nav class="navbar navbar-default navbar-fixed-topX">
+						<!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+						<div class="container-fluid">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-6">
+									<span class="sr-only">Toggle navigation</span> <span
+										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										class="icon-bar"></span>
+								</button>
+
+							</div>
+
+							<div class="mineralbay-righttext collapse navbar-collapse">
+								<p class="navbar-text navbar-right">
+									Signed in as <a href="#" class="navbar-link">Mark Otto</a>
+								</p>
+							</div>
+
+
+							<div class="collapse navbar-collapse">
+								<div class="mineralbay-rightmenu">
+									<ul class="nav navbar-nav navbar-right">
+										<li><a href="#"><span
+												class="glyphicon glyphicon-flag"></span> Language</a></li>
+										<li><a href="#"><span
+												class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+										<li><a href="#"><span
+												class="glyphicon glyphicon-log-in"></span> Login</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="mineralbay-navbar collapse navbar-collapse"
+								id="bs-example-navbar-collapse-6">
+
+								<ul class="nav navbar-nav">
+									<a href="#" class="navbar-brand"> <img
+										src="images/mineralbay_logo.png"
+										onmouseover="this.src='images/mineralbay_hover.png'"
+										onmouseout="this.src='images/mineralbay_logo.png'">
+									</a>
+									<li class="active"><a href="#">Home</a></li>
+									<li class="dropdown"><a href="#" data-toggle="dropdown"
+										role="button" aria-expanded="false">Dropdown </a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+											<li class="divider"></li>
+											<li><a href="#">Separated link</a></li>
+											<li class="divider"></li>
+											<li><a href="#">One more separated link</a></li>
+										</ul></li>
+									<li><a href="#">Link</a></li>
+									<li><a href="#">Link</a></li>
+								</ul>
+							</div>
+							<!-- /.navbar-collapse -->
+						</div>
+					</nav>
+
+				</div>
+          <div class="tab-pane fade" id="navbar-tab-1">
+             <pre><code data-language="html">&lt;nav class=&quot;navbar navbar-default navbar-fixed-topX&quot;&gt;
+	&lt;!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. --&gt;
+	&lt;div class=&quot;container-fluid&quot;&gt;
+		&lt;div class=&quot;navbar-header&quot;&gt;
+			&lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot;
+				data-toggle=&quot;collapse&quot;
+				data-target=&quot;#bs-example-navbar-collapse-6&quot;&gt;
+				&lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt; &lt;span
+					class=&quot;icon-bar&quot;&gt;&lt;/span&gt; &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt; &lt;span
+					class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+			&lt;/button&gt;
+
+		&lt;/div&gt;
+
+		&lt;div class=&quot;mineralbay-righttext collapse navbar-collapse&quot;&gt;
+			&lt;p class=&quot;navbar-text navbar-right&quot;&gt;
+				Signed in as &lt;a href=&quot;#&quot; class=&quot;navbar-link&quot;&gt;Mark Otto&lt;/a&gt;
+			&lt;/p&gt;
+		&lt;/div&gt;
+
+
+		&lt;div class=&quot;collapse navbar-collapse&quot;&gt;
+			&lt;div class=&quot;mineralbay-rightmenu&quot;&gt;
+				&lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span
+							class=&quot;glyphicon glyphicon-flag&quot;&gt;&lt;/span&gt; Language&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span
+							class=&quot;glyphicon glyphicon-user&quot;&gt;&lt;/span&gt; Sign Up&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;span
+							class=&quot;glyphicon glyphicon-log-in&quot;&gt;&lt;/span&gt; Login&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;mineralbay-navbar collapse navbar-collapse&quot;
+			id=&quot;bs-example-navbar-collapse-6&quot;&gt;
+
+			&lt;ul class=&quot;nav navbar-nav&quot;&gt;
+				&lt;a href=&quot;#&quot; class=&quot;navbar-brand&quot;&gt; &lt;img
+					src=&quot;images/mineralbay_logo.png&quot;
+					onmouseover=&quot;this.src='images/mineralbay_hover.png'&quot;
+					onmouseout=&quot;this.src='images/mineralbay_logo.png'&quot;&gt;
+				&lt;/a&gt;
+				&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+				&lt;li class=&quot;dropdown&quot;&gt;&lt;a href=&quot;#&quot; data-toggle=&quot;dropdown&quot;
+					role=&quot;button&quot; aria-expanded=&quot;false&quot;&gt;Dropdown &lt;/a&gt;
+					&lt;ul class=&quot;dropdown-menu&quot; role=&quot;menu&quot;&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+						&lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;
+						&lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+						&lt;li&gt;&lt;a href=&quot;#&quot;&gt;One more separated link&lt;/a&gt;&lt;/li&gt;
+					&lt;/ul&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;!-- /.navbar-collapse --&gt;
+	&lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="navbar-tab-2">
+            <pre ng-non-bindable><code data-language="css">.mineralbay-navbar .navbar-brand &gt; img {
+  margin-top: -70px;
+  max-width: 140px;
+  margin-left: -20px;
+}
+.mineralbay-navbar .navbar-nav &gt; .active &gt; a {
+  color: #555;
+  background-color: transparent;
+  border-bottom: 3px solid #cb2027 !important;
+  margin-right: 10px;
+}
+.mineralbay-navbar .navbar-nav &gt; .active &gt; a:hover {
+  color: #555;
+  background-color: transparent;
+  border-bottom: 3px solid #cb2027 !important;
+  margin-right: 10px;
+}
+.mineralbay-navbar .navbar-nav &gt; .active &gt; a:focus {
+  color: #555;
+  background-color: transparent;
+  border-bottom: 3px solid #cb2027 !important;
+  margin-right: 10px;
+}
+.mineralbay-navbar .navbar-nav &gt; .disabled &gt; a {
+  color: #ccc;
+  background-color: transparent;
+  margin-right: 10px;
+}
+.mineralbay-navbar .navbar-nav &gt; .disabled &gt; a:hover {
+  color: #ccc;
+  background-color: transparent;
+  margin-right: 10px;
+}
+.mineralbay-navbar .navbar-nav &gt; .disabled &gt; a:focus {
+  color: #ccc;
+  background-color: transparent;
+  margin-right: 10px;
+}
+.mineralbay-navbar .navbar-nav &gt; li &gt; a {
+  color: #999;
+}
+.mineralbay-navbar .navbar-nav &gt; li &gt; a:hover {
+  color: #333;
+  background-color: transparent;
+  border-bottom: 3px solid #ee6023 !important;
+}
+.mineralbay-navbar ul.nav li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+.mineralbay-righttext .navbar-link {
+  color: #005999;
+}
+.mineralbay-righttext .navbar-text {
+  color: #696969;
+}
+.mineralbay-rightmenu .navbar-nav &gt; li &gt; a {
+  color: #ffffff;
+}
+.mineralbay-rightmenu .navbar-nav &gt; li &gt; a:hover {
+  color: #333;
+  background-color: transparent;
+}
+.mineralbay-rightmenu .navbar-nav &gt; li &gt; a:focus {
+  color: #333;
+  background-color: transparent;
+}
+@media (min-width: 768px) {
+  .mineralbay-navbar .navbar-nav &gt; li &gt; a {
+    margin-top: 0px;
+  }
+  .mineralbay-rightmenu .navbar-nav &gt; li &gt; a {
+    margin-top: -10px;
+  }
+  .mineralbay-rightmenu .navbar-right {
+    float: right !important;
+    margin-right: -30px;
+    background: #cb2027;
+    border-radius: 10px 0 0 10px;
+    font-size: 12px;
+    height: 32px;
+  }
+}</code></pre>
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  
+
+
+
   <h2 id="navbar-brand-image">Brand image</h2>
   <p>Replace the navbar brand with your own image by swapping the text for an <code>&lt;img&gt;</code>. Since the <code>.navbar-brand</code> has its own padding and height, you may need to override some CSS depending on your image.</p>
   <div class="pl-example" data-example-id="navbar-with-image-brand">
@@ -1829,7 +2061,7 @@
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">Components</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="#icon-chevron-up"/></svg></a></p>
+            <p class="pl-docs-sidebar-header"><a href="#top">UI Components</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="#icon-chevron-up"/></svg></a></p>
             <ul class="nav nav-pills pl-docs-sidenav">
                 <li>
                     <a href="#glyphicon">Glyphicons</a>

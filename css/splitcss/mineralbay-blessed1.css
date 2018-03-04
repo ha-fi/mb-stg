@@ -3063,11 +3063,11 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-  background-image: linear-gradient(to bottom, #337ab7 0%, #2c689c 100%);
+  background-color: #ee6023;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ee6023 0%, #dc4e11 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2c689c', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee6023', endColorstr='#ffdc4e11', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary:hover,
@@ -3077,8 +3077,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #ce4910;
+  border-color: #8a2d06;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -3103,11 +3103,11 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #ee6023;
+  border-color: #c54008;
 }
 .btn-primary .badge {
-  color: #337ab7;
+  color: #ee6023;
   background-color: #fff;
 }
 .btn-primary:hover,
@@ -3116,11 +3116,11 @@ fieldset[disabled] .btn-primary.active {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #286090;
-  border-color: #2e6da4;
-  background-image: linear-gradient(to bottom, #2f70a7 0%, #245580 100%);
+  background-color: #ce4910;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ea5312 0%, #bb420e 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f70a7', endColorstr='#ff245580', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffea5312', endColorstr='#ffbb420e', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary:active,
@@ -3143,8 +3143,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #ee6023;
+  border-color: #c54008;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-primary .badge-outline {
@@ -3254,11 +3254,11 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
-  background-image: linear-gradient(to bottom, #5bc0de 0%, #3db5d8 100%);
+  background-color: #f5a482;
+  border-color: #f5a482;
+  background-image: linear-gradient(to bottom, #f5a482 0%, #f38c61 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff3db5d8', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5a482', endColorstr='#fff38c61', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-info:hover,
@@ -3268,8 +3268,8 @@ fieldset[disabled] .btn-success.active {
 .btn-info.active,
 .open > .dropdown-toggle.btn-info {
   color: #fff;
-  background-color: #31b0d5;
-  border-color: #269abc;
+  background-color: #f28252;
+  border-color: #f17b49;
 }
 .btn-info:active,
 .btn-info.active,
@@ -3294,11 +3294,11 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #f5a482;
+  border-color: #f5a482;
 }
 .btn-info .badge {
-  color: #5bc0de;
+  color: #f5a482;
   background-color: #fff;
 }
 .btn-info:hover,
@@ -3307,11 +3307,11 @@ fieldset[disabled] .btn-info.active {
 .btn-info.active,
 .open .dropdown-toggle.btn-info {
   color: #fff;
-  background-color: #31b0d5;
-  border-color: #46b8da;
-  background-image: linear-gradient(to bottom, #4ab9db 0%, #28a4c9 100%);
+  background-color: #f28252;
+  border-color: #f5a482;
+  background-image: linear-gradient(to bottom, #f4976f 0%, #f0753f 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4ab9db', endColorstr='#ff28a4c9', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff4976f', endColorstr='#fff0753f', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-info:active,
@@ -3334,8 +3334,8 @@ fieldset[disabled] .btn-info:active,
 .btn-info.disabled.active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #f5a482;
+  border-color: #f5a482;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .btn-info .badge-outline {
@@ -3344,8 +3344,6 @@ fieldset[disabled] .btn-info.active {
   border-style: solid;
   border-width: 1px;
   color: #696969;
-  border-color: #f6f6f6;
-  color: #f6f6f6;
 }
 .btn-warning {
   color: #fff;
@@ -4854,8 +4852,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .active > span:focus {
   z-index: 2;
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: #ee6023;
+  border-color: #ee6023;
   cursor: default;
 }
 .pagination > .disabled > span,
@@ -8769,11 +8767,11 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .datepicker table tr td.active.disabled,
 .datepicker table tr td.active.disabled:hover {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-  background-image: linear-gradient(to bottom, #337ab7 0%, #2c689c 100%);
+  background-color: #ee6023;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ee6023 0%, #dc4e11 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2c689c', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee6023', endColorstr='#ffdc4e11', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -8802,8 +8800,8 @@ fieldset[disabled] .datepicker table tr td.selected.disabled:hover.active {
 .open > .dropdown-toggle.datepicker table tr td.active.disabled,
 .open > .dropdown-toggle.datepicker table tr td.active.disabled:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #ce4910;
+  border-color: #8a2d06;
 }
 .datepicker table tr td.active:active,
 .datepicker table tr td.active:hover:active,
@@ -8891,14 +8889,14 @@ fieldset[disabled] .datepicker table tr td.active.active,
 fieldset[disabled] .datepicker table tr td.active:hover.active,
 fieldset[disabled] .datepicker table tr td.active.disabled.active,
 fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #ee6023;
+  border-color: #c54008;
 }
 .datepicker table tr td.active .badge,
 .datepicker table tr td.active:hover .badge,
 .datepicker table tr td.active.disabled .badge,
 .datepicker table tr td.active.disabled:hover .badge {
-  color: #337ab7;
+  color: #ee6023;
   background-color: #fff;
 }
 .datepicker table tr td.active:hover,
@@ -8922,11 +8920,11 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td.active.disabled,
 .open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #2e6da4;
-  background-image: linear-gradient(to bottom, #2f70a7 0%, #245580 100%);
+  background-color: #ce4910;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ea5312 0%, #bb420e 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f70a7', endColorstr='#ff245580', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffea5312', endColorstr='#ffbb420e', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .datepicker table tr td.active:active,
@@ -9003,8 +9001,8 @@ fieldset[disabled] .datepicker table tr td.active.active,
 fieldset[disabled] .datepicker table tr td.active:hover.active,
 fieldset[disabled] .datepicker table tr td.active.disabled.active,
 fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #ee6023;
+  border-color: #c54008;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .datepicker table tr td.active .badge-outline,
@@ -9043,11 +9041,11 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .datepicker table tr td span.active.disabled,
 .datepicker table tr td span.active.disabled:hover {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
-  background-image: linear-gradient(to bottom, #337ab7 0%, #2c689c 100%);
+  background-color: #ee6023;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ee6023 0%, #dc4e11 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff2c689c', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee6023', endColorstr='#ffdc4e11', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
@@ -9076,8 +9074,8 @@ fieldset[disabled] .datepicker table tr td.active.disabled:hover.active {
 .open > .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open > .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #204d74;
+  background-color: #ce4910;
+  border-color: #8a2d06;
 }
 .datepicker table tr td span.active:active,
 .datepicker table tr td span.active:hover:active,
@@ -9165,14 +9163,14 @@ fieldset[disabled] .datepicker table tr td span.active.active,
 fieldset[disabled] .datepicker table tr td span.active:hover.active,
 fieldset[disabled] .datepicker table tr td span.active.disabled.active,
 fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #ee6023;
+  border-color: #c54008;
 }
 .datepicker table tr td span.active .badge,
 .datepicker table tr td span.active:hover .badge,
 .datepicker table tr td span.active.disabled .badge,
 .datepicker table tr td span.active.disabled:hover .badge {
-  color: #337ab7;
+  color: #ee6023;
   background-color: #fff;
 }
 .datepicker table tr td span.active:hover,
@@ -9196,10 +9194,10 @@ fieldset[disabled] .datepicker table tr td span.active.disabled:hover.active {
 .open .dropdown-toggle.datepicker table tr td span.active.disabled,
 .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
   color: #fff;
-  background-color: #286090;
-  border-color: #2e6da4;
-  background-image: linear-gradient(to bottom, #2f70a7 0%, #245580 100%);
+  background-color: #ce4910;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ea5312 0%, #bb420e 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2f70a7', endColorstr='#ff245580', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffea5312', endColorstr='#ffbb420e', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Angular | MineralBay Pattern Library</title>
+  <title>Angular Components | MineralBay Pattern Library</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -47,6 +47,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/angularjs-slider/dist/rzslider.css"/>
 <section id="accordion">
 <div ng-controller="AccordionDemoCtrl">
 <script type="text/javascript">
@@ -445,7 +446,8 @@ Add the ability to override the template used in the component.</p>
       <li class="active"><a href="#button-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#button-tab-1" role="tab" data-toggle="tab">Markup</a></li>
         <li><a href="#button-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#button-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+        <li><a href="#button-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#button-tab-4" role="tab" data-toggle="tab">Settings</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -540,7 +542,164 @@ Add the ability to override the template used in the component.</p>
   });
 });</code></pre>
           </div> <!-- end tab-pane -->
+          
           <div class="tab-pane fade" id="button-tab-3">
+          <pre><code data-language="css">
+          .btn-primary {
+  color: #fff;
+  background-color: #ee6023;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ee6023 0%, #dc4e11 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffee6023', endColorstr='#ffdc4e11', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open &gt; .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #ce4910;
+  border-color: #8a2d06;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open &gt; .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #ee6023;
+  border-color: #c54008;
+}
+.btn-primary .badge {
+  color: #ee6023;
+  background-color: #fff;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #ce4910;
+  border-color: #c54008;
+  background-image: linear-gradient(to bottom, #ea5312 0%, #bb420e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffea5312', endColorstr='#ffbb420e', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #f5a482;
+  border-color: #f5a482;
+  background-image: linear-gradient(to bottom, #f5a482 0%, #f38c61 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5a482', endColorstr='#fff38c61', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active,
+.open &gt; .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #f28252;
+  border-color: #f17b49;
+}
+.btn-info:active,
+.btn-info.active,
+.open &gt; .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled.focus,
+.btn-info[disabled].focus,
+fieldset[disabled] .btn-info.focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #f5a482;
+  border-color: #f5a482;
+}
+.btn-info .badge {
+  color: #f5a482;
+  background-color: #fff;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #fff;
+  background-color: #f28252;
+  border-color: #f5a482;
+  background-image: linear-gradient(to bottom, #f4976f 0%, #f0753f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff4976f', endColorstr='#fff0753f', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  background-image: none;
+}
+.btn-info.disabled,
+.btn-info[disabled],
+fieldset[disabled] .btn-info,
+.btn-info.disabled:hover,
+.btn-info[disabled]:hover,
+fieldset[disabled] .btn-info:hover,
+.btn-info.disabled:focus,
+.btn-info[disabled]:focus,
+fieldset[disabled] .btn-info:focus,
+.btn-info.disabled:active,
+.btn-info[disabled]:active,
+fieldset[disabled] .btn-info:active,
+.btn-info.disabled.active,
+.btn-info[disabled].active,
+fieldset[disabled] .btn-info.active {
+  background-color: #f5a482;
+  border-color: #f5a482;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+          </code>
+          </pre>
+          
+          </div>
+          <div class="tab-pane fade" id="button-tab-4">
           <h3 id="uib-btn-checkbox-settings">uib-btn-checkbox settings</h3>
 <ul>
 <li><p><code>btn-checkbox-false</code>
@@ -2029,7 +2188,8 @@ th.sortable:hover {
       <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
       <li class="active"><a href="#floating-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#floating-tab-1" role="tab" data-toggle="tab">Markup</a></li>
-        <li><a href="#floating-tab-2" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#floating-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#floating-tab-3" role="tab" data-toggle="tab">CSS</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -2063,7 +2223,38 @@ th.sortable:hover {
 </code></pre>
           </div> <!-- end tab-pane -->
          
-          <div class="tab-pane fade" id="floating-tab-2">
+         
+         <div class="tab-pane fade" id="floating-tab-2">
+          <pre><code data-language="javascript">app.directive(&#x27withFloatingLabel&#x27, function () {
+  return {
+    restrict: 'A',
+    link: function ($scope, $element, attrs) {
+      var template = &#x27&lt;div class=&quot;floating-label&quot;&gt;&#x27 + attrs.placeholder +&#x27&lt;/div&gt;&#x27;
+      
+      //append floating label template
+      $element.after(template);
+      
+      //remove placeholder  
+      $element.removeAttr(&#x27placeholder&#x27);
+      
+      //hide label tag assotiated with given input
+      document.querySelector(&#x27label[for=&quot;&#x27 +  attrs.id +  &#x27&quot;]&#x27).style.display = &#x27none&#x27;
+     
+      $scope.$watch(function () {
+        if($element.val().toString().length &lt; 1) {
+          $element.addClass('empty';
+        } else {
+          $element.removeClass('empty');
+        }
+      });
+    }
+  };
+});       
+</code></pre>
+          </div> <!-- end tab-pane -->
+         
+         
+          <div class="tab-pane fade" id="floating-tab-3">
           <pre><code data-language="css">.well {
     margin: 10px;
 }
@@ -2987,7 +3178,8 @@ angular.module('mineralbay').controller('PaginationDemoCtrl', function ($scope, 
       <li class="active"><a href="#pag-tab-0" role="tab" data-toggle="tab">Preview</a></li>
         <li ><a href="#pag-tab-1" role="tab" data-toggle="tab">Markup</a></li>
         <li><a href="#pag-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
-        <li><a href="#pag-tab-3" role="tab" data-toggle="tab">Settings</a></li>
+        <li><a href="#pag-tab-3" role="tab" data-toggle="tab">CSS</a></li>
+        <li><a href="#pag-tab-4" role="tab" data-toggle="tab">Settings</a></li>
       </ul>
       <div class="panel-body">
         <div class="tab-content">
@@ -3059,6 +3251,21 @@ angular.module('mineralbay').controller('PaginationDemoCtrl', function ($scope, 
 });</code></pre>
           </div>
           <div class="tab-pane fade" id="pag-tab-3">
+          <pre><code data-language="css">.pagination &gt; .active &gt; a,
+.pagination &gt; .active &gt; span,
+.pagination &gt; .active &gt; a:hover,
+.pagination &gt; .active &gt; span:hover,
+.pagination &gt; .active &gt; a:focus,
+.pagination &gt; .active &gt; span:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #ee6023;
+  border-color: #ee6023;
+  cursor: default;
+}
+          </code></pre>
+          </div>
+          <div class="tab-pane fade" id="pag-tab-4">
             <h3 id="uib-pagination-settings">uib-pagination settings</h3>
 <ul>
 <li><p><code>boundary-links</code>
@@ -4856,6 +5063,974 @@ angular.module('mineralbay').filter('propsFilter', function() {
 </div> <!-- end panel -->
 </section>
 
+<section id="slider">
+<div ng-controller="SliderDemoCtrl">
+<script type="text/javascript">
+angular.module('mineralbay').controller('SliderDemoCtrl', function ($scope, $log) {
+  $scope.slider = {
+    value: 10
+};
+
+$scope.rangeSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minLimit: 10,
+      	maxLimit: 90
+    }
+};
+
+$scope.rangeMinMaxSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 50
+    }
+};
+
+$scope.rangeNoSwitchingSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        noSwitching: true
+    }
+};
+
+$scope.rangePushRangeSlider = {
+    minValue: 60,
+    maxValue: 60,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 30,
+        pushRange: true
+    }
+};
+
+$scope.selectionBarSlider = {
+    value: 10,
+    options: {
+        showSelectionBar: true
+    }
+};
+
+$scope.selectionBarFromAValueSlider = {
+  value: 5,
+  options: {
+    floor: -10,
+    ceil: 10,
+    showSelectionBarFromValue: 0
+  }
+};
+
+$scope.selectionBarWithGradientSlider = {
+  minValue: 0,
+  maxValue: 80,
+  options: {
+    ceil: 100,
+    showSelectionBar: true,
+    selectionBarGradient: {
+      from: 'white',
+      to: '#FC0'
+    }
+  }
+};
+
+$scope.customDisplaySlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value) {
+      return '$' + value;
+    }
+  }
+};
+
+$scope.customDisplayUsingHTMLSlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value, sliderId, label) {
+      switch (label) {
+        case 'model':
+          return '<b>Min price:</b> $' + value;
+        case 'high':
+          return '<b>Max price:</b> $' + value;
+        default:
+          return '$' + value
+      }
+    }
+  }
+};
+
+$scope.ticksSlider = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    showTicks: true
+  }
+};
+
+$scope.ticksIntermediateSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    showTicks: 10
+  }
+};
+
+$scope.ticksSpecificSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    ticksArray: [0, 10, 25, 50, 100]
+  }
+};
+
+$scope.ticksAndLegendsAndTooltipsSlider = {
+  value: 5,
+  options: {
+    showTicksValues: true,
+    ticksTooltip: function(v) {
+      return 'Tooltip for ' + v;
+    },
+    stepsArray: [
+      {value: 1, legend: 'Very poor'},
+      {value: 2},
+      {value: 3, legend: 'Fair'},
+      {value: 4},
+      {value: 5, legend: 'Average'},
+      {value: 6},
+      {value: 7, legend: 'Good'},
+      {value: 8},
+      {value: 9, legend: 'Excellent'}
+    ]
+  }
+};
+
+$scope.draggableRangeSlider = {
+  minValue: 1,
+  maxValue: 8,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRange: true
+  }
+};
+
+$scope.draggableRangeOnlySlider = {
+  minValue: 4,
+  maxValue: 6,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRangeOnly: true
+  }
+};
+
+$scope.verticalSlider1 = {
+  value: 0,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true
+  }
+};
+$scope.verticalSlider2 = {
+  minValue: 20,
+  maxValue: 80,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true
+  }
+};
+$scope.verticalSlider3 = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true,
+    showTicks: true
+  }
+};
+$scope.verticalSlider4 = {
+  minValue: 1,
+  maxValue: 5,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showTicksValues: true
+  }
+};
+$scope.verticalSlider5 = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true,
+    showSelectionBar: true
+  }
+};
+$scope.verticalSlider6 = {
+  value: 6,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showSelectionBar: true,
+    showTicksValues: true,
+    ticksValuesTooltip: function (v) {
+      return 'Tooltip for ' + v;
+    }
+  }
+};
+
+$scope.readOnlySlider = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    readOnly: true
+  }
+};
+
+});
+</script>
+    <div class="page-header">
+        <h1>Slider<small>
+            (<a target="_blank" href="https://github.com/angular-slider/angularjs-slider">angularjs-slider</a>)
+        </small></h1>
+    </div>
+    
+
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#panel-slider-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#panel-slider-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#panel-slider-2" role="tab" data-toggle="tab">Javascript</a></li>
+        <li><a href="#panel-slider-3" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="panel-slider-0">
+           
+           <h4>Simple slider</h4>
+            <rzslider rz-slider-model="slider.value"></rzslider>
+            
+            <h4>Range slider with min limit set to 10 and max limit set to 90</h4>
+            <rzslider rz-slider-model="rangeSlider.minValue"
+          rz-slider-high="rangeSlider.maxValue"
+          rz-slider-options="rangeSlider.options"></rzslider>
+
+			<h4>Range slider with a minimal range set to 10 and maximum of 50</h4>
+			<rzslider rz-slider-model="rangeMinMaxSlider.minValue"
+          rz-slider-high="rangeMinMaxSlider.maxValue"
+          rz-slider-options="rangeMinMaxSlider.options"></rzslider>
+          
+          
+          <h4> Range slider with noSwitching=true</h4>
+          <rzslider rz-slider-model="rangeNoSwitchingSlider.minValue"
+          rz-slider-high="rangeNoSwitchingSlider.maxValue"
+          rz-slider-options="rangeNoSwitchingSlider.options"></rzslider>
+          
+          <h4>Range slider with minimum range of 10, maximum of 30 and pushRange option</h4>
+          <rzslider rz-slider-model="rangePushRangeSlider.minValue"
+          rz-slider-high="rangePushRangeSlider.maxValue"
+          rz-slider-options="rangePushRangeSlider.options"></rzslider>
+          
+          <h4>Slider with visible selection bar</h4>
+          <rzslider rz-slider-model="selectionBarSlider.value"
+          rz-slider-options="selectionBarSlider.options"></rzslider>
+          
+          <h4>Slider with visible selection bar from a value</h4>
+          <rzslider rz-slider-model="selectionBarFromAValueSlider.value"
+          rz-slider-options="selectionBarFromAValueSlider.options"></rzslider>
+          
+          <h4>Slider with selection bar gradient</h4>
+          <rzslider rz-slider-model="selectionBarWithGradientSlider.minValue"
+          rz-slider-high="selectionBarWithGradientSlidermaxValue"
+          rz-slider-options="selectionBarWithGradientSlider.options"></rzslider>
+          
+          <h4>Slider with custom display function</h4>
+          <rzslider rz-slider-model="customDisplaySlider.minValue"
+          rz-slider-high="customDisplaySlider.maxValue"
+          rz-slider-options="customDisplaySlider.options"></rzslider>
+          
+          <h4>Slider with custom display function using HTML formatting</h4>
+          <rzslider rz-slider-model="customDisplayUsingHTMLSlider.minValue"
+          rz-slider-high="customDisplayUsingHTMLSlider.maxValue"
+          rz-slider-options="customDisplayUsingHTMLSlider.options"></rzslider>       
+         
+          <h4>Slider with ticks</h4>
+          <rzslider rz-slider-model="ticksSlider.value"
+          rz-slider-options="ticksSlider.options"></rzslider>
+          
+          <h4>Slider with ticks at intermediate positions</h4>
+          <rzslider rz-slider-model="ticksIntermediateSlider.value"
+          rz-slider-options="ticksIntermediateSlider.options"></rzslider>
+          
+          <h4>Slider with ticks at specific positions</h4>
+          <rzslider rz-slider-model="ticksSpecificSlider.value"
+          rz-slider-options="ticksSpecificSlider.options"></rzslider>
+          
+          <h4>Slider with ticks values, legend and tooltips</h4>
+          <rzslider rz-slider-model="ticksAndLegendsAndTooltipsSlider.value"
+          rz-slider-options="ticksAndLegendsAndTooltipsSlider.options"></rzslider>
+          
+          
+
+          <h4 style="padding-top:50px">Slider with draggable range</h4>
+          <rzslider rz-slider-model="draggableRangeSlider.minValue"
+          rz-slider-high="draggableRangeSlider.maxValue"
+          rz-slider-options="draggableRangeSlider.options"></rzslider>
+          
+          <h4>Slider with draggable range only</h4>
+          <rzslider rz-slider-model="draggableRangeOnlySlider.minValue"
+          rz-slider-high="draggableRangeOnlySlider.maxValue"
+          rz-slider-options="draggableRangeOnlySlider.options"></rzslider>
+          
+          <h4>Vertical sliders</h4>
+          <p style="height: 400px;width:600px;">
+          <rzslider style="padding-right:30px;" rz-slider-model="verticalSlider1.value"
+          rz-slider-options="verticalSlider1.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider2.minValue" rz-slider-high="verticalSlider2.maxValue"
+          rz-slider-options="verticalSlider2.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider3.value"
+          rz-slider-options="verticalSlider3.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider4.minValue" rz-slider-high="verticalSlider4.maxValue"
+          rz-slider-options="verticalSlider4.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider5.value"
+          rz-slider-options="verticalSlider5.options"></rzslider>
+
+		<rzslider style="padding-right:30px;" rz-slider-model="verticalSlider6.value"
+          rz-slider-options="verticalSlider6.options"></rzslider>
+          
+          </p>
+          <h4>Read-only slider</h4>
+          
+          <label>Read-only <input type="checkbox" ng-model="readOnlySlider.options.readOnly"></label>
+<rzslider rz-slider-model="readOnlySlider.value"
+          rz-slider-options="readOnlySlider.options"></rzslider>
+          
+          
+          </div>
+          <div class="tab-pane fade" id="panel-slider-1">
+             <pre><code data-language="html">
+             &lt;h4&gt;Simple slider&lt;/h4&gt;
+            &lt;rzslider rz-slider-model=&quot;slider.value&quot;&gt;&lt;/rzslider&gt;
+            
+            &lt;h4&gt;Range slider with min limit set to 10 and max limit set to 90&lt;/h4&gt;
+            &lt;rzslider rz-slider-model=&quot;rangeSlider.minValue&quot;
+          rz-slider-high=&quot;rangeSlider.maxValue&quot;
+          rz-slider-options=&quot;rangeSlider.options&quot;&gt;&lt;/rzslider&gt;
+
+			&lt;h4&gt;Range slider with a minimal range set to 10 and maximum of 50&lt;/h4&gt;
+			&lt;rzslider rz-slider-model=&quot;rangeMinMaxSlider.minValue&quot;
+          rz-slider-high=&quot;rangeMinMaxSlider.maxValue&quot;
+          rz-slider-options=&quot;rangeMinMaxSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          
+          &lt;h4&gt; Range slider with noSwitching=true&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;rangeNoSwitchingSlider.minValue&quot;
+          rz-slider-high=&quot;rangeNoSwitchingSlider.maxValue&quot;
+          rz-slider-options=&quot;rangeNoSwitchingSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Range slider with minimum range of 10, maximum of 30 and pushRange option&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;rangePushRangeSlider.minValue&quot;
+          rz-slider-high=&quot;rangePushRangeSlider.maxValue&quot;
+          rz-slider-options=&quot;rangePushRangeSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with visible selection bar&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;selectionBarSlider.value&quot;
+          rz-slider-options=&quot;selectionBarSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with visible selection bar from a value&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;selectionBarFromAValueSlider.value&quot;
+          rz-slider-options=&quot;selectionBarFromAValueSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with selection bar gradient&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;selectionBarWithGradientSlider.minValue&quot;
+          rz-slider-high=&quot;selectionBarWithGradientSlidermaxValue&quot;
+          rz-slider-options=&quot;selectionBarWithGradientSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with custom display function&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;customDisplaySlider.minValue&quot;
+          rz-slider-high=&quot;customDisplaySlider.maxValue&quot;
+          rz-slider-options=&quot;customDisplaySlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with custom display function using HTML formatting&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;customDisplayUsingHTMLSlider.minValue&quot;
+          rz-slider-high=&quot;customDisplayUsingHTMLSlider.maxValue&quot;
+          rz-slider-options=&quot;customDisplayUsingHTMLSlider.options&quot;&gt;&lt;/rzslider&gt;       
+         
+          &lt;h4&gt;Slider with ticks&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksSlider.value&quot;
+          rz-slider-options=&quot;ticksSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with ticks at intermediate positions&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksIntermediateSlider.value&quot;
+          rz-slider-options=&quot;ticksIntermediateSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with ticks at specific positions&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksSpecificSlider.value&quot;
+          rz-slider-options=&quot;ticksSpecificSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with ticks values, legend and tooltips&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;ticksAndLegendsAndTooltipsSlider.value&quot;
+          rz-slider-options=&quot;ticksAndLegendsAndTooltipsSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          
+
+          &lt;h4 style=&quot;padding-top:50px&quot;&gt;Slider with draggable range&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;draggableRangeSlider.minValue&quot;
+          rz-slider-high=&quot;draggableRangeSlider.maxValue&quot;
+          rz-slider-options=&quot;draggableRangeSlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Slider with draggable range only&lt;/h4&gt;
+          &lt;rzslider rz-slider-model=&quot;draggableRangeOnlySlider.minValue&quot;
+          rz-slider-high=&quot;draggableRangeOnlySlider.maxValue&quot;
+          rz-slider-options=&quot;draggableRangeOnlySlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;h4&gt;Vertical sliders&lt;/h4&gt;
+          &lt;p style=&quot;height: 400px;width:600px;&quot;&gt;
+          &lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider1.value&quot;
+          rz-slider-options=&quot;verticalSlider1.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider2.minValue&quot; rz-slider-high=&quot;verticalSlider2.maxValue&quot;
+          rz-slider-options=&quot;verticalSlider2.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider3.value&quot;
+          rz-slider-options=&quot;verticalSlider3.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider4.minValue&quot; rz-slider-high=&quot;verticalSlider4.maxValue&quot;
+          rz-slider-options=&quot;verticalSlider4.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider5.value&quot;
+          rz-slider-options=&quot;verticalSlider5.options&quot;&gt;&lt;/rzslider&gt;
+
+		&lt;rzslider style=&quot;padding-right:30px;&quot; rz-slider-model=&quot;verticalSlider6.value&quot;
+          rz-slider-options=&quot;verticalSlider6.options&quot;&gt;&lt;/rzslider&gt;
+          
+          &lt;/p&gt;
+          &lt;h4&gt;Read-only slider&lt;/h4&gt;
+          
+          &lt;label&gt;Read-only &lt;input type=&quot;checkbox&quot; ng-model=&quot;readOnlySlider.options.readOnly&quot;&gt;&lt;/label&gt;
+&lt;rzslider rz-slider-model=&quot;readOnlySlider.value&quot;
+          rz-slider-options=&quot;readOnlySlider.options&quot;&gt;&lt;/rzslider&gt;
+          
+             </code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-slider-2">
+            <pre ng-non-bindable><code data-language="javascript">$scope.slider = {
+    value: 10
+};
+
+$scope.rangeSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minLimit: 10,
+      	maxLimit: 90
+    }
+};
+
+$scope.rangeMinMaxSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 50
+    }
+};
+
+$scope.rangeNoSwitchingSlider = {
+    minValue: 10,
+    maxValue: 90,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        noSwitching: true
+    }
+};
+
+$scope.rangePushRangeSlider = {
+    minValue: 60,
+    maxValue: 60,
+    options: {
+        floor: 0,
+        ceil: 100,
+        step: 1,
+        minRange: 10,
+        maxRange: 30,
+        pushRange: true
+    }
+};
+
+$scope.selectionBarSlider = {
+    value: 10,
+    options: {
+        showSelectionBar: true
+    }
+};
+
+$scope.selectionBarFromAValueSlider = {
+  value: 5,
+  options: {
+    floor: -10,
+    ceil: 10,
+    showSelectionBarFromValue: 0
+  }
+};
+
+$scope.selectionBarWithGradientSlider = {
+  minValue: 0,
+  maxValue: 80,
+  options: {
+    ceil: 100,
+    showSelectionBar: true,
+    selectionBarGradient: {
+      from: 'white',
+      to: '#FC0'
+    }
+  }
+};
+
+$scope.customDisplaySlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value) {
+      return '$' + value;
+    }
+  }
+};
+
+$scope.customDisplayUsingHTMLSlider = {
+  minValue: 100,
+  maxValue: 400,
+  options: {
+    floor: 0,
+    ceil: 500,
+    translate: function(value, sliderId, label) {
+      switch (label) {
+        case 'model':
+          return '&lt;b&gt;Min price:&lt;/b&gt; $' + value;
+        case 'high':
+          return '&lt;b&gt;Max price:&lt;/b&gt; $' + value;
+        default:
+          return '$' + value
+      }
+    }
+  }
+};
+
+$scope.ticksSlider = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    showTicks: true
+  }
+};
+
+$scope.ticksIntermediateSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    showTicks: 10
+  }
+};
+
+$scope.ticksSpecificSlider = {
+  value: 55,
+  options: {
+    floor: 0,
+    ceil: 100,
+    ticksArray: [0, 10, 25, 50, 100]
+  }
+};
+
+$scope.ticksAndLegendsAndTooltipsSlider = {
+  value: 5,
+  options: {
+    showTicksValues: true,
+    ticksTooltip: function(v) {
+      return 'Tooltip for ' + v;
+    },
+    stepsArray: [
+      {value: 1, legend: 'Very poor'},
+      {value: 2},
+      {value: 3, legend: 'Fair'},
+      {value: 4},
+      {value: 5, legend: 'Average'},
+      {value: 6},
+      {value: 7, legend: 'Good'},
+      {value: 8},
+      {value: 9, legend: 'Excellent'}
+    ]
+  }
+};
+
+$scope.draggableRangeSlider = {
+  minValue: 1,
+  maxValue: 8,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRange: true
+  }
+};
+
+$scope.draggableRangeOnlySlider = {
+  minValue: 4,
+  maxValue: 6,
+  options: {
+    floor: 0,
+    ceil: 10,
+    draggableRangeOnly: true
+  }
+};
+
+$scope.verticalSlider1 = {
+  value: 0,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true
+  }
+};
+$scope.verticalSlider2 = {
+  minValue: 20,
+  maxValue: 80,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true
+  }
+};
+$scope.verticalSlider3 = {
+  value: 5,
+  options: {
+    floor: 0,
+    ceil: 10,
+    vertical: true,
+    showTicks: true
+  }
+};
+$scope.verticalSlider4 = {
+  minValue: 1,
+  maxValue: 5,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showTicksValues: true
+  }
+};
+$scope.verticalSlider5 = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    vertical: true,
+    showSelectionBar: true
+  }
+};
+$scope.verticalSlider6 = {
+  value: 6,
+  options: {
+    floor: 0,
+    ceil: 6,
+    vertical: true,
+    showSelectionBar: true,
+    showTicksValues: true,
+    ticksValuesTooltip: function (v) {
+      return 'Tooltip for ' + v;
+    }
+  }
+};
+
+$scope.readOnlySlider = {
+  value: 50,
+  options: {
+    floor: 0,
+    ceil: 100,
+    readOnly: true
+  }
+};</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="panel-slider-3">
+          <pre><code class="scss">.rzslider {
+  display: inline-block;
+  position: relative;
+  height: 4px;
+  width: 100%;
+  margin: 35px 0 15px 0;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.rzslider.with-legend {
+  margin-bottom: 40px;
+}
+.rzslider[disabled] {
+  cursor: not-allowed;
+}
+.rzslider[disabled] .rz-pointer {
+  cursor: not-allowed;
+  background-color: #d8e0f3;
+}
+.rzslider[disabled] .rz-draggable {
+  cursor: not-allowed;
+}
+.rzslider[disabled] .rz-selection {
+  background: #8b91a2;
+}
+.rzslider[disabled] .rz-tick {
+  cursor: not-allowed;
+}
+.rzslider[disabled] .rz-tick.rz-selected {
+  background: #8b91a2;
+}
+.rzslider span {
+  white-space: nowrap;
+  position: absolute;
+  display: inline-block;
+}
+.rzslider .rz-base {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.rzslider .rz-bar-wrapper {
+  left: 0;
+  box-sizing: border-box;
+  margin-top: -16px;
+  padding-top: 16px;
+  width: 100%;
+  height: 32px;
+  z-index: 1;
+}
+.rzslider .rz-draggable {
+  cursor: move;
+}
+.rzslider .rz-bar {
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1;
+  background: #d8e0f3;
+  border-radius: 2px;
+}
+.rzslider .rz-bar-wrapper.rz-transparent .rz-bar {
+  background: transparent;
+}
+.rzslider .rz-bar-wrapper.rz-left-out-selection .rz-bar {
+  background: #df002d;
+}
+.rzslider .rz-bar-wrapper.rz-right-out-selection .rz-bar {
+  background: #03a688;
+}
+.rzslider .rz-selection {
+  z-index: 2;
+  background: #ee6023;
+  border-radius: 2px;
+}
+.rzslider .rz-pointer {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  top: -14px;
+  background-color: #ee6023;
+  z-index: 3;
+  border-radius: 16px;
+}
+.rzslider .rz-pointer:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  border-radius: 4px;
+  background: #fff;
+}
+.rzslider .rz-pointer:hover:after {
+  background-color: #fff;
+}
+.rzslider .rz-pointer.rz-active {
+  z-index: 4;
+}
+.rzslider .rz-pointer.rz-active:after {
+  background-color: #b20001;
+}
+.rzslider .rz-bubble {
+  cursor: default;
+  bottom: 16px;
+  padding: 1px 3px;
+  color: #55637d;
+}
+.rzslider .rz-bubble.rz-limit {
+  color: #55637d;
+}
+.rzslider .rz-ticks {
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: -3px;
+  margin: 0;
+  z-index: 1;
+  list-style: none;
+}
+.rzslider .rz-ticks-values-under .rz-tick-value {
+  top: auto;
+  bottom: -32px;
+}
+.rzslider .rz-tick {
+  text-align: center;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background: #d8e0f3;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 11px;
+}
+.rzslider .rz-tick.rz-selected {
+  background: #ee6023;
+}
+.rzslider .rz-tick-value {
+  position: absolute;
+  top: -30px;
+  transform: translate(-50%, 0);
+}
+.rzslider .rz-tick-legend {
+  position: absolute;
+  top: 24px;
+  transform: translate(-50%, 0);
+  max-width: 50px;
+  white-space: normal;
+}
+.rzslider.rz-vertical {
+  position: relative;
+  width: 4px;
+  height: 100%;
+  margin: 0 20px;
+  padding: 0;
+  vertical-align: baseline;
+}
+.rzslider.rz-vertical .rz-base {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.rzslider.rz-vertical .rz-bar-wrapper {
+  top: auto;
+  left: 0;
+  margin: 0 0 0 -16px;
+  padding: 0 0 0 16px;
+  height: 100%;
+  width: 32px;
+}
+.rzslider.rz-vertical .rz-bar {
+  bottom: 0;
+  left: auto;
+  width: 4px;
+  height: 100%;
+}
+.rzslider.rz-vertical .rz-pointer {
+  left: -14px !important;
+  top: auto;
+  bottom: 0;
+}
+.rzslider.rz-vertical .rz-bubble {
+  left: 16px !important;
+  margin-left: 3px;
+  bottom: 0;
+}
+.rzslider.rz-vertical .rz-ticks {
+  height: 100%;
+  width: 0;
+  left: -3px;
+  top: 0;
+  z-index: 1;
+}
+.rzslider.rz-vertical .rz-tick {
+  vertical-align: middle;
+  margin-left: auto;
+  margin-top: 11px;
+}
+.rzslider.rz-vertical .rz-tick-value {
+  left: 24px;
+  top: auto;
+  transform: translate(0, -28%);
+}
+.rzslider.rz-vertical .rz-tick-legend {
+  top: auto;
+  right: 24px;
+  transform: translate(0, -28%);
+  max-width: none;
+  white-space: nowrap;
+}
+.rzslider.rz-vertical .rz-ticks-values-under .rz-tick-value {
+  bottom: auto;
+  left: auto;
+  right: 24px;
+}
+          </code>
+          
+          </pre>
+            
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  </div>
+</section>
 <section id="sorting">
 <div ng-controller="SortingDemoCtrl">
 <script type="text/javascript">
@@ -6727,11 +7902,349 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
     </div> <!-- end panel -->
 </div>
 </section>
+<section id="wizard">
+<div ng-controller="WizardDemoCtrl">
+<script type="text/javascript">
+  angular.module('mineralbay').controller('WizardDemoCtrl', function ($scope) {
+  	//this will cause the step to be hidden
+	$scope.disabled = 'true';
+});
+  </script>
+
+    <div class="page-header">
+        <h1>Wizard<small>
+            (<a target="_blank" href="https://github.com/angular-wizard/angular-wizard">angular-wizard</a>)
+        </small></h1>
+    </div>
+   
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#wizard-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#wizard-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#wizard-tab-2" role="tab" data-toggle="tab">CSS</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="wizard-tab-0">
+          <wizard on-finish="finishedWizard()" on-cancel="cancelledWizard()"> 
+    <wz-step wz-title="Starting">
+        <h1>This is the first step</h1>
+        <p>Here you can use whatever you want. You can use other directives, binding, etc.</p>
+        <input type="submit" wz-next value="Continue" />
+    </wz-step>
+    <wz-step wz-title="Continuing">
+        <h1>Continuing</h1>
+        <p>You have continued here!</p>
+        <input type="submit" wz-next value="Go on" />
+    </wz-step>
+    <wz-step wz-title="More steps">
+        <p>Even more steps!!</p>
+        <input type="submit" wz-next value="Finish now" />
+    </wz-step>
+</wizard>
+          </div>
+          <div class="tab-pane fade" id="wizard-tab-1">
+             <pre><code data-language="html"> &lt;wizard on-finish=&quot;finishedWizard()&quot; on-cancel=&quot;cancelledWizard()&quot;&gt; 
+    &lt;wz-step wz-title=&quot;Starting&quot;&gt;
+        &lt;h1&gt;This is the first step&lt;/h1&gt;
+        &lt;p&gt;Here you can use whatever you want. You can use other directives, binding, etc.&lt;/p&gt;
+        &lt;input type=&quot;submit&quot; wz-next value=&quot;Continue&quot; /&gt;
+    &lt;/wz-step&gt;
+    &lt;wz-step wz-title=&quot;Continuing&quot;&gt;
+        &lt;h1&gt;Continuing&lt;/h1&gt;
+        &lt;p&gt;You have continued here!&lt;/p&gt;
+        &lt;input type=&quot;submit&quot; wz-next value=&quot;Go on&quot; /&gt;
+    &lt;/wz-step&gt;
+    &lt;wz-step wz-title=&quot;More steps&quot;&gt;
+        &lt;p&gt;Even more steps!!&lt;/p&gt;
+        &lt;input type=&quot;submit&quot; wz-next value=&quot;Finish now&quot; /&gt;
+    &lt;/wz-step&gt;
+&lt;/wizard&gt;</code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="wizard-tab-2">
+            <pre ng-non-bindable><code data-language="css">.steps-indicator {
+  /* ---- steps quantity ---- */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 20px 0 0 0;
+  height: 30px;
+  list-style: none;
+}
+.steps-indicator:before {
+  background-color: #E6E6E6;
+  content: '';
+  position: absolute;
+  height: 1px;
+}
+.steps-indicator.steps-2:before {
+  left: calc(100% / 2 / 2);
+  right: calc(100% / 2 / 2);
+}
+.steps-indicator.steps-3:before {
+  left: calc(100% / 3 / 2);
+  right: calc(100% / 3 / 2);
+}
+.steps-indicator.steps-4:before {
+  left: calc(100% / 4 / 2);
+  right: calc(100% / 4 / 2);
+}
+.steps-indicator.steps-5:before {
+  left: calc(100% / 5 / 2);
+  right: calc(100% / 5 / 2);
+}
+.steps-indicator.steps-6:before {
+  left: calc(100% / 6 / 2);
+  right: calc(100% / 6 / 2);
+}
+.steps-indicator.steps-7:before {
+  left: calc(100% / 7 / 2);
+  right: calc(100% / 7 / 2);
+}
+.steps-indicator.steps-8:before {
+  left: calc(100% / 8 / 2);
+  right: calc(100% / 8 / 2);
+}
+.steps-indicator.steps-9:before {
+  left: calc(100% / 9 / 2);
+  right: calc(100% / 9 / 2);
+}
+.steps-indicator.steps-10:before {
+  left: calc(100% / 10 / 2);
+  right: calc(100% / 10 / 2);
+}
+.steps-indicator * {
+  box-sizing: border-box;
+}
+.steps-indicator li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  text-align: center;
+  line-height: 15px;
+}
+.steps-indicator li a {
+  color: #808080;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.steps-indicator li a:before {
+  position: absolute;
+  top: -7px;
+  left: calc(50% - 7px);
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: #E6E6E6;
+  content: '';
+  transition: 0.25s;
+}
+.steps-indicator li a:hover {
+  color: #4d4d4d;
+}
+.steps-indicator.steps-2 li {
+  width: calc(100% / 2);
+}
+.steps-indicator.steps-3 li {
+  width: calc(100% / 3);
+}
+.steps-indicator.steps-4 li {
+  width: calc(100% / 4);
+}
+.steps-indicator.steps-5 li {
+  width: calc(100% / 5);
+}
+.steps-indicator.steps-6 li {
+  width: calc(100% / 6);
+}
+.steps-indicator.steps-7 li {
+  width: calc(100% / 7);
+}
+.steps-indicator.steps-8 li {
+  width: calc(100% / 8);
+}
+.steps-indicator.steps-9 li {
+  width: calc(100% / 9);
+}
+.steps-indicator.steps-10 li {
+  width: calc(100% / 10);
+}
+.steps-indicator.steps-11 li {
+  width: calc(100% / 11);
+}
+.steps-indicator li.default {
+  pointer-events: none;
+}
+.steps-indicator li.default a:hover {
+  color: #808080;
+}
+.steps-indicator li.current,
+.steps-indicator li.editing {
+  pointer-events: none;
+}
+.steps-indicator li.current a:before {
+  background-color: #ee6023;
+}
+.steps-indicator li.done a:before {
+  background-color: #339933;
+}
+.steps-indicator li.editing a:before {
+  background-color: #ee6023;
+}</code></pre>
+          </div> <!-- end tab-pane -->
+               
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+  
+</div>
+</section>
+<section id="xeditable">
+
+
+
+<div class='container-fluid typeahead-demo' ng-controller="XeditableCtrl">
+    <div class="page-header">
+        <h1>Angular-xeditable<small>
+            (<a target="_blank" href="https://vitalets.github.io/angular-xeditable/">angular-xeditable</a>)
+        </small></h1>
+    </div>
+    
+<div class="panel panel-default">
+
+      <!-- Tabs -->
+      <ul class="nav nav-tabs panel__nav-tabs bg-gray-lightest" role="tablist">
+      <li class="active"><a href="#xedit-tab-0" role="tab" data-toggle="tab">Preview</a></li>
+        <li ><a href="#xedit-tab-1" role="tab" data-toggle="tab">Markup</a></li>
+        <li><a href="#xedit-tab-2" role="tab" data-toggle="tab">Javascript</a></li>
+      </ul>
+      <div class="panel-body">
+        <div class="tab-content">
+          <!-- Tab Panes -->
+          <div class="tab-pane fade in active" id="xedit-tab-0">
+          
+        
+			<script async src="//jsfiddle.net/ckosloski/NfPcH/19058/embed/result/"></script>
+			
+      	</div>
+          <div class="tab-pane fade" id="xedit-tab-1">
+          <pre><code data-language="html">&lt;form editable-form name=&quot;editableForm&quot; onaftersave=&quot;saveUser()&quot;&gt;
+    &lt;div&gt;
+      &lt;!-- editable username (text with validation) --&gt;
+      &lt;span class=&quot;title&quot;&gt;User name: &lt;/span&gt;
+      &lt;span editable-text=&quot;user.name&quot; e-name=&quot;name&quot; onbeforesave=&quot;checkName($data)&quot; e-required&gt;&lt;/span&gt;
+    &lt;/div&gt; 
+
+    &lt;div&gt;
+      &lt;!-- editable status (select-local) --&gt;
+      &lt;span class=&quot;title&quot;&gt;Status: &lt;/span&gt;
+      &lt;span editable-select=&quot;user.status&quot; e-name=&quot;status&quot; e-ng-options=&quot;s.value as s.text for s in statuses&quot;&gt;
+        &#123;&#123; (statuses | filter:{value: user.status})[0].text || 'Not set' &#125;&#125;
+      &lt;/span&gt;
+    &lt;/div&gt;  
+
+    &lt;div&gt;
+      &lt;!-- editable group (select-remote) --&gt;
+      &lt;span class=&quot;title&quot;&gt;Group: &lt;/span&gt;
+      &lt;span editable-select=&quot;user.group&quot; e-name=&quot;group&quot; onshow=&quot;loadGroups()&quot; e-ng-options=&quot;g.id as g.text for g in groups&quot;&gt;
+        &#123;&#123; showGroup() &#125;&#125;
+      &lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+      &lt;!-- button to show form --&gt;
+      &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;editableForm.$show()&quot; ng-show=&quot;!editableForm.$visible&quot;&gt;
+        Edit
+      &lt;/button&gt;
+      &lt;!-- buttons to submit / cancel form --&gt;
+      &lt;span ng-show=&quot;editableForm.$visible&quot;&gt;
+        &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot; ng-disabled=&quot;editableForm.$waiting&quot;&gt;
+          Save
+        &lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-disabled=&quot;editableForm.$waiting&quot; ng-click=&quot;editableForm.$cancel()&quot;&gt;
+          Cancel
+        &lt;/button&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;  
+  </code></pre>
+          </div> <!-- end tab-pane -->
+          <div class="tab-pane fade" id="xedit-tab-2">
+            <pre><code data-language="javascript">var app = angular.module(&quot;app&quot;, [&quot;xeditable&quot;, &quot;ngMockE2E&quot;]);
+
+
+app.controller('Ctrl', function($scope, $filter, $http) {
+ $scope.user = {
+    id: 1,
+    name: 'awesome user',
+    status: 2,
+    group: 4,
+    groupName: 'admin'
+  }; 
+
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+  $scope.groups = [];
+  $scope.loadGroups = function() {
+    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
+      $scope.groups = data;
+    });
+  };
+
+  $scope.showGroup = function() {
+    if($scope.groups.length) {
+      var selected = $filter('filter')($scope.groups, {id: $scope.user.group});
+      return selected.length ? selected[0].text : 'Not set';
+    } else {
+      return $scope.user.groupName;
+    }
+  };
+
+  $scope.checkName = function(data) {
+    if (data !== 'awesome' &amp;&amp; data !== 'error') {
+      return &quot;Username should be `awesome` or `error`&quot;;
+    }
+  };
+
+  $scope.saveUser = function() {
+    // $scope.user already updated!
+    return $http.post('/saveUser', $scope.user).error(function(err) {
+      if(err.field &amp;&amp; err.msg) {
+        // err like {field: &quot;name&quot;, msg: &quot;Server-side error for this username!&quot;} 
+        $scope.editableForm.$setError(err.field, err.msg);
+      } else { 
+        // unknown error
+        $scope.editableForm.$setError('name', 'Unknown error!');
+      }
+    });
+  };
+});
+            </code></pre>
+          </div> <!-- end tab-pane -->
+        </div> <!-- end tab-content -->
+      </div> <!-- end panel-body -->
+    </div> <!-- end panel -->
+</div>
+</section>
 </div>
     </div> <!-- /column (main content) -->
     <div class="col-sm-3">
         <div class="pl-docs-sidebar" data-spy="affix" data-offset-top="60">
-            <p class="pl-docs-sidebar-header"><a href="#top">Angular</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="#icon-chevron-up"/></svg></a></p>
+            <p class="pl-docs-sidebar-header"><a href="#top">Angular Components</a> <a href="#top"><svg class="icon icon-chevron-up"><use xlink:href="#icon-chevron-up"/></svg></a></p>
             <ul class="nav nav-pills pl-docs-sidenav">
                 <li>
                     <a href="#accordion">Accordion</a>
@@ -6785,6 +8298,9 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                     <a href="#scrollbar">Scrollbar</a>
                 </li>
                 <li>
+                    <a href="#slider">Slider</a>
+                </li>
+                <li>
                     <a href="#sorting">sorting</a>
                 </li>
                 <li>
@@ -6798,6 +8314,12 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                 </li>
                 <li>
                     <a href="#typeahead">Typeahead</a>
+                </li>
+                <li>
+                    <a href="#wizard">Wizard</a>
+                </li>
+                <li>
+                    <a href="#xeditable">Xeditable</a>
                 </li>
             </ul>
         </div>
